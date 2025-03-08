@@ -1,2 +1,2 @@
 # CS_3110_Final_Project
-:D
+Michelle Zhao (mz625)
