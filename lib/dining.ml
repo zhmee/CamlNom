@@ -29,11 +29,15 @@ let rec filter' (csv : t) (filt : int * string) (acc : t) =
 let filter csv prefs = filter' (Csv.load csv) prefs []
 let make_menu c = Csv.load c
 
+(**[string_of_list m acc] is the string consisting of the elements in [m]
+   appended to [acc]*)
 let rec string_of_list m acc =
   match m with
   | [] -> acc
   | h :: t -> string_of_list t (acc ^ h)
 
+(**[string_of_menu' m acc] is the helper function to make a string list list
+   into a string using tail recursion*)
 let rec string_of_menu' m acc =
   match m with
   | [] -> acc

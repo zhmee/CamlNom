@@ -4,4 +4,4 @@ let () = print_endline "Hello, World!"
 
 let () =
   print_endline
-    Dining.(string_of_menu (filter "data/small_dining.csv" (1, "Asian")))
+    Dining.(string_of_menu (filter "data/small_dining.csv" (5, "N")))
