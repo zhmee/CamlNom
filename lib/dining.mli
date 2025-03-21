@@ -1,4 +1,3 @@
 type t
 
-val filter : string list -> t
-
+val filter : string list list -> int * string -> t
