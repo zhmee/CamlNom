@@ -1,3 +1,5 @@
+open Csv
+
 type t = string list list
 
 (**[check m f h a] is the helper for filter' to either append [h] to [acc] or
@@ -24,4 +26,17 @@ let rec filter' (csv : t) (filt : int * string) (acc : t) =
             | _ -> failwith "index of filter selection not found")
         | _ -> failwith "invalid csv format")
 
-let filter csv prefs = filter' csv prefs []
+let filter csv prefs = filter' (Csv.load csv) prefs []
+let make_menu c = Csv.load c
+
+let rec string_of_list m acc =
+  match m with
+  | [] -> acc
+  | h :: t -> string_of_list t (acc ^ h)
+
+let rec string_of_menu' m acc =
+  match m with
+  | [] -> acc
+  | h :: t -> string_of_menu' t (acc ^ string_of_list h "")
+
+let string_of_menu m = string_of_menu' m ""
