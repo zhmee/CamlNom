@@ -12,6 +12,8 @@ let make_rating () =
       "With 1 star being poor and 5 stars being excellent, how would you rate \
        this food? (1, 2, 3, 4, or 5)";
     let rating = read_int () in
+    print_endline "Which dining hall did you try this food at?";
+    let hall = read_line () in
     print_endline "Please leave any additional comments.";
     let comments = read_line () in
     let out =
@@ -20,7 +22,7 @@ let make_rating () =
            [ Out_channel.Open_append ]
            0 "./data/ratings.csv")
     in
-    let rating_obj = to_csv_entry (of_strings name rating comments) in
+    let rating_obj = to_csv_entry (of_strings name rating hall comments) in
     Csv.output_record out rating_obj;
     Csv.close_out out;
     print_endline "Thank you for your review!"
@@ -63,18 +65,18 @@ let () =
        8) Appel\n";
     try
       let user_input = read_line () in
-      let int_input = int_of_string user_input in 
+      let int_input = int_of_string user_input in
       if int_input = 0 then make_rating ()
-      else 
-      let filter_cat = finding_category (int_of_string user_input) in
+      else
+        let filter_cat = finding_category (int_of_string user_input) in
 
-      (*these are the filtered menus for each dining hall*)
-      let new_morrison_menu = filter "data/morrison.csv" filter_cat in
-      print_endline "Morrison Dining options";
-      print_endline (user_menu new_morrison_menu);
-      let new_appel_menu = filter "data/appel.csv" filter_cat in
-      print_endline "North Star options";
-      print_endline (user_menu new_appel_menu)
+        (*these are the filtered menus for each dining hall*)
+        let new_morrison_menu = filter "data/morrison.csv" filter_cat in
+        print_endline "Morrison Dining options";
+        print_endline (user_menu new_morrison_menu);
+        let new_appel_menu = filter "data/appel.csv" filter_cat in
+        print_endline "North Star options";
+        print_endline (user_menu new_appel_menu)
     with
     | Unknown_Correspondence ->
         print_endline "please input only one of the choices"

@@ -9,7 +9,7 @@ let make_rating (name, rating, hall, comments) =
   let r = of_strings name rating hall comments in
   get_name r = name
   && get_rating r = rating
-  && get_dining_hall r = hall
+  && get_hall r = hall
   && get_comments r = comments
 
 (**[make_csv_entry name rating comments] checks that transforming the inputs
@@ -38,9 +38,9 @@ let get_comments_test (name, rating, hall, comments) =
   get_comments (of_strings name rating hall comments) = comments
 
 (**[get_hall_test (name, rating, hall, comments)] verifies that the dining hall
-   is properly stored and returned in string form by [get_dining_hall] *)
+   is properly stored and returned in string form by [get_hall] *)
 let get_hall_test (name, rating, hall, comments) =
-  get_dining_hall (of_strings name rating hall comments) = hall
+  get_hall (of_strings name rating hall comments) = hall
 
 (**[make_randomized_tuple func name] creates a randomized rating (consistng of a
    random string, an integer between 1 and 5, and another random string) and

@@ -23,6 +23,5 @@ val of_strings : string -> int -> string -> string -> t
 val to_csv_entry : t -> string list
 (**[to_csv_entry rating] returns [rating] represented as a CSV entry*)
 
-val get_dining_hall : t -> string
-(**[get_dining_hall rating] returns the associated dining hall the food was
-   rated at*)
+val get_hall : t -> string
+(**[get_hall rating] returns the associated dining hall the food was rated at*)
