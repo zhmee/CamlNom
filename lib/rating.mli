@@ -25,3 +25,43 @@ val to_csv_entry : t -> string list
 
 val get_hall : t -> string
 (**[get_hall rating] returns the associated dining hall the food was rated at*)
+
+val retrieve_ratings_name : Csv.t -> string -> t list
+(**[retrieve_ratings_name csv_file] returns the ratings in [csv_file] that are
+   associated with the specific food [name], if any. Requires: [csv_file] is a
+   legitimate rating file with entries representable by [Rating.t]*)
+
+val retrieve_ratings_int : Csv.t -> int -> t list
+(**[retrieve_ratings_name csv_file] returns the ratings in [csv_file] that are
+   associated with exactly the specific rating [rating], if any. Requires:
+   [csv_file] is a legitimate rating file with entries representable by
+   [Rating.t]*)
+
+val retrieve_ratings_int_range : Csv.t -> int -> int -> t list
+(**[retrieve_ratings_int_range csv_file low high] returns the ratings in
+   [csv_file] that have a rating of at least [low] and at most [high]. Requires:
+   [low] <= [high], and [csv_file] is a legitimate rating file with entries
+   representable by [Rating.t]*)
+
+val retrieve_ratings_hall : Csv.t -> string -> t list
+(**[retrieve_ratings_hall csv_file hall] returns the ratings in [csv_file] that
+   correspond to the specified [hall], if any. Requires: [csv_file] is a
+   legitimate rating file with entries representable by [Rating.t]*)
+
+val sort_name : Csv.t -> bool -> Csv.t
+(**[sort_name csv_file asc] returns the csv, sorted by the food names. The
+   returned file is sorted in ascending order if [asc] is true, descending
+   otherwise. Requires: [csv_file] is a legitimate rating file with entries
+   representable by [Rating.t]*)
+
+val sort_dining : Csv.t -> bool -> Csv.t
+(**[sort_dining csv_file asc] returns the csv, sorted by the dining hall. The
+   returned file is sorted in ascending order if [asc] is true, descending
+   otherwise. Requires: [csv_file] is a legitimate rating file with entries
+   representable by [Rating.t]*)
+
+val sort_rating : Csv.t -> bool -> Csv.t
+(**[sort_rating csv_file asc] returns the csv, sorted by the ratings. The
+   returned file is sorted in ascending order if [asc] is true, descending
+   otherwise. Requires: [csv_file] is a legitimate rating file with entries
+   representable by [Rating.t]*)
