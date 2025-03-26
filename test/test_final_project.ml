@@ -121,9 +121,16 @@ let tests =
          (let expected_string =
             "AppleOtherYYYYYPhoAsianYYYYNFried RiceAsianNNYYY"
           in
-          make_menu_test "Morrison Dining test" "../data/second_small_dining.csv"
-            (4, "Y") expected_string);
+          make_menu_test "Morrison Dining test"
+            "../data/second_small_dining.csv" (4, "Y") expected_string);
          (*test appel*)
+         (let expected_string =
+            "Chipotle Chicken \
+             ThighMexicanNNNYNAppleOtherYYYYYPhoAsianYYYYNAppleFruitYYNYYFried \
+             RiceAsianNNYYYApple2YYNYYApple1YYNYY"
+          in
+          make_menu_test "Morrison Dining test"
+            "../data/second_small_dining.csv" (5, "Y") expected_string);
          (*future add test okenshields*)
        ]
 
