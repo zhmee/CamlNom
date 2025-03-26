@@ -93,6 +93,40 @@ let tests =
           in
           make_menu_test "apple test" "../data/small_dining.csv" (0, "Apple")
             expected_string);
+        (*test vegetarian*)
+        (let expected_string =
+          "AppleOtherYYYYYPhoAsianYYYYNAppleFruitYYNYYApple2YYNYYApple1YYNYY"
+        in
+        make_menu_test "Vegetarian test" "../data/second_small_dining.csv" (2, "Y")
+          expected_string);
+        (*test vegan*)
+        (let expected_string =
+          "AppleOtherYYYYYPhoAsianYYYYNAppleFruitYYNYYApple2YYNYYApple1YYNYY"
+        in
+        make_menu_test "Vegan test" "../data/second_small_dining.csv" (3, "Y")
+          expected_string);
+        (*test asian*)
+        (let expected_string =
+          "PhoAsianYYYYNFried RiceAsianNNYYY"
+        in
+        make_menu_test "Asia food test" "../data/second_small_dining.csv" (1, "Asian")
+          expected_string);
+        (*test american*)
+        (let expected_string =
+          "HamburgerAmericanNNNNN"
+        in
+        make_menu_test "American food test" "../data/second_small_dining.csv" (1, "American")
+          expected_string);
+        (*test mexican*)
+        (let expected_string =
+          "Chipotle Chicken ThighMexicanNNNYN"
+        in
+        make_menu_test "Mexican food test" "../data/second_small_dining.csv" (1, "American")
+          expected_string);
+        (*test morrison*)
+
+        (*test appel*)
+        (*future add test okenshields*)
        ]
 
 let _ = run_test_tt_main tests
