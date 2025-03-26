@@ -4,3 +4,4 @@ Authors:
 - Rachel Kan (rk778)
 
 We sourced our data from the Cornell Dining website. 
+https://now.dining.cornell.edu/eateries
