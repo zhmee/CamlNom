@@ -27,15 +27,15 @@ val get_hall : t -> string
 (**[get_hall rating] returns the associated dining hall the food was rated at*)
 
 val retrieve_ratings_name : Csv.t -> string -> t list
-(**[retrieve_ratings_name csv_file] returns the ratings in [csv_file] that are
-   associated with the specific food [name], if any. Requires: [csv_file] is a
-   legitimate rating file with entries representable by [Rating.t]*)
+(**[retrieve_ratings_name csv_file name] returns the ratings in [csv_file] that
+   are associated with the specific food [name], if any. Requires: [csv_file] is
+   a legitimate rating file with entries representable by [Rating.t]*)
 
 val retrieve_ratings_int : Csv.t -> int -> t list
-(**[retrieve_ratings_name csv_file] returns the ratings in [csv_file] that are
-   associated with exactly the specific rating [rating], if any. Requires:
-   [csv_file] is a legitimate rating file with entries representable by
-   [Rating.t]*)
+(**[retrieve_ratings_name csv_file rating] returns the ratings in [csv_file]
+   that are associated with exactly the specific rating [rating], if any.
+   Requires: [csv_file] is a legitimate rating file with entries representable
+   by [Rating.t]*)
 
 val retrieve_ratings_int_range : Csv.t -> int -> int -> t list
 (**[retrieve_ratings_int_range csv_file low high] returns the ratings in
@@ -54,8 +54,8 @@ val sort_name : Csv.t -> bool -> Csv.t
    otherwise. Requires: [csv_file] is a legitimate rating file with entries
    representable by [Rating.t]*)
 
-val sort_dining : Csv.t -> bool -> Csv.t
-(**[sort_dining csv_file asc] returns the csv, sorted by the dining hall. The
+val sort_hall : Csv.t -> bool -> Csv.t
+(**[sort_hall csv_file asc] returns the csv, sorted by the dining hall. The
    returned file is sorted in ascending order if [asc] is true, descending
    otherwise. Requires: [csv_file] is a legitimate rating file with entries
    representable by [Rating.t]*)
