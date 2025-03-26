@@ -2,15 +2,12 @@ open Csv
 
 type t = string list list
 
-exception Unknown_Selection of string
-
 (**[check m f h a] is the helper for filter' to either append [h] to [acc] or
-   return only [acc]. [m] is the value that needs to be checked, [f] is the filter
-   condition, [h] is the row, [acc] is the accumulated rows already.*)
+   return only [acc]*)
 let check m f h acc = if m = snd f then h :: acc else acc
 
-(**[filter' c f a] is the csv [c] filtered to include only food items that match
-   the filter parameter [f]. [filt] has the (col, and the word).*)
+(**[filter' c f a] returns the csv [c] filtered to include only food items that
+   match the filter parameter [f]. *)
 let rec filter' (csv : t) (filt : int * string) (acc : t) =
   match csv with
   | [] -> acc (*reached end of csv file*)
@@ -29,15 +26,28 @@ let rec filter' (csv : t) (filt : int * string) (acc : t) =
             | _ -> failwith "index of filter selection not found")
         | _ -> failwith "invalid csv format")
 
+(**[filter csv prefs] returns the filtered entries of [csv] that match [prefs].
+   Requires: [prefs] is a tuple of type [int * string], with the first argument
+   being an integer from 0 through 6, representing the category of the csv file
+   (check filter' for specifications) and the second argument being a setting.
+   For instance, [prefs = (0, "Apple")] returns all the dining options where
+   [name = "Apple"]. Requires: [csv] is a valid dining file with entries of the
+   form [string;string;(Y/N);(Y/N);(Y/N);(Y/N);(Y/N)]*)
 let filter csv prefs = filter' (Csv.load csv) prefs []
+
+(**[make_menu c] loads the list of dining options available for a day from file
+   path [c]. Requires: [c] is a file path to a valid dining csv file. See
+   [filter] documentation for specification.*)
 let make_menu c = Csv.load c
 
 (**[string_of_list m acc] is the string consisting of the elements in [m]
-   appended to [acc]*)
+   appended to [acc]. Requires [m] is a string list*)
 let rec string_of_list m acc =
   match m with
   | [] -> acc
-  | h :: t -> string_of_list t (acc ^ h)
+  | h :: t ->
+      let x = acc ^ h in
+      string_of_list t x
 
 (**[string_of_menu' m acc] is the helper function to make a string list list
    into a string using tail recursion*)
