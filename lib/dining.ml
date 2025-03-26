@@ -42,18 +42,14 @@ let make_menu c = Csv.load c
 
 (**[string_of_list m acc] is the string consisting of the elements in [m]
    appended to [acc]. Requires [m] is a string list*)
-let rec string_of_list m acc =
-  match m with
-  | [] -> acc
-  | h :: t ->
-      let x = acc ^ h in
-      string_of_list t x
+let rec string_of_list m acc = List.fold_left ( ^ ) acc m
 
 (**[string_of_menu' m acc] is the helper function to make a string list list
    into a string using tail recursion*)
 let rec string_of_menu' m acc =
-  match m with
-  | [] -> acc
-  | h :: t -> string_of_menu' t (acc ^ string_of_list h "")
+  List.fold_left (fun acc lst -> acc ^ string_of_list lst "") acc m
 
+(**[string_of_menu m] returns the menu [m] represented as a string. Requires:
+   [m] is a CSV file fitting the specifications noted in [filter] documentation.
+*)
 let string_of_menu m = string_of_menu' m ""
