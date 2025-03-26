@@ -54,14 +54,10 @@ let rec string_of_menu' m acc =
 *)
 let string_of_menu m = string_of_menu' m ""
 
-
-(**[user_menu m acc] is the helper function to make a string list list
-   into a string *)
+(**[user_menu m acc] is the helper function to make a string list list into a
+   string *)
 let rec user_menu m =
-   match m with
-   | [] -> "\n"
-   | (h :: _) :: t -> h ^ "\n" ^ user_menu t
-   | [] :: t -> user_menu t 
-
-
-
+  match m with
+  | [] -> "\n"
+  | (h :: _) :: t -> h ^ "\n" ^ user_menu t
+  | [] :: t -> user_menu t

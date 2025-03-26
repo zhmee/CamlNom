@@ -9,6 +9,12 @@ let filter_name_test csv params exp =
   "filter name ---------" ^ "--------- test" >:: fun _ ->
   assert_equal exp Dining.(string_of_menu (filter csv params)) ~printer:id
 
+let make_menu_test test_name dining_hall filter_item expected =
+  "Test for " ^ test_name >:: fun _ ->
+  let filtered_menu = Dining.filter dining_hall filter_item in
+  let string = Dining.string_of_menu filtered_menu in
+  assert_equal expected string ~printer:Fun.id
+
 let tests =
   "test suite"
   >::: [
