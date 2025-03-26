@@ -49,10 +49,11 @@ let () =
       "Please choose what type of cuisine you would like to see, what dietary \
        restriction you would like to filter by, or which dining hall you are \
        interested in: ";
-    (*1 - 6 are the cuisine/dietary stuff, 7-9 are dining halls, add okenshields
-      later*)
+    (*0 is for feedback, 1 - 6 are the cuisine/dietary stuff, 7-9 are dining
+      halls, add okenshields later*)
     print_endline
-      "1) Asian \n\
+      "0) Leave a rating \n\
+       1) Asian \n\
        2) American \n\
        3) Mexican \n\
        4) Italian \n\
@@ -62,6 +63,9 @@ let () =
        8) Appel\n";
     try
       let user_input = read_line () in
+      let int_input = int_of_string user_input in 
+      if int_input = 0 then make_rating ()
+      else 
       let filter_cat = finding_category (int_of_string user_input) in
 
       (*these are the filtered menus for each dining hall*)
