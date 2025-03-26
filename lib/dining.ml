@@ -47,3 +47,15 @@ let rec string_of_menu' m acc =
   | h :: t -> string_of_menu' t (acc ^ string_of_list h "")
 
 let string_of_menu m = string_of_menu' m ""
+
+
+(**[user_menu m acc] is the helper function to make a string list list
+   into a string *)
+let rec user_menu m =
+   match m with
+   | [] -> "\n"
+   | (h :: _) :: t -> h ^ "\n" ^ user_menu t
+   | [] :: t -> user_menu t 
+
+
+

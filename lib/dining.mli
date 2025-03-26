@@ -10,3 +10,6 @@ val make_menu : string -> t
 
 val string_of_menu : t -> string
 (**[string_of_menu m] is the string representation of the menu [m]*)
+
+val user_menu : t -> string 
+(**[user_menu m] is the menu printed out in a user friendly output*)
