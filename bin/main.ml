@@ -24,8 +24,14 @@ let () =
   (*1 - 6 are the cuisine/dietary stuff, 7-9 are dining halls, add okenshields
     later*)
   print_endline
-    "1) Asian 2) American 3) Mexican 4) Italian 5) Vegetarian 6) Vegan 7) \
-     Morrison 8) Appel";
+    "1) Asian \n\
+     2) American \n\
+     3) Mexican \n\
+     4) Italian \n\
+     5) Vegetarian \n\
+     6) Vegan \n\
+     7) Morrison \n\
+     8) Appel\n";
   try
     let user_input = read_line () in
     let filter_cat = finding_category (int_of_string user_input) in
