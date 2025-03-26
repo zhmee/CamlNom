@@ -1,5 +1,5 @@
 (test
  (name test_final_project)
- (libraries ounit2 final_project)
+ (libraries ounit2 final_project qcheck)
  (deps (glob_files_rec ../data/*))
 )
