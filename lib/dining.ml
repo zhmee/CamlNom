@@ -2,12 +2,15 @@ open Csv
 
 type t = string list list
 
+exception Unknown_Selection of string
+
 (**[check m f h a] is the helper for filter' to either append [h] to [acc] or
-   return only [acc]*)
+   return only [acc]. [m] is the value that needs to be checked, [f] is the filter
+   condition, [h] is the row, [acc] is the accumulated rows already.*)
 let check m f h acc = if m = snd f then h :: acc else acc
 
 (**[filter' c f a] is the csv [c] filtered to include only food items that match
-   the filter parameter [f]*)
+   the filter parameter [f]. [filt] has the (col, and the word).*)
 let rec filter' (csv : t) (filt : int * string) (acc : t) =
   match csv with
   | [] -> acc (*reached end of csv file*)
