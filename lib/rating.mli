@@ -14,10 +14,15 @@ val get_comments : t -> string
 (**[get_comments rating] returns the comments that the user left in their
    rating, if any. The comments are returned as represented in a [string]*)
 
-val of_strings : string -> int -> string -> t
-(**[of_strings name rating comments] creates a rating given the name, rating,
-   and comments provided, of types [string], [int], and [string], respectively.
-*)
+val of_strings : string -> int -> string -> string -> t
+(**[of_strings name rating dining hall comments] creates a rating given the
+   name, rating, dining hall and comments provided, of types [string], [int],
+   [string], and [string], respectively. Requires: [rating] is an integer
+   between 1 and 5. *)
 
 val to_csv_entry : t -> string list
 (**[to_csv_entry rating] returns [rating] represented as a CSV entry*)
+
+val get_dining_hall : t -> string
+(**[get_dining_hall rating] returns the associated dining hall the food was
+   rated at*)
