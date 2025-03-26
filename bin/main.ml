@@ -27,7 +27,7 @@ let () =
  let filter_cat = finding_category (int_of_string user_input) in 
 
  (*these are the filtered menus for each dining hall*)
- let new_morrison_menu = filter "data/morrison.csv" (filter_cat) in 
+ let new_morrison_menu = filter "data/morri0son.csv" (filter_cat) in 
  print_endline ("Morrison Dining options");
   print_endline  ( user_menu new_morrison_menu);
   let new_appel_menu = filter "data/appel.csv" (filter_cat) in 
