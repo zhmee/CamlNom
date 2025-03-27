@@ -4,37 +4,43 @@ open Final_project
 let small_test_menu = Dining.make_menu "../data/small_dining.csv"
 let id x = x
 
+
 (**[filter_name_test c p e] is the test that [filter c p] produces [e] when
    using the ugly printer function*)
 let filter_ugly_test csv params exp =
   "filter using ugly printing ---------" ^ "--------- test" >:: fun _ ->
-  assert_equal exp Dining.(string_of_menu (filter csv params)) ~printer:id
+  let list_list = Dining.make_menu csv in 
+  assert_equal exp Dining.(string_of_menu (filter list_list params)) ~printer:id
 
 (**[filter_cuisine_test c p e] is the test that filtering for the parameters in
    [p] produces the pretty-printed [exp] when using the pretty printer function*)
 let filter_pretty_test csv params exp =
   "filter using pretty printing ---------" ^ "--------- test" >:: fun _ ->
-  assert_equal exp Dining.(user_menu (filter csv params)) ~printer:id
+    let list_list = Dining.make_menu csv in 
+  assert_equal exp Dining.(user_menu (filter list_list params)) ~printer:id
 
 (**[filter_index_oob_failure_test c p] is the test that filtering the csv [c]
    for the parameters [p] raises [Failure "index of filter selection not found"]*)
 let filter_index_oob_failure_test csv params =
   "filter failure test" >:: fun _ ->
+    let list_list = Dining.make_menu csv in 
   assert_raises (Dining.Unknown_Index "Incorrect choice") (fun () ->
-      Dining.filter csv params)
+      Dining.filter list_list params)
 
 (**[filter_invalid_csv_failure_test c p] is the test that filtering an
    improperly formatted csv file raises [Failure "invalid csv format"]*)
 let filter_invalid_csv_failure_test csv params =
   "filter failure test" >:: fun _ ->
+    let list_list = Dining.make_menu csv in 
   assert_raises (Dining.Invalid_Csv "Invalid CSV format") (fun () ->
-      Dining.filter csv params)
+      Dining.filter list_list params)
 
 (**[make_menu_test n d f e] is the test with name [n] that checks if filtering
    menu [d] using [f] produces [e]*)
-let make_menu_test test_name dining_hall filter_item expected =
+let make_menu_test test_name csv filter_item expected =
   "Test for " ^ test_name >:: fun _ ->
-  let filtered_menu = Dining.filter dining_hall filter_item in
+    let list_list = Dining.make_menu csv in 
+  let filtered_menu = Dining.filter list_list filter_item in
   let string = Dining.string_of_menu filtered_menu in
   assert_equal expected string ~printer:Fun.id
 

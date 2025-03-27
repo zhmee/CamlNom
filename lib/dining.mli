@@ -1,7 +1,7 @@
 type t
 (**type of a menu*)
 
-val filter : string -> int * string -> t
+val filter : t -> int * string -> t
 (**[filter c f] is the csv located at the path [c] filtered to include only
    lines that match the desired filter parameters [f]. Raises: Exception
    Unknown_Index when the input index is not recognized and Invalid_Csv when the
