@@ -33,9 +33,6 @@ let make_rating () =
       "Sorry, the value you entered cannot be represented as an integer. \
        Please enter an integer between 1 and 5, inclusive. "
 
-(*TODO I need to handle if the user inputs something that is out of bounds*)
-(*TODO I also need to handle negative inputs*)
-(*TODO I need to handle when nothing is inputted*)
 let rec retrieve_rating () =
   print_endline
     "inputs: 0) view rating for specific dish \n\
@@ -63,9 +60,8 @@ let rec retrieve_rating () =
         let rating = int_of_string number in
         let certain_rating = retrieve_ratings_int rating_file rating in
         print_endline (print_ratings certain_rating)
+
     (*user wants rating range*)
-    (*TODO i need to handle the event if the user does not put in numbers that are ascending*)
-    (*TODO i need to check how many arguments they put in*)
     | "2" ->
         print_endline
           "You have choose to view reviews that fall between certain ratings: 
@@ -74,28 +70,28 @@ let rec retrieve_rating () =
         print_endline
         " Please indicate the upper range of reviews (1-5):";
         let rating2 = read_line () in
-        if (rating1> rating2) then 
-           print_endline
-        "Please input a valid range:"; retrieve_rating()
-        else 
         let range_ratings =
-          retrieve_ratings_int_range rating_file rating1 rating2
+          retrieve_ratings_int_range rating_file (int_of_string rating1) (int_of_string rating2)
         in
         print_endline (print_ratings range_ratings)
+
     (*user wants specific dining hall*)
     | "3" ->
         print_endline
           "Please enter in the dining hall name you would like to view";
-        let rating1 = int_of_string Sys.argv.(Array.length Sys.argv - 1) in
-        let rating2 = int_of_string Sys.argv.(Array.length Sys.argv - 2) in
-        let range_ratings =
-          retrieve_ratings_int_range rating_file rating1 rating2
+       let hall = read_line () in
+        let hall_ratings =
+          retrieve_ratings_hall rating_file hall
         in
-        print_endline (print_ratings range_ratings)
-    | _ -> print_endline "Please choose only one of the above"
-  with Failure _ -> print_endline "Please put in an integer"
+        print_endline (print_ratings hall_ratings)
+    | _ -> print_endline "Please choose only one of the above"; retrieve_rating ()
+  with 
+  |Unknown_Input _ -> print_endline "Please make sure your input is valid."; retrieve_rating ()
+  |Failure _ -> print_endline "Please put in an integer"; retrieve_rating ()
+  
 
-let handle_feedback () =
+
+let rec handle_feedback () =
   print_endline "Would you like to submit feedback or see a rating?";
   print_endline "Input: 0 - input feedback, 1 - view rating";
   let input = read_line () in
@@ -136,7 +132,7 @@ let () =
     print_endline
       (* TODO 0) Leave/View a rating \n\*)
       (* TODO 7) Morrison 8) Appel *)
-      "0) Leave a rating \n\
+      "0) View feedback/Leave a rating \n\
        1) Asian \n\
        2) American \n\
        3) Mexican \n\
@@ -149,7 +145,7 @@ let () =
       let user_input = read_line () in
       let int_input = int_of_string user_input in
       (*todo use if int_input = 0 then handle_feedback () in future *)
-      if int_input = 0 then make_rating ()
+      if int_input = 0 then handle_feedback ()
       else
         let filter_cat = finding_category (int_of_string user_input) in
 

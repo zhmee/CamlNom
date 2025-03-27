@@ -68,3 +68,6 @@ val sort_rating : Csv.t -> bool -> Csv.t
 
 val print_ratings : Csv.t -> string
 (**[print_ratings] prints the string out of the CSV*)
+
+exception Unknown_Input of string 
+(**Raised wehn the input is an unacceptable/unrecognized one.*)
