@@ -105,6 +105,7 @@ let finding_category category =
   | 6 -> (3, "Y")
   | 7 -> (4, "Y")
   | 8 -> (5, "Y")
+  (*TODO this is okenshields*)
   | 9 -> (6, "Y")
   | _ -> raise Unknown_Correspondence
 
@@ -118,15 +119,17 @@ let () =
     (*0 is for feedback, 1 - 6 are the cuisine/dietary stuff, 7-9 are dining
       halls, add okenshields later*)
     print_endline
-      "0) Leave/View a rating \n\
+    (* TODO 0) Leave/View a rating \n\*)
+      "0) Leave a rating \n\
        1) Asian \n\
        2) American \n\
        3) Mexican \n\
        4) Italian \n\
        5) Vegetarian \n\
        6) Vegan \n\
-       7) Morrison \n\
-       8) Appel\n";
+       ";
+       (* TODO add functionallity for 7) Morrison \n\
+       8) Appel\n; *)
     try
       let user_input = read_line () in
       let int_input = int_of_string user_input in
@@ -147,4 +150,5 @@ let () =
         print_endline "please input only one of the choices"
     | Unknown_Index _ -> print_endline "please input only one of the choices"
     | Invalid_Csv "Invalid CSV format" -> print_endline "Invalid CSV format"
+    | Failure _ -> print_endline "please input one of the choices"
     | Sys_error _ -> print_endline "please input a number for your selection")
