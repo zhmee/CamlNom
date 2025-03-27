@@ -3,6 +3,7 @@ open Final_project.Dining
 open Final_project.Rating
 
 exception Unknown_Correspondence
+
 let rating_file = Csv.load "./data/ratings.csv"
 
 let make_rating () =
@@ -36,7 +37,11 @@ let make_rating () =
 (*TODO I also need to handle negative inputs*)
 
 let retrieve_rating () =
-  print_endline "Please enter in the dish you would like to give a rating for";
+  print_endline
+    "inputs: 0) view rating for specific dish \n\ 
+    1) view foods with specific rating \n\ 
+    2) view foods within a range of ratings \n\ 
+    3) view ratings for a specific dining hall";
   let input = read_line () in
   try
     match input with
@@ -70,8 +75,7 @@ let retrieve_rating () =
     (*user wants specific dining hall*)
     | "3" ->
         print_endline
-          "Please enter in the rating number range from 1-5 you would like to \
-           view";
+          "Please enter in the dining hall name you would like to view";
         let rating1 = int_of_string Sys.argv.(Array.length Sys.argv - 1) in
         let rating2 = int_of_string Sys.argv.(Array.length Sys.argv - 2) in
         let range_ratings =
