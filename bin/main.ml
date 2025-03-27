@@ -114,6 +114,18 @@ let finding_category category =
   | 9 -> (6, "Y")
   | _ -> raise Unknown_Correspondence
 
+let finding_day day = 
+  match day with 
+  |"1" ->  "./data/Mon.csv"
+  |"2" ->  "./data/Tues.csv"
+  |"3" ->  "./data/Wed.csv"
+  |"4" ->  "./data/Thurs.csv"
+  |"5" ->  "./data/Fri.csv"
+  |"6" ->  "./data/Sat.csv"
+  |"7" ->  "./data/Sun.csv"
+  |_ -> raise Unknown_Correspondence
+
+
 (* let morrison_foods filter_cat = let new_morrison_menu = filter
    "data/morrison.csv" filter_cat in *)
 
@@ -123,6 +135,22 @@ let () =
     (* print_endline "Please choose what type of cuisine you would like to see,
        what dietary \ restriction you would like to filter by, or which dining
        hall you are \ interested in: "; *)
+
+       print_endline
+       "Please choose what day you would like to see the menu for: ";
+       print_endline
+       (* TODO 2) Tuesday \n\
+        3) Wednesday \n\
+        4) Thursday \n\
+        5) Friday \n\
+        6) Saturday \n\
+        7) Sunday \n\*)
+       "
+        1) Monday \n\
+       
+       \ ";
+      let day_chosen = read_line () in 
+      let fileloaded = finding_day day_chosen in
     print_endline
       "Please choose what type of cuisine you would like to see, what dietary \
        restriction you would like to filter by, or if you want to leave \
@@ -130,7 +158,6 @@ let () =
     (*0 is for feedback, 1 - 6 are the cuisine/dietary stuff, 7-9 are dining
       halls, add okenshields later*)
     print_endline
-      (* TODO 0) Leave/View a rating \n\*)
       (* TODO 7) Morrison 8) Appel *)
       "0) View feedback/Leave a rating \n\
        1) Asian \n\
@@ -139,7 +166,8 @@ let () =
        4) Italian \n\
        5) Vegetarian \n\
        6) Vegan \n\
-      \ ";
+       7) Morrison Dining \n\
+       8) North Star \n\ ";
 
     try
       let user_input = read_line () in
@@ -148,7 +176,7 @@ let () =
       if int_input = 0 then handle_feedback ()
       else
         let filter_cat = finding_category (int_of_string user_input) in
-
+        
         (*these are the filtered menus for each dining hall*)
         let new_morrison_menu = filter "data/morrison.csv" filter_cat in
         print_endline "Morrison Dining options";
