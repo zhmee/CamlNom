@@ -31,17 +31,20 @@ let retrieve_ratings_hall csv_file hall =
 let sort_name csv_file asc =
   List.sort
     (fun lst1 lst2 ->
-      (if asc then 1 else -1) * compare (List.nth lst1 0) (List.nth lst2 0))
+      let c = compare (List.nth lst1 0) (List.nth lst2 0) in
+      if c = 0 then compare lst1 lst2 else c * if asc then 1 else -1)
     csv_file
 
 let sort_hall csv_file asc =
   List.sort
     (fun lst1 lst2 ->
-      (if asc then 1 else -1) * compare (List.nth lst1 2) (List.nth lst2 2))
+      let c = compare (List.nth lst1 2) (List.nth lst2 2) in
+      if c = 0 then compare lst1 lst2 else c * if asc then 1 else -1)
     csv_file
 
 let sort_rating csv_file asc =
   List.sort
     (fun lst1 lst2 ->
-      (if asc then 1 else -1) * compare (List.nth lst1 1) (List.nth lst2 1))
+      let c = compare (List.nth lst1 1) (List.nth lst2 1) in
+      if c = 0 then compare lst1 lst2 else c * if asc then 1 else -1)
     csv_file

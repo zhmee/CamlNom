@@ -55,6 +55,65 @@ let make_randomized_tuple func name =
             QCheck.Print.string QCheck.Print.string))
     func
 
+let example_ratings = Csv.load "../data/test_ratings.csv" ~strip:true
+let name_asc = Csv.trim (Csv.load "../data/name_asc.csv" ~strip:true)
+let name_desc = Csv.trim (Csv.load "../data/name_desc.csv" ~strip:true)
+let hall_asc = Csv.trim (Csv.load "../data/hall_asc.csv" ~strip:true)
+let hall_desc = Csv.trim (Csv.load "../data/hall_desc.csv" ~strip:true)
+let rating_asc = Csv.trim (Csv.load "../data/rating_asc.csv" ~strip:true)
+let rating_desc = Csv.trim (Csv.load "../data/rating_desc.csv" ~strip:true)
+
+(**[check_equal_name] creates randomized tests verifying the sorting of the CSV
+   files by name *)
+let check_equal_name =
+  QCheck.Test.make ~name:"Check sorting by name" ~count:1000 QCheck.bool
+    (fun b ->
+      Csv.print_readable (sort_name example_ratings b);
+      print_newline ();
+      Csv.compare
+        (sort_name example_ratings b)
+        (if b then (
+           Csv.print_readable name_asc;
+           name_asc)
+         else (
+           Csv.print_readable name_desc;
+           name_desc))
+      = 0)
+
+(**[check_equal_hall] creates randomized tests verifying the sorting of the CSV
+   files by hall *)
+let check_equal_hall =
+  QCheck.Test.make ~name:"Check sorting by hall" ~count:1000 QCheck.bool
+    (fun b ->
+      Csv.print_readable (sort_hall example_ratings b);
+      print_newline ();
+      Csv.compare
+        (sort_hall example_ratings b)
+        (if b then (
+           Csv.print_readable hall_asc;
+           hall_asc)
+         else (
+           Csv.print_readable hall_desc;
+           hall_desc))
+      = 0)
+
+(**[check_equal_rating] creates randomized tests verifying the sorting of the
+   CSV files by rating *)
+let check_equal_rating =
+  QCheck.Test.make ~name:"Check sorting by hall" ~count:1000 QCheck.bool
+    (fun b ->
+      Csv.print_readable (sort_rating example_ratings b);
+      print_newline ();
+      Csv.compare
+        (sort_hall example_ratings b)
+        (if b then (
+           Csv.print_readable rating_asc;
+           rating_asc)
+         else (
+           Csv.print_readable rating_desc;
+           rating_desc))
+      = 0)
+
 let () =
   let _ =
     QCheck_runner.run_tests
@@ -65,6 +124,8 @@ let () =
         make_randomized_tuple get_rating_test "Get the rating";
         make_randomized_tuple get_comments_test "Get the comments";
         make_randomized_tuple get_hall_test "Get dining hall";
+        check_equal_name;
+        check_equal_hall;
       ]
   in
   ()
