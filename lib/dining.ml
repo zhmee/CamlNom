@@ -2,6 +2,9 @@ open Csv
 
 type t = string list list
 
+exception Unknown_Index of string
+exception Invalid_Csv of string
+
 (**[check m f h a] is the helper for filter' to either append [h] to [acc] or
    return only [acc]*)
 let check m f h acc = if m = snd f then h :: acc else acc
@@ -23,8 +26,8 @@ let rec filter' (csv : t) (filt : int * string) (acc : t) =
             | 4 -> check m filt h acc
             | 5 -> check a filt h acc
             | 6 -> check o filt h acc
-            | _ -> failwith "index of filter selection not found")
-        | _ -> failwith "invalid csv format")
+            | _ -> raise (Unknown_Index "Incorrect choice"))
+        | _ -> raise (Invalid_Csv "Invalid CSV format"))
 
 (**[filter csv prefs] returns the filtered entries of [csv] that match [prefs].
    Requires: [prefs] is a tuple of type [int * string], with the first argument
