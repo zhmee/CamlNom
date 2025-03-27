@@ -3,8 +3,7 @@ open Final_project.Dining
 open Final_project.Rating
 
 exception Unknown_Correspondence
-
-let rating_file = Csv.load "../data/ratings.csv"
+let rating_file = Csv.load "./data/ratings.csv"
 
 let make_rating () =
   try
