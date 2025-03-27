@@ -35,7 +35,7 @@ let make_rating () =
 
 (*TODO I need to handle if the user inputs something that is out of bounds*)
 (*TODO I also need to handle negative inputs*)
-
+(*TODO I need to handle when nothing is inputted*)
 let retrieve_rating () =
   print_endline
     "inputs: 0) view rating for specific dish \n\ 
@@ -56,7 +56,8 @@ let retrieve_rating () =
     | "1" ->
         print_endline
           "Please enter in the rating number from 1-5 you would like to view";
-        let rating = int_of_string (read_line ()) in
+        let number = read_line () in 
+        let rating = int_of_string (number) in
         let certain_rating = retrieve_ratings_int rating_file rating in
         print_endline (print_ratings certain_rating)
     (*user wants rating range*)
@@ -66,6 +67,7 @@ let retrieve_rating () =
         print_endline
           "Please enter in the rating number range from 1-5 you would like to \
            view";
+        (*TODO issue with reading user input*)
         let rating1 = int_of_string Sys.argv.(Array.length Sys.argv - 1) in
         let rating2 = int_of_string Sys.argv.(Array.length Sys.argv - 2) in
         let range_ratings =
@@ -128,7 +130,8 @@ let () =
     try
       let user_input = read_line () in
       let int_input = int_of_string user_input in
-      if int_input = 0 then handle_feedback ()
+      (*todo use if int_input = 0 then handle_feedback () in future *)
+      if int_input = 0 then make_rating ()
       else
         let filter_cat = finding_category (int_of_string user_input) in
 

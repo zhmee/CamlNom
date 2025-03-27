@@ -50,7 +50,6 @@ let sort_rating csv_file asc =
     csv_file
 
 let rec print_ratings m =
-    match m with
-    | [] -> "\n"
-    | (h :: _) :: t -> h ^ "\n" ^ print_ratings t
-    | [] :: t -> print_ratings t
+  match m with
+  | [] -> "\n"
+  | h :: t -> String.concat " " h ^ "\n" ^ print_ratings t
