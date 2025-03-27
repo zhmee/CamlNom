@@ -112,10 +112,13 @@ let finding_category category =
 let () =
   if Array.length Sys.argv = 2 && Sys.argv.(1) = "rate" then make_rating ()
   else (
-    print_endline
+    (* print_endline
       "Please choose what type of cuisine you would like to see, what dietary \
        restriction you would like to filter by, or which dining hall you are \
-       interested in: ";
+       interested in: "; *)
+       print_endline
+       "Please choose what type of cuisine you would like to see, what dietary \
+        restriction you would like to filter by, or if you want to leave feedback: ";
     (*0 is for feedback, 1 - 6 are the cuisine/dietary stuff, 7-9 are dining
       halls, add okenshields later*)
     print_endline
