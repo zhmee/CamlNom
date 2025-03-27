@@ -1,3 +1,69 @@
+commit 0835496bcc126f391046de1079df20a5d59fbb86
+Author: Michelle <mz625@cornell.edu>
+Date:   Wed Mar 26 23:20:26 2025 -0400
+
+    Handled errors regarding no user input
+    
+    - Now catches exception for if the user inputs nothing
+
+commit dcdbd52255711a0759b14e0100814f7df0d61ee2
+Author: Michelle <mz625@cornell.edu>
+Date:   Wed Mar 26 23:07:54 2025 -0400
+
+    Reverted to former stage of implementation
+    
+    - Need to fix issues relating to user input
+    - Issues with implementations regarding viewing certain feedback
+
+commit cc7ea7a8dc1dbe6e949cebe4c54d29e84eb9587d
+Author: Michelle <mz625@cornell.edu>
+Date:   Wed Mar 26 22:56:05 2025 -0400
+
+    Fixed user input prompts
+    
+    - User can now choose specific inputs to view specific ratings from a list.
+
+commit ea806decfb8bc28cb14cb5e7a00ae16731573b56
+Author: Michelle <mz625@cornell.edu>
+Date:   Wed Mar 26 22:49:52 2025 -0400
+
+    Fixed main csv loading
+    
+    - Loaded in csv correctly
+
+commit c3a6fb51a1c1ce4d6a9d75a356d3f742407b8632
+Author: Michelle <mz625@cornell.edu>
+Date:   Wed Mar 26 22:41:01 2025 -0400
+
+    Implemented driver for ratings
+    
+    - Implemented user viewing rating system
+    - Users can now choose to input feedback or to see any feedback
+
+commit 0b946593689eb17e0a778657bc5bd328f2569e5c
+Merge: d0babf9 5d738e2
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Wed Mar 26 21:22:26 2025 -0400
+
+    Merge branch 'main' of github.coecis.cornell.edu:ns968/CS_3110_Final_Project
+
+commit d0babf95d32e3cc4903973008e32eab6dbf806ce
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Wed Mar 26 21:21:52 2025 -0400
+
+    Implement tests for sorting of the csv files
+    
+    - Checks sorting of rating, hall, and food name
+
+commit 5d738e2c40b6adfebb5ee38b1ffca10cf917bbee
+Author: Michelle <mz625@cornell.edu>
+Date:   Wed Mar 26 21:06:11 2025 -0400
+
+    Added exceptions
+    
+    - Added exceptions to be raised in the dining file
+    - Also implemented exception catching in the main file
+
 commit af269aba80c0ee36c73a4883a44c4ad7f1a88b7d
 Author: Neha Sudarshan <ns968@cornell.edu>
 Date:   Wed Mar 26 20:28:54 2025 -0400
