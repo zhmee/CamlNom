@@ -65,3 +65,5 @@ val sort_rating : Csv.t -> bool -> Csv.t
    returned file is sorted in ascending order if [asc] is true, descending
    otherwise. Requires: [csv_file] is a legitimate rating file with entries
    representable by [Rating.t]*)
+
+val print_ratings: Csv.t -> string 

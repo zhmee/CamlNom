@@ -4,6 +4,8 @@ open Final_project.Rating
 
 exception Unknown_Correspondence
 
+let rating_file = Csv.load "../data/ratings.csv"
+
 let make_rating () =
   try
     print_endline "Which food would you like to leave a rating for?";
@@ -31,6 +33,63 @@ let make_rating () =
       "Sorry, the value you entered cannot be represented as an integer. \
        Please enter an integer between 1 and 5, inclusive. "
 
+(*TODO I need to handle if the user inputs something that is out of bounds*)
+(*TODO I also need to handle negative inputs*)
+
+let retrieve_rating () =
+  print_endline "Please enter in the dish you would like to give a rating for";
+  let input = read_line () in
+  try
+    match input with
+    (*user wants specific dish*)
+    | "0" ->
+        print_endline
+          "Please enter in the dish you would like to give a rating for";
+        let dish_name = read_line () in
+        let dish_ratings = retrieve_ratings_name rating_file dish_name in
+        print_endline (print_ratings dish_ratings)
+    (*user wants specific rating*)
+    | "1" ->
+        print_endline
+          "Please enter in the rating number from 1-5 you would like to view";
+        let rating = int_of_string (read_line ()) in
+        let certain_rating = retrieve_ratings_int rating_file rating in
+        print_endline (print_ratings certain_rating)
+    (*user wants rating range*)
+    (*TODO i need to handle the event if the user does not put in numbers that are ascending*)
+    (*TODO i need to check how many arguments they put in*)
+    | "2" ->
+        print_endline
+          "Please enter in the rating number range from 1-5 you would like to \
+           view";
+        let rating1 = int_of_string Sys.argv.(Array.length Sys.argv - 1) in
+        let rating2 = int_of_string Sys.argv.(Array.length Sys.argv - 2) in
+        let range_ratings =
+          retrieve_ratings_int_range rating_file rating1 rating2
+        in
+        print_endline (print_ratings range_ratings)
+    (*user wants specific dining hall*)
+    | "3" ->
+        print_endline
+          "Please enter in the rating number range from 1-5 you would like to \
+           view";
+        let rating1 = int_of_string Sys.argv.(Array.length Sys.argv - 1) in
+        let rating2 = int_of_string Sys.argv.(Array.length Sys.argv - 2) in
+        let range_ratings =
+          retrieve_ratings_int_range rating_file rating1 rating2
+        in
+        print_endline (print_ratings range_ratings)
+    | _ -> print_endline "Please choose only one of the above"
+  with Failure _ -> print_endline "Please put in an integer"
+
+let handle_feedback () =
+  print_endline "Would you like to submit feedback or see a rating?";
+  print_endline "Input: 0 - input feedback, 1 - view rating";
+  let input = read_line () in
+  if input = "0" then make_rating ()
+  else if input = "1" then retrieve_rating ()
+  else print_endline "Please choose one of the valid options."
+
 let finding_category category =
   match category with
   | 1 -> (1, "Asian")
@@ -54,7 +113,7 @@ let () =
     (*0 is for feedback, 1 - 6 are the cuisine/dietary stuff, 7-9 are dining
       halls, add okenshields later*)
     print_endline
-      "0) Leave a rating \n\
+      "0) Leave/View a rating \n\
        1) Asian \n\
        2) American \n\
        3) Mexican \n\
@@ -66,7 +125,7 @@ let () =
     try
       let user_input = read_line () in
       let int_input = int_of_string user_input in
-      if int_input = 0 then make_rating ()
+      if int_input = 0 then handle_feedback ()
       else
         let filter_cat = finding_category (int_of_string user_input) in
 
@@ -80,6 +139,6 @@ let () =
     with
     | Unknown_Correspondence ->
         print_endline "please input only one of the choices"
-    | Unknown_Index _ ->  print_endline  "please input only one of the choices"
-    | Invalid_Csv "Invalid CSV format" -> print_endline  "Invalid CSV format"
+    | Unknown_Index _ -> print_endline "please input only one of the choices"
+    | Invalid_Csv "Invalid CSV format" -> print_endline "Invalid CSV format"
     | Sys_error _ -> print_endline "please input a number for your selection")

@@ -48,3 +48,9 @@ let sort_rating csv_file asc =
       let c = compare (List.nth lst1 1) (List.nth lst2 1) in
       if c = 0 then compare lst1 lst2 else c * if asc then 1 else -1)
     csv_file
+
+let rec print_ratings m =
+    match m with
+    | [] -> "\n"
+    | (h :: _) :: t -> h ^ "\n" ^ print_ratings t
+    | [] :: t -> print_ratings t
