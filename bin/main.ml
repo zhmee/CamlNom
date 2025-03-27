@@ -36,12 +36,15 @@ let make_rating () =
 (*TODO I need to handle if the user inputs something that is out of bounds*)
 (*TODO I also need to handle negative inputs*)
 (*TODO I need to handle when nothing is inputted*)
-let retrieve_rating () =
+let rec retrieve_rating () =
   print_endline
-    "inputs: 0) view rating for specific dish \n\ 
-    1) view foods with specific rating \n\ 
-    2) view foods within a range of ratings \n\ 
-    3) view ratings for a specific dining hall";
+    "inputs: 0) view rating for specific dish \n\
+    \ \n\
+    \    1) view foods with specific rating \n\
+    \ \n\
+    \    2) view foods within a range of ratings \n\
+    \ \n\
+    \    3) view ratings for a specific dining hall";
   let input = read_line () in
   try
     match input with
@@ -56,8 +59,8 @@ let retrieve_rating () =
     | "1" ->
         print_endline
           "Please enter in the rating number from 1-5 you would like to view";
-        let number = read_line () in 
-        let rating = int_of_string (number) in
+        let number = read_line () in
+        let rating = int_of_string number in
         let certain_rating = retrieve_ratings_int rating_file rating in
         print_endline (print_ratings certain_rating)
     (*user wants rating range*)
@@ -65,11 +68,16 @@ let retrieve_rating () =
     (*TODO i need to check how many arguments they put in*)
     | "2" ->
         print_endline
-          "Please enter in the rating number range from 1-5 you would like to \
-           view";
-        (*TODO issue with reading user input*)
-        let rating1 = int_of_string Sys.argv.(Array.length Sys.argv - 1) in
-        let rating2 = int_of_string Sys.argv.(Array.length Sys.argv - 2) in
+          "You have choose to view reviews that fall between certain ratings: 
+          Please indicate the lower range of reviews (1-5):";
+        let rating1 = read_line () in
+        print_endline
+        " Please indicate the upper range of reviews (1-5):";
+        let rating2 = read_line () in
+        if (rating1> rating2) then 
+           print_endline
+        "Please input a valid range:"; retrieve_rating()
+        else 
         let range_ratings =
           retrieve_ratings_int_range rating_file rating1 rating2
         in
@@ -103,26 +111,31 @@ let finding_category category =
   | 4 -> (1, "Italian")
   | 5 -> (2, "Y")
   | 6 -> (3, "Y")
+  (*TODO this is Morrison and Appel*)
   | 7 -> (4, "Y")
   | 8 -> (5, "Y")
   (*TODO this is okenshields*)
   | 9 -> (6, "Y")
   | _ -> raise Unknown_Correspondence
 
+(* let morrison_foods filter_cat = let new_morrison_menu = filter
+   "data/morrison.csv" filter_cat in *)
+
 let () =
   if Array.length Sys.argv = 2 && Sys.argv.(1) = "rate" then make_rating ()
   else (
-    (* print_endline
+    (* print_endline "Please choose what type of cuisine you would like to see,
+       what dietary \ restriction you would like to filter by, or which dining
+       hall you are \ interested in: "; *)
+    print_endline
       "Please choose what type of cuisine you would like to see, what dietary \
-       restriction you would like to filter by, or which dining hall you are \
-       interested in: "; *)
-       print_endline
-       "Please choose what type of cuisine you would like to see, what dietary \
-        restriction you would like to filter by, or if you want to leave feedback: ";
+       restriction you would like to filter by, or if you want to leave \
+       feedback: ";
     (*0 is for feedback, 1 - 6 are the cuisine/dietary stuff, 7-9 are dining
       halls, add okenshields later*)
     print_endline
-    (* TODO 0) Leave/View a rating \n\*)
+      (* TODO 0) Leave/View a rating \n\*)
+      (* TODO 7) Morrison 8) Appel *)
       "0) Leave a rating \n\
        1) Asian \n\
        2) American \n\
@@ -130,9 +143,8 @@ let () =
        4) Italian \n\
        5) Vegetarian \n\
        6) Vegan \n\
-       ";
-       (* TODO add functionallity for 7) Morrison \n\
-       8) Appel\n; *)
+      \ ";
+
     try
       let user_input = read_line () in
       let int_input = int_of_string user_input in
