@@ -80,4 +80,6 @@ let () =
     with
     | Unknown_Correspondence ->
         print_endline "please input only one of the choices"
+    | Unknown_Index _ ->  print_endline  "please input only one of the choices"
+    | Invalid_Csv "Invalid CSV format" -> print_endline  "Invalid CSV format"
     | Sys_error _ -> print_endline "please input a number for your selection")

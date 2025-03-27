@@ -20,14 +20,14 @@ let filter_pretty_test csv params exp =
    for the parameters [p] raises [Failure "index of filter selection not found"]*)
 let filter_index_oob_failure_test csv params =
   "filter failure test" >:: fun _ ->
-  assert_raises (Failure "index of filter selection not found") (fun () ->
+  assert_raises (Dining.Unknown_Index "Incorrect choice") (fun () ->
       Dining.filter csv params)
 
 (**[filter_invalid_csv_failure_test c p] is the test that filtering an
    improperly formatted csv file raises [Failure "invalid csv format"]*)
 let filter_invalid_csv_failure_test csv params =
   "filter failure test" >:: fun _ ->
-  assert_raises (Failure "invalid csv format") (fun () ->
+  assert_raises (Dining.Invalid_Csv "Invalid CSV format") (fun () ->
       Dining.filter csv params)
 
 (**[make_menu_test n d f e] is the test with name [n] that checks if filtering
