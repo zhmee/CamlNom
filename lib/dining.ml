@@ -1,6 +1,8 @@
 open Csv
 
 type t = string list list
+(*AF: Type [t] represents a menu; the string list [a1;a2;...;an] element of [t] represents the food item with name = a1, vegetarian = a2, vegan = a3, and, so on, with each list index corresponding to a restriction.  *)
+(*RI: each element of [t] has the same length. Moreover, each equal-numbered index of each element (e.g. the first element of the first list and the first element of the second list) must correspond to the same category (e.g. name). *)
 
 exception Invalid_Csv of string
 

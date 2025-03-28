@@ -5,6 +5,8 @@ type t = {
   comments : string;
 }
 
+(*AF: type [t] represents a rating by the user. The record {name;rating;hall;comments} corresponds to the user rating with the food name = name, the rating = rating, the dining hall where the food was sampled = hall, and any additional comments (perhaps an empty string) = comments. *)
+(*RI: rating is a integer value between 1 and 5. Name and hall are non-empty strings, and comments can be an empty string. *)
 let get_name r = r.name
 let get_hall r = r.hall
 let get_rating r = r.rating
