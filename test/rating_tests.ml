@@ -2,6 +2,9 @@ open Final_project.Dining
 open Final_project.Rating
 open QCheck
 
+
+
+
 (**[make_rating (name, rating, hall, comments)] checks that the fields name,
    rating, hall, and comments are properly stored when converted to a [Rating.t]
    instance by [Rating.of_strings]*)
