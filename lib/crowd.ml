@@ -1,4 +1,5 @@
 open Unix
+open Options
 
 type t = {
   hall : string;
@@ -16,13 +17,6 @@ let get_hall rating = rating.hall
 
 let get_day rating =
   let day = rating.day_time.tm_wday in
-  match day with
-  | 0 -> "Sunday"
-  | 1 -> "Monday"
-  | 2 -> "Tuesday"
-  | 3 -> "Wednesday"
-  | 4 -> "Thursday"
-  | 5 -> "Friday"
-  | _ -> "Saturday"
+  List.assoc day days_of_week
 
 let get_rating rating = rating.value

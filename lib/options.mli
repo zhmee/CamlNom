@@ -13,3 +13,8 @@ val dietary : string list ref
 val get_all_filters : string list ref
 (**[get_all_filters] returns a comprehensive list of all the filters that are
    supported by this project. *)
+
+val days_of_week : (int * string) list
+(**[days_of_week] documents the conversion between [int] and [string] to convert
+   days of the week, with 0 corresponding to "Sunday". This mirrors the
+   implementation used by the Unix library*)

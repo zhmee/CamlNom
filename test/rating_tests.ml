@@ -68,7 +68,6 @@ let rating_desc = Csv.trim (Csv.load "../data/rating_desc.csv" ~strip:true)
 let check_equal_name =
   QCheck.Test.make ~name:"Check sorting by name" ~count:1000 QCheck.bool
     (fun b ->
-      Csv.print_readable (sort_name example_ratings b);
       print_newline ();
       Csv.compare
         (sort_name example_ratings b)
