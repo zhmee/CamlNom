@@ -16,8 +16,5 @@ val string_of_menu : t -> string
 val user_menu : t -> string
 (**[user_menu m] is the menu printed out in a user friendly output*)
 
-exception Unknown_Index of string
-(**Raised when the index to be filtered for is not recognized*)
-
 exception Invalid_Csv of string
 (**Raised when the csv input is not rectangular*)

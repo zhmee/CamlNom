@@ -52,7 +52,7 @@ let make_rating () =
   with
   | Illegal_rating rating ->
       Printf.printf
-        "Sorry, %d is not a valid input. Please enter a value between 0 and 5"
+        "Sorry, %d is not a valid input. Please enter a value between 0 and 5.\n"
         rating
   | Failure read_int ->
       print_endline
@@ -274,7 +274,6 @@ let () =
   with
   | Unknown_Correspondence ->
       print_endline "please input only one of the choices"
-  | Unknown_Index _ -> print_endline "please input only one of the choices"
   | Invalid_Csv "Invalid CSV format" -> print_endline "Invalid CSV format"
   | Failure _ -> print_endline "please input one of the choices"
   | Sys_error _ -> print_endline "please input a number for your selection"

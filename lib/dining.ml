@@ -2,7 +2,6 @@ open Csv
 
 type t = string list list
 
-exception Unknown_Index of string
 exception Invalid_Csv of string
 
 (**[check m f h a] is the helper for filter' to either append [h] to [acc] or
@@ -10,8 +9,11 @@ exception Invalid_Csv of string
 let check m f h acc = if m = snd f then h :: acc else acc
 
 (**[filter' c f a] returns the csv [c] filtered to include only food items that
-   match the filter parameter [f]. *)
+   match the filter parameter [f]. Requires: [c] is a valid CSV according to the
+   spec. [filt] should be a value between 0 and 6. Raises [Invalid_Csv] if the
+   CSV is malformatted. *)
 let rec filter' (csv : t) (filt : int * string) (acc : t) =
+  assert (fst filt <= 6 && fst filt >= 0);
   match csv with
   | [] -> acc (*reached end of csv file*)
   | h :: t ->
@@ -25,8 +27,7 @@ let rec filter' (csv : t) (filt : int * string) (acc : t) =
             | 3 -> check vegan filt h acc
             | 4 -> check m filt h acc
             | 5 -> check a filt h acc
-            | 6 -> check o filt h acc
-            | _ -> raise (Unknown_Index "Incorrect choice"))
+            | _ -> check o filt h acc)
         | _ -> raise (Invalid_Csv "Invalid CSV format"))
 
 (**[filter csv prefs] returns the filtered entries of [csv] that match [prefs].
