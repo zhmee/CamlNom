@@ -36,7 +36,7 @@ let rec filter' (csv : t) (filt : int * string) (acc : t) =
    For instance, [prefs = (0, "Apple")] returns all the dining options where
    [name = "Apple"]. Requires: [csv] is a valid dining file with entries of the
    form [string;string;(Y/N);(Y/N);(Y/N);(Y/N);(Y/N)]*)
-let filter csv prefs = filter' (csv) prefs []
+let filter csv prefs = filter' csv prefs []
 
 (**[make_menu c] loads the list of dining options available for a day from file
    path [c]. Requires: [c] is a file path to a valid dining csv file. See
