@@ -263,6 +263,14 @@ let () =
     if int_input = 0 then handle_feedback ()
     else
       let filter_cat = finding_category (int_of_string user_input) in
+      (*mutable current_menu that changes depending on what the user wants*)
+      let current_menu = ref (Csv.load fileloaded) in 
+      
+      (*idea:
+      for first thing chosen, all the remove_item function, filter with the thing
+      and then 
+      then prompt again to see if they would like another thing using the remaining things
+      if nothing, then just display  *)
 
       (*these are the filtered menus for each dining hall*)
       let new_morrison_menu = filter morrison filter_cat in

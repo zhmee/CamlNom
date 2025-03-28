@@ -14,3 +14,8 @@ let days_of_week =
     (6, "Saturday");
     (7, "Sunday");
   ]
+
+let display_all_filters list =
+  let all_filters = !list in
+  List.iter (fun filters -> print_endline filters) all_filters
+  
