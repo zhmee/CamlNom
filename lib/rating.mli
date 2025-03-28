@@ -1,10 +1,6 @@
 type t
 (**[t] represents the food that the user is leaving a rating on. *)
 
-val halls : string list ref
-(**[halls] keeps track of the halls that are supported in [rating.mli].
-   Requires: [halls] contains all the dining halls supported by the project. *)
-
 val get_name : t -> string
 (**[get_food_name rating] returns the food that the user left a review of,
    represented as a [string]. *)

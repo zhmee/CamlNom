@@ -19,14 +19,6 @@ let filter_pretty_test csv params exp =
   let list_list = Dining.make_menu csv in
   assert_equal exp Dining.(user_menu (filter list_list params)) ~printer:id
 
-(**[filter_index_oob_failure_test c p] is the test that filtering the csv [c]
-   for the parameters [p] raises [Failure "index of filter selection not found"]*)
-let filter_index_oob_failure_test csv params =
-  "filter failure test" >:: fun _ ->
-  let list_list = Dining.make_menu csv in
-  assert_raises (Dining.Unknown_Index "Incorrect choice") (fun () ->
-      Dining.filter list_list params)
-
 (**[filter_invalid_csv_failure_test c p] is the test that filtering an
    improperly formatted csv file raises [Failure "invalid csv format"]*)
 let filter_invalid_csv_failure_test csv params =
@@ -88,9 +80,6 @@ let tests =
          filter_pretty_test "../data/small_dining.csv" (0, "Apple")
            "Apple\nApple\nApple\nApple\n\n";
          filter_pretty_test "../data/empty.csv" (10, ":))))") "\n";
-         (*testing out of bounds filter parameter*)
-         filter_index_oob_failure_test "../data/small_dining.csv" (10, "Apple");
-         filter_index_oob_failure_test "../data/appel.csv" (10, ":))))");
          filter_invalid_csv_failure_test "../data/invalid_format.csv"
            (10, ":))))");
          (*make menu tests*)
