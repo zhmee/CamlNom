@@ -16,5 +16,8 @@ val string_of_menu : t -> string
 val user_menu : t -> string
 (**[user_menu m] is the menu printed out in a user friendly output*)
 
+val length_of_menu : t -> int
+(**[lenght_of_menu] takes in a menu and retrieves how many entries are in it*)
+
 exception Invalid_Csv of string
 (**Raised when the csv input is not rectangular*)

@@ -67,3 +67,5 @@ let rec user_menu m =
   | [] -> "\n"
   | (h :: _) :: t -> h ^ "\n" ^ user_menu t
   | [] :: t -> user_menu t
+
+let length_of_menu (menu : string list list) = List.length menu
