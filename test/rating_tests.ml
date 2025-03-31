@@ -1,6 +1,8 @@
 open Final_project.Dining
 open Final_project.Rating
 open QCheck
+open OUnit2
+open Final_project
 
 (**[make_rating (name, rating, hall, comments)] checks that the fields name,
    rating, hall, and comments are properly stored when converted to a [Rating.t]
@@ -128,3 +130,160 @@ let () =
       ]
   in
   ()
+
+(**[line_to_str lst] is the string representation of [lst]*)
+let line_to_str lst = List.fold_left (fun a acc -> a ^ acc) "" lst
+
+(**[list_list_to_str lst] is the string representation of [lst]*)
+let list_list_to_str lst =
+  List.fold_left (fun acc a -> acc ^ line_to_str a) "" lst
+
+(**[retrieve_ratings_name_test n c f e] is the test with name [n] that checks if
+   retrieving the ratings from [c] that match the name of the food item [f]
+   returns [e]*)
+let retrieve_ratings_name_test name csv filt exp =
+  name >:: fun _ ->
+  assert_equal exp
+    (list_list_to_str Rating.(retrieve_ratings_name csv filt))
+    ~printer:Fun.id
+
+(**[retrieve_ratings_int_test n c f e] is the test with name [n] that checks if
+   retrieving the ratings from [c] that match the rating [f] returns [e]*)
+let retrieve_ratings_int_test name csv filt exp =
+  name >:: fun _ ->
+  assert_equal exp
+    (list_list_to_str Rating.(retrieve_ratings_int csv filt))
+    ~printer:Fun.id
+
+(**[retrieve_ratings_int_range_test n c l h e] is the test with name [n] that
+   checks if retrieving the ratings from [c] that match the ratings from [l] to
+   [h] returns [e]*)
+let retrieve_ratings_int_range_test name csv low high exp =
+  name >:: fun _ ->
+  assert_equal exp
+    (list_list_to_str Rating.(retrieve_ratings_int_range csv low high))
+    ~printer:Fun.id
+
+(**[retrieve_ratings_hall_test n c f e] is the test with name [n] that checks if
+   retrieving the ratings from [c] that match the dining hall [f] returns [e]*)
+let retrieve_ratings_hall_test name csv filt exp =
+  name >:: fun _ ->
+  assert_equal exp
+    (list_list_to_str Rating.(retrieve_ratings_hall csv filt))
+    ~printer:Fun.id
+
+(**[sort_rating_test n c f e] is the test with name [n] that checks if sorting
+   the ratings in [c] in the order indicated by [f] returns [e]*)
+let sort_rating_test name csv filt exp =
+  name >:: fun _ ->
+  assert_equal exp Rating.(print_ratings (sort_rating csv filt)) ~printer:Fun.id
+
+let test_ratings_with_dups = Csv.load "../data/test_ratings_duplicates.csv"
+
+let tests =
+  "test suite"
+  >::: [
+         retrieve_ratings_name_test "ratings name test 1" test_ratings_with_dups
+           "Greek yogurt" "Greek yogurt5MorrisonYAYGreek yogurt2MorrisonOh";
+         retrieve_ratings_name_test "ratings name test 2" test_ratings_with_dups
+           "Raita" "Raita5Morrisonliterally my lifelineRaita3Morrisona";
+         retrieve_ratings_name_test "ratings name test 3" test_ratings_with_dups
+           "soaidoasiais" "";
+         retrieve_ratings_name_test "ratings name test 4" test_ratings_with_dups
+           "Pineapple" "Pineapple5Appelwell cut, i felt lovedPineapple4Appelb";
+         retrieve_ratings_int_test "1 star ratings test" test_ratings_with_dups
+           1 "Channa Masala1OakenshieldsNo. ";
+         retrieve_ratings_int_test "2 star ratings test" test_ratings_with_dups
+           2 "Greek yogurt2MorrisonOhBaked tofu2Morrisonaaa";
+         retrieve_ratings_int_test "3 star ratings test" test_ratings_with_dups
+           3
+           "Baked tofu3Morrisongreat but the lady always glares at me \
+            :(Raita3Morrisona";
+         retrieve_ratings_int_test "4 star ratings test" test_ratings_with_dups
+           4 "Pineapple4Appelb";
+         retrieve_ratings_int_test "5 star ratings test" test_ratings_with_dups
+           5
+           "Greek yogurt5MorrisonYAYRaita5Morrisonliterally my \
+            lifelinePineapple5Appelwell cut, i felt lovedChanna \
+            Masala5OakenshieldsNo. ";
+         retrieve_ratings_int_range_test "int range ratings test 1 to 5"
+           test_ratings_with_dups 1 5
+           "Greek yogurt5MorrisonYAYChanna Masala1OakenshieldsNo. \
+            Raita5Morrisonliterally my lifelinePineapple5Appelwell cut, i felt \
+            lovedBaked tofu3Morrisongreat but the lady always glares at me \
+            :(Greek yogurt2MorrisonOhChanna Masala5OakenshieldsNo. \
+            Raita3MorrisonaPineapple4AppelbBaked tofu2Morrisonaaa";
+         retrieve_ratings_int_range_test "int range ratings test 2 to 5"
+           test_ratings_with_dups 2 5
+           "Greek yogurt5MorrisonYAYRaita5Morrisonliterally my \
+            lifelinePineapple5Appelwell cut, i felt lovedBaked \
+            tofu3Morrisongreat but the lady always glares at me :(Greek \
+            yogurt2MorrisonOhChanna Masala5OakenshieldsNo. \
+            Raita3MorrisonaPineapple4AppelbBaked tofu2Morrisonaaa";
+         retrieve_ratings_int_range_test "int range ratings test 3 to 5"
+           test_ratings_with_dups 3 5
+           "Greek yogurt5MorrisonYAYRaita5Morrisonliterally my \
+            lifelinePineapple5Appelwell cut, i felt lovedBaked \
+            tofu3Morrisongreat but the lady always glares at me :(Channa \
+            Masala5OakenshieldsNo. Raita3MorrisonaPineapple4Appelb";
+         retrieve_ratings_int_range_test "int range ratings test 4 to 5"
+           test_ratings_with_dups 4 5
+           "Greek yogurt5MorrisonYAYRaita5Morrisonliterally my \
+            lifelinePineapple5Appelwell cut, i felt lovedChanna \
+            Masala5OakenshieldsNo. Pineapple4Appelb";
+         retrieve_ratings_int_range_test "int range ratings test 5 to 5"
+           test_ratings_with_dups 5 5
+           "Greek yogurt5MorrisonYAYRaita5Morrisonliterally my \
+            lifelinePineapple5Appelwell cut, i felt lovedChanna \
+            Masala5OakenshieldsNo. ";
+         retrieve_ratings_int_range_test "int range ratings test 5 to 0"
+           test_ratings_with_dups 5 0 "";
+         retrieve_ratings_int_range_test "int range ratings test 0 to 0"
+           test_ratings_with_dups 0 0 "";
+         retrieve_ratings_int_range_test "int range ratings test -3 to 0"
+           test_ratings_with_dups (-3) 0 "";
+         retrieve_ratings_int_range_test "int range ratings test -3 to 2"
+           test_ratings_with_dups (-3) 2
+           "Channa Masala1OakenshieldsNo. Greek yogurt2MorrisonOhBaked \
+            tofu2Morrisonaaa";
+         retrieve_ratings_hall_test "ratings by hall Morrison test"
+           test_ratings_with_dups "Morrison"
+           "Greek yogurt5MorrisonYAYRaita5Morrisonliterally my lifelineBaked \
+            tofu3Morrisongreat but the lady always glares at me :(Greek \
+            yogurt2MorrisonOhRaita3MorrisonaBaked tofu2Morrisonaaa";
+         retrieve_ratings_hall_test "ratings by hall Oakenshields test"
+           test_ratings_with_dups "Oakenshields"
+           "Channa Masala1OakenshieldsNo. Channa Masala5OakenshieldsNo. ";
+         retrieve_ratings_hall_test "ratings by hall Appel test"
+           test_ratings_with_dups "Appel"
+           "Pineapple5Appelwell cut, i felt lovedPineapple4Appelb";
+         sort_rating_test "sort ascending test ratings test"
+           test_ratings_with_dups true
+           "Channa Masala 1 Oakenshields No. \n\
+            Baked tofu 2 Morrison aaa\n\
+            Greek yogurt 2 Morrison Oh\n\
+            Baked tofu 3 Morrison great but the lady always glares at me :(\n\
+            Raita 3 Morrison a\n\
+            Pineapple 4 Appel b\n\
+            Channa Masala 5 Oakenshields No. \n\
+            Greek yogurt 5 Morrison YAY\n\
+            Pineapple 5 Appel well cut, i felt loved\n\
+            Raita 5 Morrison literally my lifeline\n\n";
+         sort_rating_test "sort descending test ratings test"
+           test_ratings_with_dups false
+           "Channa Masala 5 Oakenshields No. \n\
+            Greek yogurt 5 Morrison YAY\n\
+            Pineapple 5 Appel well cut, i felt loved\n\
+            Raita 5 Morrison literally my lifeline\n\
+            Pineapple 4 Appel b\n\
+            Baked tofu 3 Morrison great but the lady always glares at me :(\n\
+            Raita 3 Morrison a\n\
+            Baked tofu 2 Morrison aaa\n\
+            Greek yogurt 2 Morrison Oh\n\
+            Channa Masala 1 Oakenshields No. \n\n";
+         sort_rating_test "sort ascending empty test"
+           (Csv.load "../data/empty.csv")
+           true "\n";
+       ]
+
+let _ = run_test_tt_main tests

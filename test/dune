@@ -1,5 +1,5 @@
 (tests
- (names test_final_project crowd_tests)
+ (names test_final_project crowd_tests rating_tests)
  (libraries ounit2 final_project qcheck unix)
  (deps (glob_files_rec ../data/*))
 )

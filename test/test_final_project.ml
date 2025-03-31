@@ -36,6 +36,14 @@ let make_menu_test test_name csv filter_item expected =
   let string = Dining.string_of_menu filtered_menu in
   assert_equal expected string ~printer:Fun.id
 
+(**[menu_length_test n c e] is the test with name [n] that checks whether the
+   length of the menu stored at [c] is the same as [e]*)
+let menu_length_test name csv exp =
+  name >:: fun _ ->
+  assert_equal exp
+    Dining.(length_of_menu (make_menu csv))
+    ~printer:string_of_int
+
 let tests =
   "test suite"
   >::: [
@@ -75,13 +83,13 @@ let tests =
          filter_ugly_test "../data/small_dining.csv" (6, "N")
            "PhoAsianYYYYNHamburgerAmericanNNNNN";
          filter_ugly_test "../data/small_dining.csv" (6, "Not an option") "";
-         filter_ugly_test "../data/empty.csv" (10, "Apple") "";
+         filter_ugly_test "../data/empty.csv" (2, "Apple") "";
          (*pretty printer tests*)
          filter_pretty_test "../data/small_dining.csv" (0, "Apple")
            "Apple\nApple\nApple\nApple\n\n";
-         filter_pretty_test "../data/empty.csv" (10, ":))))") "\n";
+         filter_pretty_test "../data/empty.csv" (2, ":))))") "\n";
          filter_invalid_csv_failure_test "../data/invalid_format.csv"
-           (10, ":))))");
+           (2, ":))))");
          (*make menu tests*)
          (let expected_string =
             "AppleOtherYYYYYAppleFruitYYNYYApple2YYNYYApple1YYNYY"
@@ -127,6 +135,12 @@ let tests =
           make_menu_test "Morrison Dining test"
             "../data/second_small_dining.csv" (5, "Y") expected_string);
          (*future add test okenshields*)
+         menu_length_test "menu length test 1" "../data/empty.csv" 0;
+         menu_length_test "menu length test 1" "../data/small_dining.csv" 7;
+         menu_length_test "menu length test 1" "../data/second_small_dining.csv"
+           8;
+         menu_length_test "menu length test 1" "../data/appel.csv" 43;
+         menu_length_test "menu length test 1" "../data/morrison.csv" 41;
        ]
 
 let _ = run_test_tt_main tests
