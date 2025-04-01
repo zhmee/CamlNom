@@ -45,7 +45,7 @@ let check_attribute d m p s e num =
   d' && m' && p' && s' && e'
 
 let make_plate n h c d m p s e =
-  if check_attribute d m p s e 3 then
+  if check_attribute d m p s e 2 then
     {
       name = n;
       hall = h;
@@ -58,7 +58,7 @@ let make_plate n h c d m p s e =
       side = s;
       dessert = e;
     }
-  else if check_attribute d m p s e 2 then
+  else if check_attribute d m p s e 3 then
     {
       name = n;
       hall = h;

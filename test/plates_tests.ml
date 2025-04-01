@@ -9,6 +9,18 @@ let ex_drink =
 
 let ex_main = Some [ "House Made Pasta"; "Italian"; "Y"; "Y"; "Y"; "Y"; "N" ]
 
+let veg_main =
+  Some
+    [
+      "House Made Pasta Vegetarian NOT VEGAN";
+      "Italian";
+      "N";
+      "Y";
+      "Y";
+      "Y";
+      "N";
+    ]
+
 let ex_protein =
   Some [ "Chicken Souvlaki"; "Mediterranean"; "N"; "N"; "Y"; "N"; "N" ]
 
@@ -130,6 +142,10 @@ let tests =
          make_plate_vegan_test "Full plate non-vegan test" "Full plate"
            "Morrison" "Full plate" ex_drink ex_main ex_protein ex_side
            ex_dessert false;
+         make_plate_vegan_test
+           "Partly full plate which is not vegan but is vegetarian"
+           "Vegetarian NOT VEGAN" "Morrison" "Plate1" ex_drink veg_main None
+           None ex_dessert false;
          make_plate_vegetarian_test "Just water plate vegetarian test"
            "Vegetarian Water plate" "Morrison" "this is just a plate of water"
            ex_drink None None None None true;
@@ -141,6 +157,10 @@ let tests =
          make_plate_vegetarian_test "Full plate Non-Vegetarian test"
            "Full plate" "Morrison" "Full plate" ex_drink ex_main ex_protein
            ex_side ex_dessert false;
+         make_plate_vegetarian_test
+           "Partly full plate which is vegetarian but not vegan"
+           "Vege non Vegan plate" "Morrison" "Plate1" ex_drink veg_main None
+           None ex_dessert true;
          plate_drink_test "Full plate water drink test" full_plate
            "Flavor Infused Water Station";
          plate_drink_test "Empty plate no drink test" empty_plate
