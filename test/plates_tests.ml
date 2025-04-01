@@ -26,6 +26,8 @@ let ex_dessert =
       "N";
     ]
 
+let string_of_list lst = List.fold_left (fun acc a -> acc ^ a) "" lst
+
 (**[make_plate_name_test name n h c d m p s e exp] is the test with name [name]
    that the plate made using the parameter [n h c d m p s e] has the name [exp]*)
 let make_plate_name_test name n h c d m p s e exp =
@@ -87,6 +89,10 @@ let plate_side_test name plate exp =
    dessert in plate [p] is the same as [e]*)
 let plate_dessert_test name plate exp =
   name >:: fun _ -> assert_equal exp (Plates.dessert plate) ~printer:Fun.id
+
+let plate_cuisines_test name plate exp =
+  name >:: fun _ ->
+  assert_equal exp (string_of_list (Plates.cuisines plate)) ~printer:Fun.id
 
 let full_plate =
   Plates.make_plate "Full Plate" "Morrison" "No comments." ex_drink ex_main
@@ -154,6 +160,9 @@ let tests =
            "Overnight Oats with Blueberry & Banana";
          plate_dessert_test "Empty plate no dessert test" empty_plate
            "No dessert in this plate.";
+         plate_cuisines_test "Empty plate cuisines test" empty_plate "";
+         plate_cuisines_test "Full plate cuisines test" full_plate
+           "NoneItalianMediterraneanMediterraneanDessert";
        ]
 
 let _ = run_test_tt_main tests
