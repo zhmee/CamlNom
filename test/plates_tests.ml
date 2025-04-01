@@ -45,6 +45,15 @@ let make_plate_comment_test name n h c d m p s e exp =
   name >:: fun _ ->
   assert_equal exp Plates.(comment (make_plate n h c d m p s e)) ~printer:Fun.id
 
+(**[make_plate_vegan_test name n h c d m p s e exp] is the test with name [name]
+   that the plate made using the parameter [n h c d m p s e] has the vegetarian
+   status [exp]*)
+let make_plate_vegan_test name n h c d m p s e exp =
+  name >:: fun _ ->
+  assert_equal exp
+    Plates.(is_vegan (make_plate n h c d m p s e))
+    ~printer:string_of_bool
+
 let id x = x
 
 let tests =
@@ -64,6 +73,14 @@ let tests =
            ex_drink ex_main ex_protein ex_side ex_dessert "";
          make_plate_comment_test "Non-empty hall plate test" "Name" "Morrison"
            "COMMENT" ex_drink ex_main ex_protein ex_side ex_dessert "COMMENT";
+         make_plate_vegan_test "Just water plate vegan test" "Vegan Water plate"
+           "Morrison" "this is just a plate of water" ex_drink None None None
+           None true;
+         make_plate_vegan_test "Chicken and water plate non-vegan test"
+           "Chicken + Water plate" "Morrison" "water + chicken" ex_drink None
+           ex_protein None None false;
+         make_plate_vegan_test "Empty plate vegan test" "Empty plate" "Morrison"
+           "empty plate" None None None None None true;
        ]
 
 let _ = run_test_tt_main tests
