@@ -63,7 +63,38 @@ let make_plate_vegetarian_test name n h c d m p s e exp =
     Plates.(is_vegetarian (make_plate n h c d m p s e))
     ~printer:string_of_bool
 
-let id x = x
+(**[plate_drink_test n p e] is the test with name [n] that checks whether the
+   drink in plate [p] is the same as [e]*)
+let plate_drink_test name plate exp =
+  name >:: fun _ -> assert_equal exp (Plates.drink plate) ~printer:Fun.id
+
+(**[plate_main_test n p e] is the test with name [n] that checks whether the
+   main in plate [p] is the same as [e]*)
+let plate_main_test name plate exp =
+  name >:: fun _ -> assert_equal exp (Plates.main plate) ~printer:Fun.id
+
+(**[plate_protein_test n p e] is the test with name [n] that checks whether the
+   protein in plate [p] is the same as [e]*)
+let plate_protein_test name plate exp =
+  name >:: fun _ -> assert_equal exp (Plates.protein plate) ~printer:Fun.id
+
+(**[plate_side_test n p e] is the test with name [n] that checks whether the
+   side in plate [p] is the same as [e]*)
+let plate_side_test name plate exp =
+  name >:: fun _ -> assert_equal exp (Plates.side plate) ~printer:Fun.id
+
+(**[plate_dessert_test n p e] is the test with name [n] that checks whether the
+   dessert in plate [p] is the same as [e]*)
+let plate_dessert_test name plate exp =
+  name >:: fun _ -> assert_equal exp (Plates.dessert plate) ~printer:Fun.id
+
+let full_plate =
+  Plates.make_plate "Full Plate" "Morrison" "No comments." ex_drink ex_main
+    ex_protein ex_side ex_dessert
+
+let empty_plate =
+  Plates.make_plate "Empty Plate" "No Dining Hall" "No Comment" None None None
+    None None
 
 let tests =
   "test suite"
@@ -104,6 +135,25 @@ let tests =
          make_plate_vegetarian_test "Full plate Non-Vegetarian test"
            "Full plate" "Morrison" "Full plate" ex_drink ex_main ex_protein
            ex_side ex_dessert false;
+         plate_drink_test "Full plate water drink test" full_plate
+           "Flavor Infused Water Station";
+         plate_drink_test "Empty plate no drink test" empty_plate
+           "No drink in this plate.";
+         plate_main_test "Full plate pasta main test" full_plate
+           "House Made Pasta";
+         plate_main_test "Empty plate no main test" empty_plate
+           "No main dish in this plate.";
+         plate_protein_test "Full plate chicken protein test" full_plate
+           "Chicken Souvlaki";
+         plate_protein_test "Empty plate no protein test" empty_plate
+           "No protein in this plate.";
+         plate_side_test "Full plate salad side test" full_plate "Greek Salad";
+         plate_side_test "Empty plate no side test" empty_plate
+           "No side dish in this plate.";
+         plate_dessert_test "Full plate oats dessert test" full_plate
+           "Overnight Oats with Blueberry & Banana";
+         plate_dessert_test "Empty plate no dessert test" empty_plate
+           "No dessert in this plate.";
        ]
 
 let _ = run_test_tt_main tests

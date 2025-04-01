@@ -56,7 +56,7 @@ let make_plate n h c d m p s e =
       main = m;
       protein = p;
       side = s;
-      dessert = d;
+      dessert = e;
     }
   else if check_attribute d m p s e 2 then
     {
@@ -69,7 +69,7 @@ let make_plate n h c d m p s e =
       main = m;
       protein = p;
       side = s;
-      dessert = d;
+      dessert = e;
     }
   else
     {
@@ -82,7 +82,7 @@ let make_plate n h c d m p s e =
       main = m;
       protein = p;
       side = s;
-      dessert = d;
+      dessert = e;
     }
 
 let is_vegetarian p = p.vegetarian
