@@ -1,0 +1,117 @@
+type p = {
+  name : string;
+  hall : string;
+  vegetarian : bool;
+  vegan : bool;
+  comment : string;
+  drink : string list option;
+  main : string list option;
+  protein : string list option;
+  side : string list option;
+  dessert : string list option;
+}
+
+exception Invalid_plate
+
+(**[check_attribute d m p s e num] is the truth statement of if all the foods
+   [d, m, p, s, e] all have ["Y"] in the [num]th index. If the options match
+   with [None], it is considered true.*)
+let check_attribute d m p s e num =
+  let d' =
+    match d with
+    | Some d1 -> if List.nth d1 num = "Y" then true else false
+    | None -> true
+  in
+  let m' =
+    match m with
+    | Some m1 -> if List.nth m1 num = "Y" then true else false
+    | None -> true
+  in
+  let p' =
+    match p with
+    | Some p1 -> if List.nth p1 num = "Y" then true else false
+    | None -> true
+  in
+  let s' =
+    match s with
+    | Some s1 -> if List.nth s1 num = "Y" then true else false
+    | None -> true
+  in
+  let e' =
+    match e with
+    | Some e1 -> if List.nth e1 num = "Y" then true else false
+    | None -> true
+  in
+  d' && m' && p' && s' && e'
+
+let make_plate n h c d m p s e =
+  if check_attribute d m p s e 3 then
+    {
+      name = n;
+      hall = h;
+      vegetarian = true;
+      vegan = true;
+      comment = c;
+      drink = d;
+      main = m;
+      protein = p;
+      side = s;
+      dessert = d;
+    }
+  else if check_attribute d m p s e 2 then
+    {
+      name = n;
+      hall = h;
+      vegetarian = true;
+      vegan = false;
+      comment = c;
+      drink = d;
+      main = m;
+      protein = p;
+      side = s;
+      dessert = d;
+    }
+  else
+    {
+      name = n;
+      hall = h;
+      vegetarian = false;
+      vegan = false;
+      comment = c;
+      drink = d;
+      main = m;
+      protein = p;
+      side = s;
+      dessert = d;
+    }
+
+let is_vegetarian p = p.vegetarian
+let is_vegan p = p.vegan
+let name p = p.name
+let hall p = p.hall
+let comment p = p.comment
+
+let drink p =
+  match p.drink with
+  | Some d -> List.hd d
+  | None -> "No drink in this plate."
+
+let main p =
+  match p.main with
+  | Some m -> List.hd m
+  | _ -> "No main dish in this plate."
+
+let protein p =
+  match p.protein with
+  | Some p' -> List.hd p'
+  | _ -> "No protein in this plate."
+
+let side p =
+  match p.side with
+  | Some s -> List.hd s
+  | _ -> "No side dish in this plate."
+
+let dessert p =
+  match p.dessert with
+  | Some e -> List.hd e
+  | _ -> "No dessert in this plate."
