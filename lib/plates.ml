@@ -115,3 +115,31 @@ let dessert p =
   match p.dessert with
   | Some e -> List.hd e
   | _ -> "No dessert in this plate."
+
+let cuisines p =
+  let d =
+    match p.drink with
+    | Some d' -> List.nth d' 1
+    | None -> ""
+  in
+  let m =
+    match p.main with
+    | Some m' -> List.nth m' 1
+    | None -> ""
+  in
+  let pr =
+    match p.protein with
+    | Some p' -> List.nth p' 1
+    | None -> ""
+  in
+  let s =
+    match p.side with
+    | Some s' -> List.nth s' 1
+    | None -> ""
+  in
+  let e =
+    match p.dessert with
+    | Some e' -> List.nth e' 1
+    | None -> ""
+  in
+  [ d; m; pr; s; e ]

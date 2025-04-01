@@ -51,3 +51,6 @@ val side : p -> string
 
 val dessert : p -> string
 (**[dessert p] is the dessert stored in the plate [p] if any.*)
+
+val cuisines : p -> string list
+(**[cuisines p] is the list of cuisines of the dishes in [p].*)
