@@ -13,3 +13,6 @@ val remove_dup : t -> string list
 val corrected_word : string -> t -> string
 (**[corrected_word] takes in a word and returns the corrected spelling version
    of it. *)
+
+val create_dictionary: string -> t
+(**[create_dictionary] creates a dictionary*)

@@ -1,6 +1,7 @@
-type t = string list list
+type t = Csv.t
 
-exception Failure_File_not_found of string
+let create_dictionary csv = 
+  Csv.load csv 
 
 let transform_to_list (dictionary : t) = List.flatten dictionary
 
