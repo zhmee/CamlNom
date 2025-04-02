@@ -1,5 +1,5 @@
 (library
  (name final_project)
- (libraries csv unix)
+ (libraries csv unix batteries str)
  (instrumentation
   (backend bisect_ppx)))

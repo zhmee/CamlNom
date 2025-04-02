@@ -15,6 +15,16 @@ let display_all_filters list =
   let all_filters = !list in
   List.iter (fun filters -> print_endline filters) all_filters
 
+let write_to_csv csv_file list =
+  let out =
+    Csv.to_channel (Out_channel.open_gen [ Out_channel.Open_append ] 0 csv_file)
+  in
+  List.iter (fun word -> Csv.output_record out [ word ]) list;
+  Csv.close_out out
+
+(** everytime a user put in new feedback, word correct the updated csv file
+
+    everytime a user asks for a feedback, check their spelling first before *)
 let rating_file = Csv.load "./data/ratings.csv"
 
 (*This is the total filters that the user can filter by*)
