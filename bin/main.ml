@@ -9,6 +9,12 @@ exception Illegal_rating of int
 (**[Illegal_rating rating] documents the event that the user inputs a rating
    that is deemed illegal by the specifications in [rating.mli]*)
 
+(**[display_all_filters] takes in all the current available filters and prints
+   each one.*)
+let display_all_filters list =
+  let all_filters = !list in
+  List.iter (fun filters -> print_endline filters) all_filters
+
 let rating_file = Csv.load "./data/ratings.csv"
 
 (*This is the total filters that the user can filter by*)
@@ -161,7 +167,7 @@ let finding_day day =
   | _ -> raise Unknown_Correspondence
 
 (**[updating_filter_choices] removes from the possible choices displayed to the
-user all the conflicting options.*)
+   user all the conflicting options.*)
 let updating_filter_choices input =
   match input with
   | "Asian" -> begin
@@ -221,8 +227,8 @@ let updating_filter_choices input =
     end
   | _ -> print_endline "please input only one of the choices"
 
-(**[valid_choices] is an error checker that makes sure that the user input
-is one of the supports ones.*)
+(**[valid_choices] is an error checker that makes sure that the user input is
+   one of the supports ones.*)
 let valid_choices input =
   match input with
   | "Asian" -> input
@@ -236,8 +242,8 @@ let valid_choices input =
   | "Okenshields" -> input
   | _ -> raise Unknown_Correspondence
 
-(**[print_by_dining_hall] prints the dining halls and the dishes they have
-that satisfies the user's needs.*)
+(**[print_by_dining_hall] prints the dining halls and the dishes they have that
+   satisfies the user's needs.*)
 let print_by_dining_hall filtered_list =
   let new_morrison_menu = filter filtered_list (4, "Y") in
   print_endline " ";
@@ -267,9 +273,8 @@ let print_by_dining_hall filtered_list =
   then print_endline "None"
   else print_endline (user_menu new_oak_menu)
 
-(**[prompter] continually prompts the user to add in more filter options if
-  they way, or the user can choose to finish and see the foods they have
-chosen.*)
+(**[prompter] continually prompts the user to add in more filter options if they
+   way, or the user can choose to finish and see the foods they have chosen.*)
 let rec prompter created_menu =
   try
     if List.length !user_filters = 0 then begin
@@ -279,9 +284,9 @@ let rec prompter created_menu =
     else print_endline "-------------------------------------------------";
     print_endline
       "Please choose what type of cuisine you would like to see,\n\
-      what dietary restriction you would like to filter by, \n\
-      which dining hall you are interested in, \n\
-      or if you are done selecting: ";
+       what dietary restriction you would like to filter by, \n\
+       which dining hall you are interested in, \n\
+       or if you are done selecting: ";
     print_endline " ";
     print_endline "0) View feedback/Leave a rating";
     display_all_filters user_filters;
