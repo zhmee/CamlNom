@@ -60,6 +60,8 @@ let rec string_of_menu' m acc =
 *)
 let string_of_menu m = string_of_menu' m ""
 
+(**[user_menu m acc] is the helper function to make a string list list into a
+   string *)
 let rec user_menu m =
   match m with
   | [] -> "\n"
