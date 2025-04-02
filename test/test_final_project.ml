@@ -44,6 +44,10 @@ let menu_length_test name csv exp =
     Dining.(length_of_menu (make_menu csv))
     ~printer:string_of_int
 
+let user_menu_test name csv exp =
+  name >:: fun _ ->
+  assert_equal exp Dining.(user_menu (make_menu csv)) ~printer:Fun.id
+
 let tests =
   "test suite"
   >::: [
@@ -88,6 +92,8 @@ let tests =
          filter_pretty_test "../data/small_dining.csv" (0, "Apple")
            "Apple\nApple\nApple\nApple\n\n";
          filter_pretty_test "../data/empty.csv" (2, ":))))") "\n";
+         user_menu_test "" "../data/filter_pretty_empty_lines.csv"
+           "Apple\nApple\n\nFried Rice\nApple\nHamburger\n\n\nPho\nApple\n\n";
          filter_invalid_csv_failure_test "../data/invalid_format.csv"
            (2, ":))))");
          (*make menu tests*)

@@ -7,6 +7,7 @@ let example_ratings = Csv.load "../data/test_ratings.csv" ~strip:true
 let ex_drink =
   Some [ "Flavor Infused Water Station"; "None"; "Y"; "Y"; "Y"; "Y"; "Y" ]
 
+let non_veg_drink = Some [ "Milk"; "None"; "N"; "Y"; "Y"; "Y"; "Y" ]
 let ex_main = Some [ "House Made Pasta"; "Italian"; "Y"; "Y"; "Y"; "Y"; "N" ]
 
 let veg_main =
@@ -24,6 +25,7 @@ let veg_main =
 let ex_protein =
   Some [ "Chicken Souvlaki"; "Mediterranean"; "N"; "N"; "Y"; "N"; "N" ]
 
+let vegan_protein = Some [ "BBQ Tofu"; "American"; "Y"; "Y"; "Y"; "Y"; "Y" ]
 let ex_side = Some [ "Greek Salad"; "Mediterranean"; "Y"; "N"; "Y"; "N"; "N" ]
 
 let ex_dessert =
@@ -37,6 +39,9 @@ let ex_dessert =
       "N";
       "N";
     ]
+
+let non_vegan_dessert =
+  Some [ "Chocolate Cake"; "American"; "N"; "Y"; "Y"; "Y"; "Y" ]
 
 let string_of_list lst = List.fold_left (fun acc a -> acc ^ a) "" lst
 
@@ -146,6 +151,11 @@ let tests =
            "Partly full plate which is not vegan but is vegetarian"
            "Vegetarian NOT VEGAN" "Morrison" "Plate1" ex_drink veg_main None
            None ex_dessert false;
+         make_plate_vegan_test
+           "Non-vegan drink, no main, vegan protein, no side, non vegan \
+            dessert non vegan test"
+           "Non-Vegan" "Morrison" "Plate2" non_veg_drink None vegan_protein None
+           non_vegan_dessert false;
          make_plate_vegetarian_test "Just water plate vegetarian test"
            "Vegetarian Water plate" "Morrison" "this is just a plate of water"
            ex_drink None None None None true;

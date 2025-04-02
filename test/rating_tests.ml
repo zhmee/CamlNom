@@ -178,6 +178,10 @@ let sort_rating_test name csv filt exp =
   name >:: fun _ ->
   assert_equal exp Rating.(print_ratings (sort_rating csv filt)) ~printer:Fun.id
 
+let sort_name_test name csv filt exp =
+  name >:: fun _ ->
+  assert_equal exp Rating.(print_ratings (sort_name csv filt)) ~printer:Fun.id
+
 let test_ratings_with_dups = Csv.load "../data/test_ratings_duplicates.csv"
 
 let tests =
@@ -284,6 +288,18 @@ let tests =
          sort_rating_test "sort ascending empty test"
            (Csv.load "../data/empty.csv")
            true "\n";
+         sort_name_test "sort descending test name test" test_ratings_with_dups
+           false
+           "Raita 3 Morrison a\n\
+            Raita 5 Morrison literally my lifeline\n\
+            Pineapple 4 Appel b\n\
+            Pineapple 5 Appel well cut, i felt loved\n\
+            Greek yogurt 2 Morrison Oh\n\
+            Greek yogurt 5 Morrison YAY\n\
+            Channa Masala 1 Oakenshields No. \n\
+            Channa Masala 5 Oakenshields No. \n\
+            Baked tofu 2 Morrison aaa\n\
+            Baked tofu 3 Morrison great but the lady always glares at me :(\n\n";
        ]
 
 let _ = run_test_tt_main tests

@@ -65,7 +65,6 @@ let string_of_menu m = string_of_menu' m ""
 let rec user_menu m =
   match m with
   | [] -> "\n"
-  | (h :: _) :: t -> h ^ "\n" ^ user_menu t
-  | [] :: t -> user_menu t
+  | h :: t -> List.hd h ^ "\n" ^ user_menu t
 
 let length_of_menu (menu : string list list) = List.length menu
