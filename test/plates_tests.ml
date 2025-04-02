@@ -43,6 +43,7 @@ let ex_dessert =
 let non_vegan_dessert =
   Some [ "Chocolate Cake"; "American"; "N"; "Y"; "Y"; "Y"; "Y" ]
 
+(**[string_of_list l] is the string representation of [l]*)
 let string_of_list lst = List.fold_left (fun acc a -> acc ^ a) "" lst
 
 (**[make_plate_name_test name n h c d m p s e exp] is the test with name [name]

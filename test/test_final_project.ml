@@ -44,6 +44,8 @@ let menu_length_test name csv exp =
     Dining.(length_of_menu (make_menu csv))
     ~printer:string_of_int
 
+(**[user_menu_test n c e] is the test with name [n] that checks if the menu
+   created from [c] has the user menu string [e]*)
 let user_menu_test name csv exp =
   name >:: fun _ ->
   assert_equal exp Dining.(user_menu (make_menu csv)) ~printer:Fun.id
