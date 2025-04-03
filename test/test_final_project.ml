@@ -3,7 +3,12 @@ open Final_project
 
 let small_test_menu = Dining.make_menu "../data/small_dining.csv"
 let example_ratings = Csv.load "../data/test_ratings.csv" ~strip:true
+
+(**[id x] is [x]*)
 let id x = x
+
+(**[string_of_list l] is the string representation of [l]*)
+let string_of_list lst = List.fold_left (fun acc a -> acc ^ a) "" lst
 
 (**[filter_name_test c p e] is the test that [filter c p] produces [e] when
    using the ugly printer function*)
@@ -49,6 +54,12 @@ let menu_length_test name csv exp =
 let user_menu_test name csv exp =
   name >:: fun _ ->
   assert_equal exp Dining.(user_menu (make_menu csv)) ~printer:Fun.id
+
+(**[list_of_menu_test n c e] is the test with name [n] that checks if
+   [list_of_menu] of the menu stored at [c] is [e]*)
+let list_of_menu_test name csv exp =
+  name >:: fun _ ->
+  assert_equal exp (string_of_list Dining.(list_of_menu (make_menu csv)))
 
 let tests =
   "test suite"
@@ -149,6 +160,9 @@ let tests =
            8;
          menu_length_test "menu length test 1" "../data/appel.csv" 43;
          menu_length_test "menu length test 1" "../data/morrison.csv" 41;
+         list_of_menu_test "small dining list of menu test"
+           "../data/small_dining.csv" "Apple1YYNYY";
+         list_of_menu_test "empty menu list of menu test" "../data/empty.csv" "";
        ]
 
 let _ = run_test_tt_main tests
