@@ -56,8 +56,12 @@ let tests =
            "../data/food_dict_no_dups.csv" "AppleBurgerCheeseSaladWater";
          corrected_word_test "Incorrect spelling Applee correct to Apple test"
            "../data/fooddict.csv" "Applee" "Apple";
-         corrected_word_test "ashdasudhiaus cannot be corrected test"
-           "../data/fooddict.csv" "ashdasudhiaus" "ashdasudhiaus";
+         (let dictionary =
+            Dictionary.create_dictionary "../data/fooddict.csv"
+          in
+          "Matching the wrong malady" >:: fun _ ->
+          assert_raises (Dictionary.Word_Not_Found "Word cannot be found")
+            (fun () -> Dictionary.corrected_word "ashdasudhiaus" dictionary));
          corrected_word_test "Correct spelling Apple correct to Apple test"
            "../data/fooddict.csv" "Apple" "Apple";
          corrected_word_test "Correct spelling apple correct to Apple test"

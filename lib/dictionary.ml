@@ -1,5 +1,7 @@
 type t = Csv.t
 
+exception Word_Not_Found of string 
+
 let create_dictionary csv = 
   Csv.load csv 
 
@@ -13,7 +15,6 @@ let remove_dup dictionary =
   let new_dictionary = transform_to_list dictionary in
   List.sort_uniq compare new_dictionary
 
-
 let corrected_word word dictionary =
   if check_spelling word dictionary then word
   else
@@ -24,6 +25,8 @@ let corrected_word word dictionary =
         used_dictionary
     in
     match list_of_corrections with
-    | [] -> word
+    | [] -> raise (Word_Not_Found "Word cannot be found")
     | [ item ] -> item
     | h :: t -> h
+
+
