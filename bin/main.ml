@@ -3,6 +3,7 @@ open Final_project.Dining
 open Final_project.Rating
 open Final_project.Options
 open Final_project.Dictionary
+open Final_project.Plates
 
 (* EXCEPTIONS AND FILES USED -------------------------------------------------
    ------------------------------------------------------------------------------*)
@@ -20,10 +21,11 @@ let food_dict = create_dictionary "./driver_data/fooddict.csv"
 let total_dict = create_dictionary "./data/dictionary.csv"
 let dining_dict = create_dictionary "./driver_data/diningdict.csv"
 let user_plates = Csv.load "./driver_data/userplates.csv"
-let all_dishes = Csv.load "./driver_data/alldishes.csv"
+let all_dishes = make_menu "./driver_data/alldishes.csv"
 
 (* CURRENTLY SUPPORTED FILTERS AND OPERATIONS --------------------------------*)
 
+let all_supported_filters = !Options.get_all_filters
 let user_filters = Options.get_all_filters
 let user_halls = Options.halls
 
@@ -250,7 +252,7 @@ let rec retrieve_rating () =
     (*user wants specific dish*)
     | "0" ->
         print_endline
-          "Please enter in the dish you would like to give a rating for";
+          "Please enter in the dish you would like to view a rating for";
         let user_input_dish = read_line () in
         let dish_name =
           check_user_spelling user_input_dish food_dict total_dict
@@ -309,12 +311,97 @@ let rec handle_feedback () =
 (* PLATE MAKER ---------------------------------------------------------------
    ---------------------------------------------------------------------------*)
 
+let printing_options_for_plates () =
+  let num = ref 1 in
+  begin
+    List.iter
+      (fun filters ->
+        print_endline
+          (string_of_int !num ^ ") " ^ "Contains: " ^ filters ^ " cuisine");
+        num := !num + 1)
+      !Options.cuisines;
+
+    List.iter
+      (fun filters ->
+        print_endline (string_of_int !num ^ ") " ^ "Is " ^ filters);
+        num := !num + 1)
+      !dietary;
+
+    List.iter
+      (fun filters ->
+        print_endline
+          (string_of_int !num ^ ") " ^ "Is from: " ^ filters ^ " hall");
+        num := !num + 1)
+      !halls
+  end
+
 let custom_categorization dish_name dining_hall =
-  match dining_hall with
-  | "Morrison" -> [ dish_name; "None"; "N"; "N"; "Y"; "N"; "N" ]
-  | "North Star" -> [ dish_name; "None"; "N"; "N"; "N"; "Y"; "N" ]
-  | "Oakenshields" -> [ dish_name; "None"; "N"; "N"; "N"; "N"; "Y" ]
-  | _ -> [ dish_name; "None"; "N"; "N"; "Y"; "N"; "N" ]
+  if String.length dish_name = 0 then None
+  else
+    match dining_hall with
+    | "Morrison" -> Some [ dish_name; "None"; "N"; "N"; "Y"; "N"; "N" ]
+    | "North Star" -> Some [ dish_name; "None"; "N"; "N"; "N"; "Y"; "N" ]
+    | "Oakenshields" -> Some [ dish_name; "None"; "N"; "N"; "N"; "N"; "Y" ]
+    | _ -> Some [ dish_name; "None"; "N"; "N"; "Y"; "N"; "N" ]
+
+let array_of_plates = ref []
+
+let storing_all_plates =
+  let csv_plates = Csv.load "./driver_data/userplates.csv" in
+  List.iter
+    (fun row ->
+      let plate_name = ref "" in
+      let hall_name = ref "" in
+      let user_comments = ref "" in
+      let user_drink = ref None in
+      let main_dish = ref None in
+      let protein = ref None in
+      let side_dish = ref None in
+      let dessert = ref None in
+
+      List.iteri
+        (fun index item ->
+          match index with
+          | 0 -> plate_name := item
+          | 1 -> hall_name := item
+          | 2 -> user_comments := item
+          | 3 ->
+              user_drink :=
+                if item = "None" then None
+                else custom_categorization item !hall_name
+          | 4 ->
+              main_dish :=
+                if item = "None" then None
+                else if
+                  List.length (list_of_menu (filter all_dishes (0, item))) = 0
+                then custom_categorization item !hall_name
+                else Some (list_of_menu (filter all_dishes (0, item)))
+          | 5 ->
+              protein :=
+                if item = "None" then None
+                else if
+                  List.length (list_of_menu (filter all_dishes (0, item))) = 0
+                then custom_categorization item !hall_name
+                else Some (list_of_menu (filter all_dishes (0, item)))
+          | 6 ->
+              side_dish :=
+                if item = "None" then None
+                else if
+                  List.length (list_of_menu (filter all_dishes (0, item))) = 0
+                then custom_categorization item !hall_name
+                else Some (list_of_menu (filter all_dishes (0, item)))
+          | 7 ->
+              dessert :=
+                if item = "None" then None
+                else custom_categorization item !hall_name
+          | _ -> ())
+        row;
+      let new_plate =
+        make_plate !plate_name !hall_name !user_comments !user_drink !main_dish
+          !protein !side_dish !dessert
+      in
+      array_of_plates := new_plate :: !array_of_plates)
+    csv_plates
 
 let rec make_plates () =
   try
@@ -327,26 +414,34 @@ let rec make_plates () =
     let user_dining_hall = read_line () in
     let hall = check_user_spelling user_dining_hall dining_dict dining_dict in
     if String.length hall = 0 then raise Missing_input
-    else print_endline "What was the main dish? Please input dish name or None.";
-    let user_main_dish = read_line () in
+    else print_endline "What was the main dish? Please input dish name or Skip.";
     let main_dish_name =
+    let user_main_dish = read_line () in
+    if user_main_dish = "skip" || user_main_dish = "Skip" then "None" else
       check_user_spelling user_main_dish food_dict total_dict
     in
-    print_endline "What was the side dish? Please input dish name or None.";
-    let user_side_dish = read_line () in
+    print_endline "What was the side dish? Please input dish name or Skip.";
     let side_dish_name =
+    let user_side_dish = read_line () in
+    if user_side_dish = "skip" || user_side_dish = "Skip" then "None" else
       check_user_spelling user_side_dish food_dict total_dict
     in
     print_endline
-      "What drink would you like to add? Please input drink or None.";
-    let user_drink = read_line () in
+      "What drink would you like to add? Please input drink or Skip.";
+    let user_drink =
+    let user_drink_input = read_line () in
+    if user_drink_input = "skip" || user_drink_input = "Skip" then "None" else
+      user_drink_input in 
     print_endline
-      "What protein would you like to add? Please input dish name or None";
+      "What protein would you like to add? Please input dish name or Skip";
     let user_protein = read_line () in
     let protein = check_user_spelling user_protein food_dict total_dict in
     print_endline
-      "What dessert would you like to add? Please input dish name or None";
-    let user_dessert = read_line () in
+      "What dessert would you like to add? Please input dish name or Skip";
+      let user_dessert =
+    let user_dessert_input = read_line () in
+    if user_dessert_input = "skip" || user_dessert_input = "Skip" then "None" else
+      user_dessert_input in 
     print_endline "Do you have any additional comments?";
     let user_comments = read_line () in
     let out =
@@ -365,8 +460,7 @@ let rec make_plates () =
         protein;
         side_dish_name;
         user_dessert;
-      ]
-    in
+      ] in
     Csv.output_record out plate_obj;
     Csv.close_out out;
     print_endline "Thank you for inputting your plate!"
@@ -378,8 +472,69 @@ let rec make_plates () =
       print_endline "Sorry, you must provide an input for this."
     end
 
-  
-(* DISPLAYS & INTERACTIONS
+let plate_filtering num all_plates =
+  match num with
+  | 1 -> List.filter (fun plate -> List.mem "Asian" (cuisines plate)) all_plates
+  | 2 ->
+      List.filter (fun plate -> List.mem "American" (cuisines plate)) all_plates
+  | 3 ->
+      List.filter (fun plate -> List.mem "Mexican" (cuisines plate)) all_plates
+  | 4 ->
+      List.filter (fun plate -> List.mem "Italian" (cuisines plate)) all_plates
+  | 5 -> List.filter is_vegetarian all_plates
+  | 6 -> List.filter is_vegan all_plates
+  | 7 -> List.filter (fun plate -> hall plate = "Morrison") all_plates
+  | 8 -> List.filter (fun plate -> hall plate = "North Star") all_plates
+  | 9 -> List.filter (fun plate -> hall plate = "Oakenshields") all_plates
+  | _ -> all_plates
+
+let plates_printing plates =
+  print_endline
+    "Here are all the plates that other users have made that satisfy your \
+     requirements";
+  print_endline "----------------------------------------------------";
+  List.iter
+    (fun plate ->
+      print_endline ("Plate name: " ^ name plate);
+      print_endline ("Hall: " ^ hall plate);
+      print_endline ("Main dish: " ^ main plate);
+      print_endline ("Side dish: " ^ side plate);
+      print_endline ("Protein: " ^ protein plate);
+      print_endline ("Dessert: " ^ dessert plate);
+      print_endline ("Drink: " ^ drink plate);
+      print_endline "----------------------------------------------------")
+    plates
+let plate_access () =
+  try
+    let num_option =
+      List.length !halls + List.length !Options.cuisines + List.length !dietary
+    in
+    print_endline
+      "What type of plate would you like access? Please indicate with a number:";
+    print_endline "These are the possible attributes: ";
+    printing_options_for_plates ();
+    let user_input = read_int () in
+    if user_input < 1 || user_input > num_option then raise Invalid_input
+    else
+      let plates_collection = plate_filtering user_input !array_of_plates in
+      plates_printing plates_collection
+  with
+  | Failure _ ->
+      print_endline "Please only input an integer for one of the above options"
+  | Invalid_input ->
+      print_endline "Please only input an integer for one of the above options"
+
+let rec view_make_plate () = 
+  print_endline "Would you like to view other user's save plates or create your own?";
+  print_endline "1) View\n2) Create";
+  let user_input = read_line() in 
+  if user_input = "1" then plate_access() 
+  else if user_input = "2" then make_plates() 
+  else begin
+    print_endline "Please choose one or two"; view_make_plate()
+  end
+
+(* DISPLAYS & INTERACTIONS-----------------------------------------------------
    ----------------------------------------------------------------------------*)
 
 (**[print_by_dining_hall] prints the dining halls and the dishes they have that
@@ -448,10 +603,11 @@ let () =
   try
     (*create an empty list list of food [food] display to user all the days they
       can choose from [food] gets loaded by the csv of the particular day.*)
-    print_endline "Would you like to filter menus or leave a rating?";
-    print_endline "0) View feedback/Leave a rating\n1) View menus ";
+    print_endline "Would you like to filter menus, leave a rating, or view/create plates?";
+    print_endline "0) View feedback/Leave a rating\n1) View menus\n2) view/create plates ";
     let user_input = read_line () in
     if user_input = "0" then handle_feedback ()
+    else if user_input = "2" then view_make_plate () 
     else if user_input = "1" then begin
       print_endline
         "Please choose what day you would like to see the menu for: ";
