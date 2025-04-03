@@ -66,3 +66,9 @@ let rec user_menu m =
   | h :: t -> List.hd h ^ "\n" ^ user_menu t
 
 let length_of_menu (menu : string list list) = List.length menu
+
+let list_of_menu (filtered_menu : t) =
+   match filtered_menu with
+   | [] -> [] 
+   | h::_ -> h 
+ 

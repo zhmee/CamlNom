@@ -19,5 +19,8 @@ val user_menu : t -> string
 val length_of_menu : t -> int
 (**[lenght_of_menu] takes in a menu and retrieves how many entries are in it*)
 
+val list_of_menu : t -> string list 
+(**[list_of_menu] takes in a menu and returns the first entries in a list *)
+
 exception Invalid_Csv of string
 (**Raised when the csv input is not rectangular*)

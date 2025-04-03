@@ -4,10 +4,12 @@ open Final_project.Rating
 open Final_project.Options
 open Final_project.Dictionary
 
-(* EXCEPTIONS AND FILES USED--------------------------------------------------*)
+(* EXCEPTIONS AND FILES USED -------------------------------------------------
+   ------------------------------------------------------------------------------*)
 
 exception Unknown_Correspondence
 exception Invalid_input
+exception Missing_input
 
 exception Illegal_rating of int
 (**[Illegal_rating rating] documents the event that the user inputs a rating
@@ -17,6 +19,8 @@ let rating_file = Csv.load "./driver_data/ratings.csv"
 let food_dict = create_dictionary "./driver_data/fooddict.csv"
 let total_dict = create_dictionary "./data/dictionary.csv"
 let dining_dict = create_dictionary "./driver_data/diningdict.csv"
+let user_plates = Csv.load "./driver_data/userplates.csv"
+let all_dishes = Csv.load "./driver_data/alldishes.csv"
 
 (* CURRENTLY SUPPORTED FILTERS AND OPERATIONS --------------------------------*)
 
@@ -145,8 +149,11 @@ let valid_choices input =
   | "Okenshields" -> input
   | _ -> raise Unknown_Correspondence
 
-(* SPELLCHECKER --------------------------------------------------------------*)
+(* SPELLCHECKER ---------------------------------------------------------------
+   ------------------------------------------------------------------------------*)
 
+(**[check_user_spelling] takes in the user input for a food and then spellchecks
+   it so it is consistent with our menus. *)
 let check_user_spelling input food_dictionary total_dictionary =
   if String.length input = 0 then raise Invalid_input
   else
@@ -299,6 +306,79 @@ let rec handle_feedback () =
     print_endline "Please choose one of the valid options.";
     handle_feedback ())
 
+(* PLATE MAKER ---------------------------------------------------------------
+   ---------------------------------------------------------------------------*)
+
+let custom_categorization dish_name dining_hall =
+  match dining_hall with
+  | "Morrison" -> [ dish_name; "None"; "N"; "N"; "Y"; "N"; "N" ]
+  | "North Star" -> [ dish_name; "None"; "N"; "N"; "N"; "Y"; "N" ]
+  | "Oakenshields" -> [ dish_name; "None"; "N"; "N"; "N"; "N"; "Y" ]
+  | _ -> [ dish_name; "None"; "N"; "N"; "Y"; "N"; "N" ]
+
+let rec make_plates () =
+  try
+    print_endline "What you like your plate to be named?\n";
+    let plate_name = read_line () in
+    if String.length plate_name = 0 then raise Missing_input
+    else
+      print_endline
+        "What dining hall are the contents of your plate built from?\n";
+    let user_dining_hall = read_line () in
+    let hall = check_user_spelling user_dining_hall dining_dict dining_dict in
+    if String.length hall = 0 then raise Missing_input
+    else print_endline "What was the main dish? Please input dish name or None.";
+    let user_main_dish = read_line () in
+    let main_dish_name =
+      check_user_spelling user_main_dish food_dict total_dict
+    in
+    print_endline "What was the side dish? Please input dish name or None.";
+    let user_side_dish = read_line () in
+    let side_dish_name =
+      check_user_spelling user_side_dish food_dict total_dict
+    in
+    print_endline
+      "What drink would you like to add? Please input drink or None.";
+    let user_drink = read_line () in
+    print_endline
+      "What protein would you like to add? Please input dish name or None";
+    let user_protein = read_line () in
+    let protein = check_user_spelling user_protein food_dict total_dict in
+    print_endline
+      "What dessert would you like to add? Please input dish name or None";
+    let user_dessert = read_line () in
+    print_endline "Do you have any additional comments?";
+    let user_comments = read_line () in
+    let out =
+      Csv.to_channel
+        (Out_channel.open_gen
+           [ Out_channel.Open_append ]
+           0 "./driver_data/userplates.csv")
+    in
+    let plate_obj =
+      [
+        plate_name;
+        hall;
+        user_comments;
+        user_drink;
+        main_dish_name;
+        protein;
+        side_dish_name;
+        user_dessert;
+      ]
+    in
+    Csv.output_record out plate_obj;
+    Csv.close_out out;
+    print_endline "Thank you for inputting your plate!"
+  with
+  | Invalid_input -> begin
+      print_endline "Sorry, please input a valid food item"
+    end
+  | Missing_input -> begin
+      print_endline "Sorry, you must provide an input for this."
+    end
+
+  
 (* DISPLAYS & INTERACTIONS
    ----------------------------------------------------------------------------*)
 
@@ -379,7 +459,13 @@ let () =
       print_endline
         (* TODO 2) Tuesday \n\ 3) Wednesday \n\ 4) Thursday \n\ 5) Friday \n\ 6)
            Saturday \n\ 7) Sunday \n\*)
-        "1) Monday";
+        "0) Sunday\n\
+         1) Monday\n\
+         2) Tuesday\n\
+         3) Wednesday\n\
+         4) Thursday\n\
+         5) Friday\n\
+         6) Saturday";
       let day_chosen = read_line () in
       let csv_file = finding_day day_chosen in
       let curated_menu = ref (make_menu csv_file) in
