@@ -23,6 +23,11 @@ let dining_dict = create_dictionary "./driver_data/diningdict.csv"
 let user_plates = Csv.load "./driver_data/userplates.csv"
 let all_dishes = make_menu "./driver_data/alldishes.csv"
 
+(**[exit] handles all cases for the user to exit the interface*)
+let exit () =
+  print_endline "Thank you for visiting!";
+  exit 0
+
 (* CURRENTLY SUPPORTED FILTERS AND OPERATIONS --------------------------------*)
 
 let all_supported_filters = !Options.get_all_filters
@@ -239,8 +244,9 @@ let make_rating () =
    the user wants.*)
 let rec retrieve_rating () =
   print_endline
-    "Please indicate the category of rating you would like to view: \n\ 
-    0) view rating for specific dish \n\
+    "Please indicate the category of rating you would like to view: \n\
+    \ \n\
+    \    0) view rating for specific dish \n\
     \ \n\
     \    1) view foods with specific rating \n\
     \ \n\
@@ -259,17 +265,18 @@ let rec retrieve_rating () =
           check_user_spelling user_input_dish food_dict total_dict
         in
         let dish_ratings = retrieve_ratings_name rating_file dish_name in
-        if dish_ratings = [] then print_endline "No ratings found for dish" else
-       print_endline (print_ratings dish_ratings)
+        if dish_ratings = [] then print_endline "No ratings found for dish"
+        else print_endline (print_ratings dish_ratings)
     (*user wants specific rating*)
     | "1" ->
         print_endline
           "Please enter in the rating number from 1-5 you would like to view";
         let number = read_line () in
         let rating = int_of_string number in
-        if rating < 1 || rating > 5 then raise (Illegal_rating rating) else 
-        let certain_rating = retrieve_ratings_int rating_file rating in
-        print_endline (print_ratings certain_rating)
+        if rating < 1 || rating > 5 then raise (Illegal_rating rating)
+        else
+          let certain_rating = retrieve_ratings_int rating_file rating in
+          print_endline (print_ratings certain_rating)
     (*user wants rating range*)
     | "2" ->
         print_endline
@@ -277,36 +284,46 @@ let rec retrieve_rating () =
           \          Please indicate the lower range of reviews (1-5):";
         let rating1 = int_of_string (read_line ()) in
         print_endline " Please indicate the upper range of reviews (1-5):";
-        let rating2 = int_of_string ( read_line ()) in
-        if rating1 > rating2 then raise (Illegal_rating 1) else 
-        let range_ratings =
-          retrieve_ratings_int_range rating_file ( rating1)
-            ( rating2)
-        in
-        print_endline (print_ratings range_ratings)
+        let rating2 = int_of_string (read_line ()) in
+        if rating1 > rating2 then raise (Illegal_rating 1)
+        else
+          let range_ratings =
+            retrieve_ratings_int_range rating_file rating1 rating2
+          in
+          print_endline (print_ratings range_ratings)
     (*user wants specific dining hall*)
     | "3" ->
         print_endline
           "Please enter in the dining hall name you would like to view";
         let hall = read_line () in
         let hall_ratings = retrieve_ratings_hall rating_file hall in
-        if hall_ratings = [] then print_endline "No ratings found for this hall" else
-        print_endline (print_ratings hall_ratings)
+        if hall_ratings = [] then print_endline "No ratings found for this hall"
+        else print_endline (print_ratings hall_ratings)
     | _ ->
         print_endline "Please choose only one of the above";
         retrieve_rating ()
-  with 
-  |Failure _ ->
-    print_endline "Please put in an integer";
-    retrieve_rating ()
-  |Invalid_input ->  begin print_endline "- Please put in a dish name - ";print_endline "";
-  retrieve_rating () end
-  | Illegal_rating 1 ->  begin print_endline " - Please make sure your range is valid - ";print_endline "";
-  retrieve_rating () end
+  with
+  | Failure _ ->
+      print_endline "Please put in an integer";
+      retrieve_rating ()
+  | Invalid_input -> begin
+      print_endline "- Please put in a dish name - ";
+      print_endline "";
+      retrieve_rating ()
+    end
+  | Illegal_rating 1 -> begin
+      print_endline " - Please make sure your range is valid - ";
+      print_endline "";
+      retrieve_rating ()
+    end
   | Illegal_rating rating -> begin
-    Printf.printf
-      "- Sorry, %d is not a valid input. Please enter a value between 0 and 5. - \n"
-      rating; print_endline ""; retrieve_rating () end 
+      Printf.printf
+        "- Sorry, %d is not a valid input. Please enter a value between 0 and \
+         5. - \n"
+        rating;
+      print_endline "";
+      retrieve_rating ()
+    end
 
 (**[handle_feedback] handles the different cases of giving or receiving feedback
    that the user may want. *)
@@ -546,7 +563,12 @@ let plate_access () =
     if user_input < 1 || user_input > num_option then raise Invalid_input
     else
       let plates_collection = plate_filtering user_input !array_of_plates in
-      plates_printing plates_collection
+      if plates_collection = [] then
+        print_endline "There were no plates satisfying your chosen attributes "
+      else begin
+        print_endline "Here are some users' saved plates!";
+        plates_printing plates_collection
+      end
   with
   | Failure _ ->
       print_endline "Please only input an integer for one of the above options"
@@ -569,6 +591,8 @@ let rec view_make_plate () =
 
 (* DISPLAYS & INTERACTIONS-----------------------------------------------------
    ----------------------------------------------------------------------------*)
+
+
 
 (**[print_by_dining_hall] prints the dining halls and the dishes they have that
    satisfies the user's needs.*)
@@ -637,13 +661,18 @@ let () =
     (*create an empty list list of food [food] display to user all the days they
       can choose from [food] gets loaded by the csv of the particular day.*)
     print_endline
-      "Would you like to filter menus, leave a rating, or view/create plates?";
+      "Would you like to view feedback/leave a rating, filter menus, \
+       view/create plates, or exit?";
     print_endline
-      "0) View feedback/Leave a rating\n1) View menus\n2) view/create plates ";
+      "1) View feedback/Leave a rating\n\
+       2) View menus\n\
+       3) View/Create plates\n\
+       4) Exit";
     let user_input = read_line () in
-    if user_input = "0" then handle_feedback ()
-    else if user_input = "2" then view_make_plate ()
-    else if user_input = "1" then begin
+    if user_input = "1" then handle_feedback ()
+    else if user_input = "3" then view_make_plate ()
+    else if user_input = "4" then exit ()
+    else if user_input = "2" then begin
       print_endline
         "Please choose what day you would like to see the menu for: ";
       print_endline " ";
