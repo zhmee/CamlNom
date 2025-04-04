@@ -239,7 +239,8 @@ let make_rating () =
    the user wants.*)
 let rec retrieve_rating () =
   print_endline
-    "inputs: 0) view rating for specific dish \n\
+    "Please indicate the category of rating you would like to view: \n\ 
+    0) view rating for specific dish \n\
     \ \n\
     \    1) view foods with specific rating \n\
     \ \n\
@@ -258,9 +259,8 @@ let rec retrieve_rating () =
           check_user_spelling user_input_dish food_dict total_dict
         in
         let dish_ratings = retrieve_ratings_name rating_file dish_name in
-        let found_ratings = print_ratings dish_ratings in
-        if String.length found_ratings = 0 then print_endline "No ratings found"
-        else print_endline (print_ratings dish_ratings)
+        if dish_ratings = [] then print_endline "No ratings found for dish" else
+       print_endline (print_ratings dish_ratings)
     (*user wants specific rating*)
     | "1" ->
         print_endline
@@ -292,9 +292,12 @@ let rec retrieve_rating () =
     | _ ->
         print_endline "Please choose only one of the above";
         retrieve_rating ()
-  with Failure _ ->
+  with 
+  |Failure _ ->
     print_endline "Please put in an integer";
     retrieve_rating ()
+  |Invalid_input ->  begin print_endline "Please put in a dish name";print_endline "";
+  retrieve_rating () end
 
 (**[handle_feedback] handles the different cases of giving or receiving feedback
    that the user may want. *)
