@@ -267,6 +267,7 @@ let rec retrieve_rating () =
           "Please enter in the rating number from 1-5 you would like to view";
         let number = read_line () in
         let rating = int_of_string number in
+        if rating < 1 || rating > 5 then raise (Illegal_rating rating) else 
         let certain_rating = retrieve_ratings_int rating_file rating in
         print_endline (print_ratings certain_rating)
     (*user wants rating range*)
@@ -274,12 +275,13 @@ let rec retrieve_rating () =
         print_endline
           "You have chosen to view reviews that fall between certain ratings: \n\
           \          Please indicate the lower range of reviews (1-5):";
-        let rating1 = read_line () in
+        let rating1 = int_of_string (read_line ()) in
         print_endline " Please indicate the upper range of reviews (1-5):";
-        let rating2 = read_line () in
+        let rating2 = int_of_string ( read_line ()) in
+        if rating1 > rating2 then raise (Illegal_rating 1) else 
         let range_ratings =
-          retrieve_ratings_int_range rating_file (int_of_string rating1)
-            (int_of_string rating2)
+          retrieve_ratings_int_range rating_file ( rating1)
+            ( rating2)
         in
         print_endline (print_ratings range_ratings)
     (*user wants specific dining hall*)
@@ -288,6 +290,7 @@ let rec retrieve_rating () =
           "Please enter in the dining hall name you would like to view";
         let hall = read_line () in
         let hall_ratings = retrieve_ratings_hall rating_file hall in
+        if hall_ratings = [] then print_endline "No ratings found for this hall" else
         print_endline (print_ratings hall_ratings)
     | _ ->
         print_endline "Please choose only one of the above";
@@ -296,8 +299,14 @@ let rec retrieve_rating () =
   |Failure _ ->
     print_endline "Please put in an integer";
     retrieve_rating ()
-  |Invalid_input ->  begin print_endline "Please put in a dish name";print_endline "";
+  |Invalid_input ->  begin print_endline "- Please put in a dish name - ";print_endline "";
   retrieve_rating () end
+  | Illegal_rating 1 ->  begin print_endline " - Please make sure your range is valid - ";print_endline "";
+  retrieve_rating () end
+  | Illegal_rating rating -> begin
+    Printf.printf
+      "- Sorry, %d is not a valid input. Please enter a value between 0 and 5. - \n"
+      rating; print_endline ""; retrieve_rating () end 
 
 (**[handle_feedback] handles the different cases of giving or receiving feedback
    that the user may want. *)
