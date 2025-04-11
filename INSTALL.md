@@ -8,6 +8,7 @@ Install the Csv package:
 $ opam update
 $ opam upgrade
 $ opam install csv
+$ opam install qcheck
 ```
 
 # Running the Program
