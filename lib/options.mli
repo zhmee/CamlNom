@@ -18,3 +18,7 @@ val days_of_week : (int * string) list
 (**[days_of_week] documents the conversion between [int] and [string] to convert
    days of the week, with 0 corresponding to "Sunday". This mirrors the
    implementation used by the Unix library*)
+
+val meal_types : (string * string list ref) list ref
+(**[meal_types] documents the types of meals (e.g. Lunch) that are offered at
+   each dining hall. *)

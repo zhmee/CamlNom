@@ -14,3 +14,5 @@ let days_of_week =
     (6, "Saturday");
     (7, "Sunday");
   ]
+
+let meal_types = []

@@ -78,14 +78,14 @@ let finding_category category =
 
 (**[finding_day] takes in the specific day's menu that the user wants and has
    the rest of the program parse accordingly.*)
-let finding_day day =
+let finding_day day hall meal =
   let now = localtime (time ()) in
   let date =
     mktime
       { now with tm_mday = now.tm_mday + (now.tm_wday - int_of_string day + 1) }
     |> snd
   in
-  let x = "./dining_data/" ^ formatted_day date ^ ".csv" in
+  let x = "./dining_data/" ^ hall ^ formatted_day date ^ meal ^ ".csv" in
   ();
   match day with
   | "0" -> "./driver_data/Sun.csv"
@@ -647,6 +647,41 @@ let rec prompter created_menu =
       prompter created_menu
     end
 
+let print_menu f lst =
+  List.iteri
+    (fun index item -> print_endline (string_of_int index ^ ") " ^ f item))
+    lst
+
+let menu_view () =
+  try
+    let check_valid_bounds index lst = index < List.length lst && index >= 0 in
+    let yield_value lst f =
+      print_menu f lst;
+      let index = read_int () in
+      if not (check_valid_bounds index lst) then
+        raise (Sys_error (string_of_int index))
+      else List.nth lst index
+    in
+    print_endline
+      "Please choose what day you would like to see the menu for: \n";
+    let day_chosen = yield_value Options.days_of_week snd |> fst in
+    print_endline
+      "Please choose which dining hall you'd like to view the menu for: \n";
+    let hall_chosen = yield_value !Options.halls Fun.id in
+
+    print_endline "Please choose a meal you'd like to view the menu for: \n";
+    let meal_chosen =
+      yield_value !(List.assoc hall_chosen !Options.meal_types) Fun.id
+    in
+    let csv_file = finding_day day_chosen hall_chosen meal_chosen in
+    let curated_menu = ref (make_menu csv_file) in
+
+    prompter curated_menu
+  with
+  | Sys_error x ->
+      print_endline (x ^ " is out of bounds for the required selection.")
+  | read_int -> print_endline "Please enter an integer. "
+
 let () =
   try
     (*create an empty list list of food [food] display to user all the days they
@@ -663,25 +698,7 @@ let () =
     if user_input = "1" then handle_feedback ()
     else if user_input = "3" then view_make_plate ()
     else if user_input = "4" then exit ()
-    else if user_input = "2" then begin
-      print_endline
-        "Please choose what day you would like to see the menu for: ";
-      print_endline " ";
-      print_endline
-        (* TODO 2) Tuesday \n\ 3) Wednesday \n\ 4) Thursday \n\ 5) Friday \n\ 6)
-           Saturday \n\ 7) Sunday \n\*)
-        "0) Sunday\n\
-         1) Monday\n\
-         2) Tuesday\n\
-         3) Wednesday\n\
-         4) Thursday\n\
-         5) Friday\n\
-         6) Saturday";
-      let day_chosen = read_line () in
-      let csv_file = finding_day day_chosen in
-      let curated_menu = ref (make_menu csv_file) in
-      prompter curated_menu
-    end
+    else if user_input = "2" then menu_view ()
     else raise Unknown_Correspondence
   with
   | Unknown_Correspondence ->
