@@ -25,13 +25,13 @@ let dining_dict = create_dictionary "./driver_data/diningdict.csv"
 let user_plates = Csv.load "./driver_data/userplates.csv"
 let all_dishes = make_menu "./driver_data/alldishes.csv"
 
+let formatted_day day =
+  string_of_int day.tm_year ^ string_of_int day.tm_mon
+  ^ string_of_int day.tm_mday
+
 let query hall meal day =
-  let format_date =
-    string_of_int day.tm_year ^ string_of_int day.tm_mon
-    ^ string_of_int day.tm_mday
-  in
-  if not (Sys.file_exists ("dining_data/" ^ hall ^ format_date ^ meal)) then
-    Fetch_data.fetch ()
+  if not (Sys.file_exists ("dining_data/" ^ hall ^ formatted_day day ^ meal))
+  then Fetch_data.fetch ()
   else ()
 
 (**[exit] handles all cases for the user to exit the interface*)
@@ -41,9 +41,9 @@ let exit () =
 
 (* CURRENTLY SUPPORTED FILTERS AND OPERATIONS --------------------------------*)
 
-let all_supported_filters = !Options.get_all_filters
-let user_filters = Options.get_all_filters
-let user_halls = Options.halls
+let all_supported_filters = ref !Options.get_all_filters
+let user_filters = ref !Options.get_all_filters
+let user_halls = ref !Options.halls
 
 (**[display_all_filters] takes in all the current available filters and prints
    each one.*)
@@ -71,16 +71,22 @@ let finding_category category =
   | "Italian" -> (1, "Italian")
   | "Vegetarian" -> (2, "Y")
   | "Vegan" -> (3, "Y")
-  (*TODO this is Morrison and Appel*)
-  | "Morrison" -> (4, "Y")
-  | "North Star" -> (5, "Y")
-  (*TODO this is okenshields*)
-  | "Okenshields" -> (6, "Y")
-  | _ -> raise Unknown_Correspondence
+  | x ->
+      let y = List.find_index (( = ) x) !Options.halls in
+      if Option.is_some y then (Option.get y + 4, "Y")
+      else raise Unknown_Correspondence
 
 (**[finding_day] takes in the specific day's menu that the user wants and has
    the rest of the program parse accordingly.*)
 let finding_day day =
+  let now = localtime (time ()) in
+  let date =
+    mktime
+      { now with tm_mday = now.tm_mday + (now.tm_wday - int_of_string day + 1) }
+    |> snd
+  in
+  let x = "./dining_data/" ^ formatted_day date ^ ".csv" in
+  ();
   match day with
   | "0" -> "./driver_data/Sun.csv"
   | "1" -> "./driver_data/Mon.csv"
@@ -90,6 +96,13 @@ let finding_day day =
   | "5" -> "./driver_data/Fri.csv"
   | "6" -> "./driver_data/Sat.csv"
   | _ -> raise Unknown_Correspondence
+
+let reset_filters_halls filter =
+  List.iter
+    (fun x ->
+      if x = filter then () else remove_hall x;
+      remove_item x)
+    !Options.halls
 
 (**[updating_filter_choices] removes from the possible choices displayed to the
    user all the conflicting options.*)
@@ -128,44 +141,16 @@ let updating_filter_choices input =
       remove_item "Vegan"
     end
   (*TODO this is Morrison and Appel*)
-  | "Morrison" -> begin
-      remove_item "Morrison";
-      remove_item "North Star";
-      remove_item "Oakenshields";
-      remove_hall "North Star";
-      remove_hall "Oakenshields"
-    end
-  | "North Star" -> begin
-      remove_item "Morrison";
-      remove_item "North Star";
-      remove_item "Oakenshields";
-      remove_hall "Morrison";
-      remove_hall "Oakenshields"
-    end
-  (*TODO this is okenshields*)
-  | "Okenshields" -> begin
-      remove_item "Morrison";
-      remove_item "North Star";
-      remove_item "Oakenshields";
-      remove_hall "North Star";
-      remove_hall "Morrison"
-    end
-  | _ -> print_endline "please input only one of the choices"
+  | x ->
+      if not (List.mem x !Options.halls) then
+        print_endline "please input only one of the choices"
+      else reset_filters_halls x
 
 (**[valid_choices] is an error checker that makes sure that the user input is
    one of the supports ones.*)
 let valid_choices input =
-  match input with
-  | "Asian" -> input
-  | "American" -> input
-  | "Mexican" -> input
-  | "Italian" -> input
-  | "Vegetarian" -> input
-  | "Vegan" -> input
-  | "Morrison" -> input
-  | "North Star" -> input
-  | "Okenshields" -> input
-  | _ -> raise Unknown_Correspondence
+  if List.mem input !Options.get_all_filters then input
+  else raise Unknown_Correspondence
 
 (* SPELLCHECKER ---------------------------------------------------------------
    ------------------------------------------------------------------------------*)
@@ -380,13 +365,24 @@ let printing_options_for_plates () =
 (**[custom_categorization] is to categorize dishes that are not yet known in the
    menus. *)
 let custom_categorization dish_name dining_hall =
+  let rec append_repeat n lst =
+    if n > 0 then
+      let x = "N" :: lst in
+      x
+    else lst
+  in
   if String.length dish_name = 0 then None
   else
-    match dining_hall with
-    | "Morrison" -> Some [ dish_name; "None"; "N"; "N"; "Y"; "N"; "N" ]
-    | "North Star" -> Some [ dish_name; "None"; "N"; "N"; "N"; "Y"; "N" ]
-    | "Oakenshields" -> Some [ dish_name; "None"; "N"; "N"; "N"; "N"; "Y" ]
-    | _ -> Some [ dish_name; "None"; "N"; "N"; "Y"; "N"; "N" ]
+    let base = [ dish_name; "None"; "N"; "N" ] in
+    let index_opt = List.find_index (( = ) dining_hall) !Options.halls in
+    if index_opt = None then
+      Some (append_repeat (List.length !Options.halls) base)
+    else
+      let index = Option.get index_opt in
+      Some
+        (append_repeat
+           (List.length !Options.halls - index - 1)
+           ("Y" :: append_repeat index base))
 
 let array_of_plates = ref []
 
@@ -535,10 +531,12 @@ let plate_filtering num all_plates =
       List.filter (fun plate -> List.mem "Italian" (cuisines plate)) all_plates
   | 5 -> List.filter is_vegetarian all_plates
   | 6 -> List.filter is_vegan all_plates
-  | 7 -> List.filter (fun plate -> hall plate = "Morrison") all_plates
-  | 8 -> List.filter (fun plate -> hall plate = "North Star") all_plates
-  | 9 -> List.filter (fun plate -> hall plate = "Oakenshields") all_plates
-  | _ -> all_plates
+  | x ->
+      if x - 7 > List.length !Options.halls then all_plates
+      else
+        List.filter
+          (fun plate -> hall plate = List.nth !Options.halls (x - 7))
+          all_plates
 
 (**[plates_printing] prints out all of the specified plates*)
 let plates_printing plates =
@@ -606,33 +604,17 @@ let rec view_make_plate () =
 (**[print_by_dining_hall] prints the dining halls and the dishes they have that
    satisfies the user's needs.*)
 let print_by_dining_hall filtered_list =
-  let new_morrison_menu = filter filtered_list (4, "Y") in
-  print_endline " ";
-  print_endline "Morrison Dining options -----------------";
-  print_endline " ";
-  if
-    length_of_menu new_morrison_menu = 0
-    || List.mem "Morrison" !user_halls = false
-  then print_endline "None"
-  else print_string (user_menu new_morrison_menu);
-  let new_north_menu = filter filtered_list (5, "Y") in
-  print_endline " ";
-  print_endline "North Star options ----------------------";
-  print_endline " ";
-  if
-    length_of_menu new_north_menu = 0
-    || List.mem "North Star" !user_halls = false
-  then print_endline "None"
-  else print_endline (user_menu new_north_menu);
-  let new_oak_menu = filter filtered_list (6, "Y") in
-  print_endline " ";
-  print_endline "Oakenshields options --------------------";
-  print_endline " ";
-  if
-    length_of_menu new_oak_menu = 0
-    || List.mem "Oakenshields" !user_halls = false
-  then print_endline "None"
-  else print_endline (user_menu new_oak_menu)
+  let print_hall hall =
+    let index = Option.get (List.find_index (( = ) hall) !Options.halls) in
+    let menu = filter filtered_list (index + 4, "Y") in
+    print_endline " ";
+    print_endline (hall ^ " options -----------------");
+    print_endline " ";
+    if length_of_menu menu = 0 || List.mem hall !user_halls = false then
+      print_endline "None"
+    else print_string (user_menu menu)
+  in
+  List.iter print_hall !Options.halls
 
 (**[prompter] continually prompts the user to add in more filter options if they
    way, or the user can choose to finish and see the foods they have chosen.*)
