@@ -4,6 +4,8 @@ open Final_project.Rating
 open Final_project.Options
 open Final_project.Dictionary
 open Final_project.Plates
+open Unix
+open Fetch_data
 
 (* EXCEPTIONS AND FILES USED -------------------------------------------------
    ------------------------------------------------------------------------------*)
@@ -22,6 +24,15 @@ let total_dict = create_dictionary "./data/dictionary.csv"
 let dining_dict = create_dictionary "./driver_data/diningdict.csv"
 let user_plates = Csv.load "./driver_data/userplates.csv"
 let all_dishes = make_menu "./driver_data/alldishes.csv"
+
+let query hall meal day =
+  let format_date =
+    string_of_int day.tm_year ^ string_of_int day.tm_mon
+    ^ string_of_int day.tm_mday
+  in
+  if not (Sys.file_exists ("dining_data/" ^ hall ^ format_date ^ meal)) then
+    Fetch_data.fetch ()
+  else ()
 
 (**[exit] handles all cases for the user to exit the interface*)
 let exit () =
@@ -591,8 +602,6 @@ let rec view_make_plate () =
 
 (* DISPLAYS & INTERACTIONS-----------------------------------------------------
    ----------------------------------------------------------------------------*)
-
-
 
 (**[print_by_dining_hall] prints the dining halls and the dishes they have that
    satisfies the user's needs.*)

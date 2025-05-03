@@ -1,4 +1,4 @@
-let halls = ref [ "Morrison"; "North Star"; "Oakenshields" ]
+let halls = ref []
 let dietary = ref [ "Vegetarian"; "Vegan" ]
 let cuisines = ref [ "Asian"; "American"; "Mexican"; "Italian" ]
 let get_all_filters = ref (!halls @ !dietary @ !cuisines)
