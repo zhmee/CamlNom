@@ -15,4 +15,4 @@ let days_of_week =
     (7, "Sunday");
   ]
 
-let meal_types = []
+let meal_types = ref []

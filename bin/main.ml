@@ -26,13 +26,11 @@ let user_plates = Csv.load "./driver_data/userplates.csv"
 let all_dishes = make_menu "./driver_data/alldishes.csv"
 
 let formatted_day day =
-  string_of_int day.tm_year ^ string_of_int day.tm_mon
+  string_of_int day.tm_year ^ "-" ^ string_of_int day.tm_mon ^ "-"
   ^ string_of_int day.tm_mday
 
-let query hall meal day =
-  if not (Sys.file_exists ("dining_data/" ^ hall ^ formatted_day day ^ meal))
-  then Fetch_data.fetch ()
-  else ()
+let query file_name =
+  if not (Sys.file_exists file_name) then Fetch_data.fetch () else ()
 
 (**[exit] handles all cases for the user to exit the interface*)
 let exit () =
@@ -82,11 +80,11 @@ let finding_day day hall meal =
   let now = localtime (time ()) in
   let date =
     mktime
-      { now with tm_mday = now.tm_mday + (now.tm_wday - int_of_string day + 1) }
+      { now with tm_mday = now.tm_mday - (now.tm_wday - int_of_string day) }
     |> snd
   in
   let x = "./dining_data/" ^ hall ^ formatted_day date ^ meal ^ ".csv" in
-  ();
+  query x;
   match day with
   | "0" -> "./driver_data/Sun.csv"
   | "1" -> "./driver_data/Mon.csv"
@@ -673,7 +671,9 @@ let menu_view () =
     let meal_chosen =
       yield_value !(List.assoc hall_chosen !Options.meal_types) Fun.id
     in
-    let csv_file = finding_day day_chosen hall_chosen meal_chosen in
+    let csv_file =
+      finding_day (string_of_int day_chosen) hall_chosen meal_chosen
+    in
     let curated_menu = ref (make_menu csv_file) in
 
     prompter curated_menu
