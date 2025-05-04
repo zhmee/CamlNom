@@ -25,10 +25,15 @@ let dining_dict = create_dictionary "./driver_data/diningdict.csv"
 let user_plates = Csv.load "./driver_data/userplates.csv"
 let all_dishes = !Options.recipe_book
 
-let formatted_day day =
-  string_of_int day.tm_year ^ "-" ^ string_of_int day.tm_mon ^ "-"
-  ^ string_of_int day.tm_mday
+(**[formatted_day day] takes in a day of type [Unix.tm] and returns it in
+   YYYY-MM-DD form. *)
+let formatted_day (day : tm) =
+  Printf.(
+    sprintf "%04d" (day.tm_year + 1900)
+    ^ "-" ^ sprintf "%02d" day.tm_mon ^ "-" ^ sprintf "%02d" day.tm_mday)
 
+(**[query file_name] verifies whether the file [file_name] exists. If not, the
+   data representing the current week's dining menu is updated. *)
 let query file_name =
   if not (Sys.file_exists file_name) then Fetch_data.fetch () else ()
 

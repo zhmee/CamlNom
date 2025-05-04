@@ -89,8 +89,12 @@ module Fetch_data = struct
      restrictions and cuisine. If [recipe] is not an existing recipe in
      [Options.recipes] then a new recipe card is added. *)
   let pull_specific_data recipe =
-    if mem recipe !recipes then () else recipes := BatSet.add recipe !recipes;
-    recipe_book := add_recipe !recipe_book (new_recipe recipe)
+    if mem recipe !recipes then ()
+    else (
+      recipes := BatSet.add recipe !recipes;
+      let c = new_recipe recipe in
+      recipe_book := add_recipe !recipe_book c;
+      List.iter print_string c)
 
   (**[create_meal name date meal] creates the csv file corresponding to a
      singular meal (e.g. Lunch or Dinner) at the dining hall with name [name] on
@@ -110,6 +114,10 @@ module Fetch_data = struct
     let csv_file =
       Final_project.Dining.find_recipes !recipe_list !recipe_book
     in
+    BatSet.iter print_endline !recipe_list;
+    print_endline "HERE";
+    print_endline (string_of_menu !recipe_book);
+
     let file_name = "dining_data/" ^ name ^ date ^ meal_name ^ ".csv" in
     save_menu csv_file file_name;
 
@@ -152,7 +160,10 @@ module Fetch_data = struct
   let fill_master_list () =
     let master_file_name = master_file_name in
     recipe_book := make_menu master_file_name;
-    ()
+    print_endline (string_of_menu !recipe_book);
+    List.iter
+      (fun row -> recipes := BatSet.add (List.hd row) !recipes)
+      (to_csv !recipe_book)
 
   (**[fetch ()] updates the directory [./dining_data], which contains updated
      information on the menus in each dining hall. *)

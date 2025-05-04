@@ -79,3 +79,5 @@ let add_recipe menu recipe = recipe :: menu
 
 let find_recipes recipe_list recipe_book =
   List.filter (fun row -> BatSet.mem (List.hd row) recipe_list) recipe_book
+
+let to_csv = Fun.id

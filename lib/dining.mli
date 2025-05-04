@@ -40,5 +40,8 @@ val find_recipes : string BatSet.t -> t -> t
    of [recipe_list] have a corresponding [recipe_book] entry, but not
    necessarily vice versa. *)
 
+val to_csv : t -> Csv.t
+(**[to_csv] returns a [Csv.t] representation of the dining menu. *)
+
 exception Invalid_Csv of string
 (**Raised when the csv input is not rectangular*)
