@@ -16,3 +16,6 @@ let days_of_week =
   ]
 
 let meal_types = ref []
+let master_file_name = "./driver_data/recipe_book.csv"
+let recipe_book = ref Dining.empty
+let recipes = ref BatSet.empty

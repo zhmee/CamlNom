@@ -23,7 +23,7 @@ let food_dict = create_dictionary "./driver_data/fooddict.csv"
 let total_dict = create_dictionary "./data/dictionary.csv"
 let dining_dict = create_dictionary "./driver_data/diningdict.csv"
 let user_plates = Csv.load "./driver_data/userplates.csv"
-let all_dishes = make_menu "./driver_data/alldishes.csv"
+let all_dishes = !Options.recipe_book
 
 let formatted_day day =
   string_of_int day.tm_year ^ "-" ^ string_of_int day.tm_mon ^ "-"
@@ -83,18 +83,15 @@ let finding_day day hall meal =
       { now with tm_mday = now.tm_mday - (now.tm_wday - int_of_string day) }
     |> snd
   in
-  let x = "./dining_data/" ^ hall ^ formatted_day date ^ meal ^ ".csv" in
-  query x;
-  match day with
-  | "0" -> "./driver_data/Sun.csv"
-  | "1" -> "./driver_data/Mon.csv"
-  | "2" -> "./driver_data/Tues.csv"
-  | "3" -> "./driver_data/Wed.csv"
-  | "4" -> "./driver_data/Thurs.csv"
-  | "5" -> "./driver_data/Fri.csv"
-  | "6" -> "./driver_data/Sat.csv"
-  | _ -> raise Unknown_Correspondence
+  let file_name =
+    "./dining_data/" ^ hall ^ formatted_day date ^ meal ^ ".csv"
+  in
+  query file_name;
+  file_name
 
+(**[reset_filters_halls filter] removes all fitlers except the one hall
+   specified. Requires: [filter] is one of the filters specified in
+   Options.halls*)
 let reset_filters_halls filter =
   List.iter
     (fun x ->
@@ -645,11 +642,15 @@ let rec prompter created_menu =
       prompter created_menu
     end
 
+(**[print_menu f lst] is a function that prints out a numerical list of options
+   for a user to view. [f] is an argument that allows the function to print out
+   the options, in the case that they are not of type [string]. *)
 let print_menu f lst =
   List.iteri
     (fun index item -> print_endline (string_of_int index ^ ") " ^ f item))
     lst
 
+(**[menu_view] handles the user path where the user chooses to view a menu. *)
 let menu_view () =
   try
     let check_valid_bounds index lst = index < List.length lst && index >= 0 in
@@ -661,13 +662,13 @@ let menu_view () =
       else List.nth lst index
     in
     print_endline
-      "Please choose what day you would like to see the menu for: \n";
+      "\nPlease choose what day you would like to see the menu for: \n";
     let day_chosen = yield_value Options.days_of_week snd |> fst in
     print_endline
-      "Please choose which dining hall you'd like to view the menu for: \n";
+      "\nPlease choose which dining hall you'd like to view the menu for: \n";
     let hall_chosen = yield_value !Options.halls Fun.id in
 
-    print_endline "Please choose a meal you'd like to view the menu for: \n";
+    print_endline "\nPlease choose a meal you'd like to view the menu for: \n";
     let meal_chosen =
       yield_value !(List.assoc hall_chosen !Options.meal_types) Fun.id
     in
@@ -683,26 +684,29 @@ let menu_view () =
   | read_int -> print_endline "Please enter an integer. "
 
 let () =
-  try
-    (*create an empty list list of food [food] display to user all the days they
-      can choose from [food] gets loaded by the csv of the particular day.*)
-    print_endline
-      "Would you like to view feedback/leave a rating, filter menus, \
-       view/create plates, or exit?";
-    print_endline
-      "1) View feedback/Leave a rating\n\
-       2) View menus\n\
-       3) View/Create plates\n\
-       4) Exit";
-    let user_input = read_line () in
-    if user_input = "1" then handle_feedback ()
-    else if user_input = "3" then view_make_plate ()
-    else if user_input = "4" then exit ()
-    else if user_input = "2" then menu_view ()
-    else raise Unknown_Correspondence
-  with
+  (try
+     Fetch_data.fetch ();
+     (*create an empty list list of food [food] display to user all the days
+       they can choose from [food] gets loaded by the csv of the particular
+       day.*)
+     print_endline
+       "Would you like to view feedback/leave a rating, filter menus, \
+        view/create plates, or exit?";
+     print_endline
+       "1) View feedback/Leave a rating\n\
+        2) View menus\n\
+        3) View/Create plates\n\
+        4) Exit";
+     let user_input = read_line () in
+     if user_input = "1" then handle_feedback ()
+     else if user_input = "3" then view_make_plate ()
+     else if user_input = "4" then exit ()
+     else if user_input = "2" then menu_view ()
+     else raise Unknown_Correspondence
+   with
   | Unknown_Correspondence ->
       print_endline "please input only one of the choices"
   | Invalid_Csv "Invalid CSV format" -> print_endline "Invalid CSV format"
   | Failure _ -> print_endline "please input one of the choices"
-  | Sys_error _ -> print_endline "please input a number for your selection"
+  | Sys_error _ -> print_endline "please input a number for your selection");
+  save_menu all_dishes Options.master_file_name

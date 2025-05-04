@@ -6,6 +6,8 @@ type t = string list list
 
 exception Invalid_Csv of string
 
+let empty = []
+
 (**[check m f h a] is the helper for filter' to either append [h] to [acc] or
    return only [acc]*)
 let check m f h acc = if m = snd f then h :: acc else acc
@@ -68,7 +70,12 @@ let rec user_menu m =
 let length_of_menu (menu : string list list) = List.length menu
 
 let list_of_menu (filtered_menu : t) =
-   match filtered_menu with
-   | [] -> [] 
-   | h::_ -> h 
- 
+  match filtered_menu with
+  | [] -> []
+  | h :: _ -> h
+
+let save_menu menu file_name = Csv.save file_name menu
+let add_recipe menu recipe = recipe :: menu
+
+let find_recipes recipe_list recipe_book =
+  List.filter (fun row -> BatSet.mem (List.hd row) recipe_list) recipe_book

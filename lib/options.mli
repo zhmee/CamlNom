@@ -22,3 +22,14 @@ val days_of_week : (int * string) list
 val meal_types : (string * string list ref) list ref
 (**[meal_types] documents the types of meals (e.g. Lunch) that are offered at
    each dining hall. *)
+
+val recipe_book : Dining.t ref
+(**[recipe_book] keeps track of the different dishes offered by Cornell Dining,
+   in a master list of sorts. *)
+
+val master_file_name : string
+(**[master_file_name] stores the name of the file that contains the recipe_book.
+*)
+
+val recipes : string BatSet.t ref
+(**[recipes] stores all possible meals made by Cornell Dining. *)
