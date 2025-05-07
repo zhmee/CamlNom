@@ -26,6 +26,10 @@ module Fetch_data = struct
      offered at each eatery around campus, in the form of an association list.*)
   let meals = ref []
 
+  (**[queries] keeps track of the recipes at each dining hall at each meal, to
+     query later. *)
+  let queries = ref []
+
   (**[get_site] webscrapes the data containing the menu information from the
      Cornell Open Data Project.*)
   let get_site =
@@ -93,8 +97,7 @@ module Fetch_data = struct
     else (
       recipes := BatSet.add recipe !recipes;
       let c = new_recipe recipe in
-      recipe_book := add_recipe !recipe_book c;
-      List.iter print_string c)
+      recipe_book := add_recipe !recipe_book c)
 
   (**[create_meal name date meal] creates the csv file corresponding to a
      singular meal (e.g. Lunch or Dinner) at the dining hall with name [name] on
@@ -111,19 +114,25 @@ module Fetch_data = struct
       menu;
     if BatSet.is_empty !recipe_list then ()
     else BatSet.iter pull_specific_data !recipe_list;
-    let csv_file =
-      Final_project.Dining.find_recipes !recipe_list !recipe_book
-    in
-    BatSet.iter print_endline !recipe_list;
-    print_endline "HERE";
-    print_endline (string_of_menu !recipe_book);
 
     let file_name = "dining_data/" ^ name ^ date ^ meal_name ^ ".csv" in
-    save_menu csv_file file_name;
+    queries := (file_name, recipe_list) :: !queries;
 
     data_halls := add name !data_halls;
     let hall_meals = BatList.assoc name !meals in
     hall_meals := add meal_name !hall_meals
+
+  (**[save_all meal_lst] takes the association [meal_list] (which contains a
+     file name as the key and a set with the relevant recipe names as the value)
+     and creates files for every element of the list*)
+  let save_all meal_lst =
+    List.iter
+      (fun (file_name, recipes) ->
+        let csv_file =
+          Final_project.Dining.find_recipes !recipes !recipe_book
+        in
+        save_menu csv_file file_name)
+      meal_lst
 
   (**[day_csv name day_menu] creates the CSV files corresponding to a singular
      day at the hall specified by [name]. Requires: [day_menu] is a JSON with
@@ -160,7 +169,6 @@ module Fetch_data = struct
   let fill_master_list () =
     let master_file_name = master_file_name in
     recipe_book := make_menu master_file_name;
-    print_endline (string_of_menu !recipe_book);
     List.iter
       (fun row -> recipes := BatSet.add (List.hd row) !recipes)
       (to_csv !recipe_book)
@@ -186,5 +194,6 @@ module Fetch_data = struct
       List.map
         (fun (hall_name, hall_meals) ->
           (hall_name, ref (BatSet.to_list !hall_meals)))
-        !meals
+        !meals;
+    save_all !queries
 end
