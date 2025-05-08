@@ -44,8 +44,8 @@ let exit () =
 
 (* CURRENTLY SUPPORTED FILTERS AND OPERATIONS --------------------------------*)
 
-let all_supported_filters = ref !Options.get_all_filters
-let user_filters = ref !Options.get_all_filters
+let all_supported_filters = ref !(Options.get_all_filters ())
+let user_filters = ref !(Options.get_all_filters ())
 let user_halls = ref !Options.halls
 
 (**[display_all_filters] takes in all the current available filters and prints
@@ -149,7 +149,7 @@ let updating_filter_choices input =
 (**[valid_choices] is an error checker that makes sure that the user input is
    one of the supports ones.*)
 let valid_choices input =
-  if List.mem input !Options.get_all_filters then input
+  if List.mem input !(Options.get_all_filters ()) then input
   else raise Unknown_Correspondence
 
 (* SPELLCHECKER ---------------------------------------------------------------
@@ -689,29 +689,27 @@ let menu_view () =
   | read_int -> print_endline "Please enter an integer. "
 
 let () =
-  (try
-     Fetch_data.fetch ();
-     (*create an empty list list of food [food] display to user all the days
-       they can choose from [food] gets loaded by the csv of the particular
-       day.*)
-     print_endline
-       "Would you like to view feedback/leave a rating, filter menus, \
-        view/create plates, or exit?";
-     print_endline
-       "1) View feedback/Leave a rating\n\
-        2) View menus\n\
-        3) View/Create plates\n\
-        4) Exit";
-     let user_input = read_line () in
-     if user_input = "1" then handle_feedback ()
-     else if user_input = "3" then view_make_plate ()
-     else if user_input = "4" then exit ()
-     else if user_input = "2" then menu_view ()
-     else raise Unknown_Correspondence
-   with
+  try
+    Fetch_data.fetch ();
+    (*create an empty list list of food [food] display to user all the days they
+      can choose from [food] gets loaded by the csv of the particular day.*)
+    print_endline
+      "Would you like to view feedback/leave a rating, filter menus, \
+       view/create plates, or exit?";
+    print_endline
+      "1) View feedback/Leave a rating\n\
+       2) View menus\n\
+       3) View/Create plates\n\
+       4) Exit";
+    let user_input = read_line () in
+    if user_input = "1" then handle_feedback ()
+    else if user_input = "3" then view_make_plate ()
+    else if user_input = "4" then exit ()
+    else if user_input = "2" then menu_view ()
+    else raise Unknown_Correspondence
+  with
   | Unknown_Correspondence ->
       print_endline "please input only one of the choices"
   | Invalid_Csv "Invalid CSV format" -> print_endline "Invalid CSV format"
   | Failure _ -> print_endline "please input one of the choices"
-  | Sys_error _ -> print_endline "please input a number for your selection");
-  save_menu all_dishes Options.master_file_name
+  | Sys_error _ -> print_endline "please input a number for your selection"

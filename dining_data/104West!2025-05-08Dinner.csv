@@ -1,3 +1,16 @@
-Hot & Cold Beverages,None,Y,Y,N,Y,N
-Salad Bar,None,Y,Y,N,Y,N
-Hot & Cold Beverages,None,Y,Y,N,Y,N
+Recipe,Cuisine,Vegetarian,Vegan,104West!
+Coleslaw,Polish,N,N,Y
+Tuna Salad,None,N,N,Y
+Steamed Rice Basmati,Indian,Y,Y,Y
+Steamed Edamame,None,Y,Y,Y
+Spicy Tahini Sauce,Mediterranean,Y,Y,Y
+Sauteed Zucchini,None,Y,Y,Y
+Salad Bar,None,Y,Y,Y
+Pita,Mediterranean,Y,Y,Y
+Fresh Cut Fruit,None,Y,Y,Y
+Falafel Balls,Mediterranean,Y,Y,Y
+"Cookies, Cakes & Desserts",Dessert,Y,Y,Y
+Chickpea Provencale,French,Y,Y,Y
+Chicken Shawarma,Middle Eastern,N,N,Y
+BBQ Beef Sandwiches,American,N,N,Y
+Hot & Cold Beverages,None,Y,Y,N

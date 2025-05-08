@@ -10,8 +10,8 @@ val dietary : string list ref
 (**[dietary] keeps track of the different dietary restrictions that are
    supported by this project. *)
 
-val get_all_filters : string list ref
-(**[get_all_filters] returns a comprehensive list of all the filters that are
+val get_all_filters : unit -> string list ref
+(**[get_all_filters ()] returns a comprehensive list of all the filters that are
    supported by this project. *)
 
 val days_of_week : (int * string) list
@@ -33,3 +33,6 @@ val master_file_name : string
 
 val recipes : string BatSet.t ref
 (**[recipes] stores all possible meals made by Cornell Dining. *)
+
+val meats : string list
+(**[meats] keeps track of the different meats that are used by Cornell Dining.*)

@@ -1,7 +1,7 @@
 let halls = ref []
 let dietary = ref [ "Vegetarian"; "Vegan" ]
 let cuisines = ref [ "Asian"; "American"; "Mexican"; "Italian" ]
-let get_all_filters = ref (!halls @ !dietary @ !cuisines)
+let get_all_filters () = ref (!halls @ !dietary @ !cuisines)
 
 let days_of_week =
   [
@@ -19,3 +19,17 @@ let meal_types = ref []
 let master_file_name = "./driver_data/recipe_book.csv"
 let recipe_book = ref Dining.empty
 let recipes = ref BatSet.empty
+
+let meats =
+  [
+    "Beef";
+    "Chicken";
+    "Tuna";
+    "Egg";
+    "Pork";
+    "Salmon";
+    "Lamb";
+    "Fish";
+    "Bacon";
+    "Ham";
+  ]
