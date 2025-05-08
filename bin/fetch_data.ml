@@ -59,7 +59,6 @@ module Fetch_data = struct
       List.iter
         (fun item ->
           let recipe = item |> member "item" |> to_string in
-          print_endline recipe;
           recipe_list := add recipe !recipe_list)
         items
 
@@ -109,16 +108,11 @@ module Fetch_data = struct
      information, such as dietary restrictions and cuisine. If [recipe] is not
      an existing recipe in [Options.recipes] then a new recipe card is added. *)
   let pull_specific_data headers orig_headers hall recipe =
-    recipe_book_adj :=
-      !recipe_book_adj |> to_adjustable_csv |> List.tl |> from_adjustable_csv;
     if BatSet.mem recipe !recipes then ()
     else (
       recipes := BatSet.add recipe !recipes;
       let c = new_recipe recipe headers hall in
-      recipe_book_adj := add_adjustable !recipe_book_adj c;
-      print_endline "updated: ";
-      Csv.print_readable
-        (!headers :: (from_adjustable !recipe_book_adj |> to_csv)))
+      recipe_book_adj := add_adjustable !recipe_book_adj c)
 
   (**[create_meal name date meal headers] creates the csv file corresponding to
      a singular meal (e.g. Lunch or Dinner) at the dining hall with name [name]
@@ -153,6 +147,8 @@ module Fetch_data = struct
      contains a file name as the key and a set with the relevant recipe names as
      the value) and creates files for every element of the list*)
   let save_all meal_lst headers =
+    recipe_book_adj :=
+      !recipe_book_adj |> to_adjustable_csv |> List.tl |> from_adjustable_csv;
     List.iter
       (fun (file_name, (hall, recipes)) ->
         BatSet.String.iter
@@ -164,6 +160,7 @@ module Fetch_data = struct
           Final_project.Dining.find_recipes !recipes
             (!recipe_book_adj |> from_adjustable)
         in
+        List.iter print_endline !headers;
         save_menu csv_file headers file_name)
       meal_lst
 
@@ -211,10 +208,11 @@ module Fetch_data = struct
       (!recipe_book_adj |> to_adjustable_csv |> List.tl);
     headers := !recipe_book_adj |> to_adjustable_csv |> List.hd |> Array.to_list
 
-  let write_master_list () =
+  let write_master_list headers () =
     Csv.save master_file_name
-      (Final_project.Dining.from_adjustable !recipe_book_adj
-      |> Final_project.Dining.to_csv)
+      (!headers
+      :: (Final_project.Dining.from_adjustable !recipe_book_adj
+         |> Final_project.Dining.to_csv))
 
   (**[fetch ()] updates the directory [./dining_data], which contains updated
      information on the menus in each dining hall. *)
@@ -240,5 +238,5 @@ module Fetch_data = struct
           (hall_name, ref (BatSet.String.to_list !hall_meals)))
         !meals;
     save_all !queries headers;
-    write_master_list ()
+    write_master_list headers ()
 end
