@@ -103,12 +103,35 @@ module Fetch_data = struct
       (List.tl !headers);
     !specs
 
+  let check_halls headers hall recipe =
+    let index = List.find_index (( = ) hall) !headers |> Option.get in
+    let spec_row =
+      List.find
+        (fun row -> row.(0) = recipe)
+        (!recipe_book_adj |> to_adjustable_csv)
+    in
+    if spec_row.(index) <> "Y" then spec_row.(index) <- "Y"
+
+  let add_halls headers hall recipe =
+    recipe_book_adj :=
+      List.map
+        (fun row ->
+          if row.(0) = recipe then Array.append row [| "Y" |]
+          else Array.append row [| "N" |])
+        (!recipe_book_adj |> to_adjustable_csv)
+      |> from_adjustable_csv
+
   (**[pull_specific_data headers orig_headers hall recipe ] takes the recipe
      with name [recipe] and returns the [list] containing the specific
      information, such as dietary restrictions and cuisine. If [recipe] is not
      an existing recipe in [Options.recipes] then a new recipe card is added. *)
   let pull_specific_data headers orig_headers hall recipe =
-    if BatSet.mem recipe !recipes then ()
+    if BatSet.mem recipe !recipes then
+      if
+        List.length !headers
+        > (!recipe_book_adj |> to_adjustable_csv |> List.hd |> Array.length)
+      then add_halls headers hall recipe
+      else check_halls headers hall recipe
     else (
       recipes := BatSet.add recipe !recipes;
       let c = new_recipe recipe headers hall in
