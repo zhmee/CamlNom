@@ -1,16 +1,16 @@
-Recipe,Cuisine,Vegetarian,Vegan,104West!,Morrison
-Coleslaw,Polish,N,N,Y,N
-Tuna Salad,None,N,N,Y,N
-Steamed Rice Basmati,Indian,Y,Y,Y,N
-Steamed Edamame,None,Y,Y,Y,N
-Spicy Tahini Sauce,Mediterranean,Y,Y,Y,N
-Sauteed Zucchini,None,Y,Y,Y,N
-Salad Bar,None,Y,Y,Y,N
-Pita,Mediterranean,Y,Y,Y,N
-Fresh Cut Fruit,None,Y,Y,Y,N
-Falafel Balls,Mediterranean,Y,Y,Y,N
-"Cookies, Cakes & Desserts",Dessert,Y,Y,Y,N
-Chickpea Provencale,French,Y,Y,Y,N
-Chicken Shawarma,Middle Eastern,N,N,Y,N
-BBQ Beef Sandwiches,American,N,N,Y,Y
-Hot & Cold Beverages,None,Y,Y,Y,N
+Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
+Coleslaw,Polish,N,N,N,Y
+Tuna Salad,None,N,N,N,Y
+Steamed Rice Basmati,Indian,Y,Y,N,Y,N,N,Y
+Steamed Edamame,None,Y,Y,N,Y
+Spicy Tahini Sauce,Mediterranean,Y,Y,N,Y
+Sauteed Zucchini,None,Y,Y,N,Y
+Salad Bar,None,Y,Y,N,Y,N,N,N,Y
+Pita,Mediterranean,Y,Y,N,Y,N,N,N,N,N,N,Y
+Fresh Cut Fruit,None,Y,Y,N,Y
+Falafel Balls,Mediterranean,Y,Y,N,Y
+"Cookies, Cakes & Desserts",Dessert,Y,Y,N,Y
+Chickpea Provencale,French,Y,Y,N,Y
+Chicken Shawarma,Middle Eastern,N,N,N,Y
+BBQ Beef Sandwiches,American,N,N,N,Y
+Hot & Cold Beverages,None,Y,Y,N,Y,N,N,N,Y

@@ -1,7 +1,7 @@
 open Csv
 
 type t = string list list
-type v = string array list
+type v = string array array
 (*AF: Type [t] represents a shared menu across all the dining halls on campus; the string list [a1;a2;...;an] element of [t] represents the food item with name = a1, vegetarian = a2, vegan = a3, and, so on, with each list index corresponding to a restriction.  Type [v] represents an adjustable version of type [t], allowing for additional columns and entries*)
 (*RI: each element of [t] has the same length. Moreover, each equal-numbered index of each element (e.g. the first element of the first list and the first element of the second list) must correspond to the same category (e.g. name). *)
 
@@ -51,7 +51,8 @@ let make_menu c = Csv.load c
 
 (**[make_adjustable_menu c] takes the file path [c] and converts it to an
    adjustable menu. *)
-let make_adjustable_menu c = List.map Array.of_list (Csv.load c)
+let make_adjustable_menu c =
+  List.map Array.of_list (Csv.load c) |> Array.of_list
 
 (**[string_of_list m acc] is the string consisting of the elements in [m]
    appended to [acc]. Requires [m] is a string list*)
@@ -81,7 +82,7 @@ let list_of_menu (filtered_menu : t) =
 
 let save_menu menu headers file_name = Csv.save file_name (!headers :: menu)
 let add_recipe menu recipe = recipe :: menu
-let add_adjustable menu recipe = recipe :: menu
+let add_adjustable menu recipe = Array.append [| recipe |] menu
 
 let find_recipes recipe_list recipe_book =
   List.filter
@@ -90,7 +91,7 @@ let find_recipes recipe_list recipe_book =
 
 let to_csv = Fun.id
 let from_csv = Fun.id
-let to_adjustable = List.map Array.of_list
-let from_adjustable = List.map Array.to_list
+let to_adjustable menu = List.map Array.of_list menu |> Array.of_list
+let from_adjustable menu = Array.map Array.to_list menu |> Array.to_list
 let to_adjustable_csv = Fun.id
 let from_adjustable_csv = Fun.id

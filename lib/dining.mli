@@ -69,10 +69,10 @@ exception Invalid_Csv of string
 val add_adjustable : v -> string array -> v
 (**[add_adjustable]*)
 
-val to_adjustable_csv : v -> string array list
+val to_adjustable_csv : v -> string array array
 (**[to_adjustable_csv] takes in an adjustable menu and returns a horizontally
    adjustable csv.*)
 
-val from_adjustable_csv : string array list -> v
+val from_adjustable_csv : string array array -> v
 (**[from_adjustable_csv] takes in a horizontally adjustable csv and returns an
    adjustable menu. *)

@@ -1,0 +1,22 @@
+Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
+"Vegetable Pasta Bake ",Italian,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
+Unbreaded Baked Chicken Parmesan,Italian,N,N,N,N,N,N,Y,N,N,N,N,N,N
+Steamed Plain Bao Bun,Chinese,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
+Sliced Cucumbers,None,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
+Sauteed Yellow Squash,None,Y,Y,N,Y,N,N,Y,N,N,N,N,N,N
+House Made Kimchi,Korean,N,N,N,N,N,N,Y,N,N,N,N,N,N
+Hoisin Sauce,Chinese,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
+Bacon,None,N,N,N,N,N,N,Y,N,N,N,N,N,N
+Broccoli Cheddar Soup,None,Y,N,N,N,N,N,Y,N,N,N,N,N,N
+Fresh Fruit Salad,None,Y,Y,N,N,N,N,Y,Y,N,N,Y,N,N
+Roasted Cauliflower,Indian,Y,Y,N,N,N,N,Y,Y,N,N,Y,N,N
+Lunch Sweets & Treats,Dessert,N,N,Y,N,N,N,Y
+Hot & Cold Beverage Service,None,Y,Y,Y,N,N,N,Y
+Healthy Style Salad Station,None,Y,Y,Y,N,N,N,Y,Y
+Cornell Dairy Yogurt,None,Y,N,Y,N,N,N,Y,Y,N,N,Y
+Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,N,N,Y,Y,N,N,Y
+Fresh Whole Fruit,None,Y,Y,Y,N,N,N,Y,Y,N,N,Y
+Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,N,N,Y,Y
+Cornell Dairy Ice Cream,None,Y,N,Y
+Cornell Dairy Ice Cream,Dessert,Y,N,Y
+Waffle Bar,None,N,N,Y,Y,N,N,Y,N,N,N,Y

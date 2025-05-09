@@ -85,13 +85,21 @@ module Fetch_data = struct
           specs := Array.append !specs [| input |];
           if not (List.mem input !cuisines) then cuisines := input :: !cuisines
           else ())
-        else if contains recipe filter then
-          specs := Array.append !specs [| "Y" |]
+        else if contains recipe filter then (
+          print_endline (filter ^ " found");
+          specs := Array.append !specs [| "Y" |])
         else if
           (filter = "Vegan" || filter = "Vegetarian")
           && List.exists (contains recipe) Final_project.Options.meats
-        then specs := Array.append !specs [| "Y" |]
-        else if filter = hall then specs := Array.append !specs [| "Y" |]
+        then (
+          print_endline "found meat";
+          specs := Array.append !specs [| "N" |])
+        else if filter = hall then (
+          print_endline ("marking " ^ filter ^ " as Y");
+          specs := Array.append !specs [| "Y" |])
+        else if List.mem filter !Final_project.Options.halls then (
+          print_endline ("marking " ^ filter ^ " as N");
+          specs := Array.append !specs [| "N" |])
         else (
           print_endline ("Does the label \"" ^ filter ^ "\" apply? (Y/N)");
           let input = read_line () in
@@ -99,37 +107,57 @@ module Fetch_data = struct
             specs := Array.append !specs [| input |]
           else (
             print_endline "Illegal input entered. A \"N\" is assumed.";
-            specs := Array.append !specs [| input |])))
+            specs := Array.append !specs [| "N" |])))
       (List.tl !headers);
     !specs
 
-  let check_halls headers hall recipe =
-    let index = List.find_index (( = ) hall) !headers |> Option.get in
-    let spec_row =
-      List.find
-        (fun row -> row.(0) = recipe)
-        (!recipe_book_adj |> to_adjustable_csv)
-    in
-    if spec_row.(index) <> "Y" then spec_row.(index) <- "Y"
-
   let add_halls headers hall recipe =
     recipe_book_adj :=
-      List.map
+      Array.map
         (fun row ->
           if row.(0) = recipe then Array.append row [| "Y" |]
           else Array.append row [| "N" |])
         (!recipe_book_adj |> to_adjustable_csv)
       |> from_adjustable_csv
 
+  let fill_n spec_row index =
+    if index < Array.length spec_row then spec_row
+    else
+      let extension = Array.make (index - Array.length spec_row) "N" in
+      Array.concat [ spec_row; extension; [| "Y" |] ]
+
+  let check_halls headers hall recipe =
+    let index = List.find_index (( = ) hall) !headers |> Option.get in
+    if index >= Array.length (!recipe_book_adj |> to_adjustable_csv).(1) then
+      add_halls headers hall recipe
+    else
+      let x =
+        Array.find_index
+          (fun row -> row.(0) = recipe)
+          (!recipe_book_adj |> to_adjustable_csv)
+      in
+      if Option.is_none x then ()
+      else
+        let index_in_csv = Option.get x in
+        let spec_row = (!recipe_book_adj |> to_adjustable_csv).(index_in_csv) in
+        if index >= Array.length spec_row then
+          (!recipe_book_adj |> to_adjustable_csv).(index_in_csv) <-
+            fill_n spec_row index
+        else if spec_row.(index) <> "Y" then spec_row.(index) <- "Y"
+
   (**[pull_specific_data headers orig_headers hall recipe ] takes the recipe
      with name [recipe] and returns the [list] containing the specific
      information, such as dietary restrictions and cuisine. If [recipe] is not
      an existing recipe in [Options.recipes] then a new recipe card is added. *)
   let pull_specific_data headers orig_headers hall recipe =
-    if BatSet.mem recipe !recipes then
+    if
+      Array.exists
+        (fun row -> row.(0) = recipe)
+        (!recipe_book_adj |> to_adjustable_csv)
+    then
       if
         List.length !headers
-        > (!recipe_book_adj |> to_adjustable_csv |> List.hd |> Array.length)
+        > ((!recipe_book_adj |> to_adjustable_csv).(1) |> Array.length)
       then add_halls headers hall recipe
       else check_halls headers hall recipe
     else (
@@ -145,45 +173,46 @@ module Fetch_data = struct
   let create_meal name date headers meal =
     let recipe_list = ref BatSet.String.empty in
     let meal_name = meal |> member "descr" |> to_string in
-    if meal_name <> "Dinner" || name <> "104West!" || date <> "2025-05-08" then
-      ()
+    let menu = meal |> member "menu" |> Yojson.Basic.Util.to_list in
+    List.iter
+      (fun category ->
+        add_items
+          (category |> member "items" |> Yojson.Basic.Util.to_list)
+          recipe_list)
+      menu;
+    if BatSet.String.is_empty !recipe_list then ()
     else
-      let menu = meal |> member "menu" |> Yojson.Basic.Util.to_list in
-      List.iter
-        (fun category ->
-          add_items
-            (category |> member "items" |> Yojson.Basic.Util.to_list)
-            recipe_list)
-        menu;
-      if BatSet.String.is_empty !recipe_list then ()
-      else
-        let file_name = "dining_data/" ^ name ^ date ^ meal_name ^ ".csv" in
-        queries := (file_name, (name, recipe_list)) :: !queries;
+      let file_name = "dining_data/" ^ name ^ date ^ meal_name ^ ".csv" in
+      queries := (file_name, (name, recipe_list)) :: !queries;
 
-        data_halls := BatSet.add name !data_halls;
-        if not (List.mem name !headers) then headers := !headers @ [ name ]
-        else ();
-        let hall_meals = BatList.assoc name !meals in
-        hall_meals := add meal_name !hall_meals
+      data_halls := BatSet.add name !data_halls;
+      if not (List.mem name !headers) then (
+        print_endline ("adding " ^ name);
+        headers := !headers @ [ name ])
+      else ();
+      let hall_meals = BatList.assoc name !meals in
+      hall_meals := add meal_name !hall_meals
 
   (**[save_all meal_lst headers] takes the association [meal_list] (which
      contains a file name as the key and a set with the relevant recipe names as
      the value) and creates files for every element of the list*)
   let save_all meal_lst headers =
+    List.iter print_endline !headers;
     recipe_book_adj :=
-      !recipe_book_adj |> to_adjustable_csv |> List.tl |> from_adjustable_csv;
+      !recipe_book_adj |> from_adjustable |> to_csv |> List.tl |> from_csv
+      |> to_adjustable;
     List.iter
       (fun (file_name, (hall, recipes)) ->
+        print_endline (string_of_int (BatSet.String.cardinal !recipes));
         BatSet.String.iter
           (pull_specific_data headers
-             (!recipe_book_adj |> to_adjustable_csv |> List.hd |> Array.to_list)
+             ((!recipe_book_adj |> to_adjustable_csv).(0) |> Array.to_list)
              hall)
           !recipes;
         let csv_file =
           Final_project.Dining.find_recipes !recipes
             (!recipe_book_adj |> from_adjustable)
         in
-        List.iter print_endline !headers;
         save_menu csv_file headers file_name)
       meal_lst
 
@@ -191,10 +220,23 @@ module Fetch_data = struct
      singular day at the hall specified by [name]. Requires: [day_menu] is a
      JSON with the relevant information specific to the hall [name]*)
   let day_csv name headers day_menu =
-    Yojson.Basic.Util.(
-      let date = day_menu |> member "date" |> to_string in
-      let meals = day_menu |> member "events" |> Yojson.Basic.Util.to_list in
-      List.iter (create_meal name date headers) meals)
+    if
+      not
+        (List.mem name
+           [
+             "Rose House Dining Room";
+             "Straight from the Market";
+             "Keeton House Dining Room";
+             "Okenshields";
+             "104West!";
+             "Jansen's Dining Room at Bethe House";
+           ])
+    then ()
+    else
+      Yojson.Basic.Util.(
+        let date = day_menu |> member "date" |> to_string in
+        let meals = day_menu |> member "events" |> Yojson.Basic.Util.to_list in
+        List.iter (create_meal name date headers) meals)
 
   (**[scrape_data hall_json headers] reads the information regarding the
      different menus in eateries across campus from a webscraped JSON object
@@ -226,10 +268,11 @@ module Fetch_data = struct
      Dining can make. *)
   let fill_master_list headers () =
     recipe_book_adj := make_adjustable_menu master_file_name;
-    List.iter
+    Array.iter
       (fun row -> recipes := BatSet.add row.(0) !recipes)
-      (!recipe_book_adj |> to_adjustable_csv |> List.tl);
-    headers := !recipe_book_adj |> to_adjustable_csv |> List.hd |> Array.to_list
+      (!recipe_book_adj |> from_adjustable |> to_csv |> List.tl |> from_csv
+     |> to_adjustable |> to_adjustable_csv);
+    headers := (!recipe_book_adj |> to_adjustable_csv).(0) |> Array.to_list
 
   let write_master_list headers () =
     Csv.save master_file_name

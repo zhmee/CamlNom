@@ -1,6 +1,6 @@
 let halls = ref []
 let dietary = ref [ "Vegetarian"; "Vegan" ]
-let cuisines = ref [ "Asian"; "American"; "Mexican"; "Italian" ]
+let cuisines = ref (Csv.load "driver_data/cuisines.csv" |> List.map List.hd)
 let get_all_filters () = ref (!halls @ !dietary @ !cuisines)
 
 let days_of_week =
@@ -32,4 +32,7 @@ let meats =
     "Fish";
     "Bacon";
     "Ham";
+    "Turkey";
+    "Shrimp";
+    "Duck";
   ]
