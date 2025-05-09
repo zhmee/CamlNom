@@ -86,21 +86,15 @@ module Fetch_data = struct
           if not (List.mem input !cuisines_list) then
             cuisines_list := input :: !cuisines_list
           else ())
-        else if contains recipe filter then (
-          print_endline (filter ^ " found");
-          specs := Array.append !specs [| "Y" |])
+        else if contains recipe filter then
+          specs := Array.append !specs [| "Y" |]
         else if
           (filter = "Vegan" || filter = "Vegetarian")
           && List.exists (contains recipe) Final_project.Options.meats
-        then (
-          print_endline "found meat";
-          specs := Array.append !specs [| "N" |])
-        else if filter = hall then (
-          print_endline ("marking " ^ filter ^ " as Y");
-          specs := Array.append !specs [| "Y" |])
-        else if List.mem filter !Final_project.Options.halls then (
-          print_endline ("marking " ^ filter ^ " as N");
-          specs := Array.append !specs [| "N" |])
+        then specs := Array.append !specs [| "N" |]
+        else if filter = hall then specs := Array.append !specs [| "Y" |]
+        else if List.mem filter !Final_project.Options.halls then
+          specs := Array.append !specs [| "N" |]
         else (
           print_endline ("Does the label \"" ^ filter ^ "\" apply? (Y/N)");
           let input = read_line () in
@@ -112,6 +106,10 @@ module Fetch_data = struct
       (List.tl !headers);
     !specs
 
+  (**[add_halls headers hall recipe] deals with the case when an entry in the
+     recipe book is too short (i.e. does not contain information about being
+     present at a certain hall). The entry is then extended, padded with "N",
+     and added back to the CSV. *)
   let add_halls headers hall recipe =
     recipe_book_adj :=
       Array.map
@@ -121,12 +119,18 @@ module Fetch_data = struct
         (!recipe_book_adj |> to_adjustable_csv)
       |> from_adjustable_csv
 
+  (**[fill_n spec_row index] is a helper function that extends [spec_row] to
+     contain [index + 1] elements, padding the added indices with "N". The last
+     index, [index], is marked as "Y"*)
   let fill_n spec_row index =
     if index < Array.length spec_row then spec_row
     else
       let extension = Array.make (index - Array.length spec_row) "N" in
       Array.concat [ spec_row; extension; [| "Y" |] ]
 
+  (**[check_halls headers hall recipe] checks whether the corresponding entry
+     for [recipe] in [recipe_book_adj] contains "Y" in the column for [hall].
+     Requires: [headers] contains [hall]*)
   let check_halls headers hall recipe =
     let index = List.find_index (( = ) hall) !headers |> Option.get in
     if index >= Array.length (!recipe_book_adj |> to_adjustable_csv).(1) then
@@ -187,9 +191,7 @@ module Fetch_data = struct
       queries := (file_name, (name, recipe_list)) :: !queries;
 
       data_halls := BatSet.add name !data_halls;
-      if not (List.mem name !headers) then (
-        print_endline ("adding " ^ name);
-        headers := !headers @ [ name ])
+      if not (List.mem name !headers) then headers := !headers @ [ name ]
       else ();
       let hall_meals = BatList.assoc name !meals in
       hall_meals := add meal_name !hall_meals
@@ -198,13 +200,11 @@ module Fetch_data = struct
      contains a file name as the key and a set with the relevant recipe names as
      the value) and creates files for every element of the list*)
   let save_all meal_lst headers =
-    List.iter print_endline !headers;
     recipe_book_adj :=
       !recipe_book_adj |> from_adjustable |> to_csv |> List.tl |> from_csv
       |> to_adjustable;
     List.iter
       (fun (file_name, (hall, recipes)) ->
-        print_endline (string_of_int (BatSet.String.cardinal !recipes));
         BatSet.String.iter
           (pull_specific_data headers
              ((!recipe_book_adj |> to_adjustable_csv).(0) |> Array.to_list)
@@ -262,6 +262,8 @@ module Fetch_data = struct
      |> to_adjustable |> to_adjustable_csv);
     headers := (!recipe_book_adj |> to_adjustable_csv).(0) |> Array.to_list
 
+  (**[write_master_list headers] writes [recipe_book] to the appropriate file,
+     using headers [headers] to mark the columns. *)
   let write_master_list headers () =
     Csv.save master_file_name
       (!headers

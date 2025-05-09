@@ -129,7 +129,7 @@ Cheddar BBQ Black Bean Burger,American,Y,N,N,N,N,N,N,N,N,N,N,Y,N
 Bacon Cheddar BBQ Smashburger,American,N,N,N,N,N,N,N,N,N,N,N,Y,N
 Vegan Baked Beans,None,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
 Sweet Potato Fries,None,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
-Ssam Tofu,Korea,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
+Ssam Tofu,Korean,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
 Ssam Sauce - Korean Chili Sauce,Korean,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
 Ssam Chicken,Korean,N,N,N,N,N,N,N,N,N,N,N,Y,N
 Ssam Bar Toppings,Korean,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
@@ -145,7 +145,7 @@ Brussels Sprouts with Balsamic Reduction,None,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
 Beef Bourguignon,French,N,N,N,N,N,N,N,N,N,N,N,Y,N
 Sicilian Style Chicken Cacciatore,Italian,N,N,N,N,N,N,N,N,N,N,N,Y,N
 Sauteed Mixed Mushroom with Thyme,None,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
-Quinoa Stuffed Sweet Potatoes,Y,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
+Quinoa Stuffed Sweet Potatoes,None,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
 GF Vegan Grilled Cheeze,None,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
 GF Bruschetta Grilled Cheese,Italian,Y,N,N,N,N,N,N,N,N,N,N,Y,N
 Steamed Catalina Island Vegetables,None,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
@@ -177,7 +177,7 @@ Asian Chicken Thighs,Asian,N,N,N,N,N,N,N,N,N,N,N,Y,N
 Ancho Pork Tostada,Mexican,N,N,N,N,N,N,N,N,N,N,N,Y,N
 Tofu Pad Thai,Thai,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
 Thai BBQ Chicken,Thai,N,N,N,N,N,N,N,N,N,N,N,Y,N
-"Roasted Bok Choy, Garlic & Eggplant",,N,N,N,N,N,N,N,N,N,N,N,Y,N
+"Roasted Bok Choy, Garlic & Eggplant",Asian,N,N,N,N,N,N,N,N,N,N,N,Y,N
 Thai Massaman Curry Chicken,Thai,N,N,N,N,N,N,N,N,N,N,N,Y,N
 Sweet Chili Dipping Sauce,None,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
 Sesame Vinaigrette,None,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
@@ -491,7 +491,7 @@ Mediterranean Pita Buffet,Mediterranean,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Meatless Chick'n & Broccoli Stir Fry,Chinese,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Kens Essentials Greek Dressing,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Dal Makhni,Indian,Y,N,N,N,N,N,N,N,N,N,Y,N,N
-Crumbled Feta Cheese,None,Y,N,N,N,N,N,N,N,N,Y,Y,N,N
+Crumbled Feta Cheese,None,N,N,N,N,N,N,N,N,N,Y,Y,N,N
 Chicken & Spinach Souvlaki,Greek,N,N,N,N,N,N,N,N,N,N,Y,N,N
 Brown Rice & Vegetables,None,Y,Y,N,N,Y,N,N,N,N,N,Y,N,N
 Nacho Bar,Mexican,Y,Y,N,N,N,N,N,N,N,N,Y,Y,N
