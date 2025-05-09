@@ -2,21 +2,21 @@ Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Din
 Whole Grain Hot Dog Rolls,None,N,N,N,N,N,N,N,Y,N,N,N,N,N
 Wheat Hamburger Roll,American,N,N,N,N,N,N,N,Y,N,N,N,N,N
 Tartar Sauce,None,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
-Simply Steamed Peas,None,Y,Y,N,N,N,N,Y,Y,N,N,N,N,N
-Seasoned Wedge Fries,None,Y,Y,N,N,N,N,Y,Y,N,N,N,N,N
+Simply Steamed Peas,None,Y,Y,N,N,N,Y,Y,Y,Y,N,N,N,N
+Seasoned Wedge Fries,None,Y,Y,N,N,N,Y,Y,Y,N,N,N,N,N
 Oyster Cracker,None,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
 New England Clam Chowder,American,N,N,N,N,N,N,N,Y,N,N,N,N,N
-Grilled All Beef Hot Dogs,American,N,N,N,N,N,N,Y,Y,N,N,Y,N,N
+Grilled All Beef Hot Dogs,American,N,N,N,N,Y,N,Y,Y,N,N,Y,N,N
 Green Onion,N,None,Y,N,N,N,N,Y,Y,N,N,N,N,N
 "Green Monster Veggie ""Not Dogs""",American,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
 Corn on the Cob,None,N,N,N,N,N,N,N,Y,N,N,N,N,N
 Classic Creamy Coleslaw,Polish,N,N,N,N,N,N,N,Y,N,N,N,N,N
 Breaded Cod Square,None,N,N,N,N,N,N,N,Y,N,N,N,N,N
-Fruit & Yogurt Bar,None,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
-"Pastries, Cakes & Desserts",Dessert,N,N,Y,N,N,N,Y,Y
-Healthy Style Salad Station,None,Y,Y,Y,N,N,N,Y,Y
-Fresh Whole Fruit,None,Y,Y,Y,N,N,N,Y,Y,N,N,Y
-Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,N,N,Y,Y
-Hot & Cold Beverages,None,Y,Y,N,Y,N,N,N,Y
+Fruit & Yogurt Bar,None,Y,Y,N,N,N,N,N,Y,Y,Y,N,N,N
+"Pastries, Cakes & Desserts",Dessert,N,N,Y,N,N,Y,Y,Y
+Healthy Style Salad Station,None,Y,Y,Y,N,Y,N,Y,Y
+Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
+Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,Y,N,Y
+Hot & Cold Beverages,None,Y,Y,N,Y,N,Y,N,Y,N,Y,N,Y
 Cornell Dairy Ice Cream,None,Y,N,Y
 Cornell Dairy Ice Cream,Dessert,Y,N,Y

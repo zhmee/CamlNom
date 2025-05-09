@@ -1,21 +1,21 @@
 Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
-Vegan Chili,American,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
+Vegan Chili,American,Y,Y,N,N,N,N,N,Y,N,N,N,Y,N
 Puerco Verde,Mexican,N,N,N,N,N,N,N,Y,N,N,N,N,N
 Pico De Gallo,Mexican,Y,Y,N,N,N,N,N,Y,N,N,Y,N,N
-Fresh Fruit Salad,None,Y,Y,N,N,N,N,Y,Y,N,N,Y,N,N
+Fresh Fruit Salad,None,Y,Y,N,N,N,N,Y,Y,N,N,Y,Y,N
 Chimichurri Rice,Peruvian,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
 Chimichurri Black Beans,Peruvian,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
 Chilaquiles Bake,Mexican,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
 Black Bean Sweet Potato Burrito,Mexican,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
 Ancho Chili Spice Rub,Mexican,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
 "6"" Flour Tortilla Wrap",Mexican,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
-Fruit & Yogurt Bar,None,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
-Simply Steamed Green Beans,None,Y,Y,Y,N,N,N,N,Y
-Calabacitas,Mexican,Y,Y,Y,N,N,N,N,Y
-"Pastries, Cakes & Desserts",Dessert,N,N,Y,N,N,N,Y,Y
-Healthy Style Salad Station,None,Y,Y,Y,N,N,N,Y,Y
-Fresh Whole Fruit,None,Y,Y,Y,N,N,N,Y,Y,N,N,Y
-Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,N,N,Y,Y
-Hot & Cold Beverages,None,Y,Y,N,Y,N,N,N,Y
+Fruit & Yogurt Bar,None,Y,Y,N,N,N,N,N,Y,Y,Y,N,N,N
+Simply Steamed Green Beans,None,Y,Y,Y,N,Y,Y,N,Y
+Calabacitas,Mexican,Y,Y,Y,N,Y,N,N,Y,N,Y
+"Pastries, Cakes & Desserts",Dessert,N,N,Y,N,N,Y,Y,Y
+Healthy Style Salad Station,None,Y,Y,Y,N,Y,N,Y,Y
+Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
+Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,Y,N,Y
+Hot & Cold Beverages,None,Y,Y,N,Y,N,Y,N,Y,N,Y,N,Y
 Cornell Dairy Ice Cream,None,Y,N,Y
 Cornell Dairy Ice Cream,Dessert,Y,N,Y

@@ -1,25 +1,25 @@
 Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
-"Vegetarian Chipotle Cheddar Soup ",Mexican,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
-Vegetable Medley,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
+"Vegetarian Chipotle Cheddar Soup ",Mexican,Y,N,N,N,N,N,N,N,N,N,Y,N,N
+Vegetable Medley,None,Y,Y,N,N,Y,N,N,N,N,N,Y,N,N
 Southern Style Fried Chicken,American,N,N,N,N,N,N,N,N,N,N,Y,N,N
 Creole Cabbage,American,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
-Cornbread,American,N,N,N,N,N,N,N,N,N,N,Y,N,N
-Cheese Ravioli & Marinara,Italian,Y,N,N,N,N,N,N,N,N,N,Y,N,N
+Cornbread,American,N,N,N,N,N,N,N,N,Y,N,Y,N,N
+Cheese Ravioli & Marinara,Italian,Y,N,N,N,Y,N,N,N,N,N,Y,N,N
 Carolina BBQ Pulled Pork Sandwich,American,N,N,N,N,N,N,N,N,N,N,Y,N,N
 Mashed Potatoes,None,Y,N,N,N,N,N,N,N,N,N,Y,N,N
 Chef's Choice Seasonal Vegetable,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Harvest Salad Bar,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Beverage Bar,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Wok Tofu & Squash,Chinese,Y,Y,N,Y,N,N,N,N,N,N,Y,N,N
-Fresh Fruit Salad,None,Y,Y,N,N,N,N,Y,Y,N,N,Y,N,N
-Cornell Dairy Ice Cream Bar,None,Y,N,N,N,N,N,N,Y,N,N,Y,N,N
+Fresh Fruit Salad,None,Y,Y,N,N,N,N,Y,Y,N,N,Y,Y,N
+Cornell Dairy Ice Cream Bar,None,Y,N,N,N,Y,N,N,Y,N,N,Y,N,N
 "Wok Spicy Chili & Basil Chicken ",Asian,N,N,N,N,N,N,N,N,N,N,Y,N,Y
-Cornell Dairy Yogurt,None,Y,N,Y,N,N,N,Y,Y,N,N,Y
-Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,N,N,Y,Y,N,N,Y
-Pepperoni Pizza,Italian,N,N,N,N,N,N,Y,N,N,N,Y
-Fresh Whole Fruit,None,Y,Y,Y,N,N,N,Y,Y,N,N,Y
-Dessert Bars,Dessert,N,N,N,N,N,N,N,N,N,N,Y
-Cheese Pizza,Italian,Y,N,N,N,N,N,Y,N,N,N,Y
+Cornell Dairy Yogurt,None,Y,N,Y,N,Y,Y,Y,Y,N,N,Y,Y
+Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,Y,Y,Y,Y,Y,N,Y,Y
+Pepperoni Pizza,Italian,N,N,N,N,N,N,Y,N,Y,N,Y
+Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,N,Y,Y
+Dessert Bars,Dessert,N,N,N,N,N,N,N,N,Y,N,Y
+Cheese Pizza,Italian,Y,N,N,N,N,N,Y,N,Y,N,Y
 Pepperoni Pizza,Italian,N,N,N
 Dessert Bars,Dessert,N,N,N
-Waffle Bar,None,N,N,Y,Y,N,N,Y,N,N,N,Y
+Waffle Bar,None,N,N,Y,Y,N,Y,Y,N,Y,N,Y,Y

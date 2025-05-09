@@ -5,11 +5,11 @@ Lentil & Couscous Salad,North African,Y,Y,N,Y,N,N,N,N,N,N,N,N,N
 Cornell Vegetarian Minestrone Soup,Italian,Y,Y,N,Y,Y,N,N,N,N,N,N,N,N
 Chicken Quesadilla,Mexican,N,N,N,Y,N,N,N,N,N,N,N,N,N
 Vegan Oatmeal Cranberry Cookie,Dessert,Y,Y,N,Y,N,N,N,N,N,N,N,N,N
-Roasted Sweet Potatoes,None,Y,Y,N,Y,N,N,Y,N,N,N,Y,N,N
+Roasted Sweet Potatoes,None,Y,Y,N,Y,Y,N,Y,N,Y,N,Y,N,N
 Sauteed Green Beans,None,Y,N,N,Y,N,N,Y,N,N,N,N,N,N
-Simply Steamed Corn,None,Y,Y,Y,Y
-Tuna Salad,None,N,N,N,Y
-Salad Bar,None,Y,Y,N,Y,N,N,N,Y
+Simply Steamed Corn,None,Y,Y,Y,Y,Y,Y
+Tuna Salad,None,N,N,N,Y,Y,Y,N,N,Y
+Salad Bar,None,Y,Y,N,Y,N,Y,N,Y,N,Y
 Fresh Cut Fruit,None,Y,Y,N,Y
 "Cookies, Cakes & Desserts",Dessert,Y,Y,N,Y
-Assorted Hot & Cold Beverages,None,Y,Y,N,Y
+Assorted Hot & Cold Beverages,None,Y,Y,N,Y,N,N,N,N,Y

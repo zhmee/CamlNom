@@ -4,21 +4,21 @@ Sauteed Green Beans,None,Y,N,N,Y,N,N,Y,N,N,N,N,N,N
 New England Style Hot Dog Bun,None,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
 Fresh Sauerkraut,German,N,N,N,Y,N,N,Y,N,N,N,N,N,N
 Cilantro & Lime Chicken,None,N,N,N,N,N,N,Y,N,N,N,N,N,N
-Simply Steamed Cauliflower,None,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
+Simply Steamed Cauliflower,None,Y,Y,N,N,N,N,Y,N,N,N,N,Y,N
 Cornell Corn Chowder,American,N,N,N,N,N,N,Y,N,N,N,Y,N,N
-Traditional Creamy Coleslaw,Polish,N,N,N,N,N,N,Y,N,N,N,N,N,N
-Grilled All Beef Hot Dogs,American,N,N,N,N,N,N,Y,Y,N,N,Y,N,N
-Fresh Fruit Salad,None,Y,Y,N,N,N,N,Y,Y,N,N,Y,N,N
+Traditional Creamy Coleslaw,Polish,N,N,N,N,Y,N,Y,N,Y,Y,N,N,N
+Grilled All Beef Hot Dogs,American,N,N,N,N,Y,N,Y,Y,N,N,Y,N,N
+Fresh Fruit Salad,None,Y,Y,N,N,N,N,Y,Y,N,N,Y,Y,N
 Lunch Sweets & Treats,Dessert,N,N,Y,N,N,N,Y
-Fried Potato Puffs,None,Y,Y,Y,N,N,N,Y,Y
-Cheddar Cheese Sauce,None,Y,N,Y,N,N,N,Y
-Hot & Cold Beverage Service,None,Y,Y,Y,N,N,N,Y
-Healthy Style Salad Station,None,Y,Y,Y,N,N,N,Y,Y
-Cornell Dairy Yogurt,None,Y,N,Y,N,N,N,Y,Y,N,N,Y
-Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,N,N,Y,Y,N,N,Y
-Eggplant & Tofu Stir-Fry,Chinese,Y,Y,N,Y,N,N,Y
-Fresh Whole Fruit,None,Y,Y,Y,N,N,N,Y,Y,N,N,Y
-Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,N,N,Y,Y
+Fried Potato Puffs,None,Y,Y,Y,N,Y,Y,Y,Y,N,Y
+Cheddar Cheese Sauce,None,Y,N,Y,N,Y,Y,Y
+Hot & Cold Beverage Service,None,Y,Y,Y,N,Y,N,Y
+Healthy Style Salad Station,None,Y,Y,Y,N,Y,N,Y,Y
+Cornell Dairy Yogurt,None,Y,N,Y,N,Y,Y,Y,Y,N,N,Y,Y
+Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+Eggplant & Tofu Stir-Fry,Chinese,Y,Y,N,Y,N,N,Y,N,Y
+Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
+Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,Y,N,Y
 Cornell Dairy Ice Cream,None,Y,N,Y
 Cornell Dairy Ice Cream,Dessert,Y,N,Y
-Waffle Bar,None,N,N,Y,Y,N,N,Y,N,N,N,Y
+Waffle Bar,None,N,N,Y,Y,N,Y,Y,N,Y,N,Y,Y

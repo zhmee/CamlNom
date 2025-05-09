@@ -221,23 +221,10 @@ module Fetch_data = struct
      singular day at the hall specified by [name]. Requires: [day_menu] is a
      JSON with the relevant information specific to the hall [name]*)
   let day_csv name headers day_menu =
-    if
-      not
-        (List.mem name
-           [
-             "Rose House Dining Room";
-             "Straight from the Market";
-             "Keeton House Dining Room";
-             "Okenshields";
-             "104West!";
-             "Jansen's Dining Room at Bethe House";
-           ])
-    then ()
-    else
-      Yojson.Basic.Util.(
-        let date = day_menu |> member "date" |> to_string in
-        let meals = day_menu |> member "events" |> Yojson.Basic.Util.to_list in
-        List.iter (create_meal name date headers) meals)
+    Yojson.Basic.Util.(
+      let date = day_menu |> member "date" |> to_string in
+      let meals = day_menu |> member "events" |> Yojson.Basic.Util.to_list in
+      List.iter (create_meal name date headers) meals)
 
   (**[scrape_data hall_json headers] reads the information regarding the
      different menus in eateries across campus from a webscraped JSON object

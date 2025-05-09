@@ -3,20 +3,20 @@ Tofu & Vegetable Lo Mein,Chinese,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
 Seafood Salad Roll,None,N,N,N,N,N,N,Y,N,N,N,N,N,N
 Pickles,None,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
 Kettle Cooked Potato Chips,None,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
-Carrots Roasted in Olive Oil,None,Y,Y,N,Y,N,N,Y,N,N,N,N,N,N
+Carrots Roasted in Olive Oil,None,Y,Y,N,Y,Y,Y,Y,N,N,N,N,N,N
 Asian Marinated Chicken,Asian,N,N,N,N,N,N,Y,N,N,N,N,N,N
 "Cornell New England Clam Chowder ",American,N,N,N,N,N,N,Y,N,N,N,Y,N,N
-Traditional Creamy Coleslaw,Polish,N,N,N,N,N,N,Y,N,N,N,N,N,N
-Simply Steamed Peas,None,Y,Y,N,N,N,N,Y,Y,N,N,N,N,N
-Seasoned Wedge Fries,None,Y,Y,N,N,N,N,Y,Y,N,N,N,N,N
-Fresh Fruit Salad,None,Y,Y,N,N,N,N,Y,Y,N,N,Y,N,N
+Traditional Creamy Coleslaw,Polish,N,N,N,N,Y,N,Y,N,Y,Y,N,N,N
+Simply Steamed Peas,None,Y,Y,N,N,N,Y,Y,Y,Y,N,N,N,N
+Seasoned Wedge Fries,None,Y,Y,N,N,N,Y,Y,Y,N,N,N,N,N
+Fresh Fruit Salad,None,Y,Y,N,N,N,N,Y,Y,N,N,Y,Y,N
 Lunch Sweets & Treats,Dessert,N,N,Y,N,N,N,Y
-Hot & Cold Beverage Service,None,Y,Y,Y,N,N,N,Y
-Healthy Style Salad Station,None,Y,Y,Y,N,N,N,Y,Y
-Cornell Dairy Yogurt,None,Y,N,Y,N,N,N,Y,Y,N,N,Y
-Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,N,N,Y,Y,N,N,Y
-Fresh Whole Fruit,None,Y,Y,Y,N,N,N,Y,Y,N,N,Y
-Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,N,N,Y,Y
+Hot & Cold Beverage Service,None,Y,Y,Y,N,Y,N,Y
+Healthy Style Salad Station,None,Y,Y,Y,N,Y,N,Y,Y
+Cornell Dairy Yogurt,None,Y,N,Y,N,Y,Y,Y,Y,N,N,Y,Y
+Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
+Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,Y,N,Y
 Cornell Dairy Ice Cream,None,Y,N,Y
 Cornell Dairy Ice Cream,Dessert,Y,N,Y
-Waffle Bar,None,N,N,Y,Y,N,N,Y,N,N,N,Y
+Waffle Bar,None,N,N,Y,Y,N,Y,Y,N,Y,N,Y,Y

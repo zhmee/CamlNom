@@ -1,0 +1,49 @@
+Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
+Zuppa Toscana,Italian,Y,N,N,N,N,N,N,N,N,Y,N,N,N
+Wilted Greens,None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
+"White Bean Spinach Artichoke Casserole ",Italian,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
+Vegan Meatball Sub,None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
+Pasta with Roasted Red Pepper Alfredo,Italian,Y,N,N,N,N,N,N,N,N,Y,N,N,N
+Orzo Pasta with Olive Oil & Herbs,Italian,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
+Meat Lover's Sheet Pizza,Italian,N,N,N,N,N,N,N,N,N,Y,N,N,N
+Lebanese Lentil Soup with Orzo & Lemon,Lebanese,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
+"Greens Stir Fry ",None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
+"Four Cheese, Tomato & Pesto Sheet Pizza",Italian,Y,N,N,N,N,N,N,N,N,Y,N,N,N
+Cioppino Seafood Stew,American,N,N,N,N,N,N,N,N,N,Y,N,N,N
+Beef & Jackfruit Blended Burger,American,N,N,N,N,N,N,N,N,N,Y,N,N,N
+Arrabbiata & Broccoli Rabe,Italian,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
+Macaroni & Cheese Bar,American,Y,N,N,N,N,N,N,N,N,Y,N,N,N
+Honey Citrus Basil Vinaigrette,None,Y,N,N,N,N,N,N,N,N,Y,N,N,N
+Dressing Asian Sesame GF,None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
+Arugula Beet Radish & Goat Cheese Salad,None,Y,N,N,N,N,N,N,N,N,Y,N,N,N
+Grilled Chicken Breast,None,N,N,N,N,N,N,N,N,N,Y,N,N,N
+Kale & Caramelized Onion,None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
+Chipotle Chicken Thigh,Mexican,N,N,N,N,N,N,N,N,N,Y,N,N,N
+Bowl Toppings & Condiments,None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
+Gourmet Garlic Bread,None,Y,N,N,N,Y,N,N,N,N,Y,N,N,N
+Assorted Bread & Rolls,None,Y,Y,N,N,N,N,N,N,Y,Y,N,N,N
+Tofurizo,Mexican,Y,Y,N,N,N,N,N,N,N,Y,Y,N,N
+Taco Beef,Mexican,N,N,N,N,N,Y,N,N,N,Y,Y,N,N
+Steamed Brown Rice,None,Y,Y,N,N,N,Y,N,N,N,Y,Y,Y,N
+Roasted Grape Tomatoes & Summer Squash,None,N,Y,N,N,Y,N,Y,N,N,Y,N,Y,N
+Crispy Fried Onions,None,Y,Y,N,N,Y,N,Y,N,N,Y,N,N,N
+Chef's Choice Pizza/Flatbread,Italian,Y,Y,N,N,N,N,N,Y,N,Y,N,N,N
+Fruit & Yogurt Bar,None,Y,Y,N,N,N,N,N,Y,Y,Y,N,N,N
+Glass Noodles with Sesame & Bean Sprouts,Asian,Y,Y,Y,N,N,N,N,N,Y,Y
+Seasoned Black Beans,None,Y,Y,Y,N,N,N,N,N,N,Y
+"French Fries ",American,Y,Y,Y,N,Y,Y,Y,Y,N,Y,Y
+Salad Bar,None,Y,Y,N,Y,N,Y,N,Y,N,Y
+Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
+Flavor Infused Water Station,None,Y,Y,N,N,N,N,N,N,Y,Y
+Fresh Baked Vegan Cookies,Dessert,Y,Y,N,N,N,N,N,N,Y,Y
+Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,Y,N,Y
+Dole Fruit Soft Serve,Dessert,Y,Y,N,N,N,N,N,N,Y,Y
+Sicilian Style Sheet Pizza,Italian,Y,N,N,N,N,N,N,N,N,Y
+Massaman Chicken Curry,Thai,N,N,N,N,N,N,N,N,N,Y
+Hot & Cold Beverages,None,Y,Y,N,Y,N,Y,N,Y,N,Y,N,Y
+Dole Fruit Soft Serve,None,Y,Y,N
+Cornell Dairy Ice Cream,None,Y,N,Y
+Flavor Infused Water Station,None,Y,Y,N
+Fresh Baked Cookies,Dessert,N,N,N,Y,Y,N,N,N,Y,Y,Y
+Cornell Dairy Ice Cream,Dessert,Y,N,Y
+Dole Fruit Soft Serve,Dessert,Y,Y,N

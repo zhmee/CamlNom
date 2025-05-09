@@ -3,20 +3,20 @@ Rosemary & Sage Pork Loin,None,N,N,N,N,N,N,N,Y,N,N,N,N,N
 Parmesan Roasted Red Potatoes,Italian,Y,N,N,N,N,N,N,Y,N,N,N,N,N
 Gnocchi Primavera,Italian,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
 Fennel Carrots,None,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
-Chef's Choice Pizza/Flatbread,Italian,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
-Bread Sticks,Italian,Y,Y,N,N,N,N,Y,Y,N,N,N,N,N
+Chef's Choice Pizza/Flatbread,Italian,Y,Y,N,N,N,N,N,Y,N,Y,N,N,N
+Bread Sticks,Italian,Y,Y,N,N,Y,Y,Y,Y,N,Y,N,N,N
 Antipasti Salad,Italian,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
 Turkey Gumbo,American,N,N,N,N,N,N,N,Y,N,N,N,N,N
 Pasta,Italian,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
 Lentil Bolognese,Italian,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
-Fruit & Yogurt Bar,None,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
-Simply Steamed Green Beans,None,Y,Y,Y,N,N,N,N,Y
-Marinara Sauce,Italian,Y,Y,Y,N,N,N,Y,Y,N,N,Y
-Grated Parmesan Cheese,Italian,Y,N,Y,N,N,N,Y,Y
-"Pastries, Cakes & Desserts",Dessert,N,N,Y,N,N,N,Y,Y
-Healthy Style Salad Station,None,Y,Y,Y,N,N,N,Y,Y
-Fresh Whole Fruit,None,Y,Y,Y,N,N,N,Y,Y,N,N,Y
-Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,N,N,Y,Y
-Hot & Cold Beverages,None,Y,Y,N,Y,N,N,N,Y
+Fruit & Yogurt Bar,None,Y,Y,N,N,N,N,N,Y,Y,Y,N,N,N
+Simply Steamed Green Beans,None,Y,Y,Y,N,Y,Y,N,Y
+Marinara Sauce,Italian,Y,Y,Y,N,Y,Y,Y,Y,N,N,Y
+Grated Parmesan Cheese,Italian,Y,N,Y,N,N,N,Y,Y,N,Y
+"Pastries, Cakes & Desserts",Dessert,N,N,Y,N,N,Y,Y,Y
+Healthy Style Salad Station,None,Y,Y,Y,N,Y,N,Y,Y
+Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
+Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,Y,N,Y
+Hot & Cold Beverages,None,Y,Y,N,Y,N,Y,N,Y,N,Y,N,Y
 Cornell Dairy Ice Cream,None,Y,N,Y
 Cornell Dairy Ice Cream,Dessert,Y,N,Y

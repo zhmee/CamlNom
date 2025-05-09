@@ -2,24 +2,24 @@ Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Din
 "Western Scrambled Tofu ",None,Y,Y,N,N,N,N,Y,Y,N,N,N,N,N
 Toasted Pepitas,None,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
 Sweetened Coconut,None,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
-"Simply Steamed Broccoli ",None,Y,Y,N,N,N,N,Y,Y,N,N,N,N,N
+"Simply Steamed Broccoli ",None,Y,Y,N,N,Y,N,Y,Y,N,N,N,N,N
 Seedless Raisins,None,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
-Scrambled Eggs,None,N,N,N,Y,N,N,Y,Y,N,N,N,N,N
-Sausage Gravy & Biscuits,None,N,N,N,N,N,N,N,Y,N,N,N,N,N
-Roasted Cauliflower,Indian,Y,Y,N,N,N,N,Y,Y,N,N,Y,N,N
+Scrambled Eggs,None,N,N,N,Y,Y,Y,Y,Y,Y,Y,N,N,N
+Sausage Gravy & Biscuits,None,N,N,N,N,Y,N,N,Y,Y,Y,N,N,N
+Roasted Cauliflower,Indian,Y,Y,N,N,N,Y,Y,Y,N,N,Y,N,N
 Morning Fruits & Pastries,None,Y,N,N,N,N,N,N,Y,N,N,N,N,N
 Lemongrass Chicken Potstickers,None,N,N,N,N,N,N,N,Y,N,N,N,N,N
-Hot Oatmeal,None,Y,Y,N,Y,N,N,N,Y,N,N,N,N,N
+Hot Oatmeal,None,Y,Y,N,Y,N,Y,N,Y,N,N,N,N,N
 Grandy Oats Apple Crisp Granola,None,Y,Y,N,N,N,N,Y,Y,N,N,N,N,N
 General Tso Chicken,Chinese,N,N,N,N,N,N,N,Y,N,N,N,N,N
-French Toast Sticks,None,N,n,N,N,N,N,Y,Y,N,N,N,N,N
+French Toast Sticks,None,N,n,N,N,Y,Y,Y,Y,Y,Y,N,N,N
 Dried Cranberries,None,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
 Banana - Dried Chips,None,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
 Assorted Bagel & Toppings Bar,None,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
-Fruit & Yogurt Bar,None,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
+Fruit & Yogurt Bar,None,Y,Y,N,N,N,N,N,Y,Y,Y,N,N,N
 Semi Sweet Chocolate Chips,None,Y,Y,Y,N,N,N,N,Y
-Traditional Hummus,Mediterranean,Y,Y,Y,N,N,N,N,Y
-Cornell Dairy Yogurt,None,Y,N,Y,N,N,N,Y,Y,N,N,Y
-Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,N,N,Y,Y,N,N,Y
-Salad Bar,None,Y,Y,N,Y,N,N,N,Y
-Hot & Cold Beverages,None,Y,Y,N,Y,N,N,N,Y
+Traditional Hummus,Mediterranean,Y,Y,Y,N,N,N,N,Y,N,N,N,Y
+Cornell Dairy Yogurt,None,Y,N,Y,N,Y,Y,Y,Y,N,N,Y,Y
+Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+Salad Bar,None,Y,Y,N,Y,N,Y,N,Y,N,Y
+Hot & Cold Beverages,None,Y,Y,N,Y,N,Y,N,Y,N,Y,N,Y

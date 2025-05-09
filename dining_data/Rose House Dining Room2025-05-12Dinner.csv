@@ -1,34 +1,34 @@
 Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
-Tropical Mango Chutney,Indian,Y,Y,Y
-Tamarind Chutney,Indian,Y,Y,Y
-Steamed Fresh Vegetables,None,Y,Y,Y
-Ssamjang Sauce,Korean,Y,Y,Y
+Tropical Mango Chutney,Indian,Y,Y,Y,N,N,N,N,N,Y
+Tamarind Chutney,Indian,Y,Y,Y,N,N,N,N,N,Y
+Steamed Fresh Vegetables,None,Y,Y,Y,N,N,N,N,N,Y
+Ssamjang Sauce,Korean,Y,Y,Y,N,N,N,N,N,Y
 "Roasted Garlic Stonefire Naan Bread ",Indian,Y,N,Y
-Red Leaf Lettuce,None,Y,Y,Y
-"Korean Kimchi ",Korean,N,N,Y
-Korean BBQ Tofu,Korean,Y,Y,Y,N,N,N,Y
+Red Leaf Lettuce,None,Y,Y,Y,N,N,N,N,N,Y
+"Korean Kimchi ",Korean,N,N,Y,N,N,N,N,N,Y
+Korean BBQ Tofu,Korean,Y,Y,Y,N,N,Y,Y
 Kettle Cuisine Hungarian Mushroom Soup,Hungarian,Y,Y,Y
-Dal Makhani - Spiced Lentils & Cream,Indian,Y,N,Y
+Dal Makhani - Spiced Lentils & Cream,Indian,Y,N,Y,N,N,N,N,N,Y
 Cilantro Mint Chutney,Indian,Y,Y,Y
-Chana Masala,Indian,Y,Y,Y,Y
-Blueberry Banana Smoothie,None,Y,Y,Y
-Beef Bulgogi,Korean,N,N,Y
+Chana Masala,Indian,Y,Y,Y,Y,Y,Y,N,N,Y
+Blueberry Banana Smoothie,None,Y,Y,Y,N,N,Y
+Beef Bulgogi,Korean,N,N,Y,N,N,N,N,N,Y
 Vinaigrette Marinated Tuna Salad,None,Y,Y,Y
 Vegan Chocolate Cake,Dessert,Y,Y,Y
-Sesame Marinated Tofu,Asian,Y,Y,Y
-"Pastries, Cakes & Desserts",Dessert,N,N,Y,N,N,N,Y,Y
+Sesame Marinated Tofu,Asian,Y,Y,Y,N,Y
+"Pastries, Cakes & Desserts",Dessert,N,N,Y,N,N,Y,Y,Y
 Green Goddess Dressing,None,N,N,Y
 Traditional Hummus,Mediterranean,Y,Y,Y,N,N,N,N,Y
 Seedless White Grapes,None,Y,Y,Y
 Seedless Red Grapes,None,Y,Y,Y,N,N,N,Y
-Roasted Corn & Black Bean Salad,Mexican,Y,Y,Y,Y
+Roasted Corn & Black Bean Salad,Mexican,Y,Y,Y,Y,Y,N,N,N,N,N,Y
 Lavash Chips,Mediterranean,Y,Y,Y
-Hot & Cold Beverage Service,None,Y,Y,Y,N,N,N,Y
-Healthy Style Salad Station,None,Y,Y,Y,N,N,N,Y,Y
-Fresh Fruit Slices,None,Y,Y,Y
-Cornell Dairy Yogurt,None,Y,N,Y,N,N,N,Y,Y
-Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,N,N,Y,Y
-Fresh Whole Fruit,None,Y,Y,Y,N,N,N,Y,Y
-Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,N,N,Y,Y
+Hot & Cold Beverage Service,None,Y,Y,Y,N,Y,N,Y
+Healthy Style Salad Station,None,Y,Y,Y,N,Y,N,Y,Y
+Fresh Fruit Slices,None,Y,Y,Y,N,Y,Y,N,N,N,N,Y
+Cornell Dairy Yogurt,None,Y,N,Y,N,Y,Y,Y,Y,N,N,Y
+Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,Y,Y,Y,Y,Y,N,Y
+Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,N,Y
+Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y
 Cornell Dairy Ice Cream,None,Y,N,Y
 Cornell Dairy Ice Cream,Dessert,Y,N,Y

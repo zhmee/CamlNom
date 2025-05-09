@@ -10,9 +10,9 @@ Korean BBQ Chicken Thigh,Korean,N,N,N,N,N,N,N,Y,N,N,N,N,N
 Chocolate Chip Cookie a la Mode,Dessert,N,N,N,N,N,N,N,Y,N,N,N,N,N
 Chili Lime Street Corn,Mexican,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
 Black Bean Veggie Burger,American,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
-Fruit & Yogurt Bar,None,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
-"French Fries ",American,Y,Y,Y,N,N,N,Y,Y,N,N,Y
-"Pastries, Cakes & Desserts",Dessert,N,N,Y,N,N,N,Y,Y
-Healthy Style Salad Station,None,Y,Y,Y,N,N,N,Y,Y
-Fresh Whole Fruit,None,Y,Y,Y,N,N,N,Y,Y,N,N,Y
-Hot & Cold Beverages,None,Y,Y,N,Y,N,N,N,Y
+Fruit & Yogurt Bar,None,Y,Y,N,N,N,N,N,Y,Y,Y,N,N,N
+"French Fries ",American,Y,Y,Y,N,Y,Y,Y,Y,N,Y,Y
+"Pastries, Cakes & Desserts",Dessert,N,N,Y,N,N,Y,Y,Y
+Healthy Style Salad Station,None,Y,Y,Y,N,Y,N,Y,Y
+Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
+Hot & Cold Beverages,None,Y,Y,N,Y,N,Y,N,Y,N,Y,N,Y

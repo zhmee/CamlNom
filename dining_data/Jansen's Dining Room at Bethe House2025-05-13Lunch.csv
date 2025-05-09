@@ -1,24 +1,24 @@
 Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
-Spicy Sweet Chili Tofu & Veggies,Asian,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
+Spicy Sweet Chili Tofu & Veggies,Asian,Y,Y,N,N,Y,N,Y,N,N,N,N,N,N
 Shredded Red Cabbage,None,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
-Sambal Chili Sauce,Korean,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
+Sambal Chili Sauce,Korean,Y,Y,N,N,Y,N,Y,N,N,N,N,N,N
 Korean Bulgogi Bowl Toppings,Korean,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
 Korean Bulgogi Bar,Korean,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
-Crispy Fried Onions,None,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
+Crispy Fried Onions,None,Y,Y,N,N,Y,N,Y,N,N,Y,N,N,N
 Chicken & Broccoli,None,N,N,N,N,N,N,Y,N,N,N,N,N,N
-Bok Choy,None,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
-Cornell Vegan Tomato Bisque,French,Y,Y,N,Y,N,N,Y,N,N,N,N,N,N
-Roasted Mushrooms,None,Y,Y,N,Y,N,N,Y,N,N,N,N,N,N
-Traditional Creamy Coleslaw,Polish,N,N,N,N,N,N,Y,N,N,N,N,N,N
-Simply Steamed Peas,None,Y,Y,N,N,N,N,Y,Y,N,N,N,N,N
-Fresh Fruit Salad,None,Y,Y,N,N,N,N,Y,Y,N,N,Y,N,N
+Bok Choy,None,Y,Y,N,N,Y,N,Y,N,N,N,N,N,N
+Cornell Vegan Tomato Bisque,French,Y,Y,N,Y,N,N,Y,N,N,Y,N,Y,N
+Roasted Mushrooms,None,Y,Y,N,Y,Y,N,Y,N,N,Y,N,N,N
+Traditional Creamy Coleslaw,Polish,N,N,N,N,Y,N,Y,N,Y,Y,N,N,N
+Simply Steamed Peas,None,Y,Y,N,N,N,Y,Y,Y,Y,N,N,N,N
+Fresh Fruit Salad,None,Y,Y,N,N,N,N,Y,Y,N,N,Y,Y,N
 Lunch Sweets & Treats,Dessert,N,N,Y,N,N,N,Y
-Hot & Cold Beverage Service,None,Y,Y,Y,N,N,N,Y
-Healthy Style Salad Station,None,Y,Y,Y,N,N,N,Y,Y
-Cornell Dairy Yogurt,None,Y,N,Y,N,N,N,Y,Y,N,N,Y
-Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,N,N,Y,Y,N,N,Y
-Fresh Whole Fruit,None,Y,Y,Y,N,N,N,Y,Y,N,N,Y
-Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,N,N,Y,Y
+Hot & Cold Beverage Service,None,Y,Y,Y,N,Y,N,Y
+Healthy Style Salad Station,None,Y,Y,Y,N,Y,N,Y,Y
+Cornell Dairy Yogurt,None,Y,N,Y,N,Y,Y,Y,Y,N,N,Y,Y
+Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
+Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,Y,N,Y
 Cornell Dairy Ice Cream,None,Y,N,Y
 Cornell Dairy Ice Cream,Dessert,Y,N,Y
-Waffle Bar,None,N,N,Y,Y,N,N,Y,N,N,N,Y
+Waffle Bar,None,N,N,Y,Y,N,Y,Y,N,Y,N,Y,Y
