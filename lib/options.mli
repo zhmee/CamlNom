@@ -2,7 +2,19 @@ val halls : string list ref
 (**[halls] keeps track of the different dining halls that are supported by this
    project*)
 
-val cuisines : string list ref
+val cuisines_file_path : string
+(**[cuisines_file_path] keeps track of the file path name that stores the
+   cuisines*)
+
+val read_cuisines : unit -> unit
+(**[read_cuisines ()] initializes [cuisines_list] using the CSV stored at the
+   file path designated by [cuisines_file_path]*)
+
+val write_cuisines : unit -> unit
+(**[write_cuisines ()] writes the existing list of cuisines to the specified
+   file [cuisines_file_path]*)
+
+val cuisines_list : string list ref
 (**[cuisines] keeps track of the different cuisines that are supported by this
    project. *)
 
@@ -35,4 +47,5 @@ val recipes : string BatSet.t ref
 (**[recipes] stores all possible meals made by Cornell Dining. *)
 
 val meats : string list
-(**[meats] keeps track of the different meats that are used by Cornell Dining.*)
+(**[meats] keeps track of the different meats that are used by Cornell Dining.
+   Used mainly for purposes with entering data.*)

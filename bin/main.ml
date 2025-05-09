@@ -67,17 +67,26 @@ let remove_hall filter =
 (**[finding_category] finds the specific corresponding category for the user's
    choice in the driver and acts accordingly.*)
 let finding_category category =
-  match category with
-  | "Asian" -> (1, "Asian")
-  | "American" -> (1, "American")
-  | "Mexican" -> (1, "Mexican")
-  | "Italian" -> (1, "Italian")
-  | "Vegetarian" -> (2, "Y")
-  | "Vegan" -> (3, "Y")
-  | x ->
-      let y = List.find_index (( = ) x) !Options.halls in
-      if Option.is_some y then (Option.get y + 4, "Y")
-      else raise Unknown_Correspondence
+  if List.mem category !cuisines_list then
+    let y =
+      List.find_index (( = ) "Cuisine") (!recipe_book |> to_csv |> List.hd)
+    in
+    if Option.is_none y then raise Unknown_Correspondence
+    else
+      let index = Option.get y in
+      (index, category)
+  else if List.mem category !dietary then
+    let y =
+      List.find_index (( = ) category) (!recipe_book |> to_csv |> List.hd)
+    in
+    if Option.is_none y then raise Unknown_Correspondence
+    else
+      let index = Option.get y in
+      (index, "Y")
+  else
+    let y = List.find_index (( = ) category) !Options.halls in
+    if Option.is_some y then (Option.get y + 2 + List.length !dietary, "Y")
+    else raise Unknown_Correspondence
 
 (**[finding_day] takes in the specific day's menu that the user wants and has
    the rest of the program parse accordingly.*)
@@ -107,44 +116,23 @@ let reset_filters_halls filter =
 (**[updating_filter_choices] removes from the possible choices displayed to the
    user all the conflicting options.*)
 let updating_filter_choices input =
-  match input with
-  | "Asian" -> begin
-      remove_item "Asian";
-      remove_item "American";
-      remove_item "Mexican";
-      remove_item "Italian"
-    end
-  | "American" -> begin
-      remove_item "Asian";
-      remove_item "American";
-      remove_item "Mexican";
-      remove_item "Italian"
-    end
-  | "Mexican" -> begin
-      remove_item "Asian";
-      remove_item "American";
-      remove_item "Mexican";
-      remove_item "Italian"
-    end
-  | "Italian" -> begin
-      remove_item "Asian";
-      remove_item "American";
-      remove_item "Mexican";
-      remove_item "Italian"
-    end
-  | "Vegetarian" -> begin
-      remove_item "Vegetarian";
-      remove_item "Vegan"
-    end
-  | "Vegan" -> begin
-      remove_item "Vegetarian";
-      remove_item "Vegan"
-    end
-  (*TODO this is Morrison and Appel*)
-  | x ->
-      if not (List.mem x !Options.halls) then
-        print_endline "please input only one of the choices"
-      else reset_filters_halls x
+  if List.mem input !dietary then
+    List.iter (fun x -> if x <> input then remove_item x else ()) !dietary
+  else if List.mem input !cuisines_list then
+    List.iter (fun x -> if x <> input then remove_item x else ()) !cuisines_list
+  else print_endline "Please input only one of the options"
+
+(* match input with | "Asian" -> begin remove_item "Asian"; remove_item
+   "American"; remove_item "Mexican"; remove_item "Italian" end | "American" ->
+   begin remove_item "Asian"; remove_item "American"; remove_item "Mexican";
+   remove_item "Italian" end | "Mexican" -> begin remove_item "Asian";
+   remove_item "American"; remove_item "Mexican"; remove_item "Italian" end |
+   "Italian" -> begin remove_item "Asian"; remove_item "American"; remove_item
+   "Mexican"; remove_item "Italian" end | "Vegetarian" -> begin remove_item
+   "Vegetarian"; remove_item "Vegan" end | "Vegan" -> begin remove_item
+   "Vegetarian"; remove_item "Vegan" end (*TODO this is Morrison and Appel*) | x
+   -> if not (List.mem x !Options.halls) then print_endline "please input only
+   one of the choices" else reset_filters_halls x *)
 
 (**[valid_choices] is an error checker that makes sure that the user input is
    one of the supports ones.*)
@@ -346,7 +334,7 @@ let printing_options_for_plates () =
         print_endline
           (string_of_int !num ^ ") " ^ "Contains: " ^ filters ^ " cuisine");
         num := !num + 1)
-      !Options.cuisines;
+      !Options.cuisines_list;
 
     List.iter
       (fun filters ->
@@ -521,22 +509,24 @@ let rec make_plates () =
 (**[plate_filtering] takes in the input for the filtering and all of the plates
    currently saved and then returns the ones that satisfies the filters. *)
 let plate_filtering num all_plates =
-  match num with
-  | 1 -> List.filter (fun plate -> List.mem "Asian" (cuisines plate)) all_plates
-  | 2 ->
-      List.filter (fun plate -> List.mem "American" (cuisines plate)) all_plates
-  | 3 ->
-      List.filter (fun plate -> List.mem "Mexican" (cuisines plate)) all_plates
-  | 4 ->
-      List.filter (fun plate -> List.mem "Italian" (cuisines plate)) all_plates
-  | 5 -> List.filter is_vegetarian all_plates
-  | 6 -> List.filter is_vegan all_plates
-  | x ->
-      if x - 7 > List.length !Options.halls then all_plates
-      else
-        List.filter
-          (fun plate -> hall plate = List.nth !Options.halls (x - 7))
-          all_plates
+  if num <= List.length !cuisines_list then
+    List.filter
+      (fun plate ->
+        List.mem (List.nth !cuisines_list (num - 1)) (cuisines plate))
+      all_plates
+  else if num - List.length !cuisines_list <= List.length !dietary then
+    List.filter
+      (fun plate -> List.mem (List.nth !dietary (num - 1)) !dietary)
+      all_plates
+  else if
+    num - List.length !cuisines_list - List.length !dietary
+    <= List.length !halls
+  then
+    let x = num - List.length !cuisines_list - List.length !dietary in
+    List.filter
+      (fun plate -> hall plate = List.nth !Options.halls (x - 1))
+      all_plates
+  else all_plates
 
 (**[plates_printing] prints out all of the specified plates*)
 let plates_printing plates =
@@ -562,7 +552,9 @@ let plate_access () =
   try
     storing_all_plates ();
     let num_option =
-      List.length !halls + List.length !Options.cuisines + List.length !dietary
+      List.length !halls
+      + List.length !Options.cuisines_list
+      + List.length !dietary
     in
     print_endline
       "What type of plate would you like access? Please indicate with a number:";

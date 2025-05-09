@@ -83,7 +83,8 @@ module Fetch_data = struct
           print_endline "What cuisine is this dish?";
           let input = read_line () in
           specs := Array.append !specs [| input |];
-          if not (List.mem input !cuisines) then cuisines := input :: !cuisines
+          if not (List.mem input !cuisines_list) then
+            cuisines_list := input :: !cuisines_list
           else ())
         else if contains recipe filter then (
           print_endline (filter ^ " found");
@@ -283,6 +284,7 @@ module Fetch_data = struct
   (**[fetch ()] updates the directory [./dining_data], which contains updated
      information on the menus in each dining hall. *)
   let fetch () =
+    Final_project.Options.read_cuisines ();
     let headers = ref [] in
     fill_master_list headers ();
     (try
@@ -304,5 +306,6 @@ module Fetch_data = struct
           (hall_name, ref (BatSet.String.to_list !hall_meals)))
         !meals;
     save_all !queries headers;
-    write_master_list headers ()
+    write_master_list headers ();
+    Final_project.Options.write_cuisines ()
 end

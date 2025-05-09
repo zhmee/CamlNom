@@ -1,7 +1,16 @@
 let halls = ref []
 let dietary = ref [ "Vegetarian"; "Vegan" ]
-let cuisines = ref (Csv.load "driver_data/cuisines.csv" |> List.map List.hd)
-let get_all_filters () = ref (!halls @ !dietary @ !cuisines)
+let cuisines_list = ref []
+let cuisines_file_path = "driver_data/cuisines.csv"
+
+let read_cuisines () =
+  cuisines_list := Csv.load cuisines_file_path |> List.map List.hd
+
+let write_cuisines () =
+  Csv.save cuisines_file_path
+    (!cuisines_list |> List.map (fun cuisine -> [ cuisine ]))
+
+let get_all_filters () = ref (!halls @ !dietary @ !cuisines_list)
 
 let days_of_week =
   [
@@ -35,4 +44,6 @@ let meats =
     "Turkey";
     "Shrimp";
     "Duck";
+    "Cod";
+    "Haddock";
   ]
