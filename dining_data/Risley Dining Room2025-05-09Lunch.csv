@@ -3,7 +3,7 @@ Shrimp & Grits,None,N,N,N,N,N,N,N,N,N,N,N,Y,N
 Pasta & Cremini Mushroom Alfredo,Italian,Y,N,N,N,N,N,N,N,N,N,N,Y,N
 Cheddar BBQ Black Bean Burger,American,Y,N,N,N,N,N,N,N,N,N,N,Y,N
 Bacon Cheddar BBQ Smashburger,American,N,N,N,N,N,N,N,N,N,N,N,Y,N
-Ssam Tofu,Korea,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
+Ssam Tofu,Korean,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
 Ssam Sauce - Korean Chili Sauce,Korean,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
 Ssam Chicken,Korean,N,N,N,N,N,N,N,N,N,N,N,Y,N
 Ssam Bar Toppings,Korean,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
@@ -18,18 +18,18 @@ Cornell Unsweetened Plain Yogurt,None,Y,N,N,N,N,N,N,N,N,N,N,Y,N
 Assorted Desserts,Dessert,N,N,N,N,N,N,N,N,N,N,N,Y,N
 Roasted Broccoli & Cauliflower,None,Y,Y,N,N,N,N,N,N,Y,N,N,Y,N
 Nacho Bar,Mexican,Y,Y,N,N,N,N,N,N,N,N,Y,Y,N
-Steamed Brown Rice,None,Y,Y,N,N,N,Y,N,N,N,N,Y,Y,N
+Steamed Brown Rice,None,Y,Y,N,N,N,Y,N,N,N,Y,Y,Y,N
 House Made Kimchi,Korean,N,N,N,N,N,N,Y,N,N,N,N,Y,N
-Roasted Garlic & Herb Potatoes,None,Y,Y,N,N,N,N,Y,N,Y,N,N,Y,N
+Roasted Garlic & Herb Potatoes,None,Y,Y,N,N,N,N,Y,N,Y,Y,N,Y,N
 Fresh Fruit Salad,None,Y,Y,N,N,N,N,Y,Y,N,N,Y,Y,N
 Traditional Hummus,Mediterranean,Y,Y,Y,N,N,N,N,Y,N,N,N,Y
 Cornell Dairy Yogurt,None,Y,N,Y,N,Y,Y,Y,Y,N,N,Y,Y
-Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,Y,Y,Y,Y,Y,N,Y,Y
+Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
 Overnight Oats with Blueberry & Banana,Dessert,Y,Y,N,N,N,N,N,N,Y,N,N,Y
 Coconut Chia Seed Pudding,Dessert,Y,Y,N,N,N,N,N,N,Y,N,N,Y
-Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,N,Y,Y
-Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,N,N,Y
-Hot & Cold Beverages,None,Y,Y,N,Y,N,Y,N,Y,N,N,N,Y
+Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
+Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,Y,N,Y
+Hot & Cold Beverages,None,Y,Y,N,Y,N,Y,N,Y,N,Y,N,Y
 Cornell Dairy Ice Cream,None,Y,N,Y
 Overnight Oats with Blueberry & Banana,Dessert,Y,Y,N
 Coconut Chia Seed Pudding,Dessert,Y,Y,N

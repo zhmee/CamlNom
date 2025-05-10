@@ -3,10 +3,10 @@ White Corn Tortilla Chips,Mexican,Y,Y,N,N,Y,N,N,N,N,N,Y,N,N
 "Vegan Chocolate Cake ",Dessert,Y,Y,N,N,Y,N,N,N,N,N,Y,N,N
 Tom Yum - Thai Hot & Sour Soup,Thai,Y,Y,N,N,N,N,N,N,Y,N,Y,N,N
 Tofu Chop Suey,Chinese,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
-Taco Beef,Mexican,N,N,N,N,N,Y,N,N,N,N,Y,N,N
+Taco Beef,Mexican,N,N,N,N,N,Y,N,N,N,Y,Y,N,N
 Taco & Nacho Bar,Mexican,Y,N,N,N,N,N,N,N,N,N,Y,N,N
 Steamed Italian Vegetables,Italian,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
-Steamed Brown Rice,None,Y,Y,N,N,N,Y,N,N,N,N,Y,Y,N
+Steamed Brown Rice,None,Y,Y,N,N,N,Y,N,N,N,Y,Y,Y,N
 Southwest Bean Quesadilla,Mexican,Y,N,N,N,N,N,N,N,N,N,Y,N,N
 Sliced Pears in Juice,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Shredded Lettuce,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
@@ -23,10 +23,10 @@ Chef's Choice Seasonal Vegetable,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Tofu & Vegetable Stir Fry,Chinese,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 "Sausage, Pepper, Onion & Mushroom Pizza",Italian,N,N,N,N,N,N,N,N,N,N,Y,N,N
 Harvest Salad Bar,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
-"Cornell Chicken Noodle Soup ",None,N,N,N,N,N,N,N,N,N,N,Y,N,N
+"Cornell Chicken Noodle Soup ",None,N,N,N,N,N,N,N,N,N,Y,Y,N,N
 Beverage Bar,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
-Garlic Green Beans,None,Y,Y,N,N,Y,N,Y,N,N,N,Y,N,N
-Flour Tortilla Wraps,Mexican,Y,Y,N,N,N,N,Y,N,N,N,Y,N,N
+Garlic Green Beans,None,Y,Y,N,N,Y,N,Y,N,N,Y,Y,N,N
+Flour Tortilla Wraps,Mexican,Y,Y,N,N,N,N,Y,N,N,Y,Y,N,N
 Pico De Gallo,Mexican,Y,Y,N,N,N,N,N,Y,N,N,Y,N,N
 Cornell Dairy Ice Cream Bar,None,Y,N,N,N,Y,N,N,Y,N,N,Y,N,N
 Beef & Broccoli,None,N,N,N,N,N,N,N,N,N,N,Y,N,Y
@@ -36,11 +36,11 @@ Cheddar Cheese,None,Y,N,Y,N,N,N,Y,N,N,N,Y
 Marinara Sauce,Italian,Y,Y,Y,N,Y,Y,Y,Y,N,N,Y
 Fresh Fruit Slices,None,Y,Y,Y,N,Y,Y,N,N,N,N,Y
 Cornell Dairy Yogurt,None,Y,N,Y,N,Y,Y,Y,Y,N,N,Y,Y
-Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,Y,Y,Y,Y,Y,N,Y,Y
+Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
 Pita,Mediterranean,Y,Y,N,Y,N,N,N,N,Y,N,Y
-Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,N,Y,Y
+Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
 Dessert Bars,Dessert,N,N,N,N,N,N,N,N,Y,N,Y
 Cheese Pizza,Italian,Y,N,N,N,N,N,Y,N,Y,N,Y
-Fresh Baked Cookies,Dessert,N,N,N,Y,Y,N,N,N,Y,N,Y
+Fresh Baked Cookies,Dessert,N,N,N,Y,Y,N,N,N,Y,Y,Y
 Dessert Bars,Dessert,N,N,N
 Waffle Bar,None,N,N,Y,Y,N,Y,Y,N,Y,N,Y,Y

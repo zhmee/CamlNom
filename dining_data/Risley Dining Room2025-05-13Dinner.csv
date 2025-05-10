@@ -18,18 +18,18 @@ Cornell Unsweetened Plain Yogurt,None,Y,N,N,N,N,N,N,N,N,N,N,Y,N
 Assorted Desserts,Dessert,N,N,N,N,N,N,N,N,N,N,N,Y,N
 Sauteed Broccoli & Cauliflower,None,Y,Y,N,N,N,N,N,N,Y,N,N,Y,N
 Nacho Bar,Mexican,Y,Y,N,N,N,N,N,N,N,N,Y,Y,N
-Steamed Brown Rice,None,Y,Y,N,N,N,Y,N,N,N,N,Y,Y,N
+Steamed Brown Rice,None,Y,Y,N,N,N,Y,N,N,N,Y,Y,Y,N
 House Made Kimchi,Korean,N,N,N,N,N,N,Y,N,N,N,N,Y,N
-Roasted Grape Tomatoes & Summer Squash,None,N,Y,N,N,Y,N,Y,N,N,N,N,Y,N
+Roasted Grape Tomatoes & Summer Squash,None,N,Y,N,N,Y,N,Y,N,N,Y,N,Y,N
 Vegan Chili,American,Y,Y,N,N,N,N,N,Y,N,N,N,Y,N
 Fresh Fruit Salad,None,Y,Y,N,N,N,N,Y,Y,N,N,Y,Y,N
 Traditional Hummus,Mediterranean,Y,Y,Y,N,N,N,N,Y,N,N,N,Y
 Cornell Dairy Yogurt,None,Y,N,Y,N,Y,Y,Y,Y,N,N,Y,Y
-Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,Y,Y,Y,Y,Y,N,Y,Y
+Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
 Coconut Chia Seed Pudding,Dessert,Y,Y,N,N,N,N,N,N,Y,N,N,Y
-Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,N,Y,Y
-Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,N,N,Y
-Hot & Cold Beverages,None,Y,Y,N,Y,N,Y,N,Y,N,N,N,Y
+Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
+Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,Y,N,Y
+Hot & Cold Beverages,None,Y,Y,N,Y,N,Y,N,Y,N,Y,N,Y
 Cornell Dairy Ice Cream,None,Y,N,Y
 Coconut Chia Seed Pudding,Dessert,Y,Y,N
 Cornell Dairy Ice Cream,Dessert,Y,N,Y

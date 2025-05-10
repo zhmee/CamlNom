@@ -1,4 +1,5 @@
 Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
+"Grill Specialties ",None,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
 Vegetable Soup,None,Y,Y,N,N,N,N,Y,N,N,Y,N,N,N
 Traditional Creamy Coleslaw,Polish,N,N,N,N,Y,N,Y,N,Y,Y,N,N,N
 Chef's Choice,None,Y,Y,N,Y,Y,Y,Y,N,N,Y,N,N,N
@@ -11,5 +12,5 @@ Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
 Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
 Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,Y,N,Y
 Cornell Dairy Ice Cream,None,Y,N,Y
+Cheese Pizza,Italian,Y,N,N,N,N,N,Y,N,Y,N,Y
 Cornell Dairy Ice Cream,Dessert,Y,N,Y
-Waffle Bar,None,N,N,Y,Y,N,Y,Y,N,Y,N,Y,Y

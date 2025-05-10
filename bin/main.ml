@@ -30,12 +30,13 @@ let all_dishes = !Options.recipe_book
 let formatted_day (day : tm) =
   Printf.(
     sprintf "%04d" (day.tm_year + 1900)
-    ^ "-" ^ sprintf "%02d" day.tm_mon ^ "-" ^ sprintf "%02d" day.tm_mday)
+    ^ "-"
+    ^ sprintf "%02d" (day.tm_mon + 1)
+    ^ "-" ^ sprintf "%02d" day.tm_mday)
 
 (**[query file_name] verifies whether the file [file_name] exists. If not, the
    data representing the current week's dining menu is updated. *)
-let query file_name =
-  if not (Sys.file_exists file_name) then Fetch_data.fetch () else ()
+let query = Sys.file_exists
 
 (**[exit] handles all cases for the user to exit the interface*)
 let exit () =
@@ -44,15 +45,19 @@ let exit () =
 
 (* CURRENTLY SUPPORTED FILTERS AND OPERATIONS --------------------------------*)
 
-let all_supported_filters = ref !(Options.get_all_filters ())
-let user_filters = ref !(Options.get_all_filters ())
+let all_supported_filters = ref []
+let user_filters = ref []
 let user_halls = ref !Options.halls
 
 (**[display_all_filters] takes in all the current available filters and prints
    each one.*)
 let display_all_filters list =
   let all_filters = !list in
-  List.iter (fun filters -> print_endline filters) all_filters
+  List.iteri
+    (fun index filters ->
+      print_string (string_of_int (index + 1) ^ ") ");
+      print_endline filters)
+    all_filters
 
 (**[remove_item] takes in some category to be removed from the total possible
    filtering options.*)
@@ -64,17 +69,38 @@ let remove_item filter =
 let remove_hall filter =
   user_halls := List.filter (fun x -> x <> filter) !user_halls
 
-(**[finding_category] finds the specific corresponding category for the user's
-   choice in the driver and acts accordingly.*)
-let finding_category category =
-  if List.mem category !cuisines_list then
-    let y =
-      List.find_index (( = ) "Cuisine") (!recipe_book |> to_csv |> List.hd)
-    in
-    if Option.is_none y then raise Unknown_Correspondence
-    else
-      let index = Option.get y in
-      (index, category)
+(**[choose_cuisines ()] handles the case where the user wants to sort for a
+   certain cuisine*)
+let choose_cuisines () =
+  print_endline "Choose the specific cuisine you want to filter by: ";
+  List.iteri
+    (fun index cuisine ->
+      if index mod 2 = 0 then Printf.printf "%d) %s\n" index cuisine
+      else Printf.printf "%d) %s\t\t" index cuisine)
+    !cuisines_list;
+  let input = read_line () in
+  let category =
+    List.nth !cuisines_list
+      (try
+         let input_num = input |> int_of_string in
+         if input_num < List.length !cuisines_list && input_num >= 0 then
+           input_num
+         else raise Unknown_Correspondence
+       with _ -> raise Unknown_Correspondence)
+  in
+  let cuisine =
+    List.find_index (( = ) "Cuisine") (!recipe_book |> to_csv |> List.hd)
+  in
+  if Option.is_none cuisine then raise Unknown_Correspondence
+  else
+    let index = Option.get cuisine in
+    (index, category)
+
+(**[finding_category index] finds the specific corresponding category for the
+   user's choice in the driver and acts accordingly.*)
+let finding_category index =
+  let category = List.nth !all_supported_filters (index - 1) in
+  if category = "Cuisine" then choose_cuisines ()
   else if List.mem category !dietary then
     let y =
       List.find_index (( = ) category) (!recipe_book |> to_csv |> List.hd)
@@ -88,9 +114,9 @@ let finding_category category =
     if Option.is_some y then (Option.get y + 2 + List.length !dietary, "Y")
     else raise Unknown_Correspondence
 
-(**[finding_day] takes in the specific day's menu that the user wants and has
-   the rest of the program parse accordingly.*)
-let finding_day day hall meal =
+(**[finding_day day hall meal] takes in the specific day's menu that the user
+   wants and has the rest of the program parse accordingly.*)
+let rec finding_day day hall meal =
   let now = localtime (time ()) in
   let date =
     mktime
@@ -100,8 +126,20 @@ let finding_day day hall meal =
   let file_name =
     "./dining_data/" ^ hall ^ formatted_day date ^ meal ^ ".csv"
   in
-  query file_name;
-  file_name
+  if query file_name then file_name
+  else
+    let date =
+      mktime
+        {
+          now with
+          tm_mday = now.tm_mday - (now.tm_wday - int_of_string day) + 7;
+        }
+      |> snd
+    in
+    let file_name =
+      "./dining_data/" ^ hall ^ formatted_day date ^ meal ^ ".csv"
+    in
+    if query file_name then file_name else ""
 
 (**[reset_filters_halls filter] removes all fitlers except the one hall
    specified. Requires: [filter] is one of the filters specified in
@@ -116,29 +154,20 @@ let reset_filters_halls filter =
 (**[updating_filter_choices] removes from the possible choices displayed to the
    user all the conflicting options.*)
 let updating_filter_choices input =
-  if List.mem input !dietary then
-    List.iter (fun x -> if x <> input then remove_item x else ()) !dietary
-  else if List.mem input !cuisines_list then
-    List.iter (fun x -> if x <> input then remove_item x else ()) !cuisines_list
-  else print_endline "Please input only one of the options"
-
-(* match input with | "Asian" -> begin remove_item "Asian"; remove_item
-   "American"; remove_item "Mexican"; remove_item "Italian" end | "American" ->
-   begin remove_item "Asian"; remove_item "American"; remove_item "Mexican";
-   remove_item "Italian" end | "Mexican" -> begin remove_item "Asian";
-   remove_item "American"; remove_item "Mexican"; remove_item "Italian" end |
-   "Italian" -> begin remove_item "Asian"; remove_item "American"; remove_item
-   "Mexican"; remove_item "Italian" end | "Vegetarian" -> begin remove_item
-   "Vegetarian"; remove_item "Vegan" end | "Vegan" -> begin remove_item
-   "Vegetarian"; remove_item "Vegan" end (*TODO this is Morrison and Appel*) | x
-   -> if not (List.mem x !Options.halls) then print_endline "please input only
-   one of the choices" else reset_filters_halls x *)
+  if List.mem input !cuisines_list then
+    cuisines_list := List.filter (( <> ) input) !cuisines_list
+  else remove_item input
 
 (**[valid_choices] is an error checker that makes sure that the user input is
    one of the supports ones.*)
 let valid_choices input =
-  if List.mem input !(Options.get_all_filters ()) then input
-  else raise Unknown_Correspondence
+  try
+    if
+      int_of_string input <= List.length !(Options.get_all_filters ())
+      && int_of_string input >= 1
+    then input
+    else raise Unknown_Correspondence
+  with _ -> raise Unknown_Correspondence
 
 (* SPELLCHECKER ---------------------------------------------------------------
    ------------------------------------------------------------------------------*)
@@ -597,12 +626,15 @@ let rec view_make_plate () =
    satisfies the user's needs.*)
 let print_by_dining_hall filtered_list =
   let print_hall hall =
-    let index = Option.get (List.find_index (( = ) hall) !Options.halls) in
-    let menu = filter filtered_list (index + 4, "Y") in
+    let index =
+      Option.get
+        (List.find_index (( = ) hall) (!recipe_book |> to_csv |> List.hd))
+    in
+    let menu = filter filtered_list (index, "Y") in
     print_endline " ";
     print_endline (hall ^ " options -----------------");
     print_endline " ";
-    if length_of_menu menu = 0 || List.mem hall !user_halls = false then
+    if length_of_menu menu = 0 || not (List.mem hall !user_halls) then
       print_endline "None"
     else print_string (user_menu menu)
   in
@@ -629,8 +661,14 @@ let rec prompter created_menu =
     if user_input = "Done" then print_by_dining_hall !created_menu
     else
       let valid_input = valid_choices user_input in
-      let filter_cat = finding_category valid_input in
-      updating_filter_choices valid_input;
+      let filter_cat = int_of_string valid_input |> finding_category in
+      let corresponding =
+        List.nth (!recipe_book |> to_csv |> List.hd) (fst filter_cat)
+      in
+      let filter_category =
+        if corresponding <> "Cuisine" then corresponding else snd filter_cat
+      in
+      updating_filter_choices filter_category;
       created_menu := filter !created_menu filter_cat;
       prompter created_menu
   with Unknown_Correspondence ->
@@ -644,8 +682,12 @@ let rec prompter created_menu =
    the options, in the case that they are not of type [string]. *)
 let print_menu f lst =
   List.iteri
-    (fun index item -> print_endline (string_of_int index ^ ") " ^ f item))
+    (fun index item ->
+      print_endline (string_of_int (index + 1) ^ ") " ^ f item))
     lst
+
+let meal_exists day_chosen hall_chosen meal_chosen =
+  finding_day (day_chosen |> string_of_int) hall_chosen meal_chosen <> ""
 
 (**[menu_view] handles the user path where the user chooses to view a menu. *)
 let menu_view () =
@@ -653,7 +695,7 @@ let menu_view () =
     let check_valid_bounds index lst = index < List.length lst && index >= 0 in
     let yield_value lst f =
       print_menu f lst;
-      let index = read_int () in
+      let index = read_int () - 1 in
       if not (check_valid_bounds index lst) then
         raise (Sys_error (string_of_int index))
       else List.nth lst index
@@ -664,16 +706,18 @@ let menu_view () =
     print_endline
       "\nPlease choose which dining hall you'd like to view the menu for: \n";
     let hall_chosen = yield_value !Options.halls Fun.id in
-
     print_endline "\nPlease choose a meal you'd like to view the menu for: \n";
     let meal_chosen =
-      yield_value !(List.assoc hall_chosen !Options.meal_types) Fun.id
+      yield_value
+        (List.filter
+           (meal_exists day_chosen hall_chosen)
+           !(List.assoc hall_chosen !Options.meal_types))
+        Fun.id
     in
     let csv_file =
       finding_day (string_of_int day_chosen) hall_chosen meal_chosen
     in
     let curated_menu = ref (make_menu csv_file) in
-
     prompter curated_menu
   with
   | Sys_error x ->
@@ -683,6 +727,9 @@ let menu_view () =
 let () =
   try
     Fetch_data.fetch ();
+    user_halls := !Options.halls;
+    user_filters := !(Options.get_all_filters ());
+    all_supported_filters := !user_filters;
     (*create an empty list list of food [food] display to user all the days they
       can choose from [food] gets loaded by the csv of the particular day.*)
     print_endline

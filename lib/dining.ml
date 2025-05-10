@@ -3,7 +3,7 @@ open Csv
 type t = string list list
 type v = string array array
 (*AF: Type [t] represents a shared menu across all the dining halls on campus; the string list [a1;a2;...;an] element of [t] represents the food item with name = a1, vegetarian = a2, vegan = a3, and, so on, with each list index corresponding to a restriction.  Type [v] represents an adjustable version of type [t], allowing for additional columns and entries*)
-(*RI: each element of [t] has the same length. Moreover, each equal-numbered index of each element (e.g. the first element of the first list and the first element of the second list) must correspond to the same category (e.g. name). *)
+(*RI: Each equal-numbered index of each element (e.g. the first element of the first list and the first element of the second list) must correspond to the same category (e.g. name). *)
 
 exception Invalid_Csv of string
 
@@ -18,22 +18,12 @@ let check m f h acc = if m = snd f then h :: acc else acc
    spec. [filt] should be a value between 0 and 6. Raises [Invalid_Csv] if the
    CSV is malformatted. *)
 let rec filter' (csv : t) (filt : int * string) (acc : t) =
-  assert (fst filt <= 6 && fst filt >= 0);
+  assert (fst filt >= 0);
   match csv with
   | [] -> acc (*reached end of csv file*)
   | h :: t ->
-      filter' t filt
-        (match h with
-        | [ name; cuisine; vege; vegan; m; a; o ] -> (
-            match fst filt with
-            | 0 -> check name filt h acc
-            | 1 -> if cuisine = snd filt then h :: acc else acc
-            | 2 -> check vege filt h acc
-            | 3 -> check vegan filt h acc
-            | 4 -> check m filt h acc
-            | 5 -> check a filt h acc
-            | _ -> check o filt h acc)
-        | _ -> raise (Invalid_Csv "Invalid CSV format"))
+      if fst filt >= List.length h then acc
+      else filter' t filt (check (List.nth h (fst filt)) filt h acc)
 
 (**[filter csv prefs] returns the filtered entries of [csv] that match [prefs].
    Requires: [prefs] is a tuple of type [int * string], with the first argument

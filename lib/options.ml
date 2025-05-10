@@ -10,7 +10,7 @@ let write_cuisines () =
   Csv.save cuisines_file_path
     (!cuisines_list |> List.map (fun cuisine -> [ cuisine ]))
 
-let get_all_filters () = ref (!halls @ !dietary @ !cuisines_list)
+let get_all_filters () = ref (!halls @ !dietary @ [ "Cuisine" ])
 
 let days_of_week =
   [

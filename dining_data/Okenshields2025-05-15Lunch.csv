@@ -1,14 +1,14 @@
 Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
 "Wok Daikon Soup ",Japanese,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Tzatziki Sauce,Mediterranean,Y,N,N,N,Y,N,N,N,N,N,Y,N,N
-Tofurizo,Mexican,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
+Tofurizo,Mexican,Y,Y,N,N,N,N,N,N,N,Y,Y,N,N
 Sliced Black Olive,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Moroccan Beef Tagine,Moroccan,N,N,N,N,N,N,N,N,Y,N,Y,N,N
 Mediterranean Pita Buffet,Mediterranean,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Meatless Chick'n & Broccoli Stir Fry,Chinese,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Kens Essentials Greek Dressing,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Dal Makhni,Indian,Y,N,N,N,N,N,N,N,N,N,Y,N,N
-Crumbled Feta Cheese,None,Y,N,N,N,N,N,N,N,N,N,Y,N,N
+Crumbled Feta Cheese,None,N,N,N,N,N,N,N,N,N,Y,Y,N,N
 Chicken & Spinach Souvlaki,Greek,N,N,N,N,N,N,N,N,N,N,Y,N,N
 Brown Rice & Vegetables,None,Y,Y,N,N,Y,N,N,N,N,N,Y,N,N
 Vegetarian Pad Thai with Egg,Thai,Y,N,N,N,N,N,N,N,N,N,Y,N,N
@@ -30,15 +30,15 @@ Diced Tomato,None,Y,Y,Y,N,N,N,N,N,N,N,Y
 Roasted Corn & Black Bean Salad,Mexican,Y,Y,Y,Y,Y,N,N,N,N,N,Y
 Fresh Fruit Slices,None,Y,Y,Y,N,Y,Y,N,N,N,N,Y
 Cornell Dairy Yogurt,None,Y,N,Y,N,Y,Y,Y,Y,N,N,Y,Y
-Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,Y,Y,Y,Y,Y,N,Y,Y
+Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
 Sauteed Squash Medley,None,Y,Y,N,Y,N,N,N,N,N,N,Y
 Pita,Mediterranean,Y,Y,N,Y,N,N,N,N,Y,N,Y
 Lemon Rice,Mediterranean,Y,Y,N,N,N,N,N,N,N,N,Y
-Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,N,Y,Y
+Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
 Dessert Bars,Dessert,N,N,N,N,N,N,N,N,Y,N,Y
 Lemon Rice,Mediterranean,Y,Y,N
 Cheese Pizza,Italian,Y,N,N,N,N,N,Y,N,Y,N,Y
 Lemon Rice,Mediterranean,Y,Y,N
-Fresh Baked Cookies,Dessert,N,N,N,Y,Y,N,N,N,Y,N,Y
+Fresh Baked Cookies,Dessert,N,N,N,Y,Y,N,N,N,Y,Y,Y
 Dessert Bars,Dessert,N,N,N
 Waffle Bar,None,N,N,Y,Y,N,Y,Y,N,Y,N,Y,Y

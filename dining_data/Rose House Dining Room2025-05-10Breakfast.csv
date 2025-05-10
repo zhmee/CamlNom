@@ -1,15 +1,15 @@
 Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
-Thick & Chunky Salsa,Mexican,Y,Y,Y,N,N,N,Y
+Thick & Chunky Salsa,Mexican,Y,Y,Y,N,N,N,Y,N,N,Y
 Steel Cut Oatmeal Bowl,None,Y,Y,Y
 Sour Cream,None,Y,N,Y,N,N,Y,Y,Y,N,N,Y
 Sliced Jalapeno,None,Y,Y,Y,N,N,N,N,N,N,N,Y
-Seasoned Black Beans,None,Y,Y,Y
+Seasoned Black Beans,None,Y,Y,Y,N,N,N,N,N,N,Y
 Frozen Mixed Berries,None,Y,Y,Y
 Diced Avocado,None,Y,Y,Y
 Continental Breakfast at Flora Rose,None,Y,Y,Y
 Cheddar Cheese,None,Y,N,Y,N,N,N,Y,N,N,N,Y
 "6"" Soft Yellow Corn & Wheat Tortilla",Mexican,Y,Y,Y
-Steamed Green Beans,None,Y,Y,Y,N,Y,N,N,N,Y
-Fried Potato Puffs,None,Y,Y,Y,N,Y,Y,Y,Y
+Steamed Green Beans,None,Y,Y,Y,N,Y,N,N,N,Y,Y
+Fried Potato Puffs,None,Y,Y,Y,N,Y,Y,Y,Y,N,Y
 Chocolate Bread Pudding,None,N,N,Y
 Cheddar Spinach & Red Pepper Frittata,Italian,N,N,Y

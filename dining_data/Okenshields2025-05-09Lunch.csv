@@ -16,7 +16,7 @@ Harvest Salad Bar,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Beverage Bar,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 "Cornell New England Clam Chowder ",American,N,N,N,N,N,N,Y,N,N,N,Y,N,N
 Vegetable Fried Rice with Tofu,Asian,Y,Y,N,N,N,N,Y,N,N,N,Y,N,N
-Flour Tortilla Wraps,Mexican,Y,Y,N,N,N,N,Y,N,N,N,Y,N,N
+Flour Tortilla Wraps,Mexican,Y,Y,N,N,N,N,Y,N,N,Y,Y,N,N
 Grilled All Beef Hot Dogs,American,N,N,N,N,Y,N,Y,Y,N,N,Y,N,N
 Cornell Dairy Ice Cream Bar,None,Y,N,N,N,Y,N,N,Y,N,N,Y,N,N
 Chicken & Vegetable Lo Mein,Chinese,N,N,N,N,N,N,N,N,N,N,Y,N,Y
@@ -25,9 +25,9 @@ Sliced Jalapeno,None,Y,Y,Y,N,N,N,N,N,N,N,Y
 Chili Lime Tofu,Mexican,Y,Y,Y,N,N,Y,N,N,N,N,Y
 Fresh Fruit Slices,None,Y,Y,Y,N,Y,Y,N,N,N,N,Y
 Cornell Dairy Yogurt,None,Y,N,Y,N,Y,Y,Y,Y,N,N,Y,Y
-Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,N,Y,Y
+Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
 Dessert Bars,Dessert,N,N,N,N,N,N,N,N,Y,N,Y
 Cheese Pizza,Italian,Y,N,N,N,N,N,Y,N,Y,N,Y
-Fresh Baked Cookies,Dessert,N,N,N,Y,Y,N,N,N,Y,N,Y
+Fresh Baked Cookies,Dessert,N,N,N,Y,Y,N,N,N,Y,Y,Y
 Dessert Bars,Dessert,N,N,N
 Waffle Bar,None,N,N,Y,Y,N,Y,Y,N,Y,N,Y,Y

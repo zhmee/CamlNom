@@ -1,9 +1,9 @@
 Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
+Z Hebrew National Beef Frank,Jewish,N,N,N,N,N,Y,N,N,N,N,N,N,N
 Kettle Cuisine Broccoli Cheddar Soup,None,Y,N,N,N,N,Y,N,N,N,N,N,N,N
 Italian Sausage with Peppers & Onions,Italian,N,N,N,N,N,Y,N,N,N,N,N,N,N
 Garlic Roasted Chicken,None,N,N,N,N,N,Y,N,N,N,Y,N,N,N
 Beyond Meatless Sausage Link,None,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
-Egg Salad,None,N,N,N,N,N,Y,N,N,N,N,N,N,N
 Sweet Popcake Pancakes,Dessert,N,N,N,N,N,Y,N,N,N,N,N,N,N
 Roasted Potatoes,None,Y,Y,N,N,N,Y,N,N,Y,N,N,N,N
 Steamed Brown Rice,None,Y,Y,N,N,N,Y,N,N,N,Y,Y,Y,N
@@ -11,7 +11,6 @@ Hoagie Rolls,None,N,N,N,N,N,Y,Y,N,N,N,N,N,N
 Carrots Roasted in Olive Oil,None,Y,Y,N,Y,Y,Y,Y,N,N,N,N,N,N
 "Kale, Quinoa & Chickpeas",None,Y,Y,N,N,Y,Y,Y,N,N,N,N,N,N
 Roasted Broccoli,None,Y,Y,Y,N,Y,Y,Y,N,N,N,Y
-Blueberry Banana Smoothie,None,Y,Y,Y,N,N,Y
 "Pastries, Cakes & Desserts",Dessert,N,N,Y,N,N,Y,Y,Y
 Fresh Fruit Slices,None,Y,Y,Y,N,Y,Y,N,N,N,N,Y
 Cornell Dairy Yogurt,None,Y,N,Y,N,Y,Y,Y,Y,N,N,Y,Y

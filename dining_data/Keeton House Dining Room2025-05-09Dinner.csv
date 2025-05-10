@@ -1,4 +1,5 @@
 Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
+Fried Vegan Tenders,American,Y,Y,N,Y,N,Y,N,Y,N,N,N,N,N
 Whole Grain Hot Dog Rolls,None,N,N,N,N,N,N,N,Y,N,N,N,N,N
 Wheat Hamburger Roll,American,N,N,N,N,N,N,N,Y,N,N,N,N,N
 Tartar Sauce,None,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
@@ -8,7 +9,6 @@ Oyster Cracker,None,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
 New England Clam Chowder,American,N,N,N,N,N,N,N,Y,N,N,N,N,N
 Grilled All Beef Hot Dogs,American,N,N,N,N,Y,N,Y,Y,N,N,Y,N,N
 Green Onion,N,None,Y,N,N,N,N,Y,Y,N,N,N,N,N
-"Green Monster Veggie ""Not Dogs""",American,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
 Corn on the Cob,None,N,N,N,N,N,N,N,Y,N,N,N,N,N
 Classic Creamy Coleslaw,Polish,N,N,N,N,N,N,N,Y,N,N,N,N,N
 Breaded Cod Square,None,N,N,N,N,N,N,N,Y,N,N,N,N,N

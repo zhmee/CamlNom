@@ -14,7 +14,7 @@ Poke Bar Sesame Tuna,Hawaiian,N,N,N,N,N,N,N,N,N,N,N,Y,N
 Poke Bar Sesame Tofu,Hawaiian,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
 Assorted Desserts,Dessert,N,N,N,N,N,N,N,N,N,N,N,Y,N
 Nacho Bar,Mexican,Y,Y,N,N,N,N,N,N,N,N,Y,Y,N
-Steamed Brown Rice,None,Y,Y,N,N,N,Y,N,N,N,N,Y,Y,N
+Steamed Brown Rice,None,Y,Y,N,N,N,Y,N,N,N,Y,Y,Y,N
 Cornell Egg Drop Soup,None,N,N,N,Y,Y,Y,N,N,Y,N,Y,Y,N
 Chicken Tikka Masala,Indian,N,N,N,N,Y,Y,Y,N,Y,N,N,Y,N
 House Made Kimchi,Korean,N,N,N,N,N,N,Y,N,N,N,N,Y,N
@@ -23,12 +23,12 @@ Fresh Fruit Salad,None,Y,Y,N,N,N,N,Y,Y,N,N,Y,Y,N
 Chana Masala,Indian,Y,Y,Y,Y,Y,Y,N,N,Y,N,N,Y
 Traditional Hummus,Mediterranean,Y,Y,Y,N,N,N,N,Y,N,N,N,Y
 Cornell Dairy Yogurt,None,Y,N,Y,N,Y,Y,Y,Y,N,N,Y,Y
-Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,Y,Y,Y,Y,Y,N,Y,Y
+Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
 Overnight Oats with Blueberry & Banana,Dessert,Y,Y,N,N,N,N,N,N,Y,N,N,Y
 Coconut Chia Seed Pudding,Dessert,Y,Y,N,N,N,N,N,N,Y,N,N,Y
-Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,N,Y,Y
-Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,N,N,Y
-Hot & Cold Beverages,None,Y,Y,N,Y,N,Y,N,Y,N,N,N,Y
+Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
+Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,Y,N,Y
+Hot & Cold Beverages,None,Y,Y,N,Y,N,Y,N,Y,N,Y,N,Y
 Cornell Dairy Ice Cream,None,Y,N,Y
 Overnight Oats with Blueberry & Banana,Dessert,Y,Y,N
 Coconut Chia Seed Pudding,Dessert,Y,Y,N

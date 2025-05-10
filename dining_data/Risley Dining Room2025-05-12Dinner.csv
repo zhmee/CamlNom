@@ -1,7 +1,7 @@
 Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
 Sicilian Style Chicken Cacciatore,Italian,N,N,N,N,N,N,N,N,N,N,N,Y,N
 Sauteed Mixed Mushroom with Thyme,None,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
-Quinoa Stuffed Sweet Potatoes,Y,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
+Quinoa Stuffed Sweet Potatoes,None,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
 GF Vegan Grilled Cheeze,None,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
 GF Bruschetta Grilled Cheese,Italian,Y,N,N,N,N,N,N,N,N,N,N,Y,N
 Vegan Pho Broth,Vietnamese,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
@@ -18,17 +18,17 @@ Cornell Unsweetened Plain Yogurt,None,Y,N,N,N,N,N,N,N,N,N,N,Y,N
 Assorted Desserts,Dessert,N,N,N,N,N,N,N,N,N,N,N,Y,N
 Roasted Butternut Squash,None,Y,Y,N,N,N,N,N,N,Y,N,N,Y,N
 Nacho Bar,Mexican,Y,Y,N,N,N,N,N,N,N,N,Y,Y,N
-Steamed Brown Rice,None,Y,Y,N,N,N,Y,N,N,N,N,Y,Y,N
+Steamed Brown Rice,None,Y,Y,N,N,N,Y,N,N,N,Y,Y,Y,N
 Herbed Brown Rice Pilaf,Iranian,Y,Y,N,N,N,N,N,N,N,N,Y,Y,N
-Cornell Vegan Tomato Bisque,French,Y,Y,N,Y,N,N,Y,N,N,N,N,Y,N
+Cornell Vegan Tomato Bisque,French,Y,Y,N,Y,N,N,Y,N,N,Y,N,Y,N
 Fresh Fruit Salad,None,Y,Y,N,N,N,N,Y,Y,N,N,Y,Y,N
 Traditional Hummus,Mediterranean,Y,Y,Y,N,N,N,N,Y,N,N,N,Y
 Cornell Dairy Yogurt,None,Y,N,Y,N,Y,Y,Y,Y,N,N,Y,Y
-Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,Y,Y,Y,Y,Y,N,Y,Y
+Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
 Coconut Chia Seed Pudding,Dessert,Y,Y,N,N,N,N,N,N,Y,N,N,Y
-Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,N,Y,Y
-Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,N,N,Y
-Hot & Cold Beverages,None,Y,Y,N,Y,N,Y,N,Y,N,N,N,Y
+Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
+Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,Y,N,Y
+Hot & Cold Beverages,None,Y,Y,N,Y,N,Y,N,Y,N,Y,N,Y
 Cornell Dairy Ice Cream,None,Y,N,Y
 Coconut Chia Seed Pudding,Dessert,Y,Y,N
 Cornell Dairy Ice Cream,Dessert,Y,N,Y

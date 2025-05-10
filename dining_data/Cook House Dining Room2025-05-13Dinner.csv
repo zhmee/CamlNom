@@ -1,15 +1,15 @@
 Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
+Cheese Tortellini,Italian,Y,N,N,N,N,Y,N,N,N,N,N,N,N
 Tomato Bisque,French,Y,N,N,N,N,Y,N,N,N,N,N,N,N
 Seared Kale,None,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
 Roasted Green Beans,None,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
 Ginger Carrot Salad,None,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
 "Cauliflower Chickpea Provencale Stew ",French,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
 Sweet Popcake Pancakes,Dessert,N,N,N,N,N,Y,N,N,N,N,N,N,N
-Black Bean Burger,American,Y,Y,N,N,N,Y,N,N,N,Y,Y,N,N
+Black Bean Burger,American,Y,Y,N,Y,N,Y,N,N,N,Y,Y,N,N
 Steamed Brown Rice,None,Y,Y,N,N,N,Y,N,N,N,Y,Y,Y,N
 Sloppy Joe Sandwich Beef Filling,American,N,N,N,Y,N,Y,N,N,N,N,N,N,N
 Unbreaded Baked Chicken Parmesan,Italian,N,N,N,N,N,Y,Y,N,N,N,N,N,N
-Bread Sticks,Italian,Y,Y,N,N,Y,Y,Y,Y,N,Y,N,N,N
 Marinara Sauce,Italian,Y,Y,Y,N,Y,Y,Y,Y,N,N,Y
 "French Fries ",American,Y,Y,Y,N,Y,Y,Y,Y,N,Y,Y
 Cheddar Cheese Sauce,None,Y,N,Y,N,Y,Y,Y

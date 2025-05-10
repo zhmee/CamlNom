@@ -296,5 +296,6 @@ module Fetch_data = struct
         !meals;
     save_all !queries headers;
     write_master_list headers ();
+    recipe_book := master_file_name |> Csv.load |> from_csv;
     Final_project.Options.write_cuisines ()
 end
