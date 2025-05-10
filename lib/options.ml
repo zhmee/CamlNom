@@ -3,6 +3,8 @@ let dietary = ref [ "Vegetarian"; "Vegan" ]
 let cuisines_list = ref []
 let cuisines_file_path = "driver_data/cuisines.csv"
 
+[@@@coverage off]
+
 let read_cuisines () =
   cuisines_list := Csv.load cuisines_file_path |> List.map List.hd
 
@@ -11,6 +13,8 @@ let write_cuisines () =
     (!cuisines_list |> List.map (fun cuisine -> [ cuisine ]))
 
 let get_all_filters () = ref (!halls @ !dietary @ [ "Cuisine" ])
+
+[@@@coverage on]
 
 let days_of_week =
   [

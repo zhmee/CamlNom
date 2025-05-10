@@ -185,15 +185,28 @@ let sort_rating_test name csv filt exp =
   name >:: fun _ ->
   assert_equal exp Rating.(print_rating (sort_rating csv filt)) ~printer:Fun.id
 
+(**[sort_name_test] verifies that sorting the csv for the specified ame yields
+   the correct filtered csv. *)
 let sort_name_test name csv filt exp =
   name >:: fun _ ->
   assert_equal exp Rating.(print_rating (sort_name csv filt)) ~printer:Fun.id
 
+(**[test_ratings_with_dups] verifies that the csv with duplicates is
+   appropriately loaded.*)
 let test_ratings_with_dups = Csv.load "../data/test_ratings_duplicates.csv"
+
+(**[test_print_ratings] ensures that the ratings file is printed without raised
+   exceptions*)
+let test_print_ratings () =
+  "testing printing" >:: fun _ ->
+  let menu = "../data/rating_asc.csv" in
+  Rating.print_ratings (Csv.load menu);
+  assert_bool "dummy test" true
 
 let tests =
   "test suite"
   >::: [
+         test_print_ratings ();
          retrieve_ratings_name_test "ratings name test 1" test_ratings_with_dups
            "Greek yogurt" "Greek yogurt5MorrisonYAYGreek yogurt2MorrisonOh";
          retrieve_ratings_name_test "ratings name test 2" test_ratings_with_dups

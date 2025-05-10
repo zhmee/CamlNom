@@ -51,7 +51,7 @@ let sort_rating csv_file asc =
       if c = 0 then compare lst1 lst2 else c * if asc then 1 else -1)
     csv_file
 
-let rec print_ratings m =
+let print_ratings m =
   print_newline ();
   Csv.print_readable m;
   print_newline ()
