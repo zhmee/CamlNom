@@ -6,7 +6,7 @@ Ratatouille with Tofu,French,Y,Y,N,N,N,N,Y,N,N,Y,Y,N,N
 Murgh Kurma - Indian Braised Chicken,Indian,N,N,N,N,N,N,Y,N,N,N,N,N,N
 Marinated Grilled Tofu with Chimichurri,Peruvian,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
 Italian Diced Potatoes,Italian,Y,Y,N,N,Y,N,Y,N,N,N,N,N,N
-Chicken & Broccoli Alfredo Sauce,Italian,N,N,N,N,N,N,Y,N,N,N,N,N,N
+Chicken & Broccoli Alfredo Sauce,Italian,N,N,N,N,N,N,Y,N,N,N,Y,N,N
 Caribbean Rice Bowl Creations,Caribbean,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
 Broccoli Cheddar Soup,None,Y,N,N,N,N,N,Y,N,N,N,Y,N,N
 Basmati Rice,Indian,Y,Y,N,Y,N,Y,Y,N,N,N,Y,N,N
@@ -20,7 +20,5 @@ Healthy Style Salad Station,None,Y,Y,Y,N,Y,N,Y,Y
 Cornell Dairy Yogurt,None,Y,N,Y,N,Y,Y,Y,Y,N,N,Y,Y
 Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
 Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,Y,N,Y
-Cornell Dairy Ice Cream,None,Y,N,Y
 Cheese Pizza,Italian,Y,N,N,N,N,N,Y,N,Y,N,Y
-Cornell Dairy Ice Cream,Dessert,Y,N,Y
 Waffle Bar,None,N,N,Y,Y,N,Y,Y,N,Y,N,Y,Y

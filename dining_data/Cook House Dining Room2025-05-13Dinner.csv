@@ -4,9 +4,9 @@ Tomato Bisque,French,Y,N,N,N,N,Y,N,N,N,N,N,N,N
 Seared Kale,None,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
 Roasted Green Beans,None,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
 Ginger Carrot Salad,None,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
-"Cauliflower Chickpea Provencale Stew ",French,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
+"Cauliflower Chickpea Provencale Stew ",French,Y,Y,N,N,N,Y,N,N,N,N,Y,N,N
 Sweet Popcake Pancakes,Dessert,N,N,N,N,N,Y,N,N,N,N,N,N,N
-Black Bean Burger,American,Y,Y,N,Y,N,Y,N,N,N,Y,Y,N,N
+Black Bean Burger,American,Y,Y,N,Y,Y,Y,N,N,N,Y,Y,N,N
 Steamed Brown Rice,None,Y,Y,N,N,N,Y,N,N,N,Y,Y,Y,N
 Sloppy Joe Sandwich Beef Filling,American,N,N,N,Y,N,Y,N,N,N,N,N,N,N
 Unbreaded Baked Chicken Parmesan,Italian,N,N,N,N,N,Y,Y,N,N,N,N,N,N
@@ -19,5 +19,3 @@ Salad Bar,None,Y,Y,N,Y,N,Y,N,Y,N,Y
 Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
 Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,Y,N,Y
 Hot & Cold Beverages,None,Y,Y,N,Y,N,Y,N,Y,N,Y,N,Y
-Cornell Dairy Ice Cream,None,Y,N,Y
-Cornell Dairy Ice Cream,Dessert,Y,N,Y

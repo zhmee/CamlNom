@@ -15,7 +15,7 @@ Grilled Vegetables,None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
 "Coffee Crumb Cake ",Dessert,N,N,N,N,Y,N,N,N,N,Y,N,N,N
 Chicken Breakfast Sausage,None,N,N,N,N,Y,N,N,N,N,Y,N,N,N
 Breakfast Turkey Sausage Patty,None,N,N,N,N,Y,N,N,N,N,Y,N,N,N
-Pork Sausage Patty,None,N,N,N,N,Y,N,N,N,N,Y,N,N,N
+Pork Sausage Patty,None,N,N,N,N,Y,N,N,N,Y,Y,N,N,N
 Fresh Fruit Smoothies,None,Y,Y,N,N,N,N,N,N,Y,Y,N,N,N
 "Cornell Chicken Noodle Soup ",None,N,N,N,N,N,N,N,N,N,Y,Y,N,N
 Cornell Lentil & Tomato Soup,None,Y,Y,N,Y,Y,N,N,N,N,Y,N,N,N
@@ -34,9 +34,4 @@ Salad Bar,None,Y,Y,N,Y,N,Y,N,Y,N,Y
 Flavor Infused Water Station,None,Y,Y,N,N,N,N,N,N,Y,Y
 Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,Y,N,Y
 Dole Fruit Soft Serve,Dessert,Y,Y,N,N,N,N,N,N,Y,Y
-Dole Fruit Soft Serve,None,Y,Y,N
-Cornell Dairy Ice Cream,None,Y,N,Y
-Flavor Infused Water Station,None,Y,Y,N
 Fresh Baked Cookies,Dessert,N,N,N,Y,Y,N,N,N,Y,Y,Y
-Cornell Dairy Ice Cream,Dessert,Y,N,Y
-Dole Fruit Soft Serve,Dessert,Y,Y,N

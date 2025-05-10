@@ -18,7 +18,7 @@ Sliced Pears in Juice,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Shredded Lettuce,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Plain Hummus,Mediterranean,N,N,N,N,N,N,N,N,N,N,Y,N,N
 Farfalle Pasta,Italian,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
-Chef's Choice Seasonal Vegetable,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
+Chef's Choice Seasonal Vegetable,None,Y,Y,N,N,N,N,N,N,N,Y,Y,N,N
 Harvest Salad Bar,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Cumin Basmati Rice,Indian,Y,Y,N,N,N,N,N,N,Y,N,Y,Y,N
 Beverage Bar,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
@@ -36,9 +36,6 @@ Pita,Mediterranean,Y,Y,N,Y,N,N,N,N,Y,N,Y
 Lemon Rice,Mediterranean,Y,Y,N,N,N,N,N,N,N,N,Y
 Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
 Dessert Bars,Dessert,N,N,N,N,N,N,N,N,Y,N,Y
-Lemon Rice,Mediterranean,Y,Y,N
 Cheese Pizza,Italian,Y,N,N,N,N,N,Y,N,Y,N,Y
-Lemon Rice,Mediterranean,Y,Y,N
 Fresh Baked Cookies,Dessert,N,N,N,Y,Y,N,N,N,Y,Y,Y
-Dessert Bars,Dessert,N,N,N
 Waffle Bar,None,N,N,Y,Y,N,Y,Y,N,Y,N,Y,Y

@@ -4,14 +4,14 @@ Taco Bar,Mexican,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Roasted Carrots,None,Y,Y,N,N,N,N,N,N,N,N,Y,Y,N
 BBQ Pulled Chicken Thighs,American,N,N,N,N,N,N,N,N,N,N,Y,N,N
 "Wok Daikon Soup ",Japanese,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
-Rosemary & White Bean Stew,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
+Rosemary & White Bean Stew,None,Y,Y,N,N,N,N,N,N,Y,N,Y,N,N
 "Farro with Mushrooms, Zucchini & Cashews",None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Cheddar & Monterey Jack Cheese Blend,None,Y,N,N,N,N,N,N,N,N,N,Y,N,N
 Ancho Chili Fish,Mexican,N,N,N,N,N,N,N,N,N,N,Y,N,N
 Vegan Veggie Supreme Pizza,Italian,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 "Vegan Chocolate Cake ",Dessert,Y,Y,N,N,Y,N,N,N,N,N,Y,N,N
 Shredded Lettuce,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
-Chef's Choice Seasonal Vegetable,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
+Chef's Choice Seasonal Vegetable,None,Y,Y,N,N,N,N,N,N,N,Y,Y,N,N
 Harvest Salad Bar,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Beverage Bar,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 "Cornell New England Clam Chowder ",American,N,N,N,N,N,N,Y,N,N,N,Y,N,N
@@ -29,5 +29,4 @@ Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
 Dessert Bars,Dessert,N,N,N,N,N,N,N,N,Y,N,Y
 Cheese Pizza,Italian,Y,N,N,N,N,N,Y,N,Y,N,Y
 Fresh Baked Cookies,Dessert,N,N,N,Y,Y,N,N,N,Y,Y,Y
-Dessert Bars,Dessert,N,N,N
 Waffle Bar,None,N,N,Y,Y,N,Y,Y,N,Y,N,Y,Y

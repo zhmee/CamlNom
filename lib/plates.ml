@@ -45,7 +45,17 @@ let check_attribute d m p s e num =
   d' && m' && p' && s' && e'
 
 let make_plate n h c d m p s e =
-  if check_attribute d m p s e 2 then
+  let veg_index =
+    !Options.recipe_book |> Dining.to_csv |> List.hd
+    |> List.find_index (( = ) "Vegetarian")
+    |> Option.get
+  in
+  let vegan_index =
+    !Options.recipe_book |> Dining.to_csv |> List.hd
+    |> List.find_index (( = ) "Vegan")
+    |> Option.get
+  in
+  if check_attribute d m p s e veg_index then
     {
       name = n;
       hall = h;
@@ -58,7 +68,7 @@ let make_plate n h c d m p s e =
       side = s;
       dessert = e;
     }
-  else if check_attribute d m p s e 3 then
+  else if check_attribute d m p s e vegan_index then
     {
       name = n;
       hall = h;
@@ -143,4 +153,3 @@ let cuisines p =
     | None -> ""
   in
   [ d; m; pr; s; e ]
-

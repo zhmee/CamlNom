@@ -8,7 +8,7 @@ Macaroni & Cheese Bar,American,Y,N,N,N,N,N,N,N,N,Y,N,N,N
 Kielbasa & Apple Fennel Slaw,Polish,N,N,N,N,N,N,N,N,N,Y,N,N,N
 Fire Seared Roasted Button Mushrooms,None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
 "Cornell Potato Leek Soup ",None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
-Collard Greens with Red Pepper & Onions,American,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
+Collard Greens with Red Pepper & Onions,American,Y,Y,N,N,N,N,N,N,N,Y,N,Y,N
 Citrus Chicken with Honey Chipotle Glaze,None,N,N,N,N,N,N,N,N,N,Y,N,N,N
 Angus Beef Meat Sauce with Pasta,Italian,N,N,N,N,N,N,N,N,N,Y,N,N,N
 Honey Citrus Basil Vinaigrette,None,Y,N,N,N,N,N,N,N,N,Y,N,N,N
@@ -18,14 +18,14 @@ Arugula Beet Radish & Goat Cheese Salad,None,Y,N,N,N,N,N,N,N,N,Y,N,N,N
 Grilled Chicken Breast,None,N,N,N,N,N,N,N,N,N,Y,N,N,N
 Chipotle Chicken Thigh,Mexican,N,N,N,N,N,N,N,N,N,Y,N,N,N
 Bowl Toppings & Condiments,None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
-Cajun Crusted Tofu with Chimichurri,Mexican,Y,Y,N,N,N,Y,N,N,N,Y,N,N,N
+Cajun Crusted Tofu with Chimichurri,Mexican,Y,Y,N,N,Y,Y,N,N,N,Y,N,N,N
 Shrimp & Broccoli Stir Fry,None,N,N,N,N,N,N,N,N,Y,Y,N,N,N
 Assorted Bread & Rolls,None,Y,Y,N,N,N,N,N,N,Y,Y,N,N,N
 Tofurizo,Mexican,Y,Y,N,N,N,N,N,N,N,Y,Y,N,N
-Black Bean Burger,American,Y,Y,N,Y,N,Y,N,N,N,Y,Y,N,N
+Black Bean Burger,American,Y,Y,N,Y,Y,Y,N,N,N,Y,Y,N,N
 Taco Beef,Mexican,N,N,N,N,N,Y,N,N,N,Y,Y,N,N
 Steamed Brown Rice,None,Y,Y,N,N,N,Y,N,N,N,Y,Y,Y,N
-Pasta With Beans & Greens,Italian,Y,N,N,N,N,N,Y,N,N,Y,N,N,N
+Pasta With Beans & Greens,Italian,Y,N,N,N,Y,N,Y,N,N,Y,N,N,N
 Mashed Sweet Potatoes,None,Y,Y,N,N,N,N,Y,N,N,Y,N,N,N
 Chef's Choice Pizza/Flatbread,Italian,Y,Y,N,N,N,N,N,Y,N,Y,N,N,N
 Fruit & Yogurt Bar,None,Y,Y,N,N,N,N,N,Y,Y,Y,N,N,N
@@ -40,9 +40,4 @@ Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,Y,N,Y
 Dole Fruit Soft Serve,Dessert,Y,Y,N,N,N,N,N,N,Y,Y
 Sicilian Style Sheet Pizza,Italian,Y,N,N,N,N,N,N,N,N,Y
 Hot & Cold Beverages,None,Y,Y,N,Y,N,Y,N,Y,N,Y,N,Y
-Dole Fruit Soft Serve,None,Y,Y,N
-Cornell Dairy Ice Cream,None,Y,N,Y
-Flavor Infused Water Station,None,Y,Y,N
 Fresh Baked Cookies,Dessert,N,N,N,Y,Y,N,N,N,Y,Y,Y
-Cornell Dairy Ice Cream,Dessert,Y,N,Y
-Dole Fruit Soft Serve,Dessert,Y,Y,N

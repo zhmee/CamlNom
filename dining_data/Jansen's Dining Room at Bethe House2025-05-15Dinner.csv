@@ -4,7 +4,7 @@ Louisiana Black-eyed Peas,American,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
 Fried Vegan Tenders & BBQ Sauce,American,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
 Candied Yams,None,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
 "Buffalo Chicken Pizza ",American,N,N,N,N,N,N,Y,N,N,N,N,N,N
-BBQ Chicken,American,N,N,N,N,N,N,Y,N,Y,N,N,N,N
+BBQ Chicken,American,N,N,N,N,Y,N,Y,N,Y,N,N,N,N
 Cornell Carrot Ginger Soup,None,N,Y,N,N,Y,N,Y,N,N,N,N,N,N
 Asian Marinated Chicken,Asian,N,N,N,N,N,N,Y,N,N,N,N,N,N
 Steamed Plain Bao Bun,Chinese,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
@@ -20,7 +20,5 @@ Healthy Style Salad Station,None,Y,Y,Y,N,Y,N,Y,Y
 Cornell Dairy Yogurt,None,Y,N,Y,N,Y,Y,Y,Y,N,N,Y,Y
 Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
 Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,Y,N,Y
-Cornell Dairy Ice Cream,None,Y,N,Y
 Cheese Pizza,Italian,Y,N,N,N,N,N,Y,N,Y,N,Y
-Cornell Dairy Ice Cream,Dessert,Y,N,Y
 Waffle Bar,None,N,N,Y,Y,N,Y,Y,N,Y,N,Y,Y

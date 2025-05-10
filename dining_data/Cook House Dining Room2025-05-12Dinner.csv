@@ -2,7 +2,7 @@ Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Din
 Guacamole with Chips & Salsa,Mexican,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
 Spicy Caribbean Stew,Caribbean,N,N,N,N,N,Y,N,N,N,N,N,N,N
 Spicy Beef & Refried Bean Taco,Mexican,N,N,N,N,N,Y,N,N,N,N,N,N,N
-Seared Kale with Red Onions & Garlic,None,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
+Seared Kale with Red Onions & Garlic,None,Y,Y,N,N,Y,Y,N,N,N,N,N,N,N
 Jamaican Jerk Chicken,Jamaican,N,N,N,N,N,Y,N,N,N,N,N,N,N
 Cilantro Rice,Mexican,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
 Sweet Popcake Pancakes,Dessert,N,N,N,N,N,Y,N,N,N,N,N,N,N
@@ -18,5 +18,3 @@ Salad Bar,None,Y,Y,N,Y,N,Y,N,Y,N,Y
 Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
 Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,Y,N,Y
 Hot & Cold Beverages,None,Y,Y,N,Y,N,Y,N,Y,N,Y,N,Y
-Cornell Dairy Ice Cream,None,Y,N,Y
-Cornell Dairy Ice Cream,Dessert,Y,N,Y

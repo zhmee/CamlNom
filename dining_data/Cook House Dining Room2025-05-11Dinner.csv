@@ -4,7 +4,7 @@ Sliced Tomato,None,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
 Honey Mustard Roasted Chicken Thigh,None,N,N,N,N,N,Y,N,N,N,N,N,N,N
 French Round Bread,French,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
 Egg Salad,None,N,N,N,N,N,Y,N,N,N,N,N,N,N
-Cajun Crusted Tofu with Chimichurri,Mexican,Y,Y,N,N,N,Y,N,N,N,Y,N,N,N
+Cajun Crusted Tofu with Chimichurri,Mexican,Y,Y,N,N,Y,Y,N,N,N,Y,N,N,N
 Blackened MSC Pollock,None,N,N,N,N,N,Y,N,N,N,N,N,N,N
 Seared Kale,None,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
 Sweet Popcake Pancakes,Dessert,N,N,N,N,N,Y,N,N,N,N,N,N,N
@@ -23,5 +23,3 @@ Salad Bar,None,Y,Y,N,Y,N,Y,N,Y,N,Y
 Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
 Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,Y,N,Y
 Hot & Cold Beverages,None,Y,Y,N,Y,N,Y,N,Y,N,Y,N,Y
-Cornell Dairy Ice Cream,None,Y,N,Y
-Cornell Dairy Ice Cream,Dessert,Y,N,Y

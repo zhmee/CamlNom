@@ -25,6 +25,25 @@ let dining_dict = create_dictionary "./driver_data/diningdict.csv"
 let user_plates = Csv.load "./driver_data/userplates.csv"
 let all_dishes = !Options.recipe_book
 
+(**[print_menu f lst] is a function that prints out a numerical list of options
+   for a user to view. [f] is an argument that allows the function to print out
+   the options, in the case that they are not of type [string]. *)
+let print_menu f lst =
+  List.iteri
+    (fun index item ->
+      print_endline (string_of_int (index + 1) ^ ") " ^ f item))
+    lst
+
+(**[yield_value lst f] returns a valid option out of the options provided in
+   [lst]*)
+let yield_value lst f =
+  let check_valid_bounds index lst = index < List.length lst && index >= 0 in
+  print_menu f lst;
+  let index = read_int () - 1 in
+  if not (check_valid_bounds index lst) then
+    raise (Sys_error (string_of_int index))
+  else List.nth lst index
+
 (**[formatted_day day] takes in a day of type [Unix.tm] and returns it in
    YYYY-MM-DD form. *)
 let formatted_day (day : tm) =
@@ -279,7 +298,7 @@ let rec retrieve_rating () =
         in
         let dish_ratings = retrieve_ratings_name rating_file dish_name in
         if dish_ratings = [] then print_endline "No ratings found for dish"
-        else print_endline (print_ratings dish_ratings)
+        else print_ratings dish_ratings
     (*user wants specific rating*)
     | "1" ->
         print_endline
@@ -289,7 +308,7 @@ let rec retrieve_rating () =
         if rating < 1 || rating > 5 then raise (Illegal_rating rating)
         else
           let certain_rating = retrieve_ratings_int rating_file rating in
-          print_endline (print_ratings certain_rating)
+          print_ratings certain_rating
     (*user wants rating range*)
     | "2" ->
         print_endline
@@ -301,9 +320,9 @@ let rec retrieve_rating () =
         if rating1 > rating2 then raise (Illegal_rating 1)
         else
           let range_ratings =
-            retrieve_ratings_int_range rating_file rating1 rating2
+            retrieve_ratings_int_range (rating_file |> List.tl) rating1 rating2
           in
-          print_endline (print_ratings range_ratings)
+          print_ratings ((rating_file |> List.hd) :: range_ratings)
     (*user wants specific dining hall*)
     | "3" ->
         print_endline
@@ -311,7 +330,7 @@ let rec retrieve_rating () =
         let hall = read_line () in
         let hall_ratings = retrieve_ratings_hall rating_file hall in
         if hall_ratings = [] then print_endline "No ratings found for this hall"
-        else print_endline (print_ratings hall_ratings)
+        else print_ratings hall_ratings
     | _ ->
         print_endline "Please choose only one of the above";
         retrieve_rating ()
@@ -471,7 +490,7 @@ let rec make_plates () =
     else
       print_endline
         "What dining hall are the contents of your plate built from?\n";
-    let user_dining_hall = read_line () in
+    let user_dining_hall = yield_value !halls Fun.id in
     let hall = check_user_spelling user_dining_hall dining_dict dining_dict in
     if String.length hall = 0 then raise Missing_input
     else print_endline "What was the main dish? Please input dish name or Skip.";
@@ -677,29 +696,12 @@ let rec prompter created_menu =
       prompter created_menu
     end
 
-(**[print_menu f lst] is a function that prints out a numerical list of options
-   for a user to view. [f] is an argument that allows the function to print out
-   the options, in the case that they are not of type [string]. *)
-let print_menu f lst =
-  List.iteri
-    (fun index item ->
-      print_endline (string_of_int (index + 1) ^ ") " ^ f item))
-    lst
-
 let meal_exists day_chosen hall_chosen meal_chosen =
   finding_day (day_chosen |> string_of_int) hall_chosen meal_chosen <> ""
 
 (**[menu_view] handles the user path where the user chooses to view a menu. *)
 let menu_view () =
   try
-    let check_valid_bounds index lst = index < List.length lst && index >= 0 in
-    let yield_value lst f =
-      print_menu f lst;
-      let index = read_int () - 1 in
-      if not (check_valid_bounds index lst) then
-        raise (Sys_error (string_of_int index))
-      else List.nth lst index
-    in
     print_endline
       "\nPlease choose what day you would like to see the menu for: \n";
     let day_chosen = yield_value Options.days_of_week snd |> fst in

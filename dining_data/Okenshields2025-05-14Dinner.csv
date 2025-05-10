@@ -1,6 +1,6 @@
 Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
 Tofu & Vegetable Stir Fry,Chinese,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
-Steamed California Vegetables,None,Y,Y,N,N,N,N,N,N,N,N,Y,Y,N
+Steamed California Vegetables,None,Y,Y,N,N,N,N,N,N,Y,N,Y,Y,N
 "Sausage, Pepper, Onion & Mushroom Pizza",Italian,N,N,N,N,N,N,N,N,N,N,Y,N,N
 Plain Cake Donuts,Dessert,N,N,N,N,N,N,N,N,N,N,Y,N,N
 Jamaican Pork Roast,Jamaican,N,N,N,N,N,N,N,N,N,N,Y,N,N
@@ -20,5 +20,4 @@ Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
 Dessert Bars,Dessert,N,N,N,N,N,N,N,N,Y,N,Y
 Cheese Pizza,Italian,Y,N,N,N,N,N,Y,N,Y,N,Y
 Fresh Baked Cookies,Dessert,N,N,N,Y,Y,N,N,N,Y,Y,Y
-Dessert Bars,Dessert,N,N,N
 Waffle Bar,None,N,N,Y,Y,N,Y,Y,N,Y,N,Y,Y

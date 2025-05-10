@@ -1,31 +1,27 @@
 Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
-Turkey Burgers,American,N,N,N,N,N,N,N,N,N,Y,N,N,N
-"Tortellini, Brown Butter & Sweet Potato",Italian,Y,N,N,N,N,N,N,N,N,Y,N,N,N
-Penne with Vegetable Pomodoro & Basil,Italian,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
-Pasta Carbonara,Italian,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
-Honey-Butter Roasted Root Vegetables,None,Y,N,N,N,N,N,N,N,N,Y,N,N,N
+Sunflower Seed Arugula Pesto,Italian,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
+Garbanzo Bean Slider,American,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
+Cornell Creamy Cauliflower Spinach Soup,None,Y,N,N,N,N,N,N,N,N,Y,N,N,N
+"Cornell Beef & Barley Soup ",None,N,N,N,N,N,N,N,N,N,Y,N,N,N
+"Chef's Choice Vegetarian Entree ",None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
+Chef's Choice Meat Entree,None,N,N,N,N,N,N,N,N,N,Y,N,N,N
 "Closed ",None,N,N,N,N,N,N,N,N,N,Y,N,N,N
-Chef's Choice Soup,None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
-"Cheddar & Broccoli Sheet Pizza ",Italian,Y,N,N,N,N,N,N,N,N,Y,N,N,N
-"Amatriciana Sheet Pizza ",Italian,Y,N,N,N,N,N,N,N,N,Y,N,N,N
-Macaroni & Cheese Bar,American,Y,N,N,N,N,N,N,N,N,Y,N,N,N
 Grilled Chicken Breast,None,N,N,N,N,N,N,N,N,N,Y,N,N,N
-Caramelized Red Onion,None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
 Chipotle Chicken Thigh,Mexican,N,N,N,N,N,N,N,N,N,Y,N,N,N
 Bowl Toppings & Condiments,None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
-Garlic Roasted Chicken,None,N,N,N,N,N,Y,N,N,N,Y,N,N,N
-Cajun Crusted Tofu with Chimichurri,Mexican,Y,Y,N,N,N,Y,N,N,N,Y,N,N,N
+"Sweet & Sour Tofu ",None,Y,Y,N,N,Y,N,N,N,N,Y,N,N,N
 Assorted Bread & Rolls,None,Y,Y,N,N,N,N,N,N,Y,Y,N,N,N
 Tofurizo,Mexican,Y,Y,N,N,N,N,N,N,N,Y,Y,N,N
 Taco Beef,Mexican,N,N,N,N,N,Y,N,N,N,Y,Y,N,N
 Steamed Brown Rice,None,Y,Y,N,N,N,Y,N,N,N,Y,Y,Y,N
-Roasted Garlic & Herb Potatoes,None,Y,Y,N,N,N,N,Y,N,Y,Y,N,Y,N
+Chef's Choice Seasonal Vegetable,None,Y,Y,N,N,N,N,N,N,N,Y,Y,N,N
+Roasted Mushrooms,None,Y,Y,N,Y,Y,Y,Y,N,N,Y,N,N,N
+Chef's Choice,None,Y,Y,N,Y,Y,Y,Y,N,N,Y,N,N,N
 Chef's Choice Pizza/Flatbread,Italian,Y,Y,N,N,N,N,N,Y,N,Y,N,N,N
 Fruit & Yogurt Bar,None,Y,Y,N,N,N,N,N,Y,Y,Y,N,N,N
 Seasoned Black Beans,None,Y,Y,Y,N,N,N,N,N,N,Y
-Steamed Green Beans,None,Y,Y,Y,N,Y,N,N,N,Y,Y
-Grated Parmesan Cheese,Italian,Y,N,Y,N,N,N,Y,Y,N,Y
 "French Fries ",American,Y,Y,Y,N,Y,Y,Y,Y,N,Y,Y
+Chicken Riggies,Italian,N,N,Y,,N,N,N,N,N,Y
 Salad Bar,None,Y,Y,N,Y,N,Y,N,Y,N,Y
 Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
 Flavor Infused Water Station,None,Y,Y,N,N,N,N,N,N,Y,Y
@@ -34,9 +30,4 @@ Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,Y,N,Y
 Dole Fruit Soft Serve,Dessert,Y,Y,N,N,N,N,N,N,Y,Y
 Sicilian Style Sheet Pizza,Italian,Y,N,N,N,N,N,N,N,N,Y
 Hot & Cold Beverages,None,Y,Y,N,Y,N,Y,N,Y,N,Y,N,Y
-Dole Fruit Soft Serve,None,Y,Y,N
-Cornell Dairy Ice Cream,None,Y,N,Y
-Flavor Infused Water Station,None,Y,Y,N
 Fresh Baked Cookies,Dessert,N,N,N,Y,Y,N,N,N,Y,Y,Y
-Cornell Dairy Ice Cream,Dessert,Y,N,Y
-Dole Fruit Soft Serve,Dessert,Y,Y,N

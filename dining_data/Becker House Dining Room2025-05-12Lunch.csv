@@ -1,6 +1,6 @@
 Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
-Tacos Al Pastor - Pork & Pineapple,Mexican,N,N,N,N,Y,N,N,N,N,N,N,N,N
-"Sweet & Sour Tofu ",None,Y,Y,N,N,Y,N,N,N,N,N,N,N,N
+Tandoori Chicken Taco,Mexican,N,N,N,N,Y,N,N,N,N,N,N,N,N
+"Sweet & Sour Tofu ",None,Y,Y,N,N,Y,N,N,N,N,Y,N,N,N
 Roasted Mexican Street Corn,Mexican,Y,Y,N,N,Y,N,N,N,N,N,N,N,N
 Garlic Parmesan Chicken Drumsticks,Italian,N,N,N,N,Y,N,N,N,N,N,N,N,N
 Cornell Split Pea Soup,none,Y,Y,N,N,Y,N,N,N,N,N,N,N,N
@@ -9,7 +9,7 @@ Malted Vanilla Waffle Batter,None,N,N,N,N,Y,N,N,N,N,N,N,N,N
 Lemon Honey Dressing,None,Y,N,N,N,Y,N,N,N,N,N,N,N,N
 House Honey Balsamic Vinaigrette,None,Y,Y,N,N,Y,N,N,N,N,N,N,N,N
 Creamy Italian Dressing,Italian,Y,N,N,N,Y,N,N,N,N,N,N,N,N
-Cranberry Apple Wheat Berry Salad,None,Y,Y,N,N,Y,N,N,N,N,N,N,N,N
+Cranberry Apple Wheat Berry Salad,None,Y,Y,N,N,Y,N,N,N,N,N,Y,N,N
 Buttermilk Ranch Dressing,American,Y,N,N,N,Y,N,N,N,N,N,N,N,N
 Quinoa,NOne,Y,Y,N,Y,Y,N,N,N,N,N,N,N,N
 Italian Diced Potatoes,Italian,Y,Y,N,N,Y,N,Y,N,N,N,N,N,N

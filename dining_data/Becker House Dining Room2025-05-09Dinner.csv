@@ -10,7 +10,7 @@ Malted Vanilla Waffle Batter,None,N,N,N,N,Y,N,N,N,N,N,N,N,N
 Lemon Honey Dressing,None,Y,N,N,N,Y,N,N,N,N,N,N,N,N
 House Honey Balsamic Vinaigrette,None,Y,Y,N,N,Y,N,N,N,N,N,N,N,N
 Creamy Italian Dressing,Italian,Y,N,N,N,Y,N,N,N,N,N,N,N,N
-Cranberry Apple Wheat Berry Salad,None,Y,Y,N,N,Y,N,N,N,N,N,N,N,N
+Cranberry Apple Wheat Berry Salad,None,Y,Y,N,N,Y,N,N,N,N,N,Y,N,N
 Buttermilk Ranch Dressing,American,Y,N,N,N,Y,N,N,N,N,N,N,N,N
 Steamed Peas & Carrots,None,Y,Y,N,N,Y,Y,N,N,N,N,N,N,N
 "Vegan Chocolate Cake ",Dessert,Y,Y,N,N,Y,N,N,N,N,N,Y,N,N
@@ -32,8 +32,4 @@ Tuna Salad,None,N,N,N,Y,Y,Y,N,N,Y
 Oven Roasted Brussels Sprouts,None,Y,Y,N,N,Y
 Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
 Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,Y,N,Y
-Cornell Dairy Ice Cream,None,Y,N,Y
-Oven Roasted Brussels Sprouts,None,Y,Y,N
-Oven Roasted Brussels Sprouts,None,Y,Y,N
 Fresh Baked Cookies,Dessert,N,N,N,Y,Y,N,N,N,Y,Y,Y
-Cornell Dairy Ice Cream,Dessert,Y,N,Y

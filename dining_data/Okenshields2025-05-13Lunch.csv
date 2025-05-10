@@ -18,7 +18,7 @@ Steamed Brown Rice,None,Y,Y,N,N,N,Y,N,N,N,Y,Y,Y,N
 Shredded Lettuce,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Plain Hummus,Mediterranean,N,N,N,N,N,N,N,N,N,N,Y,N,N
 Farfalle Pasta,Italian,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
-Chef's Choice Seasonal Vegetable,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
+Chef's Choice Seasonal Vegetable,None,Y,Y,N,N,N,N,N,N,N,Y,Y,N,N
 Harvest Salad Bar,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Beverage Bar,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Salt Potatoes,None,Y,Y,N,N,N,N,Y,N,Y,N,Y,N,N
@@ -39,5 +39,4 @@ Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
 Dessert Bars,Dessert,N,N,N,N,N,N,N,N,Y,N,Y
 Cheese Pizza,Italian,Y,N,N,N,N,N,Y,N,Y,N,Y
 Fresh Baked Cookies,Dessert,N,N,N,Y,Y,N,N,N,Y,Y,Y
-Dessert Bars,Dessert,N,N,N
 Waffle Bar,None,N,N,Y,Y,N,Y,Y,N,Y,N,Y,Y

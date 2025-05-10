@@ -66,5 +66,5 @@ val sort_rating : Csv.t -> bool -> Csv.t
    otherwise. Requires: [csv_file] is a legitimate rating file with entries
    representable by [Rating.t]*)
 
-val print_ratings : Csv.t -> string
+val print_ratings : Csv.t -> unit
 (**[print_ratings] prints the string out of the CSV*)
