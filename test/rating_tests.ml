@@ -172,15 +172,22 @@ let retrieve_ratings_hall_test name csv filt exp =
     (list_list_to_str Rating.(retrieve_ratings_hall csv filt))
     ~printer:Fun.id
 
+(**[print_rating csv] is a helper function that allows us to test the filter
+   function of on our csv files. *)
+let rec print_rating m =
+  match m with
+  | [] -> "\n"
+  | h :: t -> String.concat " " h ^ "\n" ^ print_rating t
+
 (**[sort_rating_test n c f e] is the test with name [n] that checks if sorting
    the ratings in [c] in the order indicated by [f] returns [e]*)
 let sort_rating_test name csv filt exp =
   name >:: fun _ ->
-  assert_equal exp Rating.(print_ratings (sort_rating csv filt)) ~printer:Fun.id
+  assert_equal exp Rating.(print_rating (sort_rating csv filt)) ~printer:Fun.id
 
 let sort_name_test name csv filt exp =
   name >:: fun _ ->
-  assert_equal exp Rating.(print_ratings (sort_name csv filt)) ~printer:Fun.id
+  assert_equal exp Rating.(print_rating (sort_name csv filt)) ~printer:Fun.id
 
 let test_ratings_with_dups = Csv.load "../data/test_ratings_duplicates.csv"
 

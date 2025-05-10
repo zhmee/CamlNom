@@ -2,6 +2,7 @@ Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Din
 Pancakes with Fruit,None,N,N,N,N,Y,N,N,N,N,N,N,N,N
 Fried Tofu with Teriyaki Glaze,Japanese,Y,Y,N,N,Y,N,N,N,N,N,N,N,N
 "Coffee Crumb Cake ",Dessert,N,N,N,N,Y,N,N,N,N,Y,N,N,N
+Chicken Breakfast Sausage,None,N,N,N,N,Y,N,N,N,N,Y,N,N,N
 Assorted Cereal & Bagels,None,Y,Y,N,N,Y,N,N,N,N,N,N,N,N
 Apple Cinnamon Overnight Oats,None,Y,Y,N,N,Y,N,N,N,N,N,N,N,N
 Malted Vanilla Waffle Batter,None,N,N,N,N,Y,N,N,N,N,N,N,N,N
@@ -22,7 +23,6 @@ Cottage Cheese,None,Y,N,N,N,Y,N,Y,N,N,N,N,N,N
 Applesauce,None,Y,Y,N,N,Y,N,Y,N,N,N,N,N,N
 Scrambled Eggs,None,N,N,N,Y,Y,Y,Y,Y,Y,Y,N,N,N
 Cornell Dairy Ice Cream Bar,None,Y,N,N,N,Y,N,N,Y,N,N,Y,N,N
-Turkey Breakfast Sausage,None,N,N,Y,N,Y,N,Y,Y,Y
 Steamed Green Beans,None,Y,Y,Y,N,Y,N,N,N,Y,Y
 Fried Potato Puffs,None,Y,Y,Y,N,Y,Y,Y,Y,N,Y
 Sesame Marinated Tofu,Asian,Y,Y,Y,N,Y

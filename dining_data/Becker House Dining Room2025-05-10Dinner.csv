@@ -1,8 +1,9 @@
 Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
+Honey Balsamic Carrots,None,Y,N,N,N,Y,N,N,N,N,N,N,N,N
+Baked Beans with Bacon,American,N,N,N,N,Y,N,N,N,N,N,N,N,N
 Dijon Crusted Pork Loin,French,N,N,N,N,Y,N,N,N,N,N,N,N,N
 Buffalo Chicken Blue Cheese Sheet Pizza,American,N,N,N,N,Y,N,N,N,N,Y,N,N,N
 Beef Sloppy Joe Sandwich,American,N,N,N,N,Y,N,N,N,N,N,N,N,N
-Fresh Vegetable Saute,None,Y,Y,N,N,Y,N,N,N,N,N,N,N,N
 Malted Vanilla Waffle Batter,None,N,N,N,N,Y,N,N,N,N,N,N,N,N
 Lemon Honey Dressing,None,Y,N,N,N,Y,N,N,N,N,N,N,N,N
 House Honey Balsamic Vinaigrette,None,Y,Y,N,N,Y,N,N,N,N,N,N,N,N
@@ -13,8 +14,7 @@ Brown Rice & Vegetables,None,Y,Y,N,N,Y,N,N,N,N,N,Y,N,N
 Tofu & Red Bean Jambalaya,Mexican,Y,Y,N,N,Y,N,N,N,Y,N,Y,N,N
 "Vegan Chocolate Cake ",Dessert,Y,Y,N,N,Y,N,N,N,N,N,Y,N,N
 Quinoa,NOne,Y,Y,N,Y,Y,N,N,N,N,N,N,N,N
-Cornell Lentil & Tomato Soup,None,Y,Y,N,Y,Y,N,N,N,N,Y,N,N,N
-BBQ Baked Beans,American,Y,Y,N,N,Y,N,Y,N,N,N,N,N,N
+Cornell Lentil & Tomato Soup,None,Y,Y,N,Y,Y,Y,N,N,N,Y,N,N,N
 Garlic Green Beans,None,Y,Y,N,N,Y,N,Y,N,N,Y,Y,N,N
 Sliced Peaches in Juice,None,Y,Y,N,N,Y,N,Y,N,N,N,Y,N,N
 Cottage Cheese,None,Y,N,N,N,Y,N,Y,N,N,N,N,N,N

@@ -1,4 +1,9 @@
 Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
+Honey Balsamic Carrots,None,Y,N,N,N,Y,N,N,N,N,N,N,N,N
+Baked Beans with Bacon,American,N,N,N,N,Y,N,N,N,N,N,N,N,N
+Chicken & Wild Rice Soup,None,N,N,N,N,N,Y,N,N,N,N,N,N,N
+Jerk Chicken Thigh with Mango Salsa,Jamaican,N,N,N,N,N,N,Y,N,N,N,N,N,N
+GF Pasta Angus Beef Meat Sauce,Italian,N,N,N,N,N,N,Y,N,N,N,N,N,N
 Vegan Ziti Marinara & White Beans,Italian,Y,Y,N,N,Y,N,N,N,N,N,N,N,N
 Simply Steamed Broccoli,None,Y,Y,N,N,Y,N,N,N,N,N,N,N,N
 Cheesy Green Onion Mashed Potatoes,None,Y,N,N,N,Y,N,N,N,N,N,N,N,N
@@ -71,7 +76,7 @@ Theresa Fresh Marinara Sauce,Italian,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
 Smoked Gouda Macaroni & Cheese,American,Y,N,N,N,N,N,N,N,N,Y,N,N,N
 Green Beans with Roasted Garlic,None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
 Cornmeal Crusted Tofu with Corn Salsa,American,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
-Chefs Choice Pasta,Italian,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
+Chefs Choice Pasta,Italian,Y,Y,N,N,N,N,Y,N,N,Y,N,N,N
 Cheese Ravioli with Basil Butter,Italian,Y,N,N,N,N,N,N,N,N,Y,N,N,N
 Black Jack BBQ Sauce,American,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
 "Alfredo Sauce ",Italian,Y,N,N,N,N,N,N,N,N,Y,N,N,N
@@ -98,7 +103,7 @@ Fried Egg Sandwich,None,N,N,N,N,N,N,N,N,N,Y,N,N,N
 Dressing Asian Sesame GF,None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
 Dim Sum Buffet,Chinese,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
 Assorted Vegan Cookies,Dessert,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
-Traditional Bread Stuffing,None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
+Traditional Bread Stuffing,None,Y,Y,N,N,N,N,Y,N,N,Y,N,N,N
 "Tomato & Ricotta Sheet Pizza ",Italian,Y,N,N,N,N,N,N,N,N,Y,N,N,N
 Roasted Garlic Cream Sauce,None,Y,N,N,N,N,N,N,N,N,Y,N,N,N
 Kung Pao Beef,Chinese,N,N,N,N,N,N,N,N,N,Y,N,N,N
@@ -702,7 +707,7 @@ Wok Tofu & Squash,Chinese,Y,Y,N,Y,N,N,N,N,N,N,Y,N,N
 Vegetarian Reuben Sandwich,American,Y,Y,N,Y,N,N,N,N,N,N,N,N,N
 Teriyaki Salmon,Japanese,N,N,N,Y,N,N,N,N,N,N,N,N,N
 Farm Fresh Beets with Lemon & Honey,None,Y,N,N,Y,N,N,N,N,N,N,N,N,N
-Cornell Lentil & Tomato Soup,None,Y,Y,N,Y,Y,N,N,N,N,Y,N,N,N
+Cornell Lentil & Tomato Soup,None,Y,Y,N,Y,Y,Y,N,N,N,Y,N,N,N
 Vegan Oatmeal Cranberry Cookie,Dessert,Y,Y,N,Y,N,N,N,N,N,N,N,N,N
 Tofu Ratatouille,French,Y,Y,N,Y,N,N,N,N,N,N,N,N,N
 Salad Corn Black Bean Roasted Kosher,None,Y,Y,N,Y,N,N,N,N,N,N,N,N,N
@@ -710,7 +715,7 @@ Quinoa Pilaf,Iranian,Y,Y,N,Y,N,N,N,N,Y,N,N,N,N
 Grilled Pastrami Sandwich on Rye,Italian,N,N,N,Y,N,N,N,N,N,N,N,N,N
 "Egg Salad ",None,N,N,N,Y,N,N,N,N,Y,N,N,N,N
 Chocolate Chip Cookies,Dessert,N,N,N,Y,N,N,N,N,N,N,N,N,N
-Chicken Noodle Soup,None,N,N,N,Y,Y,N,N,N,N,N,N,N,N
+Chicken Noodle Soup,None,N,N,N,Y,Y,Y,N,N,N,N,N,N,N
 Chicken Cacciatore,Italian,N,N,N,Y,N,N,N,N,Y,N,N,N,N
 Steamed Fresh Broccoli,None,Y,Y,N,N,Y,N,Y,N,N,N,N,Y,N
 Smoked Tomato BBQ Tofu,American,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
@@ -819,7 +824,7 @@ Shrimp Scampi,Italian,N,N,N,N,N,N,Y,N,N,N,N,N,N
 Roasted Garlic & Herb Potatoes,None,Y,Y,N,N,N,N,Y,N,Y,Y,N,Y,N
 Grilled Cheese Sandwich,None,Y,N,N,Y,N,N,Y,N,N,Y,N,N,N
 Garlic Green Beans,None,Y,Y,N,N,Y,N,Y,N,N,Y,Y,N,N
-Cornell Vegan Tomato Bisque,French,Y,Y,N,Y,Y,N,Y,N,N,Y,N,Y,N
+Cornell Vegan Tomato Bisque,French,Y,Y,N,Y,Y,Y,Y,N,N,Y,N,Y,N
 Cheddar & Apple Grilled Cheese,None,Y,N,N,N,N,N,Y,N,N,N,N,N,N
 Cauliflower Florets,None,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
 Sliced Peaches in Juice,None,Y,Y,N,N,Y,N,Y,N,N,N,Y,N,N

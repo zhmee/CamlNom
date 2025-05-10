@@ -1,14 +1,12 @@
 Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
 Sliced Tomato,None,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
-"Kettle Cuisine Chicken Noodle Soup ",None,N,N,N,N,N,Y,N,N,N,N,N,N,N
 Honey Mustard Roasted Chicken Thigh,None,N,N,N,N,N,Y,N,N,N,N,N,N,N
 French Round Bread,French,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
-Egg Salad,None,N,N,N,N,N,Y,N,N,N,N,N,N,N
 Cajun Crusted Tofu with Chimichurri,Mexican,Y,Y,N,N,Y,Y,N,N,N,Y,N,N,N
 Blackened MSC Pollock,None,N,N,N,N,N,Y,N,N,N,N,N,N,N
 Seared Kale,None,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
 Sweet Popcake Pancakes,Dessert,N,N,N,N,N,Y,N,N,N,N,N,N,N
-Steamed Brown Rice,None,Y,Y,N,N,N,Y,N,N,N,Y,Y,Y,N
+Chicken Noodle Soup,None,N,N,N,Y,Y,Y,N,N,N,N,N,N,N
 "Kens Essentials Honey Mustard Dressing ",None,Y,Y,N,N,N,Y,Y,N,N,N,N,N,N
 Simply Steamed Peas,None,Y,Y,N,N,N,Y,Y,Y,Y,N,N,N,N
 Seasoned Wedge Fries,None,Y,Y,N,N,N,Y,Y,Y,N,N,N,N,N
@@ -19,6 +17,7 @@ Sour Cream,None,Y,N,Y,N,N,Y,Y,Y,N,N,Y
 Cheddar Cheese Sauce,None,Y,N,Y,N,Y,Y,Y
 Fresh Fruit Slices,None,Y,Y,Y,N,Y,Y,N,N,N,N,Y
 Cornell Dairy Yogurt,None,Y,N,Y,N,Y,Y,Y,Y,N,N,Y,Y
+Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
 Salad Bar,None,Y,Y,N,Y,N,Y,N,Y,N,Y
 Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
 Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,Y,N,Y

@@ -1,5 +1,5 @@
 Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
-Traditional Bread Stuffing,None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
+Traditional Bread Stuffing,None,Y,Y,N,N,N,N,Y,N,N,Y,N,N,N
 "Tomato & Ricotta Sheet Pizza ",Italian,Y,N,N,N,N,N,N,N,N,Y,N,N,N
 Roasted Garlic Cream Sauce,None,Y,N,N,N,N,N,N,N,N,Y,N,N,N
 Kung Pao Beef,Chinese,N,N,N,N,N,N,N,N,N,Y,N,N,N
@@ -24,7 +24,7 @@ Taco Beef,Mexican,N,N,N,N,N,Y,N,N,N,Y,Y,N,N
 Steamed Brown Rice,None,Y,Y,N,N,N,Y,N,N,N,Y,Y,Y,N
 Ratatouille with Tofu,French,Y,Y,N,N,N,N,Y,N,N,Y,Y,N,N
 Garlic Green Beans,None,Y,Y,N,N,Y,N,Y,N,N,Y,Y,N,N
-Cornell Vegan Tomato Bisque,French,Y,Y,N,Y,Y,N,Y,N,N,Y,N,Y,N
+Cornell Vegan Tomato Bisque,French,Y,Y,N,Y,Y,Y,Y,N,N,Y,N,Y,N
 Roasted Mushrooms,None,Y,Y,N,Y,Y,Y,Y,N,N,Y,N,N,N
 Chef's Choice Pizza/Flatbread,Italian,Y,Y,N,N,N,N,N,Y,N,Y,N,N,N
 Fruit & Yogurt Bar,None,Y,Y,N,N,N,N,N,Y,Y,Y,N,N,N
