@@ -241,7 +241,7 @@ module Fetch_data = struct
   (**[get_files] returns the subfiles contained in [./dining_data], each of
      which must be a file; there cannot be subdirectories within the folder.*)
   let get_files =
-    let dir = Unix.opendir "/dining_data" in
+    let dir = Unix.opendir "./dining_data" in
     let rec add_file lst =
       match readdir_opt dir with
       | Some x -> add_file (x :: lst)

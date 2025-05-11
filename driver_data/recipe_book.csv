@@ -1,4 +1,28 @@
 Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
+Healthy Style Salad Bar,None,Y,Y,N,Y,N,N,N,N,N,N,N,N,N
+Blueberry Pie Filling,None,Y,Y,N,Y,N,N,N,N,N,N,N,N,N
+Baba Ganoush,Mediterranean,Y,Y,N,Y,N,N,N,N,N,N,N,N,N
+BBQ Chinese Chicken,Chinese,N,N,N,N,Y,N,N,N,N,N,N,N,N
+"Pasta with Chickpeas, Greens, & Tomato",Italian,Y,Y,N,N,Y,N,N,N,N,N,N,N,N
+Bookbinders Fra Diablo Mussels,Mexican,N,N,N,N,Y,N,N,N,N,N,N,N,N
+Soy Sauce Sauteed Mushrooms,None,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
+Honey Mustard Baked Chicken,None,N,N,N,N,N,Y,N,N,N,N,N,N,N
+Mashed Red Skin Potatoes,None,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
+"Lentil & Potato Stew ",None,Y,N,N,N,N,Y,N,N,N,N,N,N,N
+Guacamole,Mexican,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
+Cheese & Bean Quesadilla,Mexican,Y,N,N,N,N,Y,N,N,N,N,N,N,N
+Bar - Fajitas Topping Salsa,Mexican,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
+Cheddar Cheese Omelet,None,N,N,N,N,N,N,N,N,Y,N,N,N,N
+Summer Corn & White Bean Soup,None,Y,Y,N,N,N,N,N,N,Y,N,N,N,N
+Roasted Corn Carrots & Fennel,None,Y,Y,N,N,N,N,N,N,Y,N,N,N,N
+Roasted Button Mushrooms,None,Y,Y,N,N,N,N,N,N,Y,N,N,N,N
+Lemon Basil Chicken,None,N,N,N,N,N,N,N,N,Y,N,N,N,N
+Corned Beef & Cabbage,English,N,N,N,N,N,N,N,N,Y,N,N,N,N
+Cashew Chicken,None,N,N,N,N,N,N,N,N,Y,N,N,N,N
+White Garlic Broccoli & Cheddar Pizza,Italian,Y,N,N,N,N,N,N,N,Y,N,N,N,N
+"Macaroni & Cheese ",None,Y,N,N,N,N,N,N,N,Y,N,N,N,N
+Dinosaur BBQ Mojito Chicken Thighs,Mexican,N,N,N,N,N,N,N,N,Y,N,N,N,N
+Adobo Braised Chicken Thigh,Mexican,N,N,N,N,N,N,N,N,Y,N,N,N,N
 Honey Balsamic Carrots,None,Y,N,N,N,Y,N,N,N,N,N,N,N,N
 Baked Beans with Bacon,American,N,N,N,N,Y,N,N,N,N,N,N,N,N
 Chicken & Wild Rice Soup,None,N,N,N,N,N,Y,N,N,N,N,N,N,N
@@ -156,7 +180,7 @@ Charmoula,North African,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
 Caramelized Red Onion,None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
 Vegetarian Greens & Beans Soup,None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
 Salsa Cruda,Mexican,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
-Roasted Butternut with Lime & Chilis,None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
+Roasted Butternut with Lime & Chilis,None,Y,Y,N,N,N,N,N,N,Y,Y,N,N,N
 Pesto Chicken Sheet Pizza,Italian,N,N,N,N,N,N,N,N,N,Y,N,N,N
 Pasta with Fresh Marinara,Italian,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
 Kale & Caramelized Onion,None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
@@ -165,7 +189,7 @@ Grilled Bruschetta Chicken,Italian,N,N,N,N,N,N,N,N,N,Y,N,N,N
 Chipotle Chicken Thigh,Mexican,N,N,N,N,N,N,N,N,N,Y,N,N,N
 Chicken & Wild Mushroom Pasta Carbonara,Italian,N,N,N,N,N,N,N,N,N,Y,N,N,N
 Bowl Toppings & Condiments,None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
-BBQ Tofu with Smoked Tomatoes,None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
+BBQ Tofu with Smoked Tomatoes,None,Y,Y,N,N,N,Y,N,N,N,Y,N,N,N
 Ancho Seasoned Pork,Mexican,N,N,N,N,N,N,N,N,N,Y,N,N,N
 Hawaiian Sticky Tofu,Hawaiian,Y,Y,N,N,N,N,N,N,N,N,N,Y,N
 Chicken Adobo,Mexican,N,N,N,N,N,N,N,N,N,N,N,Y,N
@@ -589,7 +613,7 @@ Assorted Items from the Grill,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Wok Chicken Orange,Chinese,N,N,N,N,N,N,N,N,N,N,Y,N,N
 Vegan Veggie Supreme Pizza,Italian,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Rojo Grande Chipotle Cheese Sauce,Mexican,Y,N,N,N,N,N,N,N,N,N,Y,N,N
-Roasted Turkey with Gravy,American,N,N,N,N,Y,N,N,N,N,N,Y,N,N
+Roasted Turkey with Gravy,American,N,N,N,N,Y,Y,N,N,N,N,Y,N,N
 Mashed Potatoes,None,Y,N,N,N,N,N,N,N,N,N,Y,N,N
 Cornell Chicken & Rice Soup,None,N,N,N,N,N,N,N,N,N,Y,Y,N,N
 Breaded Eggplant Parmesan,Italian,N,N,N,N,N,N,N,N,N,N,Y,N,N
@@ -609,7 +633,7 @@ Cilantro Lime Brown Rice,Mexican,Y,Y,N,N,N,N,N,N,N,Y,Y,Y,N
 Burrito Bar,Mexican,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Wok Vegetables with Ginger,Chinese,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Tacos & Nachos,Mexican,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
-Steamed Vegetable Melange,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
+Steamed Vegetable Melange,None,Y,Y,N,N,N,Y,N,N,N,N,Y,N,N
 Montego Bay Grilled Chicken,None,N,N,N,N,N,N,N,N,N,N,Y,N,N
 Herb Roasted Zucchini & Tomatoes,None,Y,Y,N,N,N,N,N,N,Y,N,Y,N,N
 Buffalo Chicken Pizza,American,N,N,N,N,N,N,N,N,N,N,Y,N,N
@@ -702,7 +726,7 @@ Pasta with Lentil Bolognese,Italian,Y,Y,N,Y,N,N,N,N,N,N,N,N,N
 Pasta & Meat Sauce,Italian,N,N,N,Y,N,N,N,N,N,N,N,N,N
 Lentil & Couscous Salad,North African,Y,Y,N,Y,N,N,N,N,N,N,N,N,N
 Cornell Vegetarian Minestrone Soup,Italian,Y,Y,N,Y,Y,N,N,N,N,N,N,N,N
-Chicken Quesadilla,Mexican,N,N,N,Y,N,N,N,N,N,N,N,N,N
+Chicken Quesadilla,Mexican,N,N,N,Y,N,Y,N,N,N,N,N,N,N
 Wok Tofu & Squash,Chinese,Y,Y,N,Y,N,N,N,N,N,N,Y,N,N
 Vegetarian Reuben Sandwich,American,Y,Y,N,Y,N,N,N,N,N,N,N,N,N
 Teriyaki Salmon,Japanese,N,N,N,Y,N,N,N,N,N,N,N,N,N
@@ -823,7 +847,7 @@ Simply Steamed Baby Carrots,None,Y,Y,N,Y,N,N,Y,N,N,N,N,Y,N
 Shrimp Scampi,Italian,N,N,N,N,N,N,Y,N,N,N,N,N,N
 Roasted Garlic & Herb Potatoes,None,Y,Y,N,N,N,N,Y,N,Y,Y,N,Y,N
 Grilled Cheese Sandwich,None,Y,N,N,Y,N,N,Y,N,N,Y,N,N,N
-Garlic Green Beans,None,Y,Y,N,N,Y,N,Y,N,N,Y,Y,N,N
+Garlic Green Beans,None,Y,Y,N,N,Y,Y,Y,N,N,Y,Y,N,N
 Cornell Vegan Tomato Bisque,French,Y,Y,N,Y,Y,Y,Y,N,N,Y,N,Y,N
 Cheddar & Apple Grilled Cheese,None,Y,N,N,N,N,N,Y,N,N,N,N,N,N
 Cauliflower Florets,None,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
@@ -837,7 +861,7 @@ Non Dairy Whipped Topping,None,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
 Mini Cinnamon Twist,None,N,N,N,N,Y,N,Y,N,N,Y,N,N,N
 Home Fries,None,Y,Y,N,Y,Y,N,Y,N,Y,Y,N,N,N
 Greek Egg Scramble with Lentils & Feta,Greek,N,N,N,N,N,N,Y,N,N,N,N,N,N
-Garlic & Lemon Potatoes,None,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
+Garlic & Lemon Potatoes,None,Y,Y,N,N,Y,N,Y,N,N,N,N,N,N
 Fresh Strawberries,None,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
 Fresh Cut Fruit Salad,None,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
 Fresh Blueberries,None,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
@@ -1022,7 +1046,7 @@ Vegetable Pot Sticker Dumplings,Chinese,Y,Y,Y,N,N,Y,Y,N,N,N,Y
 Sweet & Sour Chicken Drumsticks,Chinese,N,N,Y
 "Vietnamese Pizza ",Vietnamese,Y,N,Y
 Sweet Potato & Red Lentil Stew,None,Y,Y,Y
-Simply Steamed Fresh Cauliflower,None,Y,Y,Y,N,Y,N,Y,N,Y
+Simply Steamed Fresh Cauliflower,None,Y,Y,Y,N,Y,Y,Y,N,Y
 Peas & Carrots with Seasoned Butter,None,Y,N,Y,N,Y
 "Large Triple Chocolate Chip Cookie ",Dessert,N,N,Y
 Large Smores Cookie,Dessert,N,N,Y
@@ -1042,10 +1066,10 @@ Continental Breakfast at Flora Rose,None,Y,Y,Y
 Cheddar Cheese,None,Y,N,Y,N,N,N,Y,N,N,N,Y
 "6"" Soft Yellow Corn & Wheat Tortilla",Mexican,Y,Y,Y
 Vegan Fried Spring Rolls,Chinese,Y,Y,Y,N,Y,N,Y,N,Y
-Turkey Breakfast Sausage,None,N,N,Y,N,Y,N,Y,Y,Y
+Turkey Breakfast Sausage,None,N,N,Y,N,Y,Y,Y,Y,Y
 Teriyaki Sauce,Japanese,Y,Y,Y
 Steamed Green Beans,None,Y,Y,Y,N,Y,N,N,N,Y,Y
-Roasted Broccoli,None,Y,Y,Y,N,Y,Y,Y,N,N,N,Y
+Roasted Broccoli,None,Y,Y,Y,Y,Y,Y,Y,N,Y,N,Y
 Lunch Sweets & Treats,Dessert,N,N,Y,N,N,N,Y
 Kimchi Pot Sticker Dumpling,Korean,N,N,Y,N,N,N,N,N,N,N,Y
 Fried Potato Puffs,None,Y,Y,Y,N,Y,Y,Y,Y,N,Y
@@ -1063,7 +1087,7 @@ Grated Parmesan Cheese,Italian,Y,N,Y,N,N,N,Y,Y,N,Y
 "French Fries ",American,Y,Y,Y,N,Y,Y,Y,Y,N,Y,Y
 Chipotle Lime Chicken Thighs,Mexican,N,N,Y
 Carolina BBQ Pulled Pork with Coleslaw,American,N,N,Y
-Calabacitas,Mexican,Y,Y,Y,N,Y,N,N,Y,N,Y
+Calabacitas,Mexican,Y,Y,Y,N,Y,N,N,Y,Y,Y
 Tropical Mango Chutney,Indian,Y,Y,Y,N,N,N,N,N,Y
 Tamarind Chutney,Indian,Y,Y,Y,N,N,N,N,N,Y
 Steamed Fresh Vegetables,None,Y,Y,Y,N,N,N,N,N,Y
@@ -1106,7 +1130,7 @@ Roasted Corn & Black Bean Salad,Mexican,Y,Y,Y,Y,Y,N,N,N,N,N,Y
 Lavash Chips,Mediterranean,Y,Y,Y
 Kettle Cuisine Turkey Gumbo,American,N,N,Y
 Hot & Cold Beverage Service,None,Y,Y,Y,N,Y,N,Y
-Healthy Style Salad Station,None,Y,Y,Y,N,Y,N,Y,Y
+Healthy Style Salad Station,None,Y,Y,Y,N,Y,Y,Y,Y
 Green Beans in Garlic Butter,None,Y,N,Y
 Fresh Fruit Slices,None,Y,Y,Y,N,Y,Y,N,N,N,N,Y
 Dry Rubbed BBQ Tofu,Korean,Y,Y,Y,N,N,N,Y
@@ -1115,7 +1139,7 @@ Chicken Riggies,Italian,N,N,Y,,N,N,N,N,N,Y
 Tomato Vegetable Soup,None,Y,Y,N,Y
 Sweet Sesame Ginger Salmon,Asian,N,N,N,Y
 Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
-Simply Steamed Corn,None,Y,Y,Y,Y,Y,Y
+Simply Steamed Corn,None,Y,Y,Y,Y,Y,Y,N,Y
 Sauteed Squash Medley,None,Y,Y,N,Y,N,N,N,N,N,N,Y
 Roasted Corn Avocado & Tomato Salad,Mexican,Y,Y,N,Y
 Kosher Egg & Cheese Bagel Sandwich,American,Y,Y,N,Y
@@ -1156,7 +1180,7 @@ Dole Fruit Soft Serve,Dessert,Y,Y,N,N,N,N,N,N,Y,Y
 Assorted Cereals,None,Y,Y,N,N,N,N,N,N,Y
 Four Cheese Tomato & Pesto Sheet Pizza,Italian,Y,N,N
 Sicilian Style Sheet Pizza,Italian,Y,N,N,N,N,N,N,N,N,Y
-Vegetable Stir Fry,Asian,Y,Y,N
+Vegetable Stir Fry,Asian,Y,Y,N,N,N,N,N,N,Y
 Vegetable Mai Fun Noodles,Asian,Y,Y,N,N,N,N,N,N,Y
 Massaman Chicken Curry,Thai,N,N,N,N,N,N,N,N,N,Y
 Hot & Cold Beverages,None,Y,Y,N,Y,N,Y,N,Y,N,Y,N,Y
@@ -1167,7 +1191,7 @@ Veggies & Greens,None,Y,Y,N
 Tabbouleh,Mediterranean,Y,Y,N,Y
 Greek Salad,Mediterranean,Y,N,N,N,N,N,N,N,Y,Y
 Assorted Roasted Vegetables,None,Y,Y,N,N,N,N,N,N,Y
-Herb Roasted Summer & Zucchini Squash,None,Y,Y,N,N,N,N,N,N,Y
+Herb Roasted Summer & Zucchini Squash,None,Y,Y,N,N,N,Y,N,N,Y
 Hearty Whole Grains & Legumes,None,Y,Y,N,N,N,N,N,N,Y
 Salad Dressing,None,Y,N,N,N,N,N,N,N,Y
 Chicken Souvlaki,Mediterranean,N,N,N,N,N,N,N,N,N,Y

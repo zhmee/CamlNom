@@ -11,7 +11,7 @@ Creamy Italian Dressing,Italian,Y,N,N,N,Y,N,N,N,N,N,N,N,N
 Cranberry Apple Wheat Berry Salad,None,Y,Y,N,N,Y,N,N,N,N,N,Y,N,N
 Buttermilk Ranch Dressing,American,Y,N,N,N,Y,N,N,N,N,N,N,N,N
 Rosemary Roasted Red Skin Potatoes,None,Y,Y,N,N,Y,N,N,N,Y,N,Y,N,N
-Roasted Turkey with Gravy,American,N,N,N,N,Y,N,N,N,N,N,Y,N,N
+Roasted Turkey with Gravy,American,N,N,N,N,Y,Y,N,N,N,N,Y,N,N
 Cornell Egg Drop Soup,None,N,N,N,Y,Y,Y,N,N,Y,N,Y,Y,N
 Quinoa,NOne,Y,Y,N,Y,Y,N,N,N,N,N,N,N,N
 Pasta With Beans & Greens,Italian,Y,N,N,N,Y,N,Y,N,N,Y,N,N,N
@@ -20,11 +20,11 @@ Sliced Peaches in Juice,None,Y,Y,N,N,Y,N,Y,N,N,N,Y,N,N
 Cottage Cheese,None,Y,N,N,N,Y,N,Y,N,N,N,N,N,N
 Applesauce,None,Y,Y,N,N,Y,N,Y,N,N,N,N,N,N
 Cornell Dairy Ice Cream Bar,None,Y,N,N,N,Y,N,N,Y,N,N,Y,N,N
-Simply Steamed Fresh Cauliflower,None,Y,Y,Y,N,Y,N,Y,N,Y
+Simply Steamed Fresh Cauliflower,None,Y,Y,Y,N,Y,Y,Y,N,Y
 Sesame Marinated Tofu,Asian,Y,Y,Y,N,Y
 Roasted Corn & Black Bean Salad,Mexican,Y,Y,Y,Y,Y,N,N,N,N,N,Y
 Hot & Cold Beverage Service,None,Y,Y,Y,N,Y,N,Y
-Healthy Style Salad Station,None,Y,Y,Y,N,Y,N,Y,Y
+Healthy Style Salad Station,None,Y,Y,Y,N,Y,Y,Y,Y
 Fresh Fruit Slices,None,Y,Y,Y,N,Y,Y,N,N,N,N,Y
 Cornell Dairy Yogurt,None,Y,N,Y,N,Y,Y,Y,Y,N,N,Y,Y
 Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y

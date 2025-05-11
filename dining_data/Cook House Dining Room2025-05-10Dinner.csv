@@ -14,7 +14,7 @@ Chef's Choice,None,Y,Y,N,Y,Y,Y,Y,N,N,Y,N,N,N
 "Pastries, Cakes & Desserts",Dessert,N,N,Y,N,N,Y,Y,Y
 Fresh Fruit Slices,None,Y,Y,Y,N,Y,Y,N,N,N,N,Y
 Cornell Dairy Yogurt,None,Y,N,Y,N,Y,Y,Y,Y,N,N,Y,Y
-Simply Steamed Corn,None,Y,Y,Y,Y,Y,Y
+Simply Steamed Corn,None,Y,Y,Y,Y,Y,Y,N,Y
 Salad Bar,None,Y,Y,N,Y,N,Y,N,Y,N,Y
 Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
 Cornell Dairy Ice Cream,Dessert,Y,N,Y,Y,Y,Y,Y,Y,Y,Y,N,Y
