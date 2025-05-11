@@ -640,7 +640,7 @@ let rec view_make_plate () =
   end
 
 (* DISPLAYS & INTERACTIONS-----------------------------------------------------
-   ----------------------------------------------------------------------------*)
+   ---------------------------------------------------------------------------*)
 
 (**[print_by_dining_hall] prints the dining halls and the dishes they have that
    satisfies the user's needs.*)
@@ -658,7 +658,7 @@ let print_by_dining_hall filtered_list =
       print_endline "None"
     else print_string (user_menu menu)
   in
-  List.iter print_hall !Options.halls
+  List.iter print_hall !user_halls
 
 (**[prompter] continually prompts the user to add in more filter options if they
    way, or the user can choose to finish and see the foods they have chosen.*)
@@ -678,7 +678,8 @@ let rec prompter created_menu =
     print_endline "Done";
     print_endline " ";
     let user_input = read_line () in
-    if user_input = "Done" then print_by_dining_hall !created_menu
+    if user_input = "Done" then begin print_by_dining_hall !created_menu
+  end
     else
       let valid_input = valid_choices user_input in
       let filter_cat = int_of_string valid_input |> finding_category in
@@ -697,6 +698,7 @@ let rec prompter created_menu =
       prompter created_menu
     end
 
+
 let meal_exists day_chosen hall_chosen meal_chosen =
   finding_day (day_chosen |> string_of_int) hall_chosen meal_chosen <> ""
 
@@ -705,10 +707,13 @@ let menu_view () =
   try
     print_endline
       "\nPlease choose what day you would like to see the menu for: \n";
-    let day_chosen = (yield_value Options.days_of_week snd |> fst) in
+    let day_chosen = yield_value Options.days_of_week snd |> fst in
     print_endline
       "\nPlease choose which dining hall you'd like to view the menu for: \n";
     let hall_chosen = yield_value !Options.halls Fun.id in
+    user_halls := [ hall_chosen ];
+    user_filters := List.filter (fun cat -> not (List.mem cat !Options.halls)) !user_filters;
+     all_supported_filters := List.filter (fun cat -> not (List.mem cat !Options.halls)) !all_supported_filters;
     print_endline "\nPlease choose a meal you'd like to view the menu for: \n";
     let meal_chosen =
       yield_value
@@ -724,14 +729,15 @@ let menu_view () =
     prompter curated_menu
   with
   | Sys_error x ->
-      let actual_input = int_of_string x + 1 in 
-      print_endline (string_of_int actual_input ^ " is out of bounds for the required selection.")
+      let actual_input = int_of_string x + 1 in
+      print_endline
+        (string_of_int actual_input
+       ^ " is out of bounds for the required selection.")
   | read_int -> print_endline "Please enter an integer. "
 
 let () =
   try
     Fetch_data.fetch ();
-    user_halls := !Options.halls;
     user_filters := !(Options.get_all_filters ());
     all_supported_filters := !user_filters;
     (*create an empty list list of food [food] display to user all the days they
