@@ -11,6 +11,16 @@ type p = {
   dessert : string list option;
 }
 
+(**AF: Type [p] is the type of a plate. A plate has a name stored in p.name and
+   a dining hall at which it is found stored in p.hall. If a plate is
+   vegetarian, p.vegetarian is true, and if vegan, p.vegan is true. Any comment
+   the user may want to store about the plate is stored in p.comment. The plate
+   stores the users food choices as Some string list in p.drink, p.main,
+   p.protein, p.side, and p.dessert. If the user does not select any food item
+   for any of these fields, the corresponding field instead stores None.*)
+
+(**RI: None.*)
+
 exception Invalid_plate
 
 (**[check_attribute d m p s e num] is the truth statement of if all the foods

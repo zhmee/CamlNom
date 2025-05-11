@@ -2,6 +2,7 @@ open OUnit2
 open Final_project
 open Fetch_data
 
+(**[update ()] updates the recipe book with the current dining information. *)
 let update () =
   Options.recipe_book := Dining.make_menu "../driver_data/recipe_book.csv"
 
@@ -127,6 +128,8 @@ let plate_dessert_test name plate exp =
   update ();
   assert_equal exp (Plates.dessert plate) ~printer:Fun.id
 
+(**[plate_cuisines_test n p e] is the test with name [n] that checks that the
+   cuisine of plate [p] is [e]*)
 let plate_cuisines_test name plate exp =
   name >:: fun _ ->
   update ();
