@@ -705,7 +705,7 @@ let menu_view () =
   try
     print_endline
       "\nPlease choose what day you would like to see the menu for: \n";
-    let day_chosen = yield_value Options.days_of_week snd |> fst in
+    let day_chosen = (yield_value Options.days_of_week snd |> fst) in
     print_endline
       "\nPlease choose which dining hall you'd like to view the menu for: \n";
     let hall_chosen = yield_value !Options.halls Fun.id in
@@ -724,7 +724,8 @@ let menu_view () =
     prompter curated_menu
   with
   | Sys_error x ->
-      print_endline (x ^ " is out of bounds for the required selection.")
+      let actual_input = int_of_string x + 1 in 
+      print_endline (string_of_int actual_input ^ " is out of bounds for the required selection.")
   | read_int -> print_endline "Please enter an integer. "
 
 let () =
