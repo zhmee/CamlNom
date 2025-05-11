@@ -10,8 +10,12 @@ $ opam upgrade
 $ opam install csv
 $ opam install qcheck
 $ opam install lwt_ssl
-$ opam install cohttp_lwt_unix
+$ opam install cohttp-lwt-unix
 $ opam install lambdasoup
+$ opam install core_unix
+$ opam install core
+$ opam install batteries
+$ opam install lwt_ppx
 ```
 
 # Running the Program
