@@ -112,6 +112,10 @@ let tests =
          test_find_recipes;
          to_adjustable;
          from_adjustable;
+         ( "filter' test" >:: fun _ ->
+           assert_equal
+             (filter (make_menu "../driver_data/ratings.csv") (100, ""))
+             (make_menu "../data/empty.csv") );
        ]
 
 let _ = run_test_tt_main tests
