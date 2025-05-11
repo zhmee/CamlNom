@@ -4,6 +4,7 @@ open Final_project.Rating
 open Final_project.Options
 open Final_project.Dictionary
 open Final_project.Plates
+open Final_project.Fetch_data
 open Unix
 open Fetch_data
 

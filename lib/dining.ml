@@ -18,12 +18,13 @@ let check m f h acc = if m = snd f then h :: acc else acc
    spec. [filt] should be a value between 0 and 6. Raises [Invalid_Csv] if the
    CSV is malformatted. *)
 let rec filter' (csv : t) (filt : int * string) (acc : t) =
-  assert (fst filt >= 0);
-  match csv with
-  | [] -> acc (*reached end of csv file*)
-  | h :: t ->
-      if fst filt >= List.length h then acc
-      else filter' t filt (check (List.nth h (fst filt)) filt h acc)
+  if not (fst filt >= 0) then raise (Invalid_argument "negative filter")
+  else
+    match csv with
+    | [] -> acc (*reached end of csv file*)
+    | h :: t ->
+        if fst filt >= List.length h then acc
+        else filter' t filt (check (List.nth h (fst filt)) filt h acc)
 
 (**[filter csv prefs] returns the filtered entries of [csv] that match [prefs].
    Requires: [prefs] is a tuple of type [int * string], with the first argument

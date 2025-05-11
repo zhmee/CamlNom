@@ -1,5 +1,9 @@
 open OUnit2
 open Final_project
+open Fetch_data
+
+let update () =
+  Options.recipe_book := Dining.make_menu "../driver_data/recipe_book.csv"
 
 let small_test_menu = Dining.make_menu "../data/small_dining.csv"
 let example_ratings = Csv.load "../data/test_ratings.csv" ~strip:true
@@ -50,12 +54,14 @@ let string_of_list lst = List.fold_left (fun acc a -> acc ^ a) "" lst
    that the plate made using the parameter [n h c d m p s e] has the name [exp]*)
 let make_plate_name_test name n h c d m p s e exp =
   name >:: fun _ ->
+  update ();
   assert_equal exp Plates.(name (make_plate n h c d m p s e)) ~printer:Fun.id
 
 (**[make_plate_hall_test name n h c d m p s e exp] is the test with name [name]
    that the plate made using the parameter [n h c d m p s e] has the hall [exp]*)
 let make_plate_hall_test name n h c d m p s e exp =
   name >:: fun _ ->
+  update ();
   assert_equal exp Plates.(hall (make_plate n h c d m p s e)) ~printer:Fun.id
 
 (**[make_plate_comment_test name n h c d m p s e exp] is the test with name
@@ -63,6 +69,7 @@ let make_plate_hall_test name n h c d m p s e exp =
    comment [exp]*)
 let make_plate_comment_test name n h c d m p s e exp =
   name >:: fun _ ->
+  update ();
   assert_equal exp Plates.(comment (make_plate n h c d m p s e)) ~printer:Fun.id
 
 (**[make_plate_vegan_test name n h c d m p s e exp] is the test with name [name]
@@ -70,6 +77,7 @@ let make_plate_comment_test name n h c d m p s e exp =
    status [exp]*)
 let make_plate_vegan_test name n h c d m p s e exp =
   name >:: fun _ ->
+  update ();
   assert_equal exp
     Plates.(is_vegan (make_plate n h c d m p s e))
     ~printer:string_of_bool
@@ -79,6 +87,7 @@ let make_plate_vegan_test name n h c d m p s e exp =
    vegetarian status [exp]*)
 let make_plate_vegetarian_test name n h c d m p s e exp =
   name >:: fun _ ->
+  update ();
   assert_equal exp
     Plates.(is_vegetarian (make_plate n h c d m p s e))
     ~printer:string_of_bool
@@ -86,37 +95,50 @@ let make_plate_vegetarian_test name n h c d m p s e exp =
 (**[plate_drink_test n p e] is the test with name [n] that checks whether the
    drink in plate [p] is the same as [e]*)
 let plate_drink_test name plate exp =
-  name >:: fun _ -> assert_equal exp (Plates.drink plate) ~printer:Fun.id
+  name >:: fun _ ->
+  update ();
+  assert_equal exp (Plates.drink plate) ~printer:Fun.id
 
 (**[plate_main_test n p e] is the test with name [n] that checks whether the
    main in plate [p] is the same as [e]*)
 let plate_main_test name plate exp =
-  name >:: fun _ -> assert_equal exp (Plates.main plate) ~printer:Fun.id
+  name >:: fun _ ->
+  update ();
+  assert_equal exp (Plates.main plate) ~printer:Fun.id
 
 (**[plate_protein_test n p e] is the test with name [n] that checks whether the
    protein in plate [p] is the same as [e]*)
 let plate_protein_test name plate exp =
-  name >:: fun _ -> assert_equal exp (Plates.protein plate) ~printer:Fun.id
+  name >:: fun _ ->
+  update ();
+  assert_equal exp (Plates.protein plate) ~printer:Fun.id
 
 (**[plate_side_test n p e] is the test with name [n] that checks whether the
    side in plate [p] is the same as [e]*)
 let plate_side_test name plate exp =
-  name >:: fun _ -> assert_equal exp (Plates.side plate) ~printer:Fun.id
+  name >:: fun _ ->
+  update ();
+  assert_equal exp (Plates.side plate) ~printer:Fun.id
 
 (**[plate_dessert_test n p e] is the test with name [n] that checks whether the
    dessert in plate [p] is the same as [e]*)
 let plate_dessert_test name plate exp =
-  name >:: fun _ -> assert_equal exp (Plates.dessert plate) ~printer:Fun.id
+  name >:: fun _ ->
+  update ();
+  assert_equal exp (Plates.dessert plate) ~printer:Fun.id
 
 let plate_cuisines_test name plate exp =
   name >:: fun _ ->
+  update ();
   assert_equal exp (string_of_list (Plates.cuisines plate)) ~printer:Fun.id
 
 let full_plate =
+  update ();
   Plates.make_plate "Full Plate" "Morrison" "No comments." ex_drink ex_main
     ex_protein ex_side ex_dessert
 
 let empty_plate =
+  update ();
   Plates.make_plate "Empty Plate" "No Dining Hall" "No Comment" None None None
     None None
 
@@ -196,4 +218,6 @@ let tests =
            "NoneItalianMediterraneanMediterraneanDessert";
        ]
 
-let _ = run_test_tt_main tests
+let _ =
+  update ();
+  run_test_tt_main tests

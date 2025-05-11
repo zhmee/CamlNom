@@ -13,8 +13,8 @@ open Yojson.Basic
 open BatSet
 open Yojson.Basic.Util
 open Core_unix
-open Final_project.Options
-open Final_project.Dining
+open Options
+open Dining
 open String
 
 module Fetch_data = struct
@@ -33,7 +33,7 @@ module Fetch_data = struct
 
   (**[recipe_book_adj] keeps track of the current menu using an adjustable CSV
      that can add new columns or change column entries*)
-  let recipe_book_adj = ref (Final_project.Dining.empty |> to_adjustable)
+  let recipe_book_adj = ref (Dining.empty |> to_adjustable)
 
   (**[get_site] webscrapes the data containing the menu information from the
      Cornell Open Data Project.*)
@@ -48,7 +48,7 @@ module Fetch_data = struct
   let pull_data = Lwt_main.run get_site
 
   (**[master_list] is an empty list that will be updated as the file is run. *)
-  let master_list = ref Final_project.Dining.empty
+  let master_list = ref Dining.empty
 
   (**[add_items item recipe_list] reads all the recipes contained in the JSON
      represented by [items] and returns their concatenation. Requires: [items]
@@ -90,10 +90,10 @@ module Fetch_data = struct
           specs := Array.append !specs [| "Y" |]
         else if
           (filter = "Vegan" || filter = "Vegetarian")
-          && List.exists (contains recipe) Final_project.Options.meats
+          && List.exists (contains recipe) Options.meats
         then specs := Array.append !specs [| "N" |]
         else if filter = hall then specs := Array.append !specs [| "Y" |]
-        else if List.mem filter !Final_project.Options.halls then
+        else if List.mem filter !Options.halls then
           specs := Array.append !specs [| "N" |]
         else (
           print_endline ("Does the label \"" ^ filter ^ "\" apply? (Y/N)");
@@ -211,8 +211,7 @@ module Fetch_data = struct
              hall)
           !recipes;
         let csv_file =
-          Final_project.Dining.find_recipes !recipes
-            (!recipe_book_adj |> from_adjustable)
+          Dining.find_recipes !recipes (!recipe_book_adj |> from_adjustable)
         in
         save_menu csv_file headers file_name)
       meal_lst
@@ -242,7 +241,7 @@ module Fetch_data = struct
   (**[get_files] returns the subfiles contained in [./dining_data], each of
      which must be a file; there cannot be subdirectories within the folder.*)
   let get_files =
-    let dir = opendir "dining_data" in
+    let dir = Unix.opendir "/dining_data" in
     let rec add_file lst =
       match readdir_opt dir with
       | Some x -> add_file (x :: lst)
@@ -266,14 +265,12 @@ module Fetch_data = struct
      using headers [headers] to mark the columns. *)
   let write_master_list headers () =
     Csv.save master_file_name
-      (!headers
-      :: (Final_project.Dining.from_adjustable !recipe_book_adj
-         |> Final_project.Dining.to_csv))
+      (!headers :: (Dining.from_adjustable !recipe_book_adj |> Dining.to_csv))
 
   (**[fetch ()] updates the directory [./dining_data], which contains updated
      information on the menus in each dining hall. *)
   let fetch () =
-    Final_project.Options.read_cuisines ();
+    Options.read_cuisines ();
     let headers = ref [] in
     fill_master_list headers ();
     (try
@@ -288,7 +285,7 @@ module Fetch_data = struct
     let data = json |> member "data" in
     let halls = data |> member "eateries" |> Yojson.Basic.Util.to_list in
     List.iter (scrape_data headers) halls;
-    Final_project.Options.halls := BatSet.to_list !data_halls;
+    Options.halls := BatSet.to_list !data_halls;
     meal_types :=
       List.map
         (fun (hall_name, hall_meals) ->
@@ -297,5 +294,5 @@ module Fetch_data = struct
     save_all !queries headers;
     write_master_list headers ();
     recipe_book := master_file_name |> Csv.load |> from_csv;
-    Final_project.Options.write_cuisines ()
+    Options.write_cuisines ()
 end

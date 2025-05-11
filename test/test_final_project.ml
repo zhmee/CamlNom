@@ -24,12 +24,12 @@ let filter_pretty_test csv params exp =
   let list_list = Dining.make_menu csv in
   assert_equal exp Dining.(user_menu (filter list_list params)) ~printer:id
 
-(**[filter_invalid_csv_failure_test c p] is the test that filtering an
-   improperly formatted csv file raises [Failure "invalid csv format"]*)
+(**[filter_invalid_csv_failure_test c p] is the test that filtering an csv with
+   a negative argument raises [Failure "negative filter"]*)
 let filter_invalid_csv_failure_test csv params =
   "filter failure test" >:: fun _ ->
   let list_list = Dining.make_menu csv in
-  assert_raises (Dining.Invalid_Csv "Invalid CSV format") (fun () ->
+  assert_raises (Invalid_argument "negative filter") (fun () ->
       Dining.filter list_list params)
 
 (**[make_menu_test n d f e] is the test with name [n] that checks if filtering
@@ -108,7 +108,7 @@ let tests =
          user_menu_test "" "../data/filter_pretty_empty_lines.csv"
            "Apple\nApple\n\nFried Rice\nApple\nHamburger\n\n\nPho\nApple\n\n";
          filter_invalid_csv_failure_test "../data/invalid_format.csv"
-           (2, ":))))");
+           (-2, ":))))");
          (*make menu tests*)
          (let expected_string =
             "AppleOtherYYYYYAppleFruitYYNYYApple2YYNYYApple1YYNYY"
