@@ -121,7 +121,7 @@ let choose_cuisines () =
    user's choice in the driver and acts accordingly.*)
 let finding_category index =
   let category = List.nth !user_filters (index - 1) in
-  
+
   if category = "Cuisine" then choose_cuisines ()
   else if List.mem category !dietary then
     let y =
@@ -705,7 +705,7 @@ let meal_exists day_chosen hall_chosen meal_chosen =
   finding_day (day_chosen |> string_of_int) hall_chosen meal_chosen <> ""
 
 (**[menu_view] handles the user path where the user chooses to view a menu. *)
-let menu_view () =
+let rec menu_view () =
   try
     print_endline
       "\nPlease choose what day you would like to see the menu for: \n";
@@ -720,7 +720,19 @@ let menu_view () =
       List.filter
         (fun cat -> not (List.mem cat !Options.halls))
         !all_supported_filters;
-    print_endline "\nPlease choose a meal you'd like to view the menu for: \n";
+
+    let available_meals =
+      List.filter
+        (meal_exists day_chosen hall_chosen)
+        !(List.assoc hall_chosen !Options.meal_types)
+    in
+    if available_meals = [] then begin
+      print_endline
+        "No meals available for that dining hall on the selected day.";
+      menu_view ()
+    end
+    else
+      print_endline "\nPlease choose a meal you'd like to view the menu for: \n";
     let meal_chosen =
       yield_value
         (List.filter
