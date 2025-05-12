@@ -51,7 +51,30 @@ let sort_rating csv_file asc =
       if c = 0 then compare lst1 lst2 else c * if asc then 1 else -1)
     csv_file
 
+(**[print_helper l] is the nicely formatted version of the rating [l]*)
+let print_helper line =
+  let string_stars n =
+    if n = 1 then "☆     "
+    else if n = 2 then "☆☆   "
+    else if n = 3 then "☆☆☆  "
+    else if n = 4 then "☆☆☆☆ "
+    else "☆☆☆☆☆"
+  in
+  [
+    List.nth line 0;
+    string_stars (int_of_string (List.nth line 1));
+    List.nth line 2;
+    List.nth line 3;
+  ]
+
+(**[ratings_formatter c a] is the pretty format version of the ratings in [c]
+   appended to [a]*)
+let rec ratings_formatter csv acc =
+  match csv with
+  | [] -> acc
+  | h :: t -> ratings_formatter t (print_helper h :: acc)
+
 let print_ratings m =
   print_newline ();
-  Csv.print_readable m;
+  Csv.print_readable (ratings_formatter m []);
   print_newline ()
