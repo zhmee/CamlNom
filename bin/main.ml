@@ -245,8 +245,8 @@ let make_rating () =
       "With 1 star being poor and 5 stars being excellent, how would you rate \
        this food? (1, 2, 3, 4, or 5)";
     let rating = read_int () in
-    if rating > 5 || rating < 0 then raise (Illegal_rating rating)
-    else (
+    if rating > 5 || rating < 1 then raise (Illegal_rating rating)
+    else begin
       print_endline "Which dining hall did you try this food at?";
       print_endline " ";
       let user_hall = read_line () in
@@ -263,7 +263,7 @@ let make_rating () =
       let rating_obj = to_csv_entry (of_strings name rating hall comments) in
       Csv.output_record out rating_obj;
       Csv.close_out out;
-      print_endline "Thank you for your review!")
+      print_endline "Thank you for your review!" end
   with
   | Illegal_rating rating ->
       Printf.printf
@@ -281,18 +281,18 @@ let rec retrieve_rating () =
   print_endline
     "Please indicate the category of rating you would like to view: \n\
     \ \n\
-    \    0) view rating for specific dish \n\
+    \    1) view rating for specific dish \n\
     \ \n\
-    \    1) view foods with specific rating \n\
+    \    2) view foods with specific rating \n\
     \ \n\
-    \    2) view foods within a range of ratings \n\
+    \    3) view foods within a range of ratings \n\
     \ \n\
-    \    3) view ratings for a specific dining hall";
+    \    4) view ratings for a specific dining hall";
   let input = read_line () in
   try
     match input with
     (*user wants specific dish*)
-    | "0" ->
+    | "1" ->
         print_endline
           "Please enter in the dish you would like to view a rating for";
         let user_input_dish = read_line () in
@@ -303,7 +303,7 @@ let rec retrieve_rating () =
         if dish_ratings = [] then print_endline "No ratings found for dish"
         else print_ratings dish_ratings
     (*user wants specific rating*)
-    | "1" ->
+    | "2" ->
         print_endline
           "Please enter in the rating number from 1-5 you would like to view";
         let number = read_line () in
@@ -313,7 +313,7 @@ let rec retrieve_rating () =
           let certain_rating = retrieve_ratings_int rating_file rating in
           print_ratings certain_rating
     (*user wants rating range*)
-    | "2" ->
+    | "3" ->
         print_endline
           "You have chosen to view reviews that fall between certain ratings: \n\
           \          Please indicate the lower range of reviews (1-5):";
@@ -327,7 +327,7 @@ let rec retrieve_rating () =
           in
           print_ratings range_ratings
     (*user wants specific dining hall*)
-    | "3" ->
+    | "4" ->
         print_endline
           "Please enter in the dining hall name you would like to view";
         let hall = read_line () in
@@ -364,11 +364,11 @@ let rec retrieve_rating () =
    that the user may want. *)
 let rec handle_feedback () =
   print_endline "Would you like to submit feedback or see a rating?";
-  print_endline "0) input feedback";
-  print_endline "1) view rating";
+  print_endline "1) input feedback";
+  print_endline "2) view rating";
   let input = read_line () in
-  if input = "0" then make_rating ()
-  else if input = "1" then retrieve_rating ()
+  if input = "1" then make_rating ()
+  else if input = "2" then retrieve_rating ()
   else (
     print_endline "Please choose one of the valid options.";
     handle_feedback ())
