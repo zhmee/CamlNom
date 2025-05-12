@@ -249,8 +249,7 @@ let make_rating () =
     else begin
       print_endline "Which dining hall did you try this food at?";
       print_endline " ";
-      let user_hall = read_line () in
-      let hall = check_user_spelling user_hall dining_dict dining_dict in
+      let hall = yield_value !Options.halls Fun.id in
       print_endline "Please leave any additional comments.";
       print_endline " ";
       let comments = read_line () in
