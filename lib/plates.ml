@@ -65,7 +65,7 @@ let make_plate n h c d m p s e =
     |> List.find_index (( = ) "Vegan")
     |> Option.get
   in
-  if check_attribute d m p s e veg_index then
+  if check_attribute d m p s e vegan_index then
     {
       name = n;
       hall = h;
@@ -78,7 +78,7 @@ let make_plate n h c d m p s e =
       side = s;
       dessert = e;
     }
-  else if check_attribute d m p s e vegan_index then
+  else if check_attribute d m p s e veg_index then
     {
       name = n;
       hall = h;
