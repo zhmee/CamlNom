@@ -1,39 +1,28 @@
 Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
+Carolina Gold Pulled Chicken Sandwich,American,N,N,N,N,N,N,N,N,N,N,Y,N,N
 Steamed Jasmine Rice,Asian,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+"Gourmet Pretzel Bar ",None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Wok Szechuan Chicken & Vegetables,Chinese,N,N,N,N,N,N,N,N,N,N,Y,N,N
-Whole Grain MSC Fried Breaded Pollock,None,N,N,N,N,N,N,N,N,N,N,Y,N,N
 Veggie Supreme Pizza,Italian,Y,N,N,N,N,N,N,N,N,N,Y,N,N
-Tofu Black Bean Stir-Fry,Mexican,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Quinoa Tabbouleh Salad,Mediterranean,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Puerto Rican Roast Pork Pernil,Puerto Rican,N,N,N,N,N,N,N,N,N,N,Y,N,N
-Grilled Beef Burger,American,N,N,N,N,N,N,N,N,N,N,Y,N,N
-Black Bean Burger,American,Y,Y,N,Y,Y,Y,N,N,N,Y,Y,N,N
-Beef Cheeseburgers,American,N,N,N,N,N,N,N,N,N,Y,Y,N,N
 Assorted Items from the Grill,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Cornell Chicken & Rice Soup,None,N,N,N,N,N,N,N,N,N,Y,Y,N,N
 "Vegan Chocolate Cake ",Dessert,Y,Y,N,N,Y,N,N,N,N,N,Y,N,N
-Steamed Brown Rice,None,Y,Y,N,N,N,Y,N,N,N,Y,Y,Y,N
-Sliced Pears in Juice,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
-Plain Hummus,Mediterranean,N,N,N,N,N,N,N,N,N,N,Y,N,N
-Farfalle Pasta,Italian,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Chicken Breast,None,N,N,N,N,N,N,N,N,N,N,Y,N,N
-Chef's Choice Seasonal Vegetable,None,Y,Y,N,N,N,N,N,N,N,Y,Y,N,N
 Tofu & Vegetable Stir Fry,Chinese,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Harvest Salad Bar,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Beverage Bar,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
-Seasoned Spiral Fries,American,Y,Y,N,Y,N,N,N,N,N,N,Y,N,N
 Cornell Egg Drop Soup,None,N,N,N,Y,Y,Y,N,N,Y,N,Y,Y,N
 Basmati Rice,Indian,Y,Y,N,Y,N,Y,Y,N,N,N,Y,N,N
 Stewed Garbanzo Beans,None,Y,Y,N,Y,N,N,Y,N,N,N,Y,N,N
+Grilled All Beef Hot Dogs,American,N,N,N,N,Y,N,Y,Y,N,N,Y,N,N
 Fresh Fruit Salad,None,Y,Y,N,N,N,N,Y,Y,N,N,Y,Y,N
 Roasted Cauliflower,Indian,Y,Y,N,N,N,Y,Y,Y,N,N,Y,N,N
 Cornell Dairy Ice Cream Bar,None,Y,N,N,N,Y,N,N,Y,N,N,Y,N,N
-Hamburger Roll,American,N,N,N,N,N,N,N,Y,N,Y,Y,N,N
 Roasted Broccoli,None,Y,Y,Y,Y,Y,Y,Y,N,Y,N,Y
-Marinara Sauce,Italian,Y,Y,Y,N,Y,Y,Y,Y,N,N,Y
 Cornell Dairy Yogurt,None,Y,N,Y,N,Y,Y,Y,Y,N,N,Y,Y
 Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
-Pita,Mediterranean,Y,Y,N,Y,N,N,N,N,Y,N,Y
 Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
 Dessert Bars,Dessert,N,N,N,N,N,N,N,N,Y,N,Y
 Cheese Pizza,Italian,Y,N,N,N,N,N,Y,N,Y,N,Y

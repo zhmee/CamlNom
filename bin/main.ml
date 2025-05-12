@@ -25,6 +25,7 @@ let total_dict = create_dictionary "./data/dictionary.csv"
 let dining_dict = create_dictionary "./driver_data/diningdict.csv"
 let user_plates = Csv.load "./driver_data/userplates.csv"
 let all_dishes = !Options.recipe_book
+let full_menu = make_menu master_file_name
 
 (**[print_menu f lst] is a function that prints out a numerical list of options
    for a user to view. [f] is an argument that allows the function to print out
@@ -398,8 +399,7 @@ let printing_options_for_plates () =
 
     List.iter
       (fun filters ->
-        print_endline
-          (string_of_int !num ^ ") " ^ "Is from: " ^ filters);
+        print_endline (string_of_int !num ^ ") " ^ "Is from: " ^ filters);
         num := !num + 1)
       !halls
   end
@@ -409,7 +409,7 @@ let printing_options_for_plates () =
 let custom_categorization dish_name dining_hall =
   if String.length dish_name = 0 then None
   else
-    let dish = ref ["N"; "N"; "None"; dish_name]  in
+    let dish = ref [ "N"; "N"; "None"; dish_name ] in
     match List.find_index (( = ) dining_hall) !Options.halls with
     | None ->
         for i = 0 to List.length !Options.halls - 1 do
@@ -452,32 +452,38 @@ let storing_all_plates () =
           | 3 ->
               user_drink :=
                 if item = "None" then None
-                else custom_categorization item !hall_name
+                else if
+                  List.length (list_of_menu (filter full_menu (0, item))) = 0
+                then custom_categorization item !hall_name
+                else Some (list_of_menu (filter full_menu (0, item)))
           | 4 ->
               main_dish :=
                 if item = "None" then None
                 else if
-                  List.length (list_of_menu (filter all_dishes (0, item))) = 0
+                  List.length (list_of_menu (filter full_menu (0, item))) = 0
                 then custom_categorization item !hall_name
-                else Some (list_of_menu (filter all_dishes (0, item)))
+                else Some (list_of_menu (filter full_menu (0, item)))
           | 5 ->
               protein :=
                 if item = "None" then None
                 else if
-                  List.length (list_of_menu (filter all_dishes (0, item))) = 0
+                  List.length (list_of_menu (filter full_menu (0, item))) = 0
                 then custom_categorization item !hall_name
-                else Some (list_of_menu (filter all_dishes (0, item)))
+                else Some (list_of_menu (filter full_menu (0, item)))
           | 6 ->
               side_dish :=
                 if item = "None" then None
                 else if
-                  List.length (list_of_menu (filter all_dishes (0, item))) = 0
+                  List.length (list_of_menu (filter full_menu (0, item))) = 0
                 then custom_categorization item !hall_name
-                else Some (list_of_menu (filter all_dishes (0, item)))
+                else Some (list_of_menu (filter full_menu (0, item)))
           | 7 ->
               dessert :=
                 if item = "None" then None
-                else custom_categorization item !hall_name
+                else if
+                  List.length (list_of_menu (filter full_menu (0, item))) = 0
+                then custom_categorization item !hall_name
+                else Some (list_of_menu (filter full_menu (0, item)))
           | _ -> ())
         row;
       let new_plate =
@@ -569,8 +575,7 @@ let plate_filtering num all_plates =
         List.mem (List.nth !cuisines_list (num - 1)) (cuisines plate))
       all_plates
   else if num - List.length !cuisines_list <= List.length !dietary then
-    (* Filter by dietary *)
-    let x = num - (List.length !cuisines_list) in
+    let x = num - List.length !cuisines_list in
     let selected_diet = List.nth !dietary (x - 1) in
     List.filter
       (fun plate ->
