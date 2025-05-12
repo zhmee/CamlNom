@@ -364,7 +364,8 @@ let rec retrieve_rating () =
    that the user may want. *)
 let rec handle_feedback () =
   print_endline "Would you like to submit feedback or see a rating?";
-  print_endline "Input: 0 - input feedback, 1 - view rating";
+  print_endline "0) input feedback"; 
+  print_endline"1) view rating";
   let input = read_line () in
   if input = "0" then make_rating ()
   else if input = "1" then retrieve_rating ()
