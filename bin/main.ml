@@ -399,7 +399,7 @@ let printing_options_for_plates () =
     List.iter
       (fun filters ->
         print_endline
-          (string_of_int !num ^ ") " ^ "Is from: " ^ filters ^ " hall");
+          (string_of_int !num ^ ") " ^ "Is from: " ^ filters);
         num := !num + 1)
       !halls
   end
@@ -575,8 +575,15 @@ let plate_filtering num all_plates =
         List.mem (List.nth !cuisines_list (num - 1)) (cuisines plate))
       all_plates
   else if num - List.length !cuisines_list <= List.length !dietary then
+    (* Filter by dietary *)
+    let x = num - (List.length !cuisines_list) in
+    let selected_diet = List.nth !dietary (x - 1) in
     List.filter
-      (fun plate -> List.mem (List.nth !dietary (num - 1)) !dietary)
+      (fun plate ->
+        match selected_diet with
+        | "Vegetarian" -> is_vegetarian plate
+        | "Vegan" -> is_vegan plate
+        | _ -> false)
       all_plates
   else if
     num - List.length !cuisines_list - List.length !dietary
@@ -588,6 +595,8 @@ let plate_filtering num all_plates =
       all_plates
   else all_plates
 
+
+  
 (**[plates_printing] prints out all of the specified plates*)
 let plates_printing plates =
   print_endline
