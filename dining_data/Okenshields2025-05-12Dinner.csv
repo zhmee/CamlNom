@@ -1,0 +1,26 @@
+Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
+Steamed Jasmine Rice,Asian,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+Wok Chicken Orange,Chinese,N,N,N,N,N,N,N,N,N,N,Y,N,N
+Vegan Veggie Supreme Pizza,Italian,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
+Rojo Grande Chipotle Cheese Sauce,Mexican,Y,N,N,N,N,N,N,N,N,N,Y,N,N
+Roasted Turkey with Gravy,American,N,N,N,N,Y,Y,N,N,N,N,Y,N,N
+Mashed Potatoes,None,Y,N,N,N,N,N,N,N,N,N,Y,N,N
+Cornell Chicken & Rice Soup,None,N,N,N,N,N,N,N,N,N,Y,Y,N,N
+Breaded Eggplant Parmesan,Italian,N,N,N,N,N,N,N,N,N,N,Y,N,N
+Steamed Vegetable Melange,None,Y,Y,N,N,N,Y,N,N,Y,N,Y,N,N
+Tofu & Vegetable Stir Fry,Chinese,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
+Harvest Salad Bar,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
+Beverage Bar,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
+Garlic Green Beans,None,Y,Y,N,N,Y,Y,Y,N,N,Y,Y,N,N
+Fresh Fruit Salad,None,Y,Y,N,N,N,N,Y,Y,N,N,Y,Y,N
+Cornell Dairy Ice Cream Bar,None,Y,N,N,N,Y,N,N,Y,N,N,Y,N,N
+"Bacon Bits ",None,N,N,Y,N,N,N,N,N,N,N,Y
+Sliced Jalapeno,None,Y,Y,Y,N,N,N,N,N,N,N,Y
+"French Fries ",American,Y,Y,Y,N,Y,Y,Y,Y,N,Y,Y
+Cornell Dairy Yogurt,None,Y,N,Y,N,Y,Y,Y,Y,N,N,Y,Y
+Steamed Jasmine Rice,Chinese,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+Fresh Whole Fruit,None,Y,Y,Y,N,Y,Y,Y,Y,Y,Y,Y,Y
+Dessert Bars,Dessert,N,N,N,N,N,N,N,N,Y,N,Y
+Cheese Pizza,Italian,Y,N,N,N,N,N,Y,N,Y,N,Y
+Fresh Baked Cookies,Dessert,N,N,N,Y,Y,N,N,N,Y,Y,Y
+Waffle Bar,None,N,N,Y,Y,N,Y,Y,N,Y,N,Y,Y
