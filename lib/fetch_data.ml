@@ -165,7 +165,7 @@ module Fetch_data = struct
         > ((!recipe_book_adj |> to_adjustable_csv).(1) |> Array.length)
       then add_halls headers hall recipe
       else check_halls headers hall recipe
-    else if update && not (recipe = "Today's Selections Include:") then (
+    else if update then (
       recipes := BatSet.add recipe !recipes;
       let c = new_recipe recipe headers hall in
       recipe_book_adj := add_adjustable !recipe_book_adj c)
@@ -221,10 +221,12 @@ module Fetch_data = struct
      singular day at the hall specified by [name]. Requires: [day_menu] is a
      JSON with the relevant information specific to the hall [name]*)
   let day_csv name headers day_menu =
-    Yojson.Basic.Util.(
-      let date = day_menu |> member "date" |> to_string in
-      let meals = day_menu |> member "events" |> Yojson.Basic.Util.to_list in
-      List.iter (create_meal name date headers) meals)
+    if name = "Straight from the Market" then ()
+    else
+      Yojson.Basic.Util.(
+        let date = day_menu |> member "date" |> to_string in
+        let meals = day_menu |> member "events" |> Yojson.Basic.Util.to_list in
+        List.iter (create_meal name date headers) meals)
 
   (**[scrape_data hall_json headers] reads the information regarding the
      different menus in eateries across campus from a webscraped JSON object
