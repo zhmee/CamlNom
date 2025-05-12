@@ -24,8 +24,7 @@ let food_dict = create_dictionary "./driver_data/fooddict.csv"
 let total_dict = create_dictionary "./data/dictionary.csv"
 let dining_dict = create_dictionary "./driver_data/diningdict.csv"
 let user_plates = Csv.load "./driver_data/userplates.csv"
-let all_dishes = !Options.recipe_book
-let full_menu = make_menu master_file_name
+let all_dishes = ref !Options.recipe_book
 
 (**[print_menu f lst] is a function that prints out a numerical list of options
    for a user to view. [f] is an argument that allows the function to print out
@@ -453,37 +452,37 @@ let storing_all_plates () =
               user_drink :=
                 if item = "None" then None
                 else if
-                  List.length (list_of_menu (filter full_menu (0, item))) = 0
+                  List.length (list_of_menu (filter !all_dishes (0, item))) = 0
                 then custom_categorization item !hall_name
-                else Some (list_of_menu (filter full_menu (0, item)))
+                else Some (list_of_menu (filter !all_dishes (0, item)))
           | 4 ->
               main_dish :=
                 if item = "None" then None
                 else if
-                  List.length (list_of_menu (filter full_menu (0, item))) = 0
+                  List.length (list_of_menu (filter !all_dishes (0, item))) = 0
                 then custom_categorization item !hall_name
-                else Some (list_of_menu (filter full_menu (0, item)))
+                else Some (list_of_menu (filter !all_dishes (0, item)))
           | 5 ->
               protein :=
                 if item = "None" then None
                 else if
-                  List.length (list_of_menu (filter full_menu (0, item))) = 0
+                  List.length (list_of_menu (filter !all_dishes (0, item))) = 0
                 then custom_categorization item !hall_name
-                else Some (list_of_menu (filter full_menu (0, item)))
+                else Some (list_of_menu (filter !all_dishes (0, item)))
           | 6 ->
               side_dish :=
                 if item = "None" then None
                 else if
-                  List.length (list_of_menu (filter full_menu (0, item))) = 0
+                  List.length (list_of_menu (filter !all_dishes (0, item))) = 0
                 then custom_categorization item !hall_name
-                else Some (list_of_menu (filter full_menu (0, item)))
+                else Some (list_of_menu (filter !all_dishes (0, item)))
           | 7 ->
               dessert :=
                 if item = "None" then None
                 else if
-                  List.length (list_of_menu (filter full_menu (0, item))) = 0
+                  List.length (list_of_menu (filter !all_dishes (0, item))) = 0
                 then custom_categorization item !hall_name
-                else Some (list_of_menu (filter full_menu (0, item)))
+                else Some (list_of_menu (filter !all_dishes (0, item)))
           | _ -> ())
         row;
       let new_plate =
@@ -773,6 +772,7 @@ let () =
   try
     Fetch_data.fetch ();
     user_filters := !(Options.get_all_filters ());
+    all_dishes := !Options.recipe_book; 
     all_supported_filters := !user_filters;
     (*create an empty list list of food [food] display to user all the days they
       can choose from [food] gets loaded by the csv of the particular day.*)

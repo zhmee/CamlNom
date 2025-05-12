@@ -32,7 +32,7 @@ BBQ Chinese Chicken,Chinese,N,N,N,N,Y,N,N,N,N,N,N,N,N
 Bookbinders Fra Diablo Mussels,Mexican,N,N,N,N,Y,N,N,N,N,N,N,N,N
 Soy Sauce Sauteed Mushrooms,None,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
 Honey Mustard Baked Chicken,None,N,N,N,N,N,Y,N,N,N,N,N,N,N
-Mashed Red Skin Potatoes,None,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
+Mashed Red Skin Potatoes,None,Y,Y,N,N,N,Y,N,N,N,N,Y,N,N
 "Lentil & Potato Stew ",None,Y,N,N,N,N,Y,N,N,N,N,N,N,N
 Guacamole,Mexican,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
 Cheese & Bean Quesadilla,Mexican,Y,N,N,N,N,Y,N,N,N,N,N,N,N
@@ -404,7 +404,7 @@ Cilantro Rice,Mexican,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
 Churros with Chocolate Sauce,Mexican,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
 Tomato Bisque,French,Y,N,N,N,N,Y,N,N,N,N,N,N,N
 Seared Kale,None,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
-Roasted Green Beans,None,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
+Roasted Green Beans,None,Y,Y,N,N,Y,Y,N,N,N,N,N,N,N
 Ginger Carrot Salad,None,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
 "Cauliflower Chickpea Provencale Stew ",French,Y,Y,N,N,N,Y,N,N,N,N,Y,N,N
 Tiger Roasted Carrots,None,Y,Y,N,N,N,Y,N,N,N,N,N,N,N
