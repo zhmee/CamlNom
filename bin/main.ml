@@ -409,13 +409,10 @@ let printing_options_for_plates () =
 let custom_categorization dish_name dining_hall =
   if String.length dish_name = 0 then None
   else
-    let dish = ref [ dish_name ] in
+    let dish = ref ["N"; "N"; "None"; dish_name]  in
     match List.find_index (( = ) dining_hall) !Options.halls with
     | None ->
         for i = 0 to List.length !Options.halls - 1 do
-          dish := "N" :: !dish
-        done;
-        for i = 0 to 2 + List.length !Options.cuisines_list - 1 do
           dish := "N" :: !dish
         done;
         Some (List.rev !dish)
@@ -425,9 +422,6 @@ let custom_categorization dish_name dining_hall =
         done;
         dish := "Y" :: !dish;
         for i = 0 to List.length !Options.halls - index - 1 do
-          dish := "N" :: !dish
-        done;
-        for i = 0 to 2 + List.length !Options.cuisines_list - 1 do
           dish := "N" :: !dish
         done;
         Some (List.rev !dish)
@@ -595,8 +589,6 @@ let plate_filtering num all_plates =
       all_plates
   else all_plates
 
-
-  
 (**[plates_printing] prints out all of the specified plates*)
 let plates_printing plates =
   print_endline
