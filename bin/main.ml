@@ -93,6 +93,7 @@ let remove_hall filter =
    certain cuisine*)
 let choose_cuisines () =
   print_endline "Choose the specific cuisine you want to filter by: ";
+  user_filters := List.filter (fun x -> x <> "Cuisine") !user_filters;
   List.iteri
     (fun index cuisine ->
       if index mod 2 = 0 then Printf.printf "%d) %s\n" index cuisine
@@ -119,7 +120,8 @@ let choose_cuisines () =
 (**[finding_category index] finds the specific corresponding category for the
    user's choice in the driver and acts accordingly.*)
 let finding_category index =
-  let category = List.nth !all_supported_filters (index - 1) in
+  let category = List.nth !user_filters (index - 1) in
+  
   if category = "Cuisine" then choose_cuisines ()
   else if List.mem category !dietary then
     let y =
@@ -678,8 +680,9 @@ let rec prompter created_menu =
     print_endline "Done";
     print_endline " ";
     let user_input = read_line () in
-    if user_input = "Done" then begin print_by_dining_hall !created_menu
-  end
+    if user_input = "Done" then begin
+      print_by_dining_hall !created_menu
+    end
     else
       let valid_input = valid_choices user_input in
       let filter_cat = int_of_string valid_input |> finding_category in
@@ -698,7 +701,6 @@ let rec prompter created_menu =
       prompter created_menu
     end
 
-
 let meal_exists day_chosen hall_chosen meal_chosen =
   finding_day (day_chosen |> string_of_int) hall_chosen meal_chosen <> ""
 
@@ -712,8 +714,12 @@ let menu_view () =
       "\nPlease choose which dining hall you'd like to view the menu for: \n";
     let hall_chosen = yield_value !Options.halls Fun.id in
     user_halls := [ hall_chosen ];
-    user_filters := List.filter (fun cat -> not (List.mem cat !Options.halls)) !user_filters;
-     all_supported_filters := List.filter (fun cat -> not (List.mem cat !Options.halls)) !all_supported_filters;
+    user_filters :=
+      List.filter (fun cat -> not (List.mem cat !Options.halls)) !user_filters;
+    all_supported_filters :=
+      List.filter
+        (fun cat -> not (List.mem cat !Options.halls))
+        !all_supported_filters;
     print_endline "\nPlease choose a meal you'd like to view the menu for: \n";
     let meal_chosen =
       yield_value
