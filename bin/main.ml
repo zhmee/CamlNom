@@ -263,17 +263,18 @@ let make_rating () =
       let rating_obj = to_csv_entry (of_strings name rating hall comments) in
       Csv.output_record out rating_obj;
       Csv.close_out out;
-      print_endline "Thank you for your review!" end
+      print_endline "Thank you for your review!"
+    end
   with
   | Illegal_rating rating ->
       Printf.printf
-        "Sorry, %d is not a valid input. Please enter a value between 0 and 5.\n"
+        "Sorry, %d is not a valid input. Please enter a value between 1 and 5.\n"
         rating
   | Failure read_int ->
       print_endline
         "Sorry, the value you entered cannot be represented as an integer. \
          Please enter an integer between 1 and 5, inclusive. "
-  | Invalid_input -> print_endline "Sorry, please input a valid food item"
+  | Invalid_input -> print_endline "Sorry, please input a valid input"
 
 (**[retrieve_rating] takes care of retrieving the specific category of rating
    the user wants.*)
@@ -331,7 +332,7 @@ let rec retrieve_rating () =
         print_endline
           "Please enter in the dining hall name you would like to view";
         let hall = read_line () in
-        let hall = check_user_spelling hall dining_dict dining_dict in 
+        let hall = check_user_spelling hall dining_dict dining_dict in
         let hall_ratings = retrieve_ratings_hall rating_file hall in
         if hall_ratings = [] then print_endline "No ratings found for this hall"
         else print_ratings hall_ratings
@@ -406,24 +407,30 @@ let printing_options_for_plates () =
 (**[custom_categorization] is to categorize dishes that are not yet known in the
    menus. *)
 let custom_categorization dish_name dining_hall =
-  let rec append_repeat n lst =
-    if n > 0 then
-      let x = "N" :: lst in
-      x
-    else lst
-  in
   if String.length dish_name = 0 then None
   else
-    let base = [dish_name; "None"; "N"; "N" ] in
-    let index_opt = List.find_index (( = ) dining_hall) !Options.halls in
-    if index_opt = None then
-      Some (append_repeat (List.length !Options.halls) base)
-    else
-      let index = Option.get index_opt in
-      Some
-        (append_repeat
-           (List.length !Options.halls - index - 1)
-           ("Y" :: append_repeat index base))
+    let dish = ref [ dish_name ] in
+    match List.find_index (( = ) dining_hall) !Options.halls with
+    | None ->
+        for i = 0 to List.length !Options.halls - 1 do
+          dish := "N" :: !dish
+        done;
+        for i = 0 to 2 + List.length !Options.cuisines_list - 1 do
+          dish := "N" :: !dish
+        done;
+        Some (List.rev !dish)
+    | Some index ->
+        for i = 0 to index - 1 do
+          dish := "N" :: !dish
+        done;
+        dish := "Y" :: !dish;
+        for i = 0 to List.length !Options.halls - index - 1 do
+          dish := "N" :: !dish
+        done;
+        for i = 0 to 2 + List.length !Options.cuisines_list - 1 do
+          dish := "N" :: !dish
+        done;
+        Some (List.rev !dish)
 
 let array_of_plates = ref []
 
