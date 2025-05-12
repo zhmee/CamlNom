@@ -54,11 +54,11 @@ let sort_rating csv_file asc =
 (**[print_helper l] is the nicely formatted version of the rating [l]*)
 let print_helper line =
   let string_stars n =
-    if n = 1 then "☆     "
-    else if n = 2 then "☆☆   "
-    else if n = 3 then "☆☆☆  "
-    else if n = 4 then "☆☆☆☆ "
-    else "☆☆☆☆☆"
+    if n = 1 then "☆■■■■\t"
+    else if n = 2 then "☆☆■■■\t"
+    else if n = 3 then "☆☆☆■■\t"
+    else if n = 4 then "☆☆☆☆■\t"
+    else "☆☆☆☆☆\t"
   in
   [
     List.nth line 0;
@@ -76,5 +76,6 @@ let rec ratings_formatter csv acc =
 
 let print_ratings m =
   print_newline ();
-  Csv.print_readable (ratings_formatter m []);
+  Csv.print_readable
+    (List.hd (Csv.load "./driver_data/ratings.csv") :: ratings_formatter m []);
   print_newline ()

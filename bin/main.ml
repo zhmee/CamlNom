@@ -325,7 +325,7 @@ let rec retrieve_rating () =
           let range_ratings =
             retrieve_ratings_int_range (rating_file |> List.tl) rating1 rating2
           in
-          print_ratings ((rating_file |> List.hd) :: range_ratings)
+          print_ratings range_ratings
     (*user wants specific dining hall*)
     | "3" ->
         print_endline
@@ -364,8 +364,8 @@ let rec retrieve_rating () =
    that the user may want. *)
 let rec handle_feedback () =
   print_endline "Would you like to submit feedback or see a rating?";
-  print_endline "0) input feedback"; 
-  print_endline"1) view rating";
+  print_endline "0) input feedback";
+  print_endline "1) view rating";
   let input = read_line () in
   if input = "0" then make_rating ()
   else if input = "1" then retrieve_rating ()
@@ -669,7 +669,8 @@ let rec prompter created_menu =
   try
     if List.length !user_filters = 0 then begin
       print_endline "No more filters to apply, here are the results: ";
-      print_by_dining_hall !created_menu; exit ()
+      print_by_dining_hall !created_menu;
+      exit ()
     end
     else print_endline "-------------------------------------------------";
     print_endline
