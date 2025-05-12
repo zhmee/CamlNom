@@ -154,7 +154,7 @@ module Fetch_data = struct
      with name [recipe] and returns the [list] containing the specific
      information, such as dietary restrictions and cuisine. If [recipe] is not
      an existing recipe in [Options.recipes] then a new recipe card is added. *)
-  let pull_specific_data headers orig_headers hall recipe =
+  let pull_specific_data update headers orig_headers hall recipe =
     if
       Array.exists
         (fun row -> row.(0) = recipe)
@@ -165,10 +165,11 @@ module Fetch_data = struct
         > ((!recipe_book_adj |> to_adjustable_csv).(1) |> Array.length)
       then add_halls headers hall recipe
       else check_halls headers hall recipe
-    else (
+    else if update && not (recipe = "Today's Selections Include:") then (
       recipes := BatSet.add recipe !recipes;
       let c = new_recipe recipe headers hall in
       recipe_book_adj := add_adjustable !recipe_book_adj c)
+    else ()
 
   (**[create_meal name date meal headers] creates the csv file corresponding to
      a singular meal (e.g. Lunch or Dinner) at the dining hall with name [name]
@@ -199,14 +200,14 @@ module Fetch_data = struct
   (**[save_all meal_lst headers] takes the association [meal_list] (which
      contains a file name as the key and a set with the relevant recipe names as
      the value) and creates files for every element of the list*)
-  let save_all meal_lst headers =
+  let save_all update meal_lst headers =
     recipe_book_adj :=
       !recipe_book_adj |> from_adjustable |> to_csv |> List.tl |> from_csv
       |> to_adjustable;
     List.iter
       (fun (file_name, (hall, recipes)) ->
         BatSet.String.iter
-          (pull_specific_data headers
+          (pull_specific_data update headers
              ((!recipe_book_adj |> to_adjustable_csv).(0) |> Array.to_list)
              hall)
           !recipes;
@@ -269,7 +270,7 @@ module Fetch_data = struct
 
   (**[fetch ()] updates the directory [./dining_data], which contains updated
      information on the menus in each dining hall. *)
-  let fetch () =
+  let fetch update () =
     Options.read_cuisines ();
     let headers = ref [] in
     fill_master_list headers ();
@@ -291,7 +292,7 @@ module Fetch_data = struct
         (fun (hall_name, hall_meals) ->
           (hall_name, ref (BatSet.String.to_list !hall_meals)))
         !meals;
-    save_all !queries headers;
+    save_all update !queries headers;
     write_master_list headers ();
     recipe_book := master_file_name |> Csv.load |> from_csv;
     Options.write_cuisines ()

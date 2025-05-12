@@ -771,7 +771,8 @@ let rec menu_view () =
 
 let () =
   try
-    Fetch_data.fetch ();
+    print_endline "Would you like to update the dining menu? (Y/N)";
+    Fetch_data.fetch (read_line () = "Y") ();
     user_filters := !(Options.get_all_filters ());
     all_supported_filters := !user_filters;
     (*create an empty list list of food [food] display to user all the days they
