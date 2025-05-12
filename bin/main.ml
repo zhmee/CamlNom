@@ -331,6 +331,7 @@ let rec retrieve_rating () =
         print_endline
           "Please enter in the dining hall name you would like to view";
         let hall = read_line () in
+        let hall = check_user_spelling hall dining_dict dining_dict in 
         let hall_ratings = retrieve_ratings_hall rating_file hall in
         if hall_ratings = [] then print_endline "No ratings found for this hall"
         else print_ratings hall_ratings
@@ -353,7 +354,7 @@ let rec retrieve_rating () =
     end
   | Illegal_rating rating -> begin
       Printf.printf
-        "- Sorry, %d is not a valid input. Please enter a value between 0 and \
+        "- Sorry, %d is not a valid input. Please enter a value between 1 and \
          5. - \n"
         rating;
       print_endline "";
@@ -413,7 +414,7 @@ let custom_categorization dish_name dining_hall =
   in
   if String.length dish_name = 0 then None
   else
-    let base = [ dish_name; "None"; "N"; "N" ] in
+    let base = [dish_name; "None"; "N"; "N" ] in
     let index_opt = List.find_index (( = ) dining_hall) !Options.halls in
     if index_opt = None then
       Some (append_repeat (List.length !Options.halls) base)
