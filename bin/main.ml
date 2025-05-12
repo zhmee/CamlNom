@@ -668,7 +668,7 @@ let rec prompter created_menu =
   try
     if List.length !user_filters = 0 then begin
       print_endline "No more filters to apply, here are the results: ";
-      print_by_dining_hall !created_menu
+      print_by_dining_hall !created_menu; exit ()
     end
     else print_endline "-------------------------------------------------";
     print_endline
@@ -729,7 +729,7 @@ let rec menu_view () =
     if available_meals = [] then begin
       print_endline
         "No meals available for that dining hall on the selected day.";
-      menu_view ()
+      exit ()
     end
     else
       print_endline "\nPlease choose a meal you'd like to view the menu for: \n";
@@ -751,7 +751,7 @@ let rec menu_view () =
       print_endline
         (string_of_int actual_input
        ^ " is out of bounds for the required selection.")
-  | read_int -> print_endline "Please enter an integer. "
+  | read_int -> print_endline "Please enter a valid integer. "
 
 let () =
   try
