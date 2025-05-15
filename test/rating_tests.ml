@@ -200,7 +200,7 @@ let test_ratings_with_dups = Csv.load "../data/test_ratings_duplicates.csv"
 let test_print_ratings () =
   "testing printing" >:: fun _ ->
   let menu = "../data/rating_asc.csv" in
-  Rating.print_ratings (Csv.load menu);
+  Rating.print_ratings (Csv.load menu) menu;
   assert_bool "dummy test" true
 
 let tests =

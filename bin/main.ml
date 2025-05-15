@@ -301,7 +301,7 @@ let rec retrieve_rating () =
         in
         let dish_ratings = retrieve_ratings_name rating_file dish_name in
         if dish_ratings = [] then print_endline "No ratings found for dish"
-        else print_ratings dish_ratings
+        else print_ratings dish_ratings "./driver_data/ratings.csv"
     (*user wants specific rating*)
     | "2" ->
         print_endline
@@ -311,7 +311,7 @@ let rec retrieve_rating () =
         if rating < 1 || rating > 5 then raise (Illegal_rating rating)
         else
           let certain_rating = retrieve_ratings_int rating_file rating in
-          print_ratings certain_rating
+          print_ratings certain_rating "./driver_data/ratings.csv"
     (*user wants rating range*)
     | "3" ->
         print_endline
@@ -325,7 +325,7 @@ let rec retrieve_rating () =
           let range_ratings =
             retrieve_ratings_int_range (rating_file |> List.tl) rating1 rating2
           in
-          print_ratings range_ratings
+          print_ratings range_ratings "./driver_data/ratings.csv"
     (*user wants specific dining hall*)
     | "4" ->
         print_endline
@@ -334,7 +334,7 @@ let rec retrieve_rating () =
         let hall = check_user_spelling hall dining_dict dining_dict in
         let hall_ratings = retrieve_ratings_hall rating_file hall in
         if hall_ratings = [] then print_endline "No ratings found for this hall"
-        else print_ratings hall_ratings
+        else print_ratings hall_ratings "./driver_data/ratings.csv"
     | _ ->
         print_endline "Please choose only one of the above";
         retrieve_rating ()
@@ -772,7 +772,7 @@ let () =
     print_endline "Would you like to update the dining menu? (Y/N)";
     Fetch_data.fetch (read_line () = "Y") ();
     user_filters := !(Options.get_all_filters ());
-    all_dishes := !Options.recipe_book; 
+    all_dishes := !Options.recipe_book;
     all_supported_filters := !user_filters;
     (*create an empty list list of food [food] display to user all the days they
       can choose from [food] gets loaded by the csv of the particular day.*)

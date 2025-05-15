@@ -1,4 +1,4 @@
-Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
+Recipe,Cuisine,Vegan,Vegetarian,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
 Carolina Gold Pulled Chicken Sandwich,American,N,N,N,N,N,N,N,N,N,N,Y,N,N
 Simply Steamed Zucchini Squash,American,Y,Y,N,Y,N,N,N,N,N,N,N,N,N
 Eggs Shakshuka,African,N,N,N,Y,N,N,N,N,N,N,N,N,N
@@ -773,7 +773,7 @@ Herb Roasted Carrots & Mushrooms,None,Y,Y,N,N,Y,N,Y,N,Y,N,N,N,N
 BBQ Pork Loin,American,N,N,N,N,N,N,Y,N,Y,N,N,N,N
 Sicilian Meatball Sub,Italian,N,N,N,N,N,N,Y,N,N,Y,N,N,N
 Roasted Seasonal Vegeatble Mix,None,Y,Y,N,N,N,N,Y,N,N,N,N,N,N
-Pasta With Beans & Greens,Italian,Y,N,N,N,Y,N,Y,N,N,Y,N,N,N
+Pasta With Beans & Greens,Italian,Y,N,N,N,Y,N,Y,N,N,Y,Y,N,N
 Macaroni & Cheese,None,Y,N,N,Y,N,N,Y,N,N,N,N,N,N
 "Cornell Cream of Mushroom Soup ",None,Y,N,N,N,Y,N,Y,N,Y,N,N,N,N
 Cornell BBQ Chicken,American,N,N,N,N,N,N,Y,N,N,N,N,N,N
