@@ -1,4 +1,13 @@
-Recipe,Cuisine,Vegan,Vegetarian,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
+Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
+Tomato & Ricotta White Cheese Pizza,Italian,Y,N,N,N,N,N,N,N,Y,N,N,N,Y
+Stir Fried Cabbage with Red Peppers,Chinese,Y,Y,N,N,N,N,N,N,Y,N,N,N,Y
+Ropa Vieja - Cuban Shredded Beef,Cuban,N,N,N,N,N,N,N,N,Y,N,N,N,Y
+Mexican Corn,Mexican,Y,Y,N,N,N,N,N,N,Y,N,N,N,Y
+Massaman Thai Curry Pork Butt,Thai,N,N,N,N,N,N,N,N,Y,N,N,N,Y
+"Beef, Lamb & Mushroom Greek Meatloaf",Greek,N,N,N,N,N,N,N,N,Y,N,N,N,Y
+Thai Salad,Thai,Y,Y,N,N,N,N,N,N,Y,N,N,N,Y
+Roasted Radish,None,Y,Y,N,N,N,N,N,N,Y,N,N,N,Y
+"Barley, Chickpea & Feta Salad",Mediterranean,Y,N,N,N,N,N,N,N,Y,N,N,N,Y
 Plantiful Taco Bar,Mexican,N,N,N,N,N,N,N,N,Y,N,N,N,N
 Steamed Jasmine Rice,Asian,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
 Escalivida - Spanish Grilled Vegetables,Spanish,Y,Y,N,N,N,N,N,N,Y,N,N,N,N

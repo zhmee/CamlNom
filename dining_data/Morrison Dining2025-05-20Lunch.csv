@@ -1,4 +1,14 @@
-Recipe,Cuisine,Vegan,Vegetarian,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
+Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
+White Chicken Chili,None,N,N,N,N,N,N,N,N,Y,N,N,N,Y
+Thai Yellow Curry Chicken,Thai,N,N,N,N,N,N,N,N,Y,N,N,N,Y
+"Steamed Carrots ",None,Y,Y,N,N,N,N,N,N,Y,N,N,N,Y
+Garlic Lime Chicken,None,N,N,N,N,N,N,N,N,Y,N,N,N,Y
+Crispy Cumin Potatoes,None,Y,Y,N,N,N,N,N,N,Y,N,N,N,Y
+Cabbage Stir Fry,Chinese,Y,Y,N,N,N,N,N,N,Y,N,N,N,Y
+Tomato & Ricotta White Cheese Pizza,Italian,Y,N,N,N,N,N,N,N,Y,N,N,N,Y
+Thai Salad,Thai,Y,Y,N,N,N,N,N,N,Y,N,N,N,Y
+Roasted Radish,None,Y,Y,N,N,N,N,N,N,Y,N,N,N,Y
+"Barley, Chickpea & Feta Salad",Mediterranean,Y,N,N,N,N,N,N,N,Y,N,N,N,Y
 Plantiful Taco Bar,Mexican,N,N,N,N,N,N,N,N,Y,N,N,N,N
 Braised Leeks & Greens,None,Y,Y,N,N,N,N,N,N,Y,N,N,N,N
 MSC Baked Haddock with Tchermila Sauce,North African,N,N,N,N,N,N,N,N,Y,N,N,N,N

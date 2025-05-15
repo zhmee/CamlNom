@@ -1,4 +1,10 @@
-Recipe,Cuisine,Vegan,Vegetarian,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
+Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
+Lamb Curry,None,N,N,N,N,N,N,N,N,Y,N,N,N,Y
+"Beef Mushroom Meatloaf ",None,N,N,N,N,N,N,N,N,Y,N,N,N,Y
+Thai Salad,Thai,Y,Y,N,N,N,N,N,N,Y,N,N,N,Y
+Taco Pizza,Mexican,Y,N,N,N,N,N,N,N,Y,N,N,N,Y
+Roasted Radish,None,Y,Y,N,N,N,N,N,N,Y,N,N,N,Y
+"Barley, Chickpea & Feta Salad",Mediterranean,Y,N,N,N,N,N,N,N,Y,N,N,N,Y
 Plantiful Taco Bar,Mexican,N,N,N,N,N,N,N,N,Y,N,N,N,N
 Steamed Jasmine Rice,Asian,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
 Ramen Bar,Japanese,Y,Y,N,N,N,N,N,N,Y,Y,N,N,N
