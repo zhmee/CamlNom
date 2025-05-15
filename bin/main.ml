@@ -768,7 +768,7 @@ let rec menu_view () =
 
 let () =
   try
-    print_endline "Would you like to update the dining menu? (Y/N)";
+    print_endline "Would you like to update the dining menu? (Y to update)";
     Fetch_data.fetch (read_line () = "Y") ();
     user_filters := !(Options.get_all_filters ());
     all_dishes := !Options.recipe_book;
