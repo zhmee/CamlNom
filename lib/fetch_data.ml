@@ -86,7 +86,7 @@ module Fetch_data = struct
           if not (List.mem input !cuisines_list) then
             cuisines_list := input :: !cuisines_list)
           else (print_endline "Illegal input entered. A \"None\" is assumed.";specs := Array.append !specs [|"None"|])) 
-        else if filter = "Straight from the Market" then specs := Array.append !specs [| "N" |]
+        else if filter = "Straight from the Market" then specs := Array.append !specs [| "Y" |]
         else if contains recipe filter then
           specs := Array.append !specs [| "Y" |]
         else if
