@@ -1,4 +1,5 @@
 Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
+Chicken Nuggets,American,N,N,Y,N,N,Y,Y,N,N,N,Y,N,N
 Thyme Scented Carrots,None,Y,Y,Y
 Simply Steamed Green Beans,None,Y,Y,Y,N,Y,Y,N,Y
 Shrimp Poke Bowl,Hawaiian,N,N,Y
@@ -14,6 +15,7 @@ Fresh Cilantro,None,Y,Y,Y
 Beans & Greens Stew,None,Y,Y,Y
 Baguette,None,Y,Y,Y
 "French Fries ",American,Y,Y,Y,N,Y,Y,Y,Y,N,Y,Y
+Beef Bulgogi,Korean,N,N,Y,N,N,N,N,N,Y
 Vinaigrette Marinated Tuna Salad,None,Y,Y,Y
 Vegan Chocolate Cake,Dessert,Y,Y,Y
 Sesame Marinated Tofu,Asian,Y,Y,Y,N,Y

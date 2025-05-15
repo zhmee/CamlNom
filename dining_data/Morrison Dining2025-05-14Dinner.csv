@@ -5,8 +5,6 @@ Potatoes Au Gratin,French,Y,Y,N,N,N,N,N,N,Y,N,N,N,N
 Pork Bahn Mi,Vietnamese,N,N,N,N,N,N,N,N,Y,N,N,N,N
 Entree Halal - Moroccan Beef Stew,Moroccan,N,N,N,N,N,N,N,N,Y,N,N,N,N
 Cumin Roasted Carrots,None,Y,Y,N,N,N,N,N,N,Y,N,N,N,N
-Cajun Tofu & Black Bean Salsa,Mexican,Y,Y,N,N,N,N,N,N,Y,N,N,N,N
-BBQ Chicken,American,N,N,N,N,Y,N,Y,N,Y,N,N,N,N
 Assorted Bread & Rolls,None,Y,Y,N,N,N,N,N,N,Y,Y,N,N,N
 "Arugula, Cucumber, Blueberry, Feta Salad",None,N,N,N,N,N,N,N,N,Y,N,N,N,N
 Cauliflower Gremolata,Italian,Y,Y,N,N,N,N,N,N,Y,N,N,N,N
@@ -14,8 +12,10 @@ Plantiful Buddha Bowls,None,Y,Y,N,N,N,N,N,N,Y,N,N,N,N
 Chicken Salad,None,N,N,N,N,N,N,N,N,Y,N,N,N,N
 Bao Bun Bar,Chinese,Y,Y,N,N,N,N,N,N,Y,N,N,N,N
 "Assorted Salads, Veggies & Greens",None,Y,Y,N,N,N,N,N,N,Y,N,N,N,N
+Tofu Ratatouille,French,Y,Y,N,Y,N,N,N,N,Y,N,N,N,N
+Quinoa Pilaf,Iranian,Y,Y,N,Y,N,N,N,N,Y,N,N,N,N
 "Egg Salad ",None,N,N,N,Y,N,N,N,N,Y,N,N,N,N
-Salt Potatoes,None,Y,Y,N,N,N,N,Y,N,Y,N,Y,N,N
+Chicken Cacciatore,Italian,N,N,N,Y,N,N,N,N,Y,N,N,N,N
 Fruit & Yogurt Bar,None,Y,Y,N,N,N,N,N,Y,Y,Y,N,N,N
 Glass Noodles with Sesame & Bean Sprouts,Asian,Y,Y,Y,N,N,N,N,N,Y,Y
 Steamed Green Beans,None,Y,Y,Y,N,Y,N,N,N,Y,Y

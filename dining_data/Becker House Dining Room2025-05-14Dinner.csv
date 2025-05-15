@@ -3,7 +3,7 @@ Steamed Jasmine Rice,Asian,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
 Vegan Ziti Marinara & White Beans,Italian,Y,Y,N,N,Y,N,N,N,N,N,N,N,N
 Simply Steamed Broccoli,None,Y,Y,N,N,Y,N,N,N,N,N,N,N,N
 Cheesy Green Onion Mashed Potatoes,None,Y,N,N,N,Y,N,N,N,N,N,N,N,N
-Turkey Burgers,American,N,N,N,N,Y,N,N,N,N,Y,N,N,N
+Italian Sausage & Peppers Sandwich,Italian,N,N,N,N,Y,N,N,N,N,Y,N,N,N
 Fruit Smoothies,None,Y,Y,N,N,Y,N,N,N,N,N,N,N,N
 Malted Vanilla Waffle Batter,None,N,N,N,N,Y,N,N,N,N,N,N,N,N
 Lemon Honey Dressing,None,Y,N,N,N,Y,N,N,N,N,N,N,N,N
@@ -15,7 +15,7 @@ Buttered Corn,None,Y,N,N,N,Y,N,N,N,N,N,Y,N,N
 Black Bean Burger,American,Y,Y,N,Y,Y,Y,N,N,N,Y,Y,N,N
 Roasted Turkey with Gravy,American,N,N,N,N,Y,Y,N,N,N,N,Y,N,N
 "Vegan Chocolate Cake ",Dessert,Y,Y,N,N,Y,N,N,N,N,N,Y,N,N
-Cornell Egg Drop Soup,None,N,N,N,Y,Y,Y,N,N,Y,N,Y,Y,N
+"Cornell Chicken Noodle Soup ",None,N,N,N,N,Y,N,N,N,N,Y,Y,N,N
 Quinoa,NOne,Y,Y,N,Y,Y,N,N,N,N,N,N,N,N
 Sliced Peaches in Juice,None,Y,Y,N,N,Y,N,Y,N,N,N,Y,N,N
 Cottage Cheese,None,Y,N,N,N,Y,N,Y,N,N,N,N,N,N
