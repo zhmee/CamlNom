@@ -44,8 +44,8 @@ let rec yield_value lst f =
   let index = read_int () - 1 in
   if not (check_valid_bounds index lst) then
     raise (Sys_error (string_of_int index))
-  else List.nth lst index
-with _ -> print_endline "Please enter a valid choice."; yield_value lst f
+  else (print_endline( "You have selected " ^ f (List.nth lst index) ^ ". "); List.nth lst index)
+with _ -> print_endline "Please enter a valid choice.\n"; yield_value lst f
 
 (**[formatted_day day] takes in a day of type [Unix.tm] and returns it in
    YYYY-MM-DD form. *)
