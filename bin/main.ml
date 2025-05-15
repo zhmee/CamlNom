@@ -320,7 +320,7 @@ let rec retrieve_rating () =
         let rating1 = int_of_string (read_line ()) in
         print_endline " Please indicate the upper range of reviews (1-5):";
         let rating2 = int_of_string (read_line ()) in
-        if rating1 > rating2 then raise (Illegal_rating 1)
+        if rating1 > rating2 || rating1<0 || rating2>5 then raise (Illegal_rating 1)
         else
           let range_ratings =
             retrieve_ratings_int_range (rating_file |> List.tl) rating1 rating2
