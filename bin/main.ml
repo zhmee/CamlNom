@@ -339,7 +339,7 @@ let rec retrieve_rating () =
         retrieve_rating ()
   with
   | Failure _ ->
-      print_endline "Please put in an integer";
+      print_endline "Please input a valid choice";
       retrieve_rating ()
   | Invalid_input -> begin
       print_endline "- Please put in a dish name - ";
