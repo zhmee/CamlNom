@@ -330,8 +330,7 @@ let rec retrieve_rating () =
     | "4" ->
         print_endline
           "Please enter in the dining hall name you would like to view";
-        let hall = read_line () in
-        let hall = check_user_spelling hall dining_dict dining_dict in
+        let hall = yield_value !Options.halls Fun.id in
         let hall_ratings = retrieve_ratings_hall rating_file hall in
         if hall_ratings = [] then print_endline "No ratings found for this hall"
         else print_ratings hall_ratings "./driver_data/ratings.csv"
