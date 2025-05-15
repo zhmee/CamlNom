@@ -93,7 +93,8 @@ let remove_hall filter =
 
 (**[choose_cuisines ()] handles the case where the user wants to sort for a
    certain cuisine*)
-let choose_cuisines () =
+let rec choose_cuisines () =
+  try 
   print_endline "Choose the specific cuisine you want to filter by: ";
   user_filters := List.filter (fun x -> x <> "Cuisine") !user_filters;
   List.iteri
@@ -118,6 +119,7 @@ let choose_cuisines () =
   else
     let index = Option.get cuisine in
     (index, category)
+  with _ -> print_endline "Please choose a valid cuisine.\n"; choose_cuisines ()
 
 (**[finding_category index] finds the specific corresponding category for the
    user's choice in the driver and acts accordingly.*)
