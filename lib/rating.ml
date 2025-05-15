@@ -74,8 +74,7 @@ let rec ratings_formatter csv acc =
   | [] -> acc
   | h :: t -> ratings_formatter t (print_helper h :: acc)
 
-let print_ratings m =
+let print_ratings m f =
   print_newline ();
-  Csv.print_readable
-    (List.hd (Csv.load "./driver_data/ratings.csv") :: ratings_formatter m []);
+  Csv.print_readable (List.hd (Csv.load f) :: ratings_formatter m []);
   print_newline ()
