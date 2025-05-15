@@ -12,7 +12,7 @@ let example_ratings = Csv.load "../data/test_ratings.csv" ~strip:true
 let ex_drink =
   Some [ "Flavor Infused Water Station"; "None"; "Y"; "Y"; "Y"; "Y"; "Y" ]
 
-let non_veg_drink = Some [ "Milk"; "None"; "N"; "Y"; "Y"; "Y"; "Y" ]
+let non_veg_drink = Some [ "Milk"; "None"; "Y"; "N"; "Y"; "Y"; "Y" ]
 let ex_main = Some [ "House Made Pasta"; "Italian"; "Y"; "Y"; "Y"; "Y"; "N" ]
 
 let veg_main =
@@ -20,8 +20,8 @@ let veg_main =
     [
       "House Made Pasta Vegetarian NOT VEGAN";
       "Italian";
-      "N";
       "Y";
+      "N";
       "Y";
       "Y";
       "N";
@@ -31,7 +31,7 @@ let ex_protein =
   Some [ "Chicken Souvlaki"; "Mediterranean"; "N"; "N"; "Y"; "N"; "N" ]
 
 let vegan_protein = Some [ "BBQ Tofu"; "American"; "Y"; "Y"; "Y"; "Y"; "Y" ]
-let ex_side = Some [ "Greek Salad"; "Mediterranean"; "Y"; "N"; "Y"; "N"; "N" ]
+let ex_side = Some [ "Greek Salad"; "Mediterranean"; "N"; "Y"; "Y"; "N"; "N" ]
 
 let ex_dessert =
   Some
