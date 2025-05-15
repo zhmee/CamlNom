@@ -81,11 +81,11 @@ module Fetch_data = struct
       (fun filter ->
         if filter = "Cuisine" then (
           print_endline "What cuisine is this dish?";
-          let input = read_line () in
-          specs := Array.append !specs [| input |];
+          let input = read_line () in if input <> "" then
+          (specs := Array.append !specs [| input |];
           if not (List.mem input !cuisines_list) then
-            cuisines_list := input :: !cuisines_list
-          else ())
+            cuisines_list := input :: !cuisines_list)
+          else (print_endline "Illegal input entered. A \"None\" is assumed.";specs := Array.append !specs [|"None"|])) 
         else if contains recipe filter then
           specs := Array.append !specs [| "Y" |]
         else if
