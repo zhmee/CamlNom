@@ -2,3 +2,14 @@
 Michelle Zhao (mz625)
 Neha Sudarshan (ns968)
 Rachel Kan (rk778)
+
+Note for grading: 
+Depending on when grading occurs, some dining halls may be closed or have nothing on their menus. Since our program
+updates using real time data, there will be days especially over the summer that filtering for menus for certain dining halls will produce an empty list. 
+
+Another note about the updates of the menu list of foods, if the list isn't updated in a while then the foods might be
+outdated and the menus won't show everything. 
+
+When prompted if "would you like to update the dining menu? (Y/N)" this is needed for our live updates, but grading 
+purposes please select N. 
+

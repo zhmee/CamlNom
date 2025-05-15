@@ -1,9 +1,9 @@
-Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
+Recipe,Cuisine,Vegan,Vegetarian,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
 Syrian Ginger Lemon Saffron Chicken,Syrian,N,N,N,N,N,N,N,N,N,Y,N,N,N
 Souvlaki Tofu,Greek,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
 "Sausage Pepper & Onion Sheet Pizza ",Italian,Y,N,N,N,N,N,N,N,N,Y,N,N,N
 Roasted Parsnips & Carrots,None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
-Ramen Bar,Japanese,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
+Ramen Bar,Japanese,Y,Y,N,N,N,N,N,N,Y,Y,N,N,N
 Persian Rice,Persian,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
 "Margherita Sheet Pizza ",Italian,Y,N,N,N,N,N,N,N,N,Y,N,N,N
 Italian Wedding Soup,Italian,Y,Y,N,N,N,N,N,N,N,Y,N,N,N

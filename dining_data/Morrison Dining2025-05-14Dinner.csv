@@ -1,4 +1,4 @@
-Recipe,Cuisine,Vegetarian,Vegan,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
+Recipe,Cuisine,Vegan,Vegetarian,Rose House Dining Room,104West!,Becker House Dining Room,Cook House Dining Room,Jansen's Dining Room at Bethe House,Keeton House Dining Room,Morrison Dining,North Star Dining Room,Okenshields,Risley Dining Room,Straight from the Market
 Sausage Mushroom Pepper & Onion Pizza,Italian,N,N,N,N,N,N,N,N,Y,N,N,N,N
 Roasted Chicken,None,N,N,N,N,N,N,N,N,Y,N,N,N,N
 Potatoes Au Gratin,French,Y,Y,N,N,N,N,N,N,Y,N,N,N,N
@@ -18,7 +18,7 @@ Quinoa Pilaf,Iranian,Y,Y,N,Y,N,N,N,N,Y,N,N,N,N
 Chicken Cacciatore,Italian,N,N,N,Y,N,N,N,N,Y,N,N,N,N
 Fruit & Yogurt Bar,None,Y,Y,N,N,N,N,N,Y,Y,Y,N,N,N
 Glass Noodles with Sesame & Bean Sprouts,Asian,Y,Y,Y,N,N,N,N,N,Y,Y
-Steamed Green Beans,None,Y,Y,Y,N,Y,N,N,N,Y,Y
+Steamed Green Beans,None,Y,Y,Y,Y,Y,N,N,N,Y,Y
 Coleslaw,Polish,N,N,N,Y,N,N,N,N,Y
 "Lemon  Quinoa Salad ",None,Y,Y,N,Y,N,N,N,N,Y
 Overnight Oats with Blueberry & Banana,Dessert,Y,Y,N,N,N,N,N,N,Y,N,N,Y
