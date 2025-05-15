@@ -19,7 +19,7 @@ title: "CamlNom"
 # OK if this is a Cornell Github link, but public gallery viewers won't be able to see it.
 git-repo: "https://github.coecis.cornell.edu/ns968/CS_3110_Final_Project"
 # Replace the URL with your own demo video.
-demo-video-url: "https://youtu.be/GDVkBpaIwTY" 
+demo-video-url: "https://youtu.be/b5zq4vikbAQ"
 # Write a short, attention-grabbing description of your project.
 desc: >
   CamlNom is a one-stop shop for Cornell students to decide where to eat depending on their cravings of the day. Users can select from a wide range of cuisines and dietary restrictions to receive dining hall suggestions, along with details on specific menu items offered. This will help students to not only select dining options that suit their interests and tastes the most, but also to aid students with dietary restrictions to make informed decisions about what and where they can eat based on their dietary needs. 
