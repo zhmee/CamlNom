@@ -12,3 +12,5 @@ outdated and the menus won't show everything.
 
 When prompted if "would you like to update the dining menu? (Y/N)" this is needed for our live updates, but grading 
 purposes please select N. 
+
+For best viewing of the terminal, please use full screen terminal.
