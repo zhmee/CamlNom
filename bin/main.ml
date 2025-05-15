@@ -282,14 +282,10 @@ let make_rating () =
 let rec retrieve_rating () =
   print_endline
     "Please indicate the category of rating you would like to view: \n\
-    \ \n\
-    \    1) view rating for specific dish \n\
-    \ \n\
-    \    2) view foods with specific rating \n\
-    \ \n\
-    \    3) view foods within a range of ratings \n\
-    \ \n\
-    \    4) view ratings for a specific dining hall";
+     1) View rating for specific dish \n\
+     2) View foods with specific rating \n\
+     3) View foods within a range of ratings \n\
+     4) View ratings for a specific dining hall";
   let input = read_line () in
   try
     match input with
@@ -341,7 +337,7 @@ let rec retrieve_rating () =
         retrieve_rating ()
   with
   | Failure _ ->
-      print_endline "Please put in an integer";
+      print_endline "Please input a valid choice";
       retrieve_rating ()
   | Invalid_input -> begin
       print_endline "- Please put in a dish name - ";
@@ -366,8 +362,8 @@ let rec retrieve_rating () =
    that the user may want. *)
 let rec handle_feedback () =
   print_endline "Would you like to submit feedback or see a rating?";
-  print_endline "1) input feedback";
-  print_endline "2) view rating";
+  print_endline "1) Input feedback";
+  print_endline "2) View rating";
   let input = read_line () in
   if input = "1" then make_rating ()
   else if input = "2" then retrieve_rating ()
