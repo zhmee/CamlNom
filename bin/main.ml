@@ -37,13 +37,15 @@ let print_menu f lst =
 
 (**[yield_value lst f] returns a valid option out of the options provided in
    [lst]*)
-let yield_value lst f =
+let rec yield_value lst f =
+  try 
   let check_valid_bounds index lst = index < List.length lst && index >= 0 in
   print_menu f lst;
   let index = read_int () - 1 in
   if not (check_valid_bounds index lst) then
     raise (Sys_error (string_of_int index))
   else List.nth lst index
+with _ -> print_endline "Please enter a valid choice."; yield_value lst f
 
 (**[formatted_day day] takes in a day of type [Unix.tm] and returns it in
    YYYY-MM-DD form. *)
