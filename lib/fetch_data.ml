@@ -298,5 +298,6 @@ module Fetch_data = struct
     save_all update !queries headers;
     write_master_list headers ();
     recipe_book := master_file_name |> Csv.load |> from_csv;
-    Options.write_cuisines ()
+    Options.write_cuisines ();
+    print_endline "The recipe book is up to date."
 end
