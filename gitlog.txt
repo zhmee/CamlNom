@@ -1,3 +1,538 @@
+commit 9aaf88986bd6fd1f4a58f196cc9b10a47897a7c5
+Merge: 02f7532 a6f8474
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Thu May 15 16:13:52 2025 -0400
+
+    Merge branch 'main' of github.coecis.cornell.edu:ns968/CS_3110_Final_Project
+
+commit 02f7532a868a9c1cc799d8794dbb64628719f02d
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Thu May 15 16:13:18 2025 -0400
+
+    Add functionality that repeats the option menu
+    - If the user enters an invalid cuisine, the menu is repeated
+
+commit a6f84745f5f0d878803dd3eb21956b09c55b7eef
+Author: Rachel Kan <rk778@cornell.edu>
+Date:   Thu May 15 16:12:19 2025 -0400
+
+    Fix plates plates_tests
+    
+    - Switch vegan and vegetarian order in tests food items
+
+commit a9ad51f80d84299e8559321c076e1c3c21d0c0a2
+Merge: 56ee23b 0da09c2
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Thu May 15 15:43:22 2025 -0400
+
+    Merge branch 'main' of github.coecis.cornell.edu:ns968/CS_3110_Final_Project
+
+commit 56ee23b8115aa0e4222e97c73dd1a14c097031ff
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Thu May 15 15:41:59 2025 -0400
+
+    Makes yield_value message better
+    - shows user their selection
+
+commit 0da09c2b80aa598b105b91d37f1a2dd94b53dbde
+Author: Michelle <mz625@cornell.edu>
+Date:   Thu May 15 15:39:21 2025 -0400
+
+    Edited formatting for ratings
+    
+    - ratings format is better now
+
+commit 122a9a93f7aff3ae572ef51f5016856c3371629e
+Merge: da531f1 d2d3792
+Author: Michelle <mz625@cornell.edu>
+Date:   Thu May 15 15:36:31 2025 -0400
+
+    Merge branch 'main' of github.coecis.cornell.edu:ns968/CS_3110_Final_Project
+
+commit da531f17f25814a77278e2b97caee47ca913001e
+Author: Michelle <mz625@cornell.edu>
+Date:   Thu May 15 15:36:26 2025 -0400
+
+    Added more descriptive error messages
+    
+    - The error messages displayed are now updated to be more accurate
+
+commit d2d37923be0c416cb1cb760ffe5b60431288632b
+Merge: 39ecbd1 d07214f
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Thu May 15 15:27:12 2025 -0400
+
+    Merge branch 'main' of github.coecis.cornell.edu:ns968/CS_3110_Final_Project
+
+commit 39ecbd1b472b2297979e49cbe74942e9525aa0aa
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Thu May 15 15:26:41 2025 -0400
+
+    Adding catch for yield_value
+    - Catches the error raised when option is out of bounds
+
+commit d07214f3464ec450fc192cfc5a563d256cb2681b
+Merge: ba04f9d b51c1a6
+Author: Michelle <mz625@cornell.edu>
+Date:   Thu May 15 15:22:06 2025 -0400
+
+    Merge branch 'main' of github.coecis.cornell.edu:ns968/CS_3110_Final_Project
+
+commit ba04f9d217ecfab3aa5c878cb7dbff95715e878c
+Author: Michelle <mz625@cornell.edu>
+Date:   Thu May 15 15:22:02 2025 -0400
+
+    Added new instructions to README
+    
+    - Added instructions for best viewing on terminal
+
+commit b51c1a65a45101c9d870e9d61c2b808ab571efe3
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Thu May 15 15:18:36 2025 -0400
+
+    Add confirmation message to recipe book
+
+commit 69b402b73ed20942b06d12e393072b0abcd71b1f
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Thu May 15 15:15:35 2025 -0400
+
+    Change straight from the market
+    - Changed csv column headers (Vegan and vegetarian)
+    - updated repice book
+
+commit 576ec8638ff00faa53b26a2f88657e5fa999e140
+Merge: bca46ec 85a003e
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Thu May 15 15:07:11 2025 -0400
+
+    Merge branch 'main' of github.coecis.cornell.edu:ns968/CS_3110_Final_Project
+
+commit bca46ecd91ebf185304a1a82f1a0d7c455343567
+Merge: c21f03d ff646c7
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Thu May 15 15:06:49 2025 -0400
+
+    Merge branch 'new_branch'
+
+commit 85a003ea1407c1f4471d535d828c60e6d7765ec0
+Author: Michelle <mz625@cornell.edu>
+Date:   Thu May 15 15:03:32 2025 -0400
+
+    Added choices for dining halls
+    
+    - Displays to users the choices for dining halls to view ratings
+
+commit ff646c7c61d915daaf65da1f974b3b562fa76ed5
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Thu May 15 14:58:23 2025 -0400
+
+    merging
+
+commit c21f03d640f2d508e858ea0512ce4e5cc706dfe2
+Merge: 32e3063 fa99acf
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Thu May 15 14:56:00 2025 -0400
+
+    Merge branch 'main' of github.coecis.cornell.edu:ns968/CS_3110_Final_Project into new_branch_2
+
+commit fa99acf244114d077ef13d22e97f2d8cbd89f028
+Author: Rachel Kan <rk778@cornell.edu>
+Date:   Thu May 15 14:43:52 2025 -0400
+
+    Fix error with adding new input to rating/plates
+    
+    - add new line to both csvs
+
+commit 0f66ef10fe791bf82957fa878158f9ba764d2cb9
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Thu May 15 14:42:11 2025 -0400
+
+    Change straight from the market
+    - Checks if git is pushing
+
+commit e7b2d5cc8848b82da98a01063418d2b442807915
+Merge: 86ea927 32e3063
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Thu May 15 14:38:22 2025 -0400
+
+    merging
+    Merge branch 'main' into HEAD
+
+commit 9a35c7f54553f85c8b0723631c773192026f2832
+Author: Michelle <mz625@cornell.edu>
+Date:   Thu May 15 14:38:00 2025 -0400
+
+    Added additional instructions in README
+    
+    - Added grading instructions regarding live updates to readme for grader.
+
+commit 32e3063c21e88ecb533357ec5d05a35a0f389082
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Thu May 15 14:36:23 2025 -0400
+
+    Removing Straight from the Market from filters
+    - Automatically places "N"
+
+commit 86ea9272e10707001479f1989066f6706b9ae2ec
+Author: Michelle <mz625@cornell.edu>
+Date:   Thu May 15 14:32:08 2025 -0400
+
+    Added additional instructions for grading
+    
+    - Added intructions for grading regarding some notes about live menu updates.
+
+commit d71423485cab0cbb0c9bfff2069c3da43934b684
+Author: Michelle <mz625@cornell.edu>
+Date:   Thu May 15 13:53:27 2025 -0400
+
+    Added AF and RI for dictionary
+    
+    - Wrote the type representation of dictionary
+
+commit afa33089d6133ad4237cd6651313074e8876b666
+Author: Rachel Kan <rk778@cornell.edu>
+Date:   Thu May 15 13:46:54 2025 -0400
+
+    Change rating printing implementation
+    
+    - improve test coverage to 100%
+
+commit d8b70409866a435148f05ac7926042e25e7c4cdc
+Merge: 83d04f8 c8ae3f3
+Author: Michelle <mz625@cornell.edu>
+Date:   Thu May 15 13:46:00 2025 -0400
+
+    Merge branch 'main' of github.coecis.cornell.edu:ns968/CS_3110_Final_Project
+
+commit 83d04f8a9d3e93297689b9814bffa54b4f78d454
+Author: Michelle <mz625@cornell.edu>
+Date:   Thu May 15 13:42:48 2025 -0400
+
+    Added citations within Authors.md files
+    
+    - Added ChatGPT commands and citations for food name generation.
+
+commit c8ae3f394df8b2e9a9761f856a9b7ab9e9cf2b43
+Merge: 16873c6 d42d4d1
+Author: Rachel Kan <rk778@cornell.edu>
+Date:   Thu May 15 13:32:20 2025 -0400
+
+    Merge branch 'main' of github.coecis.cornell.edu:ns968/CS_3110_Final_Project
+
+commit 16873c61699500717c5f354efe625b916fd042fd
+Author: Rachel Kan <rk778@cornell.edu>
+Date:   Thu May 15 13:30:55 2025 -0400
+
+    Fixed tests by fixing file header
+    
+    - switch vegan and vegetarian
+
+commit 34431a8070aef8ee63a81fcfc3f23640b0a2567f
+Author: Rachel Kan <rk778@cornell.edu>
+Date:   Thu May 15 13:29:50 2025 -0400
+
+    Fix rating and plates tests
+
+commit d42d4d1503da02d5366062db7603d804f310876d
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Thu May 15 13:18:10 2025 -0400
+
+    Adding functionality to allow users to not specify cuisine
+    - A "None" is assumed
+
+commit 1d8f00fd30a80d3074e370996452167a799cf53e
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Thu May 15 13:10:12 2025 -0400
+
+    Add dependencies to INSTALL.md
+    - Added yojson, dune
+
+commit f21783a72eaf7c551070ae21b5e67dd099e4f96c
+Merge: 12c3a7d 3cc9150
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Mon May 12 12:57:49 2025 -0400
+
+    gerge branch 'main' of github.coecis.cornell.edu:ns968/CS_3110_Final_Project
+
+commit 12c3a7de0714af3fb96a53c3976920d16b10ccc5
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Mon May 12 12:57:26 2025 -0400
+
+    bye bye crowd
+
+commit 3cc91501ad30f75ec3e99ef821b782918c61dce5
+Merge: 8254ed3 e717588
+Author: Rachel Kan <rk778@cornell.edu>
+Date:   Mon May 12 12:57:04 2025 -0400
+
+    Merge branch 'main' of github.coecis.cornell.edu:ns968/CS_3110_Final_Project
+
+commit e717588a3cd75b0588b045075a77500a6b747e62
+Merge: 4c53498 4cf127a
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Mon May 12 12:55:27 2025 -0400
+
+    Merge branch 'main' of github.coecis.cornell.edu:ns968/CS_3110_Final_Project
+
+commit 8254ed329af993f5325b6ca994fa1b778fc4cb20
+Author: Rachel Kan <rk778@cornell.edu>
+Date:   Mon May 12 12:55:02 2025 -0400
+
+    Add more plates to csv
+    
+    - add plates for each dining hall
+
+commit 4c53498d8da9fbef754f593e09c828705ee8d2ff
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Mon May 12 12:55:01 2025 -0400
+
+    bye bye straight from the market :D
+
+commit 4cf127ab7c2e4023e7a09e17e9afe980ba9f2e2a
+Author: Michelle <mz625@cornell.edu>
+Date:   Mon May 12 12:45:05 2025 -0400
+
+    Fixed ratings
+    
+    - Ratings are fixed to add dining hall options
+
+commit 8309e57948f69c0aad68c91bd55e1d4d5c29149d
+Merge: f59e935 0b1851e
+Author: Michelle <mz625@cornell.edu>
+Date:   Mon May 12 12:34:15 2025 -0400
+
+    Merge branch 'main' of github.coecis.cornell.edu:ns968/CS_3110_Final_Project
+
+commit f59e9358547903fcbfd3c77b2f07c2c376ce80af
+Author: Michelle <mz625@cornell.edu>
+Date:   Mon May 12 12:34:01 2025 -0400
+
+    Updated plate filter
+    
+    - Updated the plate filter to reflect the updated recipe book
+
+commit 0b1851e44010fdbbec07be070ebbfc047de34fd0
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Mon May 12 12:03:06 2025 -0400
+
+    final flag for additions
+
+commit a54af69524b18031371da17d2796db24daffb9f1
+Merge: cf7d6ac 62e8e3d
+Author: Michelle <mz625@cornell.edu>
+Date:   Mon May 12 09:06:16 2025 -0400
+
+    Merge branch 'main' of github.coecis.cornell.edu:ns968/CS_3110_Final_Project
+
+commit cf7d6ac2abba4e7e0d3ab737ce62d23752a7fd4f
+Author: Michelle <mz625@cornell.edu>
+Date:   Mon May 12 09:06:12 2025 -0400
+
+    Fixed plate filtering
+    
+    - Plates are now able to be filtered for correctly
+    - Added new classifications for food
+    - Recipe book was not loaded in correctly (but now it is yay!)
+
+commit 62e8e3d9cc39110f34ef0e81a1302d652199bdb3
+Author: Rachel Kan <rk778@cornell.edu>
+Date:   Mon May 12 01:29:54 2025 -0400
+
+    Add more data to csvs
+    
+    - Add more recipes and plates
+
+commit d8b7f8a18fe5d65590270ad733bc1bfc76026011
+Author: Rachel Kan <rk778@cornell.edu>
+Date:   Mon May 12 00:50:45 2025 -0400
+
+    Add Steamed Jasmine Rice to recipe_book
+
+commit dd1f0e22f25c4fd3e004250370f0668a649a49f6
+Author: Michelle <mz625@cornell.edu>
+Date:   Mon May 12 00:48:31 2025 -0400
+
+    Reimplemented plates
+    
+    - plates can now successfully filter for vegetarian and vegan plates
+
+commit 54874da471d93c7c5beea54a61f4d44d7e295b3e
+Author: Rachel Kan <rk778@cornell.edu>
+Date:   Mon May 12 00:39:20 2025 -0400
+
+    Add plate to csv and fix vegan/veg check bug
+    
+    - same bug as previous commit where vegan should come before vegetarian check
+
+commit 614cd9d434aec885329a064df0229ad7b549f65b
+Author: Michelle <mz625@cornell.edu>
+Date:   Mon May 12 00:18:07 2025 -0400
+
+    Added support for filtering plates
+    
+    - Vegan and vegetarian plates are now supported
+
+commit 56460072888c3744859ddbb9079f39ae27c27466
+Merge: 1158db4 691b0b2
+Author: Michelle <mz625@cornell.edu>
+Date:   Sun May 11 23:58:57 2025 -0400
+
+    Merge branch 'main' of github.coecis.cornell.edu:ns968/CS_3110_Final_Project
+
+commit 1158db4d4ece48c5c613fe1ad76a00e8e1c1c5c4
+Author: Michelle <mz625@cornell.edu>
+Date:   Sun May 11 23:57:52 2025 -0400
+
+    Fixed plates
+    
+    - Fixed plates adding cuisines and dining halls
+
+commit 691b0b2e2432b59e0382886f9b935b142de201fd
+Author: Rachel Kan <rk778@cornell.edu>
+Date:   Sun May 11 23:42:43 2025 -0400
+
+    Add ratings to csv
+
+commit a372b0aaf3c65eec41756894a5a3981a139dac1f
+Merge: 70f17d6 d2c0dce
+Author: Rachel Kan <rk778@cornell.edu>
+Date:   Sun May 11 23:27:00 2025 -0400
+
+    Merge branch 'main' of github.coecis.cornell.edu:ns968/CS_3110_Final_Project
+
+commit 70f17d6cfc00c329ca750d3a8877b48693ad694f
+Author: Rachel Kan <rk778@cornell.edu>
+Date:   Sun May 11 23:26:33 2025 -0400
+
+    Added to diningdict
+    
+    - added lowercase versions of dining house names
+
+commit d2c0dce09b4732a77f9c962871ae587a3dfa08ae
+Author: Michelle <mz625@cornell.edu>
+Date:   Sun May 11 23:07:39 2025 -0400
+
+    Fixed spell checking for dining halls
+    
+    - Program now recognizes misspelled dining halls
+
+commit e0db57ba7ad614310a9812208cdc52474ddd5b4a
+Author: Michelle <mz625@cornell.edu>
+Date:   Sun May 11 22:56:43 2025 -0400
+
+    Fixed rating ranges
+    
+    - Rating ranges are now fixed to be between 1-5
+
+commit 36d6f9bbeaf8b0796111a41b9acb2b05bcf69028
+Author: Rachel Kan <rk778@cornell.edu>
+Date:   Sun May 11 22:44:42 2025 -0400
+
+    Added pretty printing to ratings
+    
+    - Fixed some display issues
+    - Added to ratings and user plates csvs
+
+commit dba16d7bbc29a3e2770a54c8f48eee4fdf53454e
+Merge: f6861fc 9c58a05
+Author: Rachel Kan <rk778@cornell.edu>
+Date:   Sun May 11 20:59:31 2025 -0400
+
+    Merge branch 'main' of github.coecis.cornell.edu:ns968/CS_3110_Final_Project
+
+commit f6861fc18b02d4ff89bb791b65b94109168fda48
+Author: Rachel Kan <rk778@cornell.edu>
+Date:   Sun May 11 20:58:37 2025 -0400
+
+    Pretty format ratings for printing
+    
+    - add stars to printing
+
+commit 9c58a059556c3dc0cfa2b197f750e68b20fcc98d
+Author: Michelle <mz625@cornell.edu>
+Date:   Sun May 11 20:57:40 2025 -0400
+
+    Fixed printing
+    
+    - Fixed the printing of choices for ratings
+
+commit 785fd251f250e02fceeed654e7b276e3fc32b50b
+Author: Michelle <mz625@cornell.edu>
+Date:   Sun May 11 20:31:23 2025 -0400
+
+    Fixed exiting bug
+    
+    - Program now exits when an incorrect choice is chosen.
+
+commit cdcd4d7035c227cbb384593f27f3046527500841
+Author: Michelle <mz625@cornell.edu>
+Date:   Sun May 11 20:06:01 2025 -0400
+
+    Fixed prompting for user to rechoose dining hall
+    
+    - If the dining hall has nothing for that day, the user is prompted to choose another day.
+
+commit f3566912024f24bfd960afbea5d6e21d6abdbcdd
+Author: Michelle <mz625@cornell.edu>
+Date:   Sun May 11 20:00:08 2025 -0400
+
+    Fixed cuisine choice
+    
+    - Users can not longer choose multiple cuisines
+
+commit aace1ffccecb1662c04bc969fc8f6d7a52a83898
+Author: Michelle <mz625@cornell.edu>
+Date:   Sun May 11 17:50:40 2025 -0400
+
+    Fixed hall choice
+    
+    - Once a hall is chosen to be viewed, the user cannot try to choose another dining hall.
+
+commit af0e4b73b566baf1c9bf050d028dbeb371910d78
+Author: Michelle <mz625@cornell.edu>
+Date:   Sun May 11 15:39:32 2025 -0400
+
+    Fixed days input
+    
+    - Fixed off by one error when reporting incorrect user input for days
+
+commit 0b6f07e4a3113afb3cc4e192f5273e6a78c40ee0
+Author: Rachel Kan <rk778@cornell.edu>
+Date:   Sun May 11 15:06:20 2025 -0400
+
+    Added documentation
+    
+    - added af/ri to plates
+    - added documentation to tests
+
+commit 91d6ff6268e9fc5b734f8151718886a164568991
+Author: Rachel Kan <rk778@cornell.edu>
+Date:   Sun May 11 14:48:13 2025 -0400
+
+    Add dining test for last bit of coverage
+    
+    - Add filter' test to cover line 26 of dining.ml
+
+commit 58570fb637cff56d1715a25de5bb57c088cb0f6b
+Author: Rachel Kan <rk778@cornell.edu>
+Date:   Sun May 11 14:32:23 2025 -0400
+
+    Add driver_data to testing deps dune stanza
+    
+    - Fixes error with tests
+
+commit 9a4f633390f10fd48b68405fb14c5527735a24cf
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Sun May 11 14:25:06 2025 -0400
+
+    Change file path for dining
+
+commit 5bf36b29a367bc82d053f1d4cd646e33fe4c1de4
+Author: Neha Sudarshan <ns968@cornell.edu>
+Date:   Sun May 11 14:20:17 2025 -0400
+
+    Fix the INSTALL.md file to add new dependenceies
+
 commit 0b3d64997f105b9dafccfbcebed7666d92c950e5
 Author: Neha Sudarshan <ns968@cornell.edu>
 Date:   Sun May 11 12:35:12 2025 -0400
