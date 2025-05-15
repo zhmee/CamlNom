@@ -1,5 +1,10 @@
 type t = Csv.t
 
+(*AF: [Dictionary] is a list of a list of strings. This is a dictionary containing
+one string per line. An empty dictionary is an [[]]. *)
+
+(*RI: There are no duplicated strings. *)
+
 exception Word_Not_Found of string
 
 let create_dictionary csv = Csv.load csv
