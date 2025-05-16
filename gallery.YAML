@@ -22,7 +22,15 @@ git-repo: "https://github.coecis.cornell.edu/ns968/CS_3110_Final_Project"
 demo-video-url: "https://youtu.be/b5zq4vikbAQ"
 # Write a short, attention-grabbing description of your project.
 desc: >
-  CamlNom is a one-stop shop for Cornell students to decide where to eat depending on their cravings of the day. Users can select from a wide range of cuisines and dietary restrictions to receive dining hall suggestions, along with details on specific menu items offered. This will help students to not only select dining options that suit their interests and tastes the most, but also to aid students with dietary restrictions to make informed decisions about what and where they can eat based on their dietary needs. 
+  CamlNom is a one-stop shop for Cornell students to decide where to eat depending on their cravings of the day. 
+  Users can select from a wide range of cuisines and dietary restrictions from each dining hall to see if it 
+  meets their needs. This will help students to not only select dining options that suit their 
+  interests and tastes the most, but also to aid students with dietary restrictions to make informed decisions about 
+  what and where they can eat based on their dietary needs. 
   
-  These features will be enhanced by a feedback system where students are able to submit commentary or rankings of their experience that will be displayed to other users and can also be shared to Cornell Dining as feedback as well. Live updates are provided on how crowded the dining halls are based on user input so students can avoid long waits and find the best time to dine. Possible additional features include an alert to users when specialty items are being served. We will be loading the menus of dining halls on a weekly basis to support our interface. 
+  These features will be enhanced by a feedback system where students are able to submit commentary or rankings of their 
+  experience. Students can also view others' feedback and filter by specific ratings. Students will also be able to share
+  their own favorite meals by creating a "plate" and detailing that dishes they added. 
+  Updates are made live whenever Cornell Dining refreshes their dining page and loads in real time data so that all the 
+  information provided to users are up to date. 
 

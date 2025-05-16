@@ -164,7 +164,7 @@ Penne with Vegetable Pomodoro & Basil,Italian,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
 Pasta Carbonara,Italian,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
 Honey-Butter Roasted Root Vegetables,None,Y,N,N,N,N,N,N,N,N,Y,N,N,N
 "Closed ",None,N,N,N,N,N,N,N,N,N,Y,N,N,N
-Chef's Choice Soup,None,Y,Y,N,N,N,N,N,N,N,Y,N,N,N
+Chef's Choice Soup,None,Y,Y,N,N,N,N,Y,N,N,Y,N,N,N
 "Cheddar & Broccoli Sheet Pizza ",Italian,Y,N,N,N,N,N,N,N,N,Y,N,N,N
 "Amatriciana Sheet Pizza ",Italian,Y,N,N,N,N,N,N,N,N,Y,N,N,N
 Zuppa Toscana,Italian,Y,N,N,N,N,N,N,N,N,Y,N,N,N
@@ -639,7 +639,7 @@ Bao Bun Bar,Chinese,Y,Y,N,N,N,N,N,N,Y,N,N,N,N
 Assorted Fresh Fruit & Cornell Yogurt,None,Y,N,N,N,N,N,N,N,Y,N,N,N,N
 Thyme Roasted Potatoes,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Taco Bar,Mexican,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
-Roasted Carrots,None,Y,Y,N,N,N,N,N,N,N,N,Y,Y,N
+Roasted Carrots,None,Y,Y,N,N,N,N,Y,N,N,N,Y,Y,N
 BBQ Pulled Chicken Thighs,American,N,N,N,N,N,N,N,N,N,N,Y,N,N
 "Wok Daikon Soup ",Japanese,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Tzatziki Sauce,Mediterranean,Y,N,N,N,Y,N,N,N,N,N,Y,N,N
@@ -708,7 +708,7 @@ Vegan Potato Onion Pierogies,Polish,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Steamed Monte Carlo Vegetables,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Sausage Pizza,Italian,N,N,N,N,N,N,N,N,Y,Y,Y,N,N
 Roasted Brussels Sprouts with Apples,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
-Refried Beans,None,Y,Y,N,N,N,Y,N,N,N,Y,Y,N,N
+Refried Beans,None,Y,Y,N,N,N,Y,Y,N,N,Y,Y,N,N
 Onions Diced Small,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Lentil Salad with Red Wine Vinaigrette,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
 Hot & Sour Soup,None,Y,Y,N,N,N,N,N,N,N,N,Y,N,N
@@ -1002,7 +1002,7 @@ Chimichurri Black Beans,Peruvian,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
 Chilaquiles Bake,Mexican,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
 Black Bean Sweet Potato Burrito,Mexican,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
 Ancho Chili Spice Rub,Mexican,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
-"6"" Flour Tortilla Wrap",Mexican,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
+"6"" Flour Tortilla Wrap",Mexican,Y,Y,N,N,N,N,Y,Y,N,N,N,N,N
 "Western Scrambled Tofu ",None,Y,Y,N,N,N,N,Y,Y,N,N,N,N,N
 Toasted Pepitas,None,Y,Y,N,N,N,N,N,Y,N,N,N,N,N
 Sweetened Coconut,None,Y,Y,N,N,N,N,N,Y,N,N,N,N,N

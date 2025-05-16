@@ -38,14 +38,18 @@ let print_menu f lst =
 (**[yield_value lst f] returns a valid option out of the options provided in
    [lst]*)
 let rec yield_value lst f =
-  try 
-  let check_valid_bounds index lst = index < List.length lst && index >= 0 in
-  print_menu f lst;
-  let index = read_int () - 1 in
-  if not (check_valid_bounds index lst) then
-    raise (Sys_error (string_of_int index))
-  else (print_endline( "You have selected " ^ f (List.nth lst index) ^ ". "); List.nth lst index)
-with _ -> print_endline "Please enter a valid choice.\n"; yield_value lst f
+  try
+    let check_valid_bounds index lst = index < List.length lst && index >= 0 in
+    print_menu f lst;
+    let index = read_int () - 1 in
+    if not (check_valid_bounds index lst) then
+      raise (Sys_error (string_of_int index))
+    else (
+      print_endline ("You have selected " ^ f (List.nth lst index) ^ ". ");
+      List.nth lst index)
+  with _ ->
+    print_endline "Please enter a valid choice.\n";
+    yield_value lst f
 
 (**[formatted_day day] takes in a day of type [Unix.tm] and returns it in
    YYYY-MM-DD form. *)
@@ -94,32 +98,34 @@ let remove_hall filter =
 (**[choose_cuisines ()] handles the case where the user wants to sort for a
    certain cuisine*)
 let rec choose_cuisines () =
-  try 
-  print_endline "Choose the specific cuisine you want to filter by: ";
-  user_filters := List.filter (fun x -> x <> "Cuisine") !user_filters;
-  List.iteri
-    (fun index cuisine ->
-      if index mod 2 = 0 then Printf.printf "%d) %s\n" index cuisine
-      else Printf.printf "%d) %s\t\t" index cuisine)
-    !cuisines_list;
-  let input = read_line () in
-  let category =
-    List.nth !cuisines_list
-      (try
-         let input_num = input |> int_of_string in
-         if input_num < List.length !cuisines_list && input_num >= 0 then
-           input_num
-         else raise Unknown_Correspondence
-       with _ -> raise Unknown_Correspondence)
-  in
-  let cuisine =
-    List.find_index (( = ) "Cuisine") (!recipe_book |> to_csv |> List.hd)
-  in
-  if Option.is_none cuisine then raise Unknown_Correspondence
-  else
-    let index = Option.get cuisine in
-    (index, category)
-  with _ -> print_endline "Please choose a valid cuisine.\n"; choose_cuisines ()
+  try
+    print_endline "Choose the specific cuisine you want to filter by: ";
+    user_filters := List.filter (fun x -> x <> "Cuisine") !user_filters;
+    List.iteri
+      (fun index cuisine ->
+        if index mod 2 = 0 then Printf.printf "%d) %s\n" index cuisine
+        else Printf.printf "%d) %s\t\t" index cuisine)
+      !cuisines_list;
+    let input = read_line () in
+    let category =
+      List.nth !cuisines_list
+        (try
+           let input_num = input |> int_of_string in
+           if input_num < List.length !cuisines_list && input_num >= 0 then
+             input_num
+           else raise Unknown_Correspondence
+         with _ -> raise Unknown_Correspondence)
+    in
+    let cuisine =
+      List.find_index (( = ) "Cuisine") (!recipe_book |> to_csv |> List.hd)
+    in
+    if Option.is_none cuisine then raise Unknown_Correspondence
+    else
+      let index = Option.get cuisine in
+      (index, category)
+  with _ ->
+    print_endline "Please choose a valid cuisine.\n";
+    choose_cuisines ()
 
 (**[finding_category index] finds the specific corresponding category for the
    user's choice in the driver and acts accordingly.*)
@@ -320,7 +326,8 @@ let rec retrieve_rating () =
         let rating1 = int_of_string (read_line ()) in
         print_endline " Please indicate the upper range of reviews (1-5):";
         let rating2 = int_of_string (read_line ()) in
-        if rating1 > rating2 || rating1<0 || rating2>5 then raise (Illegal_rating 1)
+        if rating1 > rating2 || rating1 < 0 || rating2 > 5 then
+          raise (Illegal_rating 1)
         else
           let range_ratings =
             retrieve_ratings_int_range (rating_file |> List.tl) rating1 rating2
@@ -685,9 +692,8 @@ let rec prompter created_menu =
     end
     else print_endline "-------------------------------------------------";
     print_endline
-      "Please choose what type of cuisine you would like to see,\n\
-       what dietary restriction you would like to filter by, \n\
-       which dining hall you are interested in, \n\
+      "Please choose what type of cuisine you would like to see, \n\
+      what dietary restriction you would like to filter by, \n\
        or if you are done selecting: ";
     display_all_filters user_filters;
     print_endline "Done";
