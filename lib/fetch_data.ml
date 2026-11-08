@@ -41,7 +41,7 @@ module Fetch_data = struct
     Lwt.bind
       (Client.get
          (Uri.of_string
-            "https://now.dining.cornell.edu/api/1.0/dining/eateries.json"))
+            "https://admin-now.dining.cornell.edu/api/1.0/dining/eateries.json"))
       (fun (_, x) -> x |> Cohttp_lwt.Body.to_string)
 
   (**[pull_data] initiates the data transfer from the Cornell Dining website.*)
